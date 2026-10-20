@@ -1,0 +1,76 @@
+{
+  "response": {
+    "status": "ok",
+    "userTier": "developer",
+    "total": 91,
+    "startIndex": 1,
+    "pageSize": 3,
+    "currentPage": 1,
+    "pages": 31,
+    "orderBy": "newest",
+    "results": [
+      {
+        "id": "environment/2026/oct/20/countries-pushing-vital-global-climate-report-delayed",
+        "type": "article",
+        "sectionId": "environment",
+        "sectionName": "Environment",
+        "webPublicationDate": "2026-10-20T06:00:20Z",
+        "webTitle": "Why have countries been pushing for a vital global climate report to be delayed?",
+        "webUrl": "https://www.theguardian.com/environment/2026/oct/20/countries-pushing-vital-global-climate-report-delayed",
+        "apiUrl": "https://content.guardianapis.com/environment/2026/oct/20/countries-pushing-vital-global-climate-report-delayed",
+        "fields": {
+          "trailText": "Saudi Arabia, Russia and China among those claiming developed countries have skewed findings of IPCC review",
+          "byline": "Fiona Harvey Environment editor",
+          "thumbnail": "https://media.guim.co.uk/4e8bc175614db946e21c0ce67854ce34f497f5af/599_0_6827_5464/500.jpg"
+        },
+        "pillarName": "News"
+      },
+      {
+        "id": "environment/2026/oct/20/country-diary-a-species-brought-to-the-edge-of-extinction-recovering-in-the-fens",
+        "type": "article",
+        "sectionId": "environment",
+        "sectionName": "Environment",
+        "webPublicationDate": "2026-10-20T04:30:15Z",
+        "webTitle": "Country diary: A species brought to the edge of extinction, recovering in the fens | Mark Cocker",
+        "webUrl": "https://www.theguardian.com/environment/2026/oct/20/country-diary-a-species-brought-to-the-edge-of-extinction-recovering-in-the-fens",
+        "apiUrl": "https://content.guardianapis.com/environment/2026/oct/20/country-diary-a-species-brought-to-the-edge-of-extinction-recovering-in-the-fens",
+        "fields": {
+          "trailText": "<strong>Ouse Fen, Cambridgeshire:</strong> The great egret’s story is remarkable, as is the conversion of this low-grade agricultural land into one of the richest wetlands in Britain",
+          "byline": "Mark Cocker",
+          "thumbnail": "https://media.guim.co.uk/740ac5e2feaf6d7f8a511e0eb4e424b3468c5862/0_0_3172_2538/500.jpg"
+        },
+        "pillarName": "News"
+      },
+      {
+        "id": "environment/2026/oct/19/study-europe-wild-bee-species-decline-",
+        "type": "article",
+        "sectionId": "environment",
+        "sectionName": "Environment",
+        "webPublicationDate": "2026-10-19T19:00:04Z",
+        "webTitle": "‘Crucial opportunity to act’ as study finds most of Europe’s wild bee species in decline",
+        "webUrl": "https://www.theguardian.com/environment/2026/oct/19/study-europe-wild-bee-species-decline-",
+        "apiUrl": "https://content.guardianapis.com/environment/2026/oct/19/study-europe-wild-bee-species-decline-",
+        "fields": {
+          "trailText": "As Cop17 kicks off, records since 1921 show more bee species declining than increasing in all parts of Europe except the Alps",
+          "byline": "Ajit Niranjan Europe environment correspondent",
+          "thumbnail": "https://media.guim.co.uk/866c33745465d9af42c6e781c991b6d04313522e/289_77_1694_1356/500.jpg"
+        },
+        "pillarName": "News"
+      },
+      {
+        "id": "commentisfree/2026/oct/19/edge-case-opinion",
+        "type": "article",
+        "sectionId": "commentisfree",
+        "sectionName": "Opinion",
+        "webPublicationDate": "2026-10-19T08:00:00Z",
+        "webTitle": "An opinion piece without byline or thumbnail",
+        "webUrl": "https://www.theguardian.com/commentisfree/2026/oct/19/edge-case-opinion",
+        "apiUrl": "https://content.guardianapis.com/commentisfree/2026/oct/19/edge-case-opinion",
+        "fields": {
+          "trailText": "<strong>Bold</strong> claims &amp; <a href=\"#\">links</a>"
+        },
+        "pillarName": "Opinion"
+      }
+    ]
+  }
+}

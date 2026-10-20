@@ -23,6 +23,12 @@
       {
         "allow": ["**/*.css", "@testing-library/jest-dom/vitest"]
       }
+    ],
+    "eslint/no-underscore-dangle": [
+      "warn",
+      {
+        "allow": ["_id"]
+      }
     ]
   },
   "ignorePatterns": ["dist", "coverage"]

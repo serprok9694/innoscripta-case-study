@@ -1,0 +1,42 @@
+{
+  "status": "ok",
+  "totalResults": 69,
+  "articles": [
+    {
+      "source": {
+        "id": "mashable",
+        "name": "Mashable"
+      },
+      "author": "Alex Perry",
+      "title": "Cyberleek drops more NSFW Lucia videos, threatens to release 'GTA 6' in full - Mashable",
+      "description": "Only about a month until the game is out.",
+      "url": "https://mashable.com/entertainment/gta-grand-theft-auto-6-cyberleek-lucia-leaked-gameplay-videos",
+      "urlToImage": "https://helios-i.mashable.com/imagery/articles/03sZ0A4BYrf77U0A6HR6KhF/hero-image.fill.size_1200x675.v1791815910.jpg",
+      "publishedAt": "2026-10-19T10:12:20Z"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Eurogamer.net"
+      },
+      "author": "Sherif Saed",
+      "title": "Players on Steam so far seem delighted with Modern Warfare 4's campaign, making it one of the most well-received Call of Dutys in recent history - Eurogamer.net",
+      "description": "Modern Warfare 4 may signal Call of Duty's return to form, at least judging by player sentiment on Steam so far.",
+      "url": "https://www.eurogamer.net/call-of-duty-modern-warfare-4-campaign-steam-review-rating",
+      "urlToImage": "https://assetsio.gnwcdn.com/modern-warfare-4-campaign-crop-2.jpg?width=1200&height=630&fit=crop&enable=upscale&auto=webp",
+      "publishedAt": "2026-10-19T08:36:43Z"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "BGR"
+      },
+      "author": "Faith Leroux",
+      "title": "What Is The Most Affordable Gaming Console In 2026? - BGR",
+      "description": "On paper, Nintendo ties Xbox for the cheapest console to date, but it also has the weakest hardware, and owning one of its systems comes with hidden costs.",
+      "url": "https://www.bgr.com/2287528/most-affordable-gaming-console-2026/",
+      "urlToImage": "https://www.bgr.com/img/gallery/what-is-the-most-affordable-gaming-console-in-2026/l-intro-1792072426.jpg",
+      "publishedAt": "2026-10-19T04:17:00Z"
+    }
+  ]
+}

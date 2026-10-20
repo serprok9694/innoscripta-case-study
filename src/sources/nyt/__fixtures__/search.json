@@ -1,0 +1,154 @@
+{
+  "status": "OK",
+  "copyright": "Copyright (c) 2026 The New York Times Company. All Rights Reserved.",
+  "response": {
+    "docs": [
+      {
+        "abstract": "In the state’s flattest county, flood preparation, and houses, rise to a new level.",
+        "byline": {
+          "original": "By Rachel Wharton"
+        },
+        "document_type": "article",
+        "headline": {
+          "main": "Ready for High Water in Low-Lying Delaware",
+          "kicker": "",
+          "print_headline": ""
+        },
+        "_id": "nyt://article/098ce4df-945c-5498-9a6a-67441efe63cc",
+        "multimedia": {
+          "caption": "Many streets near Delaware beaches are frequently flooded by overflow from canals or other inland waterways.",
+          "credit": "Kyle Grantham for The New York Times",
+          "default": {
+            "url": "https://static01.nyt.com/images/2026/10/20/multimedia/20re-delaware-floods-04-jpzh/20re-delaware-floods-04-jpzh-articleLarge.jpg",
+            "height": 400,
+            "width": 600
+          },
+          "thumbnail": {
+            "url": "https://static01.nyt.com/images/2026/10/20/multimedia/20re-delaware-floods-04-jpzh/20re-delaware-floods-04-jpzh-thumbStandard.jpg",
+            "height": 75,
+            "width": 75
+          }
+        },
+        "news_desk": "RealEstate",
+        "print_page": "",
+        "print_section": "",
+        "pub_date": "2026-10-20T09:00:32Z",
+        "section_name": "Real Estate",
+        "snippet": "In the state’s flattest county, flood preparation, and houses, rise to a new level.",
+        "source": "The New York Times",
+        "subsection_name": "",
+        "type_of_material": "News",
+        "uri": "nyt://article/098ce4df-945c-5498-9a6a-67441efe63cc",
+        "web_url": "https://www.nytimes.com/2026/10/20/realestate/flood-protection-efforts-delaware.html",
+        "word_count": 1196
+      },
+      {
+        "abstract": "Also, many American forests are sick. Here’s the latest at the end of Monday.",
+        "byline": {
+          "original": "By Matthew Cullen"
+        },
+        "document_type": "article",
+        "headline": {
+          "main": "France Imposes Curfews",
+          "kicker": "",
+          "print_headline": ""
+        },
+        "_id": "nyt://article/951764ca-3db9-5008-acec-b575c462f603",
+        "multimedia": {
+          "caption": "Near La Madeleine church in Paris on Saturday.",
+          "credit": "Kiran Ridley/Agence France-Presse — Getty Images",
+          "default": {
+            "url": "https://static01.nyt.com/images/2026/10/19/multimedia/19evening-nl-france-curfew-cpqf/19evening-nl-france-curfew-cpqf-articleLarge-v2.jpg",
+            "height": 750,
+            "width": 600
+          },
+          "thumbnail": {
+            "url": "https://static01.nyt.com/images/2026/10/19/multimedia/19evening-nl-france-curfew-cpqf/19evening-nl-france-curfew-cpqf-thumbStandard-v2.jpg",
+            "height": 75,
+            "width": 75
+          }
+        },
+        "news_desk": "NYTNow",
+        "print_page": "",
+        "print_section": "",
+        "pub_date": "2026-10-19T21:54:15Z",
+        "section_name": "Briefing",
+        "snippet": "Also, many American forests are sick. Here’s the latest at the end of Monday.",
+        "source": "The New York Times",
+        "subsection_name": "",
+        "type_of_material": "News",
+        "uri": "nyt://article/951764ca-3db9-5008-acec-b575c462f603",
+        "web_url": "https://www.nytimes.com/2026/10/19/briefing/france-imposes-curfews.html",
+        "word_count": 1191
+      },
+      {
+        "abstract": "Excerpts from archival letters and diaries were the basis for a number of the works in the American artist’s solo show at Paris’s Musée d’Orsay.",
+        "byline": {
+          "original": "By Zoey Poll"
+        },
+        "document_type": "article",
+        "headline": {
+          "main": "Jenny Holzer Resurrects the Past to Lament the Present",
+          "kicker": "Artist’s Questionnaire",
+          "print_headline": ""
+        },
+        "_id": "nyt://article/60b5e584-57d7-5fa0-80ff-92e017d1c351",
+        "multimedia": {
+          "caption": "Holzer standing with her eight-and-a-half-foot-tall work “Wish List metal” (2007-22), which depicts a 2003 U.S. Army memo and report on interrogation techniques.",
+          "credit": "Christopher Anderson",
+          "default": {
+            "url": "https://static01.nyt.com/images/2026/10/19/t-magazine/art/19tmag-holzer-slide-YCA0-copy/19tmag-holzer-slide-YCA0-copy-articleLarge.jpg",
+            "height": 400,
+            "width": 600
+          },
+          "thumbnail": {
+            "url": "https://static01.nyt.com/images/2026/10/19/t-magazine/art/19tmag-holzer-slide-YCA0-copy/19tmag-holzer-slide-YCA0-copy-thumbStandard.jpg",
+            "height": 75,
+            "width": 75
+          }
+        },
+        "news_desk": "TStyle",
+        "print_page": "",
+        "print_section": "",
+        "pub_date": "2026-10-19T16:13:15Z",
+        "section_name": "T Magazine",
+        "snippet": "Excerpts from archival letters and diaries were the basis for a number of the works in the American artist’s solo show at Paris’s Musée d’Orsay.",
+        "source": "The New York Times",
+        "subsection_name": "",
+        "type_of_material": "News",
+        "uri": "nyt://article/60b5e584-57d7-5fa0-80ff-92e017d1c351",
+        "web_url": "https://www.nytimes.com/2026/10/19/t-magazine/jenny-holzer-musee-dorsay-paris-exhibition.html",
+        "word_count": 1551
+      },
+      {
+        "_id": "nyt://article/00000000-edge-case",
+        "uri": "nyt://article/00000000-edge-case",
+        "web_url": "https://www.nytimes.com/2026/10/18/us/politics/edge-case.html",
+        "headline": {
+          "main": "A politics story with sparse metadata",
+          "kicker": "",
+          "print_headline": ""
+        },
+        "abstract": "",
+        "snippet": "",
+        "byline": {
+          "original": ""
+        },
+        "multimedia": [],
+        "pub_date": "2026-10-18T12:00:00Z",
+        "section_name": "U.S.",
+        "subsection_name": "Politics",
+        "news_desk": "Politics",
+        "document_type": "article",
+        "type_of_material": "News",
+        "source": "The New York Times",
+        "word_count": 0
+      }
+    ],
+    "metadata": {
+      "hits": 102,
+      "offset": 0,
+      "time": 194
+    }
+  }
+}

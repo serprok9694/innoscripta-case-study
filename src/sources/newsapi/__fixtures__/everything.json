@@ -1,0 +1,66 @@
+{
+  "status": "ok",
+  "totalResults": 6772,
+  "articles": [
+    {
+      "source": {
+        "id": null,
+        "name": "Biztoc.com"
+      },
+      "author": "nakedcapitalism.com",
+      "title": "Links 10/19/2026",
+      "description": "NOCTURNAL NAVIGATORS: HOW TO FIND YOUR WAY IN THE DARK Atmos\nPasta for the People Earth Island Journal\nClimate/Environment\nHow Fast is Earth Warming? Open Mind\nArctic Wildlife Research Suffers as Geopolitical Competition Grows Yale Environment 360\nThe fire re…",
+      "url": "https://biztoc.com/x/4c2eac57bcd9a82e",
+      "urlToImage": "https://biztoc.com/cdn/4c2eac57bcd9a82e_s.webp",
+      "publishedAt": "2026-10-19T11:22:51Z"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Newser"
+      },
+      "author": "Polly Davis Doig",
+      "title": "'No Accident': Aussie Lawmaker Critically Injured by SUV",
+      "description": "A car hit an Australian federal independent lawmaker on Monday, critically injuring her in an apparent deliberate attack, Prime Minister Anthony Albanese said. The driver was arrested, reports the AP . Helen Haines, 65, was struck by a Toyota Land Cruiser SUV…",
+      "url": "https://www.newser.com/story/398377/no-accident-aussie-lawmaker-critically-injured-by-suv.html",
+      "urlToImage": "https://cdn.newser.com/image/1718797-12-20261019063632.jpeg",
+      "publishedAt": "2026-10-19T11:06:27Z"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Science Daily"
+      },
+      "author": null,
+      "title": "A simple touch can bring dying corals back to life in just 7 weeks",
+      "description": "Scientists have discovered that severely bleached corals can make a remarkable comeback simply by touching healthy, genetically identical corals. In laboratory experiments, dying corals regained their color and fully recovered within seven weeks, with as litt…",
+      "url": "https://www.sciencedaily.com/releases/2026/10/261017230025.htm",
+      "urlToImage": "https://www.sciencedaily.com/images/1920/corals-can-fully-recover-from-bleaching.webp",
+      "publishedAt": "2026-10-19T11:05:52Z"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "[Removed]"
+      },
+      "author": null,
+      "title": "[Removed]",
+      "description": "[Removed]",
+      "url": "https://removed.com",
+      "urlToImage": null,
+      "publishedAt": "1970-01-01T00:00:00Z"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Example Blog"
+      },
+      "author": "https://example.com/authors/jane",
+      "title": "A post whose author field is a URL",
+      "description": null,
+      "url": "https://example.com/posts/url-author",
+      "urlToImage": "",
+      "publishedAt": "2026-10-18T07:30:00Z"
+    }
+  ]
+}
