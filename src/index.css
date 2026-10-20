@@ -1,13 +1,36 @@
 @import 'tailwindcss';
 
-/* Dark mode is toggled by a `dark` class on <html> (set by the theme switcher). */
+/* Dark mode is toggled by a `dark` class on <html> (see src/features/theme). */
 @custom-variant dark (&:where(.dark, .dark *));
 
 @layer base {
   html {
     color-scheme: light;
+    -webkit-tap-highlight-color: transparent;
   }
   html.dark {
     color-scheme: dark;
+  }
+
+  /* Visible keyboard focus everywhere, never on mouse clicks. */
+  :focus-visible {
+    outline: 2px solid var(--color-blue-600);
+    outline-offset: 2px;
+  }
+
+  /* No background scrolling behind an open modal (e.g. the filters drawer). */
+  html:has(dialog[open]) {
+    overflow: hidden;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }

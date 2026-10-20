@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 import type { Article } from '@/domain/article';
 import { CATEGORY_LABELS } from '@/domain/category';
 import { cx } from '@/shared/lib/cx';
@@ -47,7 +47,7 @@ function AuthorButton({ name, following }: { name: string; following: AuthorFoll
       type="button"
       // Above the card's stretched link, so it gets its own clicks.
       className={cx(
-        'relative z-10 rounded hover:underline focus-visible:outline-2 focus-visible:outline-blue-600 disabled:no-underline disabled:opacity-60',
+        'relative z-10 rounded text-left whitespace-nowrap hover:underline focus-visible:outline-2 focus-visible:outline-blue-600 disabled:no-underline disabled:opacity-60',
         followed && 'font-medium text-blue-700 dark:text-blue-400',
       )}
       aria-label={`Follow ${name}`}
@@ -70,12 +70,15 @@ function AuthorButton({ name, following }: { name: string; following: AuthorFoll
 
 function Authors({ names, following }: { names: string[]; following?: AuthorFollowing }) {
   return (
-    <span className="min-w-0 truncate">
+    <span className="min-w-0">
       {names.map((name, index) => (
-        <span key={name}>
+        // The separator stays outside the no-wrap span, so lines break between names.
+        <Fragment key={name}>
           {index > 0 && ', '}
-          {following ? <AuthorButton name={name} following={following} /> : name}
-        </span>
+          <span className="whitespace-nowrap">
+            {following ? <AuthorButton name={name} following={following} /> : name}
+          </span>
+        </Fragment>
       ))}
     </span>
   );
@@ -122,17 +125,13 @@ export function ArticleCard({ article, following }: ArticleCardProps) {
           <p className="line-clamp-3 text-sm text-zinc-600 dark:text-zinc-400">{article.summary}</p>
         )}
 
-        <p className="mt-auto flex items-center gap-2 pt-2 text-xs text-zinc-500 dark:text-zinc-400">
-          {hasAuthors && (
-            <>
-              <Authors names={article.authors} following={following} />
-              <span aria-hidden="true">·</span>
-            </>
-          )}
+        {/* Authors wrap instead of being cut off; the time stays on the right. */}
+        <p className="mt-auto flex items-start justify-between gap-3 pt-2 text-xs text-zinc-500 dark:text-zinc-400">
+          {hasAuthors && <Authors names={article.authors} following={following} />}
           <time
             dateTime={article.publishedAt}
             title={formatDateTime(article.publishedAt)}
-            className="shrink-0"
+            className="ml-auto shrink-0"
           >
             {formatRelativeTime(article.publishedAt)}
           </time>

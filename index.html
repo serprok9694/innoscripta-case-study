@@ -3,12 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
     <meta
       name="description"
       content="Personalised news from The Guardian, The New York Times and NewsAPI."
     />
-    <title>News Aggregator</title>
+    <title>Newsroom</title>
+    <script>
+      // Apply the saved theme before the first paint to avoid a light flash.
+      // Mirrors src/features/theme (storage key and "system" fallback).
+      (function () {
+        try {
+          var mode = localStorage.getItem('news-aggregator:theme');
+          var dark =
+            mode === 'dark' ||
+            (mode !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          document.documentElement.classList.toggle('dark', dark);
+          document.documentElement.style.colorScheme = dark ? 'dark' : 'light';
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

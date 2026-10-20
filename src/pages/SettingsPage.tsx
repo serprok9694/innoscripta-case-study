@@ -10,6 +10,7 @@ import {
   setSources,
 } from '@/features/preferences/preferences-slice';
 import { AuthorsEditor } from '@/features/preferences/ui/AuthorsEditor';
+import { ThemeSettings } from '@/features/theme/ui/ThemeSettings';
 import { Button } from '@/shared/ui/Button';
 import { ChipGroup } from '@/shared/ui/ChipGroup';
 import { PageHeader } from './PageHeader';
@@ -63,6 +64,10 @@ export function SettingsPage() {
 
         <Section title="Authors" hint="Their latest articles appear under “Following”.">
           <AuthorsEditor />
+        </Section>
+
+        <Section title="Appearance" hint="“System” follows your device’s light or dark mode.">
+          <ThemeSettings />
         </Section>
 
         {hasPreferences(preferences) && (

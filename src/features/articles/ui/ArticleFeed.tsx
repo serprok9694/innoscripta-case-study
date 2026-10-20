@@ -57,6 +57,10 @@ export function ArticleFeed({ feed, empty, following }: ArticleFeedProps) {
 
   return (
     <div className="space-y-6">
+      {/* Announces results to screen readers as they load. */}
+      <p className="sr-only" aria-live="polite">
+        {feed.articles.length === 1 ? '1 article' : `${feed.articles.length} articles`} loaded
+      </p>
       <SourceFailuresNotice failures={feed.failures} />
 
       {feed.articles.length === 0 && !feed.hasNextPage ? (

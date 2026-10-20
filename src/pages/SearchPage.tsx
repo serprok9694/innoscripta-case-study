@@ -7,8 +7,9 @@ import { parseSearchParams, toSearchParams } from '@/features/search/search-para
 import { SearchBox } from '@/features/search/ui/SearchBox';
 import { SearchFilters } from '@/features/search/ui/SearchFilters';
 import { useAuthorFollowing } from '@/features/preferences/use-author-following';
-import { cx } from '@/shared/lib/cx';
 import { Button } from '@/shared/ui/Button';
+import { Drawer } from '@/shared/ui/Drawer';
+import { SlidersIcon } from '@/shared/ui/icons';
 import { PageHeader } from './PageHeader';
 
 function activeFilterCount({ from, to, categories = [], sources = [] }: NewsFilters): number {
@@ -39,23 +40,33 @@ export function SearchPage() {
         />
 
         <div className="gap-8 lg:grid lg:grid-cols-[16rem_minmax(0,1fr)]">
-          <aside aria-label="Filters" className="mb-6 lg:mb-0">
-            <Button
-              className="w-full lg:hidden"
-              aria-expanded={filtersOpen}
-              aria-controls="search-filters"
-              onClick={() => setFiltersOpen((open) => !open)}
-            >
-              {filtersOpen ? 'Hide filters' : 'Show filters'}
-              {count > 0 && ` (${count})`}
-            </Button>
-            <div
-              id="search-filters"
-              className={cx(filtersOpen ? 'block' : 'hidden', 'mt-4 lg:mt-0 lg:block')}
-            >
-              <SearchFilters filters={filters} onChange={(next) => setFilters(next)} />
-            </div>
+          {/* Sidebar on large screens; a bottom-sheet drawer on smaller ones. */}
+          <aside aria-label="Filters" className="hidden lg:block">
+            <SearchFilters filters={filters} onChange={(next) => setFilters(next)} />
           </aside>
+
+          <Button
+            className="mb-6 w-full lg:hidden"
+            aria-haspopup="dialog"
+            onClick={() => setFiltersOpen(true)}
+          >
+            <SlidersIcon className="size-4" />
+            Filters{count > 0 && ` (${count})`}
+          </Button>
+          <Drawer
+            open={filtersOpen}
+            onClose={() => setFiltersOpen(false)}
+            title="Filters"
+            footer={
+              <Button variant="primary" className="w-full" onClick={() => setFiltersOpen(false)}>
+                Show results
+              </Button>
+            }
+          >
+            {filtersOpen && (
+              <SearchFilters filters={filters} onChange={(next) => setFilters(next)} />
+            )}
+          </Drawer>
 
           <section aria-label="Results">
             <ArticleFeed

@@ -112,15 +112,18 @@ describe('SearchPage', () => {
     expect(await screen.findByText('No articles match your search')).toBeInTheDocument();
   });
 
-  it('collapses filters behind a toggle on small screens', async () => {
-    setup('/search?category=world,science');
-    const toggle = screen.getByRole('button', { name: 'Show filters (2)' });
+  it('opens filters in a drawer on small screens', async () => {
+    const { search } = setup('/search?category=world,science');
+    await results();
 
-    expect(toggle).toHaveAttribute('aria-expanded', 'false');
-    await userEvent.click(toggle);
-    expect(screen.getByRole('button', { name: 'Hide filters (2)' })).toHaveAttribute(
-      'aria-expanded',
-      'true',
-    );
+    await userEvent.click(screen.getByRole('button', { name: 'Filters (2)' }));
+    const drawer = screen.getByRole('dialog', { name: 'Filters' });
+
+    await userEvent.click(within(drawer).getByRole('button', { name: 'Business' }));
+    expect(search().get('category')).toBe('business,science,world');
+
+    await userEvent.click(within(drawer).getByRole('button', { name: 'Show results' }));
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Filters (3)' })).toBeInTheDocument();
   });
 });

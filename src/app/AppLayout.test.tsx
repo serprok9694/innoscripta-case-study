@@ -1,23 +1,46 @@
 import { screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it } from 'vitest';
+import { THEME_STORAGE_KEY } from '@/features/theme/theme-storage';
 import { mockJson } from '@/test/msw/mock-json';
 import { renderRoute } from '@/test/render-route';
 
 describe('AppLayout', () => {
-  it('highlights the current page and navigates', async () => {
+  it('offers the same navigation on desktop (top) and phones (bottom tab bar)', async () => {
     mockJson('/api/config', { sources: {} });
     const { router } = renderRoute('/');
-    const nav = screen.getByRole('navigation', { name: 'Main' });
 
-    expect(within(nav).getByRole('link', { name: 'My feed' })).toHaveAttribute(
-      'aria-current',
-      'page',
-    );
+    // Only one is visible at a time (CSS); jsdom renders both.
+    const [desktop, mobile] = screen.getAllByRole('navigation', { name: 'Main' });
+    for (const nav of [desktop!, mobile!]) {
+      expect(within(nav).getByRole('link', { name: 'My feed' })).toHaveAttribute(
+        'aria-current',
+        'page',
+      );
+      expect(
+        within(nav)
+          .getAllByRole('link')
+          .map((a) => a.textContent),
+      ).toEqual(['My feed', 'Search', 'Settings']);
+    }
 
-    await userEvent.click(within(nav).getByRole('link', { name: 'Search' }));
+    await userEvent.click(within(mobile!).getByRole('link', { name: 'Search' }));
     expect(router.state.location.pathname).toBe('/search');
     expect(screen.getByRole('heading', { level: 1, name: 'Search' })).toBeInTheDocument();
+  });
+
+  it('switches between light and dark themes and remembers the choice', async () => {
+    mockJson('/api/config', { sources: {} });
+    renderRoute('/');
+
+    expect(document.documentElement).not.toHaveClass('dark');
+    await userEvent.click(screen.getByRole('button', { name: 'Switch to dark theme' }));
+
+    expect(document.documentElement).toHaveClass('dark');
+    expect(localStorage.getItem(THEME_STORAGE_KEY)).toBe('dark');
+
+    await userEvent.click(screen.getByRole('button', { name: 'Switch to light theme' }));
+    expect(document.documentElement).not.toHaveClass('dark');
   });
 
   it('shows a not-found page for unknown routes', () => {

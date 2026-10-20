@@ -38,4 +38,15 @@ describe('SettingsPage', () => {
     expect(store.getState().preferences).toEqual({ sources: [], categories: [], authors: [] });
     expect(screen.queryByRole('button', { name: 'Reset all preferences' })).not.toBeInTheDocument();
   });
+
+  it('changes the appearance', async () => {
+    mockJson('/api/config', { sources: {} });
+    const { store } = renderRoute('/settings');
+
+    expect(screen.getByRole('radio', { name: 'System' })).toBeChecked();
+    await userEvent.click(screen.getByRole('radio', { name: 'Dark' }));
+
+    expect(store.getState().theme.mode).toBe('dark');
+    expect(document.documentElement).toHaveClass('dark');
+  });
 });
