@@ -1,0 +1,48 @@
+{
+  "response": {
+    "status": "ok",
+    "userTier": "developer",
+    "total": 85,
+    "startIndex": 1,
+    "pageSize": 5,
+    "currentPage": 1,
+    "pages": 17,
+    "results": [
+      {
+        "id": "profile/fiona-harvey",
+        "type": "contributor",
+        "webTitle": "Fiona Harvey",
+        "webUrl": "https://www.theguardian.com/profile/fiona-harvey",
+        "apiUrl": "https://content.guardianapis.com/profile/fiona-harvey"
+      },
+      {
+        "id": "profile/will-harvey",
+        "type": "contributor",
+        "webTitle": "Will Harvey",
+        "webUrl": "https://www.theguardian.com/profile/will-harvey",
+        "apiUrl": "https://content.guardianapis.com/profile/will-harvey"
+      },
+      {
+        "id": "profile/alexander-harvey",
+        "type": "contributor",
+        "webTitle": "Alex Harvey",
+        "webUrl": "https://www.theguardian.com/profile/alexander-harvey",
+        "apiUrl": "https://content.guardianapis.com/profile/alexander-harvey"
+      },
+      {
+        "id": "profile/harvey-morris",
+        "type": "contributor",
+        "webTitle": "Harvey Morris",
+        "webUrl": "https://www.theguardian.com/profile/harvey-morris",
+        "apiUrl": "https://content.guardianapis.com/profile/harvey-morris"
+      },
+      {
+        "id": "profile/harvey-weinstein",
+        "type": "contributor",
+        "webTitle": "Harvey Weinstein",
+        "webUrl": "https://www.theguardian.com/profile/harvey-weinstein",
+        "apiUrl": "https://content.guardianapis.com/profile/harvey-weinstein"
+      }
+    ]
+  }
+}

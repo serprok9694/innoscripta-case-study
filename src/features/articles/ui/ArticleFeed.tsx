@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { Button } from '@/shared/ui/Button';
 import type { ArticlesResult } from '../use-articles';
-import { ArticleCard, ArticleCardSkeleton } from './ArticleCard';
+import { ArticleCard, ArticleCardSkeleton, type AuthorFollowing } from './ArticleCard';
 import { LoadMore } from './LoadMore';
 import { SourceFailuresNotice } from './SourceFailuresNotice';
 
@@ -21,10 +21,11 @@ interface ArticleFeedProps {
   feed: ArticlesResult;
   /** Shown when the query succeeded but nothing matched. */
   empty?: ReactNode;
+  following?: AuthorFollowing;
 }
 
 /** Renders every state of an article feed: loading, error, empty, results, pagination. */
-export function ArticleFeed({ feed, empty }: ArticleFeedProps) {
+export function ArticleFeed({ feed, empty, following }: ArticleFeedProps) {
   if (feed.hasNoSources) {
     return (
       <Message title="No news sources available">
@@ -65,7 +66,7 @@ export function ArticleFeed({ feed, empty }: ArticleFeedProps) {
           <ul className={GRID} aria-label="Articles">
             {feed.articles.map((article) => (
               <li key={article.id} className="flex min-w-0">
-                <ArticleCard article={article} />
+                <ArticleCard article={article} following={following} />
               </li>
             ))}
           </ul>

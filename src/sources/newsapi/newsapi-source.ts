@@ -5,6 +5,7 @@ import type { ArticleQuery, NewsSource, SourcePage } from '@/domain/news-source'
 import { invertCategoryMap, nativeValuesFor } from '../shared/category-map';
 import { PAGE_SIZE } from '../shared/constants';
 import { fetchJson, proxyUrl, type QueryParams } from '../shared/http';
+import { mergePages } from '../shared/merge-pages';
 import { nonEmpty } from '../shared/text';
 
 /**
@@ -47,12 +48,24 @@ function isRemoved(raw: RawArticle): boolean {
   return raw.title === '[Removed]' || raw.url === 'https://removed.com';
 }
 
+/** Some publishers put a URL in the author field. */
+function parseAuthor(author: string | null | undefined): string[] {
+  const name = nonEmpty(author);
+  return name && !/^https?:\/\//.test(name) ? [name] : [];
+}
+
+/** `(keyword) AND ("A" OR "B")` — NewsAPI supports quotes, AND/OR and parentheses. */
+function searchExpression({ keyword, authors = [] }: ArticleQuery): string | undefined {
+  const byAuthor = authors.map((name) => `"${name.replaceAll('"', '')}"`).join(' OR ');
+  if (keyword && byAuthor) return `(${keyword}) AND (${byAuthor})`;
+  return keyword || byAuthor || undefined;
+}
+
 function toArticle(raw: RawArticle, category?: CategoryId): Article {
   const publisher = raw.source.name;
   // Headlines often end with " - Publisher".
   const suffix = ` - ${publisher}`;
   const title = raw.title.endsWith(suffix) ? raw.title.slice(0, -suffix.length) : raw.title;
-  const author = nonEmpty(raw.author);
 
   return {
     id: `newsapi:${raw.url}`,
@@ -62,8 +75,7 @@ function toArticle(raw: RawArticle, category?: CategoryId): Article {
     summary: nonEmpty(raw.description),
     url: raw.url,
     imageUrl: nonEmpty(raw.urlToImage),
-    // Some publishers put a URL in the author field.
-    author: author && !/^https?:\/\//.test(author) ? author : undefined,
+    authors: parseAuthor(raw.author),
     category,
     publishedAt: raw.publishedAt,
   };
@@ -104,22 +116,13 @@ async function searchByCategories(
       ),
     ),
   );
-  // An article can be a top headline in several categories: keep the first match.
-  const unique = new Map<string, Article>();
-  for (const article of pages.flatMap((p) => p.articles)) {
-    if (!unique.has(article.id)) unique.set(article.id, article);
-  }
-
-  return {
-    articles: [...unique.values()],
-    nextPage: pages.some((p) => p.nextPage !== null) ? page + 1 : null,
-  };
+  return mergePages(pages, page);
 }
 
 /**
  * Endpoint choice follows the API's constraints:
  * - categories → `top-headlines` (the only endpoint with categories; no date filter);
- * - keyword    → `everything` (keyword + date range; requires `q`);
+ * - keyword or authors → `everything` (search expression + date range; requires `q`);
  * - neither    → latest `top-headlines`.
  * Filters an endpoint can't apply are enforced client-side by the aggregator.
  */
@@ -134,11 +137,12 @@ export const newsApiSource: NewsSource = {
       return searchByCategories(query, categories, page, signal);
     }
 
-    if (query.keyword) {
+    const q = searchExpression(query);
+    if (q) {
       return fetchPage(
         '/v2/everything',
         {
-          q: query.keyword,
+          q,
           from: query.from,
           to: query.to,
           sortBy: 'publishedAt',

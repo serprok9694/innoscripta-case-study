@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { mockJson } from '@/test/msw/mock-json';
 import fixture from './__fixtures__/search.json';
-import { nytSource } from './nyt-source';
+import { nytSource, parseByline } from './nyt-source';
 
 const PATH = '/api/nyt/svc/search/v2/articlesearch.json';
 
@@ -26,7 +26,7 @@ describe('nytSource', () => {
       url: 'https://www.nytimes.com/2026/10/20/realestate/flood-protection-efforts-delaware.html',
       imageUrl:
         'https://static01.nyt.com/images/2026/10/20/multimedia/20re-delaware-floods-04-jpzh/20re-delaware-floods-04-jpzh-articleLarge.jpg',
-      author: 'Rachel Wharton',
+      authors: ['Rachel Wharton'],
       category: undefined, // Real Estate isn't one of our categories
       publishedAt: '2026-10-20T09:00:32Z',
     });
@@ -40,7 +40,7 @@ describe('nytSource', () => {
       title: 'A politics story with sparse metadata',
       category: 'politics',
       summary: undefined,
-      author: undefined,
+      authors: [],
       imageUrl: undefined, // `multimedia: []` (old API shape) is ignored, not fatal
     });
   });
@@ -91,5 +91,32 @@ describe('nytSource', () => {
 
     mockJson(PATH, withHits(10_000));
     expect((await nytSource.search({}, 101)).nextPage).toBeNull();
+  });
+
+  it('searches each author separately and merges the results', async () => {
+    const requests = mockJson(PATH, fixture);
+    const { articles } = await nytSource.search(
+      { keyword: 'floods', authors: ['Rachel Wharton', 'Zoey Poll'] },
+      1,
+    );
+
+    expect(requests.map((r) => r.searchParams.get('q'))).toEqual([
+      'floods Rachel Wharton',
+      'floods Zoey Poll',
+    ]);
+    expect(articles).toHaveLength(4); // same fixture twice: duplicates merged
+  });
+});
+
+describe('parseByline', () => {
+  it.each([
+    ['By Rachel Wharton', ['Rachel Wharton']],
+    ['By Rachel Wharton and Graham Dickie', ['Rachel Wharton', 'Graham Dickie']],
+    ['By Ana Ley, Ed Shanahan and Hurubie Meko', ['Ana Ley', 'Ed Shanahan', 'Hurubie Meko']],
+    ['Ligaya Mishan', ['Ligaya Mishan']],
+    ['', []],
+    [null, []],
+  ])('%j → %j', (byline, expected) => {
+    expect(parseByline(byline)).toEqual(expected);
   });
 });

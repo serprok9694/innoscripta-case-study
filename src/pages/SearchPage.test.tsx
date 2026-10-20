@@ -89,6 +89,21 @@ describe('SearchPage', () => {
     expect(nyt.length).toBeGreaterThan(1);
   });
 
+  it('filters by publication date', async () => {
+    const { guardian, search } = setup('/search');
+    await results();
+
+    await userEvent.type(within(filters()).getByLabelText('From'), '2026-10-05');
+    await userEvent.type(within(filters()).getByLabelText('To'), '2026-10-12');
+
+    expect(search().get('from')).toBe('2026-10-05');
+    expect(search().get('to')).toBe('2026-10-12');
+    await waitFor(() => expect(guardian.at(-1)?.searchParams.get('to-date')).toBe('2026-10-12'));
+
+    await userEvent.clear(within(filters()).getByLabelText('To'));
+    expect(search().has('to')).toBe(false);
+  });
+
   it('shows a helpful empty state', async () => {
     mockJson('/api/config', { sources: { guardian: true } });
     mockJson(GUARDIAN, { response: { currentPage: 1, pages: 0, results: [] } });

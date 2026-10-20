@@ -4,6 +4,7 @@ import { cx } from '@/shared/lib/cx';
 const NAV = [
   { to: '/', label: 'My feed', end: true },
   { to: '/search', label: 'Search', end: false },
+  { to: '/settings', label: 'Settings', end: false },
 ];
 
 export function AppLayout() {

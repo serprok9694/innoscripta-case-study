@@ -5,7 +5,7 @@ import type { NewsSource } from '@/domain/news-source';
 import { invertCategoryMap, nativeValuesFor } from '../shared/category-map';
 import { PAGE_SIZE } from '../shared/constants';
 import { fetchJson, proxyUrl } from '../shared/http';
-import { htmlToText, nonEmpty } from '../shared/text';
+import { foldText, htmlToText, nonEmpty } from '../shared/text';
 
 /** Guardian section ids per category. https://open-platform.theguardian.com/documentation/search */
 const SECTIONS: Record<CategoryId, readonly string[]> = {
@@ -20,6 +20,8 @@ const SECTIONS: Record<CategoryId, readonly string[]> = {
 };
 const CATEGORY_BY_SECTION = invertCategoryMap(SECTIONS);
 
+const tagSchema = z.object({ id: z.string(), type: z.string(), webTitle: z.string() });
+
 const resultSchema = z.object({
   id: z.string(),
   sectionId: z.string(),
@@ -33,6 +35,7 @@ const resultSchema = z.object({
       thumbnail: z.string().optional(),
     })
     .optional(),
+  tags: z.array(tagSchema).optional(),
 });
 
 const searchResponseSchema = z.object({
@@ -43,7 +46,17 @@ const searchResponseSchema = z.object({
   }),
 });
 
+const tagsResponseSchema = z.object({
+  response: z.object({ results: z.array(tagSchema) }),
+});
+
 function toArticle(result: z.infer<typeof resultSchema>): Article {
+  const contributors = (result.tags ?? [])
+    .filter((tag) => tag.type === 'contributor')
+    .map((tag) => tag.webTitle);
+  // Agency copy has no contributor tags, only a byline ("Reuters").
+  const byline = nonEmpty(result.fields?.byline);
+
   return {
     id: `guardian:${result.id}`,
     sourceId: 'guardian',
@@ -52,33 +65,80 @@ function toArticle(result: z.infer<typeof resultSchema>): Article {
     summary: htmlToText(result.fields?.trailText),
     url: result.webUrl,
     imageUrl: nonEmpty(result.fields?.thumbnail),
-    author: nonEmpty(result.fields?.byline),
+    authors: contributors.length ? contributors : byline ? [byline] : [],
     category: CATEGORY_BY_SECTION.get(result.sectionId),
     publishedAt: result.webPublicationDate,
   };
 }
 
-export const guardianSource: NewsSource = {
-  id: 'guardian',
-  name: 'The Guardian',
+/**
+ * The Guardian filters by author via contributor tags (`profile/fiona-harvey`),
+ * so names are resolved to tag ids once and cached for the session.
+ */
+function createContributorResolver() {
+  const cache = new Map<string, Promise<string | null>>();
 
-  async search(query, page, signal) {
-    const url = proxyUrl('guardian', '/search', {
-      q: query.keyword,
-      // `|` means OR in the Guardian API.
-      section: nativeValuesFor(SECTIONS, query.categories).join('|'),
-      'from-date': query.from,
-      'to-date': query.to,
-      'order-by': 'newest',
-      'show-fields': 'trailText,byline,thumbnail',
-      'page-size': PAGE_SIZE,
-      page,
-    });
-    const { response } = await fetchJson('guardian', url, searchResponseSchema, signal);
+  async function lookup(name: string, signal?: AbortSignal): Promise<string | null> {
+    const url = proxyUrl('guardian', '/tags', { type: 'contributor', q: name, 'page-size': 10 });
+    const { response } = await fetchJson('guardian', url, tagsResponseSchema, signal);
+    return response.results.find((tag) => foldText(tag.webTitle) === foldText(name))?.id ?? null;
+  }
 
-    return {
-      articles: response.results.map(toArticle),
-      nextPage: response.currentPage < response.pages ? response.currentPage + 1 : null,
-    };
-  },
-};
+  return async function resolve(names: readonly string[], signal?: AbortSignal) {
+    const ids = await Promise.all(
+      names.map((name) => {
+        const key = foldText(name);
+        let pending = cache.get(key);
+        if (!pending) {
+          pending = lookup(name, signal);
+          cache.set(key, pending);
+          // Don't cache failures (network, abort): retry next time.
+          pending.catch(() => cache.delete(key));
+        }
+        return pending;
+      }),
+    );
+    return ids.filter((id): id is string => id !== null);
+  };
+}
+
+export function createGuardianSource(): NewsSource {
+  const resolveContributors = createContributorResolver();
+
+  return {
+    id: 'guardian',
+    name: 'The Guardian',
+
+    async search(query, page, signal) {
+      let tag: string | undefined;
+      if (query.authors?.length) {
+        const ids = await resolveContributors(query.authors, signal);
+        // None of the authors writes for the Guardian.
+        if (!ids.length) return { articles: [], nextPage: null };
+        tag = ids.join('|');
+      }
+
+      const url = proxyUrl('guardian', '/search', {
+        q: query.keyword,
+        // `|` means OR in the Guardian API.
+        section: nativeValuesFor(SECTIONS, query.categories).join('|'),
+        tag,
+        'from-date': query.from,
+        'to-date': query.to,
+        'order-by': 'newest',
+        'show-fields': 'trailText,byline,thumbnail',
+        'show-tags': 'contributor',
+        'page-size': PAGE_SIZE,
+        page,
+      });
+      const { response } = await fetchJson('guardian', url, searchResponseSchema, signal);
+
+      return {
+        articles: response.results.map(toArticle),
+        nextPage: response.currentPage < response.pages ? response.currentPage + 1 : null,
+      };
+    },
+  };
+}
+
+export const guardianSource = createGuardianSource();

@@ -6,6 +6,7 @@ import { ArticleFeed } from '@/features/articles/ui/ArticleFeed';
 import { parseSearchParams, toSearchParams } from '@/features/search/search-params';
 import { SearchBox } from '@/features/search/ui/SearchBox';
 import { SearchFilters } from '@/features/search/ui/SearchFilters';
+import { useAuthorFollowing } from '@/features/preferences/use-author-following';
 import { cx } from '@/shared/lib/cx';
 import { Button } from '@/shared/ui/Button';
 import { PageHeader } from './PageHeader';
@@ -19,6 +20,7 @@ export function SearchPage() {
   const filters = useMemo(() => parseSearchParams(params), [params]);
   const feed = useArticles(filters);
   const [filtersOpen, setFiltersOpen] = useState(false);
+  const following = useAuthorFollowing();
 
   // Typing replaces the history entry; filter changes are navigable with Back.
   const setFilters = (next: NewsFilters, replace = false) =>
@@ -58,6 +60,7 @@ export function SearchPage() {
           <section aria-label="Results">
             <ArticleFeed
               feed={feed}
+              following={following}
               empty={
                 <div className="rounded-xl border border-dashed border-zinc-300 px-6 py-12 text-center dark:border-zinc-700">
                   <p className="font-medium">No articles match your search</p>

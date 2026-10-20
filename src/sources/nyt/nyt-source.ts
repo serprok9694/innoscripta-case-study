@@ -1,10 +1,11 @@
 import { z } from 'zod';
 import type { Article } from '@/domain/article';
 import type { CategoryId } from '@/domain/category';
-import type { NewsSource } from '@/domain/news-source';
+import type { ArticleQuery, NewsSource, SourcePage } from '@/domain/news-source';
 import { invertCategoryMap, nativeValuesFor } from '../shared/category-map';
 import { PAGE_SIZE } from '../shared/constants';
 import { fetchJson, proxyUrl } from '../shared/http';
+import { mergePages } from '../shared/merge-pages';
 import { compactDate, nonEmpty } from '../shared/text';
 
 /**
@@ -65,6 +66,12 @@ function categoryFilter(categories: readonly CategoryId[] | undefined): string |
   return clauses.length ? clauses.join(' OR ') : undefined;
 }
 
+/** "By Jane Doe, John Roe and Ann Poe" → ["Jane Doe", "John Roe", "Ann Poe"]. */
+export function parseByline(byline: string | null | undefined): string[] {
+  const names = nonEmpty(byline)?.replace(/^By\s+/i, '');
+  return names ? names.split(/\s*,\s*|\s+and\s+/).filter(Boolean) : [];
+}
+
 function toArticle(doc: z.infer<typeof docSchema>): Article {
   const subsection = doc.subsection_name ?? '';
   const section = doc.section_name ?? '';
@@ -76,9 +83,33 @@ function toArticle(doc: z.infer<typeof docSchema>): Article {
     summary: nonEmpty(doc.abstract),
     url: doc.web_url,
     imageUrl: nonEmpty(doc.multimedia?.default?.url),
-    author: nonEmpty(doc.byline?.original?.replace(/^By\s+/i, '')),
+    authors: parseByline(doc.byline?.original),
     category: CATEGORY_BY_SUBSECTION.get(subsection) ?? CATEGORY_BY_SECTION.get(section),
     publishedAt: doc.pub_date,
+  };
+}
+
+async function searchPage(
+  query: ArticleQuery,
+  keyword: string | undefined,
+  page: number,
+  signal?: AbortSignal,
+): Promise<SourcePage> {
+  const url = proxyUrl('nyt', '/svc/search/v2/articlesearch.json', {
+    q: keyword,
+    fq: categoryFilter(query.categories),
+    begin_date: compactDate(query.from),
+    end_date: compactDate(query.to),
+    sort: 'newest',
+    page: page - 1, // NYT pages are 0-based
+  });
+  const { response } = await fetchJson('nyt', url, searchResponseSchema, signal);
+  const docs = response.docs ?? [];
+  const hasMore = docs.length > 0 && page * PAGE_SIZE < response.metadata.hits && page < MAX_PAGE;
+
+  return {
+    articles: docs.map(toArticle),
+    nextPage: hasMore ? page + 1 : null,
   };
 }
 
@@ -87,21 +118,15 @@ export const nytSource: NewsSource = {
   name: 'The New York Times',
 
   async search(query, page, signal) {
-    const url = proxyUrl('nyt', '/svc/search/v2/articlesearch.json', {
-      q: query.keyword,
-      fq: categoryFilter(query.categories),
-      begin_date: compactDate(query.from),
-      end_date: compactDate(query.to),
-      sort: 'newest',
-      page: page - 1, // NYT pages are 0-based
-    });
-    const { response } = await fetchJson('nyt', url, searchResponseSchema, signal);
-    const docs = response.docs ?? [];
-    const hasMore = docs.length > 0 && page * PAGE_SIZE < response.metadata.hits && page < MAX_PAGE;
+    if (!query.authors?.length) return searchPage(query, query.keyword, page, signal);
 
-    return {
-      articles: docs.map(toArticle),
-      nextPage: hasMore ? page + 1 : null,
-    };
+    // Byline filters no longer work and `q` has no OR, so search each author's
+    // name separately; the aggregator then keeps only real bylines.
+    const pages = await Promise.all(
+      query.authors.map((author) =>
+        searchPage(query, [query.keyword, author].filter(Boolean).join(' '), page, signal),
+      ),
+    );
+    return mergePages(pages, page);
   },
 };

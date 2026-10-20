@@ -11,6 +11,15 @@ export function htmlToText(html: string | null | undefined): string | undefined 
   return nonEmpty(doc.body.textContent?.replace(/\s+/g, ' '));
 }
 
+/** Lower-cased and accent-free, for forgiving comparisons ("Ségolène" ≈ "segolene"). */
+export function foldText(value: string): string {
+  return value
+    .normalize('NFD')
+    .replace(/\p{Diacritic}/gu, '')
+    .toLowerCase()
+    .trim();
+}
+
 /** `YYYY-MM-DD` → `YYYYMMDD` (NYT date format). */
 export function compactDate(date: string | undefined): string | undefined {
   return date?.replaceAll('-', '');

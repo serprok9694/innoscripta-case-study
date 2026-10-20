@@ -14,6 +14,8 @@ export interface ArticleQuery {
   to?: IsoDate;
   /** Match any of these. Empty or missing means "all categories". */
   categories?: readonly CategoryId[];
+  /** Articles by any of these authors. Sources narrow by author where their API allows it. */
+  authors?: readonly string[];
 }
 
 export interface SourcePage {

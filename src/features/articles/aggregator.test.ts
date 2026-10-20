@@ -59,7 +59,13 @@ describe('fetchFeedPage', () => {
       signal,
     );
 
-    const query = { keyword: 'ai', from: undefined, to: undefined, categories: ['technology'] };
+    const query = {
+      keyword: 'ai',
+      from: undefined,
+      to: undefined,
+      categories: ['technology'],
+      authors: ['x'],
+    };
     expect(guardian.search).toHaveBeenCalledWith(query, 3, signal);
     expect(nyt.search).toHaveBeenCalledWith(query, 7, signal);
   });
@@ -77,9 +83,9 @@ describe('fetchFeedPage', () => {
   it('applies client-side filters the source could not', async () => {
     const newsapi = fakeSource('newsapi', () => ({
       articles: [
-        at('newsapi', '2026-10-19T10:00:00Z', { author: 'Jane Doe' }),
-        at('newsapi', '2026-09-01T10:00:00Z', { author: 'Jane Doe' }),
-        at('newsapi', '2026-10-19T09:00:00Z', { author: 'John Roe' }),
+        at('newsapi', '2026-10-19T10:00:00Z', { authors: ['Jane Doe'] }),
+        at('newsapi', '2026-09-01T10:00:00Z', { authors: ['Jane Doe'] }),
+        at('newsapi', '2026-10-19T09:00:00Z', { authors: ['John Roe'] }),
       ],
       nextPage: null,
     }));

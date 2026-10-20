@@ -1,4 +1,4 @@
-import { SOURCE_IDS, type SourceId } from '@/domain/article';
+import { isSourceId } from '@/domain/article';
 import { isCategoryId } from '@/domain/category';
 import { type NewsFilters, normalizeFilters } from '@/features/articles/filters';
 
@@ -7,9 +7,6 @@ import { type NewsFilters, normalizeFilters } from '@/features/articles/filters'
  * `/search?q=climate&from=2026-10-01&to=2026-10-20&category=science,world&source=nyt`
  */
 const DATE = /^\d{4}-\d{2}-\d{2}$/;
-
-const isSourceId = (value: string): value is SourceId =>
-  (SOURCE_IDS as readonly string[]).includes(value);
 
 const list = (params: URLSearchParams, key: string) =>
   params.get(key)?.split(',').filter(Boolean) ?? [];

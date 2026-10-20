@@ -11,6 +11,7 @@ export function makeArticle(overrides: Partial<Article> = {}): Article {
     title: `Article ${sequence}`,
     url: `https://example.com/article-${sequence}`,
     publishedAt: '2026-10-15T12:00:00Z',
+    authors: [],
     ...overrides,
   };
 }

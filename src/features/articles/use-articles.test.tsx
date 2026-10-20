@@ -1,6 +1,7 @@
 import { act, renderHook, waitFor } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import guardianFixture from '@/sources/guardian/__fixtures__/search.json';
+import guardianTags from '@/sources/guardian/__fixtures__/tags.json';
 import nytFixture from '@/sources/nyt/__fixtures__/search.json';
 import { mockJson } from '@/test/msw/mock-json';
 import { createWrapper } from '@/test/render';
@@ -84,14 +85,13 @@ describe('useArticles', () => {
 
   it('applies client-side filters to source results', async () => {
     mockConfig({ guardian: true });
+    mockJson('/api/guardian/tags', guardianTags);
     mockJson(GUARDIAN, guardianFixture);
 
     const { result } = renderUseArticles({ authors: ['fiona harvey'] });
     await waitFor(() => expect(result.current.isLoading).toBe(false));
 
-    expect(result.current.articles.map((a) => a.author)).toEqual([
-      'Fiona Harvey Environment editor',
-    ]);
+    expect(result.current.articles.map((a) => a.authors)).toEqual([['Fiona Harvey']]);
   });
 
   it('reports when no source is available, without requesting anything', async () => {

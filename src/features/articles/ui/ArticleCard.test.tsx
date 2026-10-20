@@ -1,7 +1,8 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import { describe, expect, it } from 'vitest';
+import userEvent from '@testing-library/user-event';
+import { describe, expect, it, vi } from 'vitest';
 import { makeArticle } from '@/test/factories';
-import { ArticleCard } from './ArticleCard';
+import { ArticleCard, type AuthorFollowing } from './ArticleCard';
 
 describe('ArticleCard', () => {
   const article = makeArticle({
@@ -10,7 +11,7 @@ describe('ArticleCard', () => {
     publisher: 'The Guardian',
     category: 'science',
     summary: 'Most wild bee species are declining.',
-    author: 'Ajit Niranjan',
+    authors: ['Ajit Niranjan'],
     imageUrl: 'https://example.com/bees.jpg',
     publishedAt: '2026-10-20T09:00:00Z',
   });
@@ -45,9 +46,46 @@ describe('ArticleCard', () => {
   it('omits optional parts', () => {
     render(
       <ArticleCard
-        article={makeArticle({ category: undefined, summary: undefined, author: undefined })}
+        article={makeArticle({ category: undefined, summary: undefined, authors: [] })}
       />,
     );
     expect(screen.queryByText('·')).not.toBeInTheDocument();
+  });
+
+  describe('following authors', () => {
+    const multi = makeArticle({ authors: ['Rachel Wharton', 'Graham Dickie'] });
+    const following = (overrides: Partial<AuthorFollowing> = {}): AuthorFollowing => ({
+      isFollowing: (name) => name === 'Rachel Wharton',
+      canFollow: true,
+      toggle: vi.fn<(name: string) => void>(),
+      ...overrides,
+    });
+
+    it('shows plain names when following is not offered', () => {
+      render(<ArticleCard article={multi} />);
+      expect(screen.getByRole('time').parentElement).toHaveTextContent(
+        'Rachel Wharton, Graham Dickie',
+      );
+      expect(screen.queryByRole('button')).not.toBeInTheDocument();
+    });
+
+    it('lets each author be followed or unfollowed', async () => {
+      const props = following();
+      render(<ArticleCard article={multi} following={props} />);
+
+      const rachel = screen.getByRole('button', { name: 'Follow Rachel Wharton' });
+      const graham = screen.getByRole('button', { name: 'Follow Graham Dickie' });
+      expect(rachel).toHaveAttribute('aria-pressed', 'true');
+      expect(graham).toHaveAttribute('aria-pressed', 'false');
+
+      await userEvent.click(graham);
+      expect(props.toggle).toHaveBeenCalledWith('Graham Dickie');
+    });
+
+    it('disables following new authors at the limit, but still allows unfollowing', () => {
+      render(<ArticleCard article={multi} following={following({ canFollow: false })} />);
+      expect(screen.getByRole('button', { name: 'Follow Graham Dickie' })).toBeDisabled();
+      expect(screen.getByRole('button', { name: 'Follow Rachel Wharton' })).toBeEnabled();
+    });
   });
 });

@@ -23,7 +23,16 @@
           "byline": "Fiona Harvey Environment editor",
           "thumbnail": "https://media.guim.co.uk/4e8bc175614db946e21c0ce67854ce34f497f5af/599_0_6827_5464/500.jpg"
         },
-        "pillarName": "News"
+        "pillarName": "News",
+        "tags": [
+          {
+            "id": "profile/fiona-harvey",
+            "type": "contributor",
+            "webTitle": "Fiona Harvey",
+            "webUrl": "https://www.theguardian.com/profile/fiona-harvey",
+            "apiUrl": "https://content.guardianapis.com/profile/fiona-harvey"
+          }
+        ]
       },
       {
         "id": "environment/2026/oct/20/country-diary-a-species-brought-to-the-edge-of-extinction-recovering-in-the-fens",
@@ -39,7 +48,16 @@
           "byline": "Mark Cocker",
           "thumbnail": "https://media.guim.co.uk/740ac5e2feaf6d7f8a511e0eb4e424b3468c5862/0_0_3172_2538/500.jpg"
         },
-        "pillarName": "News"
+        "pillarName": "News",
+        "tags": [
+          {
+            "id": "profile/markcocker",
+            "type": "contributor",
+            "webTitle": "Mark Cocker",
+            "webUrl": "https://www.theguardian.com/profile/markcocker",
+            "apiUrl": "https://content.guardianapis.com/profile/markcocker"
+          }
+        ]
       },
       {
         "id": "environment/2026/oct/19/study-europe-wild-bee-species-decline-",
@@ -55,7 +73,16 @@
           "byline": "Ajit Niranjan Europe environment correspondent",
           "thumbnail": "https://media.guim.co.uk/866c33745465d9af42c6e781c991b6d04313522e/289_77_1694_1356/500.jpg"
         },
-        "pillarName": "News"
+        "pillarName": "News",
+        "tags": [
+          {
+            "id": "profile/ajit-niranjan",
+            "type": "contributor",
+            "webTitle": "Ajit Niranjan",
+            "webUrl": "https://www.theguardian.com/profile/ajit-niranjan",
+            "apiUrl": "https://content.guardianapis.com/profile/ajit-niranjan"
+          }
+        ]
       },
       {
         "id": "commentisfree/2026/oct/19/edge-case-opinion",
@@ -69,7 +96,8 @@
         "fields": {
           "trailText": "<strong>Bold</strong> claims &amp; <a href=\"#\">links</a>"
         },
-        "pillarName": "Opinion"
+        "pillarName": "Opinion",
+        "tags": []
       }
     ]
   }

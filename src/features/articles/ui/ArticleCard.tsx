@@ -1,7 +1,16 @@
 import { useState } from 'react';
 import type { Article } from '@/domain/article';
 import { CATEGORY_LABELS } from '@/domain/category';
+import { cx } from '@/shared/lib/cx';
 import { formatDateTime, formatRelativeTime } from '@/shared/lib/format-date';
+
+/** Lets readers follow an article's authors. Provided by the page, so the card stays store-agnostic. */
+export interface AuthorFollowing {
+  isFollowing: (name: string) => boolean;
+  /** False once the follow limit is reached. */
+  canFollow: boolean;
+  toggle: (name: string) => void;
+}
 
 function ArticleImage({ src }: { src?: string }) {
   const [failed, setFailed] = useState(false);
@@ -29,7 +38,57 @@ function ArticleImage({ src }: { src?: string }) {
   );
 }
 
-export function ArticleCard({ article }: { article: Article }) {
+function AuthorButton({ name, following }: { name: string; following: AuthorFollowing }) {
+  const followed = following.isFollowing(name);
+  const disabled = !followed && !following.canFollow;
+
+  return (
+    <button
+      type="button"
+      // Above the card's stretched link, so it gets its own clicks.
+      className={cx(
+        'relative z-10 rounded hover:underline focus-visible:outline-2 focus-visible:outline-blue-600 disabled:no-underline disabled:opacity-60',
+        followed && 'font-medium text-blue-700 dark:text-blue-400',
+      )}
+      aria-label={`Follow ${name}`}
+      aria-pressed={followed}
+      disabled={disabled}
+      title={
+        disabled
+          ? 'You’re following the maximum number of authors'
+          : followed
+            ? 'Unfollow'
+            : 'Follow'
+      }
+      onClick={() => following.toggle(name)}
+    >
+      {name}
+      {followed && <span aria-hidden="true"> ✓</span>}
+    </button>
+  );
+}
+
+function Authors({ names, following }: { names: string[]; following?: AuthorFollowing }) {
+  return (
+    <span className="min-w-0 truncate">
+      {names.map((name, index) => (
+        <span key={name}>
+          {index > 0 && ', '}
+          {following ? <AuthorButton name={name} following={following} /> : name}
+        </span>
+      ))}
+    </span>
+  );
+}
+
+interface ArticleCardProps {
+  article: Article;
+  following?: AuthorFollowing;
+}
+
+export function ArticleCard({ article, following }: ArticleCardProps) {
+  const hasAuthors = article.authors.length > 0;
+
   return (
     <article className="group relative flex w-full flex-col overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-sm transition-shadow hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900">
       <ArticleImage src={article.imageUrl} />
@@ -64,9 +123,9 @@ export function ArticleCard({ article }: { article: Article }) {
         )}
 
         <p className="mt-auto flex items-center gap-2 pt-2 text-xs text-zinc-500 dark:text-zinc-400">
-          {article.author && (
+          {hasAuthors && (
             <>
-              <span className="min-w-0 truncate">{article.author}</span>
+              <Authors names={article.authors} following={following} />
               <span aria-hidden="true">·</span>
             </>
           )}

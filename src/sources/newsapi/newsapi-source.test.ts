@@ -38,7 +38,7 @@ describe('newsApiSource', () => {
         summary: everything.articles[1]?.description,
         url: everything.articles[1]?.url,
         imageUrl: everything.articles[1]?.urlToImage,
-        author: 'Polly Davis Doig',
+        authors: ['Polly Davis Doig'],
         category: undefined,
         publishedAt: everything.articles[1]?.publishedAt,
       });
@@ -47,7 +47,7 @@ describe('newsApiSource', () => {
     it('ignores URLs in the author field and empty images', async () => {
       mockJson(EVERYTHING, everything);
       const { articles } = await newsApiSource.search({ keyword: 'climate' }, 1);
-      expect(articles.at(-1)).toMatchObject({ author: undefined, imageUrl: undefined });
+      expect(articles.at(-1)).toMatchObject({ authors: [], imageUrl: undefined });
     });
 
     it('stops paginating at the 100-result cap of the developer plan', async () => {
@@ -117,6 +117,19 @@ describe('newsApiSource', () => {
       sourceId: 'newsapi',
       kind: 'rate-limit',
       message: 'You have made too many requests.',
+    });
+  });
+
+  describe('author filter', () => {
+    it.each([
+      [{ authors: ['Alex Perry'] }, '"Alex Perry"'],
+      [{ authors: ['Alex Perry', 'Sherif Saed'] }, '"Alex Perry" OR "Sherif Saed"'],
+      [{ keyword: 'games', authors: ['Alex Perry'] }, '(games) AND ("Alex Perry")'],
+      [{ authors: ['Dwayne "The Rock" Johnson'] }, '"Dwayne The Rock Johnson"'],
+    ])('searches /everything for %j', async (query, q) => {
+      const requests = mockJson(EVERYTHING, everything);
+      await newsApiSource.search(query, 1);
+      expect(requests[0]?.searchParams.get('q')).toBe(q);
     });
   });
 });

@@ -1,12 +1,11 @@
 import type { Article, SourceId } from '@/domain/article';
 import type { ArticleQuery } from '@/domain/news-source';
+import { foldText } from '@/sources/shared/text';
 
-/** Everything the user can filter by: the source-level query plus aggregator-level filters. */
+/** Everything the user can filter by: the source-level query plus the source selection. */
 export interface NewsFilters extends ArticleQuery {
   /** Restrict to these sources. Empty or missing means "all enabled sources". */
   sources?: readonly SourceId[];
-  /** Keep articles by any of these authors (case- and accent-insensitive substring match). */
-  authors?: readonly string[];
 }
 
 function normalizeList<T extends string>(values: readonly T[] | undefined): T[] | undefined {
@@ -36,19 +35,20 @@ export function normalizeFilters(filters: NewsFilters): NewsFilters {
 }
 
 /** The part of the filters that source adapters understand. */
-export function toArticleQuery({ keyword, from, to, categories }: NewsFilters): ArticleQuery {
-  return { keyword, from, to, categories };
+export function toArticleQuery({
+  keyword,
+  from,
+  to,
+  categories,
+  authors,
+}: NewsFilters): ArticleQuery {
+  return { keyword, from, to, categories, authors };
 }
-
-const fold = (value: string) =>
-  value
-    .normalize('NFD')
-    .replace(/\p{Diacritic}/gu, '')
-    .toLowerCase();
 
 /**
  * Client-side safety net. Sources apply what their API supports; this
- * enforces the rest (e.g. dates on NewsAPI top headlines, authors everywhere).
+ * enforces the rest (e.g. dates on NewsAPI top headlines) and keeps author
+ * searches precise (a name in `q` also matches articles that merely mention it).
  */
 export function matchesFilters(article: Article, filters: NewsFilters): boolean {
   // Calendar day in UTC, the same convention the APIs use for date filters.
@@ -61,8 +61,9 @@ export function matchesFilters(article: Article, filters: NewsFilters): boolean 
   }
 
   if (filters.authors?.length) {
-    const author = article.author ? fold(article.author) : '';
-    if (!filters.authors.some((name) => author.includes(fold(name)))) return false;
+    const authors = article.authors.map(foldText);
+    const wanted = filters.authors.map(foldText);
+    if (!wanted.some((name) => authors.some((author) => author.includes(name)))) return false;
   }
 
   return true;

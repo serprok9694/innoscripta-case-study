@@ -35,7 +35,7 @@ function selectFeed(data: InfiniteData<FeedPage, Cursors>): Feed {
  * Infinite, multi-source article feed for the given filters.
  * Equivalent filters share a cache entry (see `normalizeFilters`).
  */
-export function useArticles(filters: NewsFilters) {
+export function useArticles(filters: NewsFilters, { enabled = true }: { enabled?: boolean } = {}) {
   const config = useSourcesConfig();
   const normalized = normalizeFilters(filters);
   const sources = config.data ? selectSources(enabledSources(config.data), normalized) : [];
@@ -45,7 +45,7 @@ export function useArticles(filters: NewsFilters) {
     queryFn: ({ pageParam, signal }) => fetchFeedPage(sources, normalized, pageParam, signal),
     initialPageParam: initialCursors(sources),
     getNextPageParam: (lastPage) => lastPage.next ?? undefined,
-    enabled: sources.length > 0,
+    enabled: enabled && sources.length > 0,
     select: selectFeed,
   });
 
@@ -55,7 +55,7 @@ export function useArticles(filters: NewsFilters) {
     isLoading: config.isLoading || query.isLoading,
     error: config.error ?? query.error,
     /** No source is configured or none of the picked ones is available. */
-    hasNoSources: config.isSuccess && sources.length === 0,
+    hasNoSources: enabled && config.isSuccess && sources.length === 0,
     hasNextPage: query.hasNextPage,
     isFetchingNextPage: query.isFetchingNextPage,
     fetchNextPage: query.fetchNextPage,

@@ -37,7 +37,13 @@ describe('toArticleQuery', () => {
   it('keeps only what source adapters understand', () => {
     expect(
       toArticleQuery({ keyword: 'a', categories: ['world'], sources: ['nyt'], authors: ['b'] }),
-    ).toEqual({ keyword: 'a', from: undefined, to: undefined, categories: ['world'] });
+    ).toEqual({
+      keyword: 'a',
+      from: undefined,
+      to: undefined,
+      categories: ['world'],
+      authors: ['b'],
+    });
   });
 });
 
@@ -45,7 +51,7 @@ describe('matchesFilters', () => {
   const article = makeArticle({
     publishedAt: '2026-10-15T23:30:00Z',
     category: 'science',
-    author: 'Ségolène Le Stradic',
+    authors: ['Natan Odenheimer', 'Ségolène Le Stradic'],
   });
 
   it('matches when no filters are set', () => {
@@ -70,6 +76,6 @@ describe('matchesFilters', () => {
     expect(matchesFilters(article, { authors: ['segolene le stradic'] })).toBe(true);
     expect(matchesFilters(article, { authors: ['Nobody', 'stradic'] })).toBe(true);
     expect(matchesFilters(article, { authors: ['Fiona Harvey'] })).toBe(false);
-    expect(matchesFilters(makeArticle({ author: undefined }), { authors: ['x'] })).toBe(false);
+    expect(matchesFilters(makeArticle({ authors: [] }), { authors: ['x'] })).toBe(false);
   });
 });
