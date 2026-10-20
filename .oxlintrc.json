@@ -29,7 +29,8 @@
       {
         "allow": ["_id"]
       }
-    ]
+    ],
+    "jsx-a11y/prefer-tag-over-role": "off"
   },
   "ignorePatterns": ["dist", "coverage"]
 }

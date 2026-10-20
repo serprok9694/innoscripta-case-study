@@ -62,3 +62,5 @@ export function useArticles(filters: NewsFilters) {
     refetch: query.refetch,
   };
 }
+
+export type ArticlesResult = ReturnType<typeof useArticles>;
