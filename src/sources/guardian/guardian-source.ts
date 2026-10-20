@@ -5,7 +5,8 @@ import type { NewsSource } from '@/domain/news-source';
 import { invertCategoryMap, nativeValuesFor } from '../shared/category-map';
 import { PAGE_SIZE } from '../shared/constants';
 import { fetchJson, proxyUrl } from '../shared/http';
-import { foldText, htmlToText, nonEmpty } from '../shared/text';
+import { foldText } from '@/shared/lib/fold-text';
+import { htmlToText, nonEmpty } from '../shared/text';
 
 /** Guardian section ids per category. https://open-platform.theguardian.com/documentation/search */
 const SECTIONS: Record<CategoryId, readonly string[]> = {

@@ -94,10 +94,21 @@ describe('useArticles', () => {
     expect(result.current.articles.map((a) => a.authors)).toEqual([['Fiona Harvey']]);
   });
 
-  it('reports when no source is available, without requesting anything', async () => {
+  it('serves the recorded sample, without any request, when no key is configured', async () => {
     mockConfig({ guardian: false, nyt: false, newsapi: false });
+    // No source handlers: a live request would fail the test.
 
-    const { result } = renderUseArticles();
+    const { result } = renderUseArticles({ categories: ['science'] });
+
+    await waitFor(() => expect(result.current.articles.length).toBeGreaterThan(0));
+    expect(result.current.articles.every((a) => a.category === 'science')).toBe(true);
+    expect(new Set(result.current.articles.map((a) => a.sourceId)).size).toBeGreaterThan(1);
+  });
+
+  it('reports when none of the picked sources is available, without requesting anything', async () => {
+    mockConfig({ guardian: true, nyt: false, newsapi: false });
+
+    const { result } = renderUseArticles({ sources: ['newsapi'] });
 
     await waitFor(() => expect(result.current.hasNoSources).toBe(true));
     expect(result.current.isLoading).toBe(false);

@@ -1,7 +1,8 @@
 import type { Article, SourceId } from '@/domain/article';
 import type { NewsSource } from '@/domain/news-source';
 import { SourceError, type SourceErrorKind } from '@/sources/shared/source-error';
-import { matchesFilters, type NewsFilters, toArticleQuery } from './filters';
+import { matchesQuery } from '@/domain/article-matching';
+import { type NewsFilters, toArticleQuery } from './filters';
 
 /** Next page to request per source. A source missing from the map is exhausted (or failed). */
 export type Cursors = Partial<Record<SourceId, number>>;
@@ -57,7 +58,7 @@ const newestFirst = (a: Article, b: Article) =>
 /**
  * Fetches one page from every source that still has results, in parallel.
  *
- * - Articles are filtered client-side (see `matchesFilters`) and sorted newest first.
+ * - Articles are filtered client-side (see `matchesQuery`) and sorted newest first.
  * - A failing source is reported in `failures` and dropped from later pages, so
  *   infinite scrolling never hammers a broken or rate-limited API.
  * - Only when every source fails does the page itself fail.
@@ -89,7 +90,7 @@ export async function fetchFeedPage(
       failures.push(toFailure(source.id, result.reason));
       return;
     }
-    articles.push(...result.value.articles.filter((a) => matchesFilters(a, filters)));
+    articles.push(...result.value.articles.filter((a) => matchesQuery(a, filters)));
     if (result.value.nextPage !== null) next[source.id] = result.value.nextPage;
   });
 

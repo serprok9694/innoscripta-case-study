@@ -1,6 +1,6 @@
 import { type InfiniteData, useInfiniteQuery } from '@tanstack/react-query';
 import type { Article, SourceId } from '@/domain/article';
-import { enabledSources } from '@/sources/registry';
+import { availableSources } from '@/sources/registry';
 import {
   type Cursors,
   type FeedPage,
@@ -38,7 +38,7 @@ function selectFeed(data: InfiniteData<FeedPage, Cursors>): Feed {
 export function useArticles(filters: NewsFilters, { enabled = true }: { enabled?: boolean } = {}) {
   const config = useSourcesConfig();
   const normalized = normalizeFilters(filters);
-  const sources = config.data ? selectSources(enabledSources(config.data), normalized) : [];
+  const sources = config.data ? selectSources(availableSources(config.data), normalized) : [];
 
   const query = useInfiniteQuery({
     queryKey: ['articles', normalized, sources.map((s) => s.id)],

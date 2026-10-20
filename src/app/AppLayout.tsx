@@ -1,5 +1,6 @@
 import type { ComponentType, SVGProps } from 'react';
 import { NavLink, Outlet, ScrollRestoration } from 'react-router';
+import { DemoModeBanner } from '@/features/articles/ui/DemoModeBanner';
 import { ThemeToggle } from '@/features/theme/ui/ThemeToggle';
 import { useApplyTheme } from '@/features/theme/use-theme';
 import { cx } from '@/shared/lib/cx';
@@ -102,6 +103,7 @@ export function AppLayout() {
           </div>
         </div>
       </header>
+      <DemoModeBanner />
 
       <main id="main" className="mx-auto w-full max-w-6xl flex-1 px-4 py-6 sm:py-8">
         <Outlet />

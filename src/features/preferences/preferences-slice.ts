@@ -1,7 +1,7 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 import type { SourceId } from '@/domain/article';
 import type { CategoryId } from '@/domain/category';
-import { foldText } from '@/sources/shared/text';
+import { foldText } from '@/shared/lib/fold-text';
 
 /**
  * NYT can't search several authors at once, so each followed author costs one

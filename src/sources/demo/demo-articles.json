@@ -1,0 +1,3390 @@
+{
+  "recordedAt": "2026-10-20",
+  "articles": [
+    {
+      "id": "guardian:sport/live/2026/oct/20/south-africa-v-australia-second-test-day-three-cricket-st-georges-park-gqeberha-live-updates",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "South Africa v Australia: second men’s cricket Test, day three – live",
+      "summary": "Over-by-over report: Scott Boland has the Proteas on the ropes as the hosts continue their first innings in Gqeberha. Join our writers for updates",
+      "url": "https://www.theguardian.com/sport/live/2026/oct/20/south-africa-v-australia-second-test-day-three-cricket-st-georges-park-gqeberha-live-updates",
+      "imageUrl": "https://media.guim.co.uk/8bea9046a71d1ca5508640171428ab4f8b740dad/114_0_2888_2311/500.jpg",
+      "authors": [
+        "Geoff Lemon",
+        "Daniel Gallan"
+      ],
+      "category": "sports",
+      "publishedAt": "2026-10-20T12:21:08Z"
+    },
+    {
+      "id": "guardian:us-news/live/2026/oct/20/donald-trump-midterms-republicans-democrats-north-carolina-latest-updates",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Trump continues midterm campaign blitz in North Carolina – US politics live ",
+      "summary": "President to stump for Michael Whatley, who is facing an uphill battle against Democrat Roy Cooper for the Senate, as elections are just two weeks away",
+      "url": "https://www.theguardian.com/us-news/live/2026/oct/20/donald-trump-midterms-republicans-democrats-north-carolina-latest-updates",
+      "imageUrl": "https://media.guim.co.uk/45a6eb1967cbe3e395cdadcff67f7ea22af1de58/375_0_2743_2194/500.jpg",
+      "authors": [
+        "Shrai Popat"
+      ],
+      "publishedAt": "2026-10-20T12:20:54Z"
+    },
+    {
+      "id": "guardian:sport/live/2026/oct/20/pakistan-v-england-mens-tri-series-cricket-odi-live",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "England chasing 303 to beat Pakistan in men’s tri-series cricket ODI – live",
+      "summary": "Over-by-over report: How will England fare in Rawalpindi? Join Tim de Lisle to find out",
+      "url": "https://www.theguardian.com/sport/live/2026/oct/20/pakistan-v-england-mens-tri-series-cricket-odi-live",
+      "imageUrl": "https://media.guim.co.uk/05bc51f69864d8259e58f4edfbca7c1c5e281783/99_0_2471_1977/500.jpg",
+      "authors": [
+        "Tim de Lisle",
+        "Rob Smyth"
+      ],
+      "category": "sports",
+      "publishedAt": "2026-10-20T12:18:39Z"
+    },
+    {
+      "id": "guardian:business/live/2026/oct/20/uk-unemployment-rate-pre-budget-boost-wages-vacancies-latest-news-updates",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Google says ‘power event’ that disrupted Cloud services has been ‘mitigated’, after widespread problems – latest updates",
+      "summary": "Google apologises after suffering a major Cloud outage in its London region that caused problems at banks, Revolut, and court video cameras",
+      "url": "https://www.theguardian.com/business/live/2026/oct/20/uk-unemployment-rate-pre-budget-boost-wages-vacancies-latest-news-updates",
+      "imageUrl": "https://media.guim.co.uk/4abba6c5ea456b0e89fd05e658c5c6fa8a713ce7/430_0_3301_2641/500.jpg",
+      "authors": [
+        "Graeme Wearden",
+        "Julia Kollewe"
+      ],
+      "category": "business",
+      "publishedAt": "2026-10-20T12:15:19Z"
+    },
+    {
+      "id": "guardian:politics/live/2026/oct/20/kemi-badenoch-john-healey-capital-gains-tax-budget-covid-inquiry-care-homes-uk-politics-latest-news",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Ban on family visits to care homes at start of pandemic had ‘devastating consequences’, inquiry finds – UK politics live",
+      "summary": "Heather Hallett, chair of the Covid inquiry, has just published the report from the inquiry’s module 6, looking at what happened in care homes",
+      "url": "https://www.theguardian.com/politics/live/2026/oct/20/kemi-badenoch-john-healey-capital-gains-tax-budget-covid-inquiry-care-homes-uk-politics-latest-news",
+      "imageUrl": "https://media.guim.co.uk/e47ef742035edc19ba36b13621ca7e9926f80ba6/680_0_6814_5451/500.jpg",
+      "authors": [
+        "Andrew Sparrow",
+        "Jakub Krupa"
+      ],
+      "category": "politics",
+      "publishedAt": "2026-10-20T12:15:11Z"
+    },
+    {
+      "id": "guardian:world/live/2026/oct/20/france-protests-paris-curfews-italy-europe-ukraine-latest-news-updates",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "French cities ‘calm overnight’ after targeted curfews, prime minister says – Europe live",
+      "summary": "Sébastien Lecornu suggests more curfews could be introduced to quell unrest after weekend protests",
+      "url": "https://www.theguardian.com/world/live/2026/oct/20/france-protests-paris-curfews-italy-europe-ukraine-latest-news-updates",
+      "imageUrl": "https://media.guim.co.uk/8583f4ba91abd08cbc173527ed7e3d8bbc7b1438/796_586_6012_4809/500.jpg",
+      "authors": [
+        "Jakub Krupa",
+        "Miranda Bryant"
+      ],
+      "category": "world",
+      "publishedAt": "2026-10-20T12:11:05Z"
+    },
+    {
+      "id": "guardian:food/2026/oct/20/fridge-or-not-whats-the-best-way-to-store-bread",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Fridge or not? What’s the best way to store bread?",
+      "summary": "Our experts have some airtight advice to stop your loaf from going stale",
+      "url": "https://www.theguardian.com/food/2026/oct/20/fridge-or-not-whats-the-best-way-to-store-bread",
+      "imageUrl": "https://media.guim.co.uk/90082730da2b3cf4f9d1d70295290bde4b2bdff8/439_151_4764_3811/500.jpg",
+      "authors": [
+        "Anna Berrill"
+      ],
+      "publishedAt": "2026-10-20T12:00:36Z"
+    },
+    {
+      "id": "guardian:artanddesign/2026/oct/20/cameroon-cameroonian-art-lion-hunter-roxane-mbanga",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "‘If the lion does not tell its story, the hunter will’: a century of thrilling Cameroonian art",
+      "summary": "Key players in the country’s art history feature in a hefty new tome that covers everything from royal-carvers to bronze-smiths to work inspired by a horrific video smuggled out of a torture chamber",
+      "url": "https://www.theguardian.com/artanddesign/2026/oct/20/cameroon-cameroonian-art-lion-hunter-roxane-mbanga",
+      "imageUrl": "https://media.guim.co.uk/4edc86a055655984130ddc2117afc17c2f4c54aa/250_0_2500_2000/500.jpg",
+      "authors": [
+        "Eromo Egbejule"
+      ],
+      "publishedAt": "2026-10-20T12:00:36Z"
+    },
+    {
+      "id": "guardian:environment/2026/oct/20/unconditional-basic-income-amazon-rainforest-peru-study",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Giving £2 a day to people in the Amazon helps protect rainforest, pilot project finds",
+      "summary": "Researchers say almost 90% of participants in unconditional basic income scheme in Peru adopted environmentally beneficial practices",
+      "url": "https://www.theguardian.com/environment/2026/oct/20/unconditional-basic-income-amazon-rainforest-peru-study",
+      "imageUrl": "https://media.guim.co.uk/5dcbf6e6a550212dfa34c885265d9ef3a763ed30/353_0_4800_3840/500.jpg",
+      "authors": [
+        "Jonathan Watts"
+      ],
+      "category": "science",
+      "publishedAt": "2026-10-20T12:00:36Z"
+    },
+    {
+      "id": "guardian:us-news/2026/oct/20/san-francisco-mall-ai-datacenter",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Downtown datacenter? AI plan floated for boarded-up San Francisco mall",
+      "summary": "Developers propose turning San Francisco Centre into not a server-based facility but a ‘community-based AI exhibit’",
+      "url": "https://www.theguardian.com/us-news/2026/oct/20/san-francisco-mall-ai-datacenter",
+      "imageUrl": "https://media.guim.co.uk/db923849b94bf0ad9b0d796496c4d8d45b32b6e7/286_0_4560_3648/500.jpg",
+      "authors": [
+        "Kari Paul"
+      ],
+      "publishedAt": "2026-10-20T12:00:35Z"
+    },
+    {
+      "id": "guardian:football/2026/oct/20/amimal-rights-group-peta-urges-crystal-palace-retire-bald-eagle-mascot-phoenix-selhurst-park",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Animal rights group urges Crystal Palace to retire bald eagle mascot",
+      "summary": "Peta has urged Crystal Palace to retire their eagle mascot because, it says, the matchday experience can leave the bird ‘frightened, disoriented and panicked’",
+      "url": "https://www.theguardian.com/football/2026/oct/20/amimal-rights-group-peta-urges-crystal-palace-retire-bald-eagle-mascot-phoenix-selhurst-park",
+      "imageUrl": "https://media.guim.co.uk/093119a966e8f12385ca1cc013e27a84eb5555ab/740_0_5160_4128/500.jpg",
+      "authors": [
+        "Ed Aarons"
+      ],
+      "category": "sports",
+      "publishedAt": "2026-10-20T12:00:35Z"
+    },
+    {
+      "id": "guardian:film/2026/oct/20/children-of-the-wicker-man-review-folk-horror-robin-hardy",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Children of the Wicker Man review – how the folk-horror classic haunted the family that made it",
+      "summary": "Director Robin Hardy’s children lay bare the sometimes agonised family background to a movie that went from ruinous flop to cult favourite",
+      "url": "https://www.theguardian.com/film/2026/oct/20/children-of-the-wicker-man-review-folk-horror-robin-hardy",
+      "imageUrl": "https://media.guim.co.uk/f9339a30c7aec5d9e5c10a1ff6c993fb962f3a89/129_0_908_726/500.jpg",
+      "authors": [
+        "Leslie Felperin"
+      ],
+      "category": "entertainment",
+      "publishedAt": "2026-10-20T12:00:34Z"
+    },
+    {
+      "id": "guardian:film/2026/oct/20/tom-cruise-digger-climate-film",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Tom Cruise’s Digger is a commercial flop – but also the perfect climate film for our time",
+      "summary": "The movie follows Digger Rockwell, whose drilling triggers a vast iceberg that’s five times the size of Washington DC",
+      "url": "https://www.theguardian.com/film/2026/oct/20/tom-cruise-digger-climate-film",
+      "imageUrl": "https://media.guim.co.uk/e6552c72052af6953ffc7ae055106a9afdc8a68a/249_0_2565_2052/500.jpg",
+      "authors": [
+        "Oliver Milman"
+      ],
+      "category": "entertainment",
+      "publishedAt": "2026-10-20T12:00:34Z"
+    },
+    {
+      "id": "guardian:uk-news/2026/oct/20/uk-raf-typhoon-fighters-saudi-arabia-houthi-attacks",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "UK to deploy fighter jets to protect Saudi Arabia from Houthi attacks",
+      "summary": "RAF Typhoon fighters to fly defensive missions over cities and infrastructure in extension of UK support for Riyadh",
+      "url": "https://www.theguardian.com/uk-news/2026/oct/20/uk-raf-typhoon-fighters-saudi-arabia-houthi-attacks",
+      "imageUrl": "https://media.guim.co.uk/ed5b7f246bea513d923672e490f53e7d5ac9bc2e/0_203_3995_3195/500.jpg",
+      "authors": [
+        "Dan Sabbagh"
+      ],
+      "category": "politics",
+      "publishedAt": "2026-10-20T11:54:52Z"
+    },
+    {
+      "id": "guardian:stage/2026/oct/20/ts-eliot-murder-in-the-cathedral-review-david-suchet",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "TS Eliot’s Murder in the Cathedral review – gather in wonder at David Suchet’s excellent archbishop",
+      "summary": "The poet’s 1935 verse drama has its eccentricities but the meticulous star plays Thomas Becket with a Shakespearean relish",
+      "url": "https://www.theguardian.com/stage/2026/oct/20/ts-eliot-murder-in-the-cathedral-review-david-suchet",
+      "imageUrl": "https://media.guim.co.uk/987706d3b8bb0f7c94163f69bb2e24e2ea611025/708_324_2321_1857/500.jpg",
+      "authors": [
+        "Mark Lawson"
+      ],
+      "category": "entertainment",
+      "publishedAt": "2026-10-20T11:50:30Z"
+    },
+    {
+      "id": "guardian:culture/2026/oct/20/rj-mitte-obituary",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "RJ Mitte obituary",
+      "summary": "Film and TV actor with cerebral palsy who played Walter White Jr in Breaking Bad and was a staunch disability rights campaigner",
+      "url": "https://www.theguardian.com/culture/2026/oct/20/rj-mitte-obituary",
+      "imageUrl": "https://media.guim.co.uk/6d0b7ab6577eff99ec0bd681ca7a3d0d1dc19e31/927_234_4508_3606/500.jpg",
+      "authors": [
+        "Michael Carlson"
+      ],
+      "category": "entertainment",
+      "publishedAt": "2026-10-20T11:39:49Z"
+    },
+    {
+      "id": "guardian:uk-news/2026/oct/20/storm-austen-named-uk-severe-weather-warning",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Storm Austen forecast to hit southern UK",
+      "summary": "Yellow severe weather warning issued for first named storm of season with gusts of up to 60mph expected",
+      "url": "https://www.theguardian.com/uk-news/2026/oct/20/storm-austen-named-uk-severe-weather-warning",
+      "imageUrl": "https://media.guim.co.uk/c57858faffd6eb23a4c63753572831eb2675974a/357_0_3048_2438/500.jpg",
+      "authors": [
+        "Jamie Grierson"
+      ],
+      "publishedAt": "2026-10-20T11:38:01Z"
+    },
+    {
+      "id": "guardian:film/2026/oct/20/judi-dench-cats-film-was-a-waste-of-goodwill-and-talent",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "‘Oh God, I can’t bear it’: Judi Dench says Cats film was ‘a waste of goodwill and talent’",
+      "summary": "The actor’s forthcoming memoir Is It Too Late to Make a Run for It? says the makers had honourable intentions but the elements ‘didn’t coalesce’",
+      "url": "https://www.theguardian.com/film/2026/oct/20/judi-dench-cats-film-was-a-waste-of-goodwill-and-talent",
+      "imageUrl": "https://media.guim.co.uk/4fd511b9ad4acdeee42a4de7d5af3159b2e82425/824_119_1127_902/500.jpg",
+      "authors": [
+        "Catherine Shoard"
+      ],
+      "category": "entertainment",
+      "publishedAt": "2026-10-20T11:28:47Z"
+    },
+    {
+      "id": "guardian:us-news/2026/oct/20/fbi-new-orleans-investigation-child-medical-records",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "FBI investigates misuse of medical records after alleged sexual abuse of child by classmate",
+      "summary": "Authorities examine potential Hipaa breach after Louisiana hospital counselor shared information with pre-school principal, her sister-in-law",
+      "url": "https://www.theguardian.com/us-news/2026/oct/20/fbi-new-orleans-investigation-child-medical-records",
+      "imageUrl": "https://media.guim.co.uk/3965b413118498e938081775f2c9e9ce6c1e5916/128_126_1516_1214/500.jpg",
+      "authors": [
+        "Ramon Antonio Vargas"
+      ],
+      "publishedAt": "2026-10-20T11:00:36Z"
+    },
+    {
+      "id": "guardian:uk-news/2026/oct/20/uk-government-failures-led-to-covid-spreading-like-wildfire-in-care-homes-inquiry-finds",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "UK government failures led to Covid spreading ‘like wildfire’ in care homes, inquiry finds",
+      "summary": "Inquiry chair says failure to advise care homes to isolate people discharged from hospital was ‘significant oversight’",
+      "url": "https://www.theguardian.com/uk-news/2026/oct/20/uk-government-failures-led-to-covid-spreading-like-wildfire-in-care-homes-inquiry-finds",
+      "imageUrl": "https://media.guim.co.uk/d7121cda18786784e03f8bdedee0494b193d1483/3468_827_1988_1591/500.jpg",
+      "authors": [
+        "Jessica Murray"
+      ],
+      "publishedAt": "2026-10-20T11:00:35Z"
+    },
+    {
+      "id": "guardian:world/2026/oct/20/milan-luxury-shops-close-italy-to-deploy-troops-youth-protests-europe",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Italy to deploy 500 troops to Milan after days of protests and looting",
+      "summary": "Government planning tougher security measures after protests over high cost of living descend into violence",
+      "url": "https://www.theguardian.com/world/2026/oct/20/milan-luxury-shops-close-italy-to-deploy-troops-youth-protests-europe",
+      "imageUrl": "https://media.guim.co.uk/1773b9db4a2794c82db8e03b1f005b6c490013de/134_0_5000_4000/500.jpg",
+      "authors": [
+        "Angela Giuffrida"
+      ],
+      "category": "world",
+      "publishedAt": "2026-10-20T11:00:05Z"
+    },
+    {
+      "id": "guardian:world/2026/oct/20/families-cross-red-sea-to-djibouti-houthi-conflict-yemen",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Fleeing the frontline: Yemeni families cross Red Sea to Djibouti as Houthi conflict rages ",
+      "summary": "Their overland routes to safety blocked off, several thousand people have boarded boats to escape gunfire, bombing and a dire humanitarian situation",
+      "url": "https://www.theguardian.com/world/2026/oct/20/families-cross-red-sea-to-djibouti-houthi-conflict-yemen",
+      "imageUrl": "https://media.guim.co.uk/ec7f1efa1e3a7dce4e0fae2f242d696e0c24bfd9/439_0_5000_4000/500.jpg",
+      "authors": [
+        "Carlos Mureithi"
+      ],
+      "category": "world",
+      "publishedAt": "2026-10-20T10:00:32Z"
+    },
+    {
+      "id": "guardian:world/2026/oct/20/canada-alberta-rejects-independence-succession-referendum",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Alberta voters reject plan for referendum to leave Canada",
+      "summary": "Result is a victory for prime minister Mark Carney and supporters of Canadian unity",
+      "url": "https://www.theguardian.com/world/2026/oct/20/canada-alberta-rejects-independence-succession-referendum",
+      "imageUrl": "https://media.guim.co.uk/24436e30051721c8fa0489c283150fc4b439b60a/334_0_3331_2666/500.jpg",
+      "authors": [
+        "Leyland Cecco"
+      ],
+      "category": "world",
+      "publishedAt": "2026-10-20T09:02:43Z"
+    },
+    {
+      "id": "guardian:world/2026/oct/20/serbia-prosecutor-belgrade-trump-tower-project-targeted-spyware",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Serbian prosecutor who investigated Belgrade Trump tower project ‘targeted with spyware’",
+      "summary": "Apparent attempt to hack Rade Bajić’s iPhone comes amid efforts to undermine landmark criminal case",
+      "url": "https://www.theguardian.com/world/2026/oct/20/serbia-prosecutor-belgrade-trump-tower-project-targeted-spyware",
+      "imageUrl": "https://media.guim.co.uk/b3480eaf2fc3c53720e0df5d1b99ce803c659f31/480_0_6623_5299/500.jpg",
+      "authors": [
+        "Tom Burgis"
+      ],
+      "category": "world",
+      "publishedAt": "2026-10-20T09:00:21Z"
+    },
+    {
+      "id": "guardian:world/2026/oct/19/no-us-warning-russian-strikes-kyiv-power-plants-zelenskyy-ukraine-trump",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "US gave us no warning of Russian strikes on Kyiv power plants, Zelenskyy says",
+      "summary": "Ukrainian president accuses Washington of ‘denial of reality’ in continuing row with Trump over apparent support for Moscow",
+      "url": "https://www.theguardian.com/world/2026/oct/19/no-us-warning-russian-strikes-kyiv-power-plants-zelenskyy-ukraine-trump",
+      "imageUrl": "https://media.guim.co.uk/f0efe124ad4a75f1612be6e5eeb68f07d1ec3a34/629_0_4178_3342/500.jpg",
+      "authors": [
+        "Andrew Roth"
+      ],
+      "category": "world",
+      "publishedAt": "2026-10-20T06:47:18Z"
+    },
+    {
+      "id": "guardian:world/2026/oct/20/tuesday-briefing-can-andy-burnham-beat-britains-headphone-dodgers",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Tuesday briefing: Can Andy Burnham beat Britain’s headphone dodgers?",
+      "summary": "In today’s newsletter: The prime minister’s campaign against noisy passengers has struck a chord with commuters. Whether anyone hears him remains to be seen.",
+      "url": "https://www.theguardian.com/world/2026/oct/20/tuesday-briefing-can-andy-burnham-beat-britains-headphone-dodgers",
+      "imageUrl": "https://media.guim.co.uk/65b9ed792be47ad4aea24dded91951f15012ad14/353_0_4190_3354/500.jpg",
+      "authors": [
+        "Libby Brooks"
+      ],
+      "category": "world",
+      "publishedAt": "2026-10-20T05:44:25Z"
+    },
+    {
+      "id": "guardian:world/2026/oct/20/myanmar-aung-san-suu-kyi-rare-photos-gift-king-charles",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Myanmar’s ousted leader Aung San Suu Kyi seen in rare photos after receiving gift from King Charles",
+      "summary": "Critics said images of detained former leader were a stunt by the military to end country’s diplomatic isolation",
+      "url": "https://www.theguardian.com/world/2026/oct/20/myanmar-aung-san-suu-kyi-rare-photos-gift-king-charles",
+      "imageUrl": "https://media.guim.co.uk/cdf94063b68b4dca419bfd7a6446ac441222d300/106_0_1184_947/500.jpg",
+      "authors": [
+        "Oliver Holmes"
+      ],
+      "category": "world",
+      "publishedAt": "2026-10-20T05:07:00Z"
+    },
+    {
+      "id": "guardian:world/2026/oct/20/ukraine-war-briefing-zelenskyy-claims-us-deliberately-delaying-interceptor-missile-deliveries-to-kyiv",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Ukraine war briefing: Zelenskyy claims US deliberately delaying interceptor missile deliveries to Kyiv",
+      "summary": "Ukrainian president tells US senators the delayed missiles have already been paid for by European countries, amid growing rift. What we know on day 1,700",
+      "url": "https://www.theguardian.com/world/2026/oct/20/ukraine-war-briefing-zelenskyy-claims-us-deliberately-delaying-interceptor-missile-deliveries-to-kyiv",
+      "imageUrl": "https://media.guim.co.uk/c0d6e289dd9d41c854105a7cff3ff74c89b2b11f/117_0_1875_1500/500.jpg",
+      "authors": [
+        "Guardian staff and agencies"
+      ],
+      "category": "world",
+      "publishedAt": "2026-10-20T00:44:45Z"
+    },
+    {
+      "id": "guardian:world/2026/oct/20/japan-mars-moon-mission-phobos-collect-rocks",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "‘Once-in-a-lifetime chance’: Japan launches historic mission to collect rocks from Mars’s moon Phobos",
+      "summary": "Scientists hope Martian material collected will shed light on the origins of the solar system and life on Earth",
+      "url": "https://www.theguardian.com/world/2026/oct/20/japan-mars-moon-mission-phobos-collect-rocks",
+      "imageUrl": "https://media.guim.co.uk/8b8c7baa851530aa5cc92126c0aa8893b34bf1b7/0_63_3016_2414/500.jpg",
+      "authors": [
+        "Justin McCurry"
+      ],
+      "category": "world",
+      "publishedAt": "2026-10-19T23:37:57Z"
+    },
+    {
+      "id": "guardian:politics/2026/oct/20/greens-adrian-ramsay-council-groups-reject-zionism-racism-policy",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Ex-Greens co-leader urges council groups to reject Zionism policy ",
+      "summary": "Exclusive: Adrian Ramsay calls conference motion a distraction and says councillors should maintain coalitions where possible",
+      "url": "https://www.theguardian.com/politics/2026/oct/20/greens-adrian-ramsay-council-groups-reject-zionism-racism-policy",
+      "imageUrl": "https://media.guim.co.uk/2dedaa4fc6810a5548c11db4cc2a2e3e7fd5e5ed/890_0_5230_4184/500.jpg",
+      "authors": [
+        "Peter Walker"
+      ],
+      "category": "politics",
+      "publishedAt": "2026-10-20T08:55:36Z"
+    },
+    {
+      "id": "guardian:politics/2026/oct/19/burnham-urges-officials-radical-options-thames-water-public-control",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Burnham urges officials to come up with more radical options for Thames Water",
+      "summary": "Exclusive: Utility seen as ‘litmus test’ of PM’s promise to bring ‘essentials of life’ under public control",
+      "url": "https://www.theguardian.com/politics/2026/oct/19/burnham-urges-officials-radical-options-thames-water-public-control",
+      "imageUrl": "https://media.guim.co.uk/557b0a44f25778da6a50036261f7471b5b398f66/155_0_3008_2406/500.jpg",
+      "authors": [
+        "Pippa Crerar",
+        "Jessica Elgot",
+        "Kiran Stacey"
+      ],
+      "category": "politics",
+      "publishedAt": "2026-10-19T18:37:14Z"
+    },
+    {
+      "id": "guardian:politics/2026/oct/19/itv-expose-racism-misogyny-reform",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "ITV’s exposé of racism and misogyny in Reform? Just a few (more) bad apples | John Crace",
+      "summary": "While the party’s MPs went into hiding, it was left to its failed byelection candidate Matt Goodwin to defend it",
+      "url": "https://www.theguardian.com/politics/2026/oct/19/itv-expose-racism-misogyny-reform",
+      "imageUrl": "https://media.guim.co.uk/8b6c2cfa09b9dc5a9d6a918e279023091bb25fca/181_0_3750_3000/500.jpg",
+      "authors": [
+        "John Crace"
+      ],
+      "category": "politics",
+      "publishedAt": "2026-10-19T17:42:46Z"
+    },
+    {
+      "id": "guardian:politics/2026/oct/19/migration-energy-secretary-mahmood-fahnbulleh",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Minister says Mahmood’s migration policy will ‘prolong integration’",
+      "summary": "In now-removed post, Miatta Fahnbulleh criticised home secretary’s proposal to extend qualifying period for settlement in UK",
+      "url": "https://www.theguardian.com/politics/2026/oct/19/migration-energy-secretary-mahmood-fahnbulleh",
+      "imageUrl": "https://media.guim.co.uk/dfcc70efcb27c5184b6220e52b45a0f79a6ad134/48_0_4473_3581/500.jpg",
+      "authors": [
+        "Jessica Elgot",
+        "Kiran Stacey"
+      ],
+      "category": "politics",
+      "publishedAt": "2026-10-19T17:35:17Z"
+    },
+    {
+      "id": "guardian:politics/2026/oct/19/we-need-to-stop-disinformation-in-uk-political-adverts-heres-a-chance-to-do-so",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "We need to stop disinformation in UK political adverts. Here’s a chance to do so | Letter",
+      "summary": "Letters: Alex Tait on a proposed amendment to the representation of the people bill, and Dr Joseph Mullen on Russian interference in the Brexit referendum",
+      "url": "https://www.theguardian.com/politics/2026/oct/19/we-need-to-stop-disinformation-in-uk-political-adverts-heres-a-chance-to-do-so",
+      "imageUrl": "https://media.guim.co.uk/480eed546c13cb30afc122dc8f8fb7e7218f0abb/342_0_3601_2881/500.jpg",
+      "authors": [],
+      "category": "politics",
+      "publishedAt": "2026-10-19T17:17:33Z"
+    },
+    {
+      "id": "guardian:politics/live/2026/oct/19/andy-burnham-labour-children-welfare-neets-kemi-badenoch-conservatives-nigel-farage-reform-latest-news-updates",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "No 10: Hegseth ‘wrong’ to say most non-US Nato soldiers didn’t fight in Afghanistan – as it happened",
+      "summary": "Downing Street delivered a rare rebuke to a senior member of Donald Trump’s administration",
+      "url": "https://www.theguardian.com/politics/live/2026/oct/19/andy-burnham-labour-children-welfare-neets-kemi-badenoch-conservatives-nigel-farage-reform-latest-news-updates",
+      "imageUrl": "https://media.guim.co.uk/980ecfaaf74456927e0f8d295853ce135c1b14cf/691_0_3939_3153/500.jpg",
+      "authors": [
+        "Andrew Sparrow"
+      ],
+      "category": "politics",
+      "publishedAt": "2026-10-19T16:18:07Z"
+    },
+    {
+      "id": "guardian:politics/2026/oct/19/farage-claim-that-5m-was-reward-for-brexit-was-not-press-office-line-close-aide-says",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Farage claim that £5m was reward for Brexit was ‘not press office line’, close aide says",
+      "summary": "Exclusive: Undercover footage of Dan Jukes raises fresh questions about Reform leader’s statement that £5m gift was for security",
+      "url": "https://www.theguardian.com/politics/2026/oct/19/farage-claim-that-5m-was-reward-for-brexit-was-not-press-office-line-close-aide-says",
+      "imageUrl": "https://media.guim.co.uk/2cad9221591dc08843aa6252d545b8132beb1868/735_0_6827_5464/500.jpg",
+      "authors": [
+        "Anna Isaac"
+      ],
+      "category": "politics",
+      "publishedAt": "2026-10-19T16:16:23Z"
+    },
+    {
+      "id": "guardian:politics/2026/oct/19/hywel-lloyd-obituary",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Hywel Lloyd obituary",
+      "summary": "Other lives: Public policy consultant on sustainability who led Labour’s campaign to get elected in rural and coastal areas",
+      "url": "https://www.theguardian.com/politics/2026/oct/19/hywel-lloyd-obituary",
+      "imageUrl": "https://media.guim.co.uk/634ad614a1452ed55713c2781e8a00f037f567a6/0_184_1230_984/500.jpg",
+      "authors": [
+        "Polly Billington"
+      ],
+      "category": "politics",
+      "publishedAt": "2026-10-19T15:51:12Z"
+    },
+    {
+      "id": "guardian:business/2026/oct/20/thames-water-creditors-former-labour-minister-john-hutton-rescue-deal",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Thames Water creditors secure former Labour minister to drive rescue deal",
+      "summary": "Stricken UK water supplier lines up John Hutton as independent chair designate if takeover goes ahead",
+      "url": "https://www.theguardian.com/business/2026/oct/20/thames-water-creditors-former-labour-minister-john-hutton-rescue-deal",
+      "imageUrl": "https://media.guim.co.uk/2b6bdeea37e0ca32ddf4d68c86a653186c7297b5/146_0_1708_1366/500.jpg",
+      "authors": [
+        "Julia Kollewe"
+      ],
+      "category": "business",
+      "publishedAt": "2026-10-20T10:49:23Z"
+    },
+    {
+      "id": "guardian:business/2026/oct/20/mukesh-ambani-jio-platforms-ipo-india-stock-market",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Billionaire Mukesh Ambani launches India’s biggest-ever IPO",
+      "summary": "Low-cost broadband provider Jio Platforms aims for £81bn valuation when it floats on the stock market on Wednesday",
+      "url": "https://www.theguardian.com/business/2026/oct/20/mukesh-ambani-jio-platforms-ipo-india-stock-market",
+      "imageUrl": "https://media.guim.co.uk/3ae335b7e0e881c618a8eb3edcc27734c745f17e/510_0_4583_3668/500.jpg",
+      "authors": [
+        "Julia Kollewe"
+      ],
+      "category": "business",
+      "publishedAt": "2026-10-20T09:53:27Z"
+    },
+    {
+      "id": "guardian:business/2026/oct/20/revolut-down-app-cards-service-disruption",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Millions unable to use Revolut app or cards as company suffers ‘service disruption’",
+      "summary": "Lloyds Bank and other companies also affected by outages thought to be linked to issues with Google’s cloud services",
+      "url": "https://www.theguardian.com/business/2026/oct/20/revolut-down-app-cards-service-disruption",
+      "imageUrl": "https://media.guim.co.uk/d58e3aac6f0229d8898fb9662f67f64e3d40e5f7/213_0_2915_2333/500.jpg",
+      "authors": [
+        "Julia Kollewe"
+      ],
+      "category": "business",
+      "publishedAt": "2026-10-20T09:45:39Z"
+    },
+    {
+      "id": "guardian:money/2026/oct/20/are-you-a-first-time-buyer-in-england-would-the-governments-your-first-home-scheme-help-you",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Are you a first-time buyer in England? Would the government’s Your First Home scheme help you? ",
+      "summary": "We would like to speak to people in England who are planning to buy a new-build flat or house as their first home",
+      "url": "https://www.theguardian.com/money/2026/oct/20/are-you-a-first-time-buyer-in-england-would-the-governments-your-first-home-scheme-help-you",
+      "imageUrl": "https://media.guim.co.uk/2cd536d49329101a02b28fea60b2a9074498551c/120_0_2760_2209/500.jpg",
+      "authors": [
+        "Guardian community team"
+      ],
+      "category": "business",
+      "publishedAt": "2026-10-20T09:42:47Z"
+    },
+    {
+      "id": "guardian:business/2026/oct/20/uk-unemployment-rate-surprise-drop",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Surprise drop in UK unemployment to 4.7% as John Healey’s first budget looms",
+      "summary": "Latest ONS data presents mixed picture ahead of budget amid slump in job vacancies and analysts warning labour market is ‘running on idle’",
+      "url": "https://www.theguardian.com/business/2026/oct/20/uk-unemployment-rate-surprise-drop",
+      "imageUrl": "https://media.guim.co.uk/620a3507183ab101881df40acb747d5e30fe4448/451_0_4774_3819/500.jpg",
+      "authors": [
+        "Phillip Inman",
+        "Graeme Wearden"
+      ],
+      "category": "business",
+      "publishedAt": "2026-10-20T08:39:27Z"
+    },
+    {
+      "id": "guardian:business/nils-pratley-on-finance/2026/oct/20/modest-increase-bank-taxes-not-end-of-world-for-lenders",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "A modest increase in bank taxes is not the end of the world for lenders | Nils Pratley",
+      "summary": "As long as Healey doesn’t go overboard, a small turn on surcharge dial will not seriously undermine flow of capital",
+      "url": "https://www.theguardian.com/business/nils-pratley-on-finance/2026/oct/20/modest-increase-bank-taxes-not-end-of-world-for-lenders",
+      "imageUrl": "https://media.guim.co.uk/c4cc276888e266f5c8b2cf7c5c0221c885a4e61f/368_0_4265_3413/500.jpg",
+      "authors": [
+        "Nils Pratley"
+      ],
+      "category": "business",
+      "publishedAt": "2026-10-20T08:00:20Z"
+    },
+    {
+      "id": "guardian:money/2026/oct/20/vinted-sellers-banned-sales",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "‘No real sense of appeal’: Vinted sellers complain of unfair account ‘bans’",
+      "summary": "Some users claim online marketplace’s automated systems stack odds against them when sales go wrong",
+      "url": "https://www.theguardian.com/money/2026/oct/20/vinted-sellers-banned-sales",
+      "imageUrl": "https://media.guim.co.uk/8792238d2c596711322ae3496d3578aa51c9422c/395_0_4228_3383/500.jpg",
+      "authors": [
+        "Sarah Marsh"
+      ],
+      "category": "business",
+      "publishedAt": "2026-10-20T06:00:19Z"
+    },
+    {
+      "id": "guardian:business/2026/oct/20/bradford-railway-station-transform-travel-north",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "New Bradford railway station will ‘transform travel across the north’",
+      "summary": "Transport hub will offer through trains between Leeds and Manchester with ‘turn-up-and-go’ service",
+      "url": "https://www.theguardian.com/business/2026/oct/20/bradford-railway-station-transform-travel-north",
+      "imageUrl": "https://media.guim.co.uk/f36f236e9d33a48811c65ed343ba541b824490d3/780_0_4295_3436/500.jpg",
+      "authors": [
+        "Gwyn Topham"
+      ],
+      "category": "business",
+      "publishedAt": "2026-10-20T05:00:16Z"
+    },
+    {
+      "id": "guardian:business/2026/oct/20/ai-stock-market-boom-beginning-of-the-end-imf-wallstreet-nasdaq",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Is this the beginning of the end of the AI stock market boom? ",
+      "summary": "After a wobble on the tech-heavy Nasdaq, some AI market observers think a reassessment of the potential value of various businesses may be under way",
+      "url": "https://www.theguardian.com/business/2026/oct/20/ai-stock-market-boom-beginning-of-the-end-imf-wallstreet-nasdaq",
+      "imageUrl": "https://media.guim.co.uk/ddfb561650f575c6123c0a9b57256c95a64a8ee8/182_0_3595_2877/500.jpg",
+      "authors": [
+        "Patrick Commins"
+      ],
+      "category": "business",
+      "publishedAt": "2026-10-20T02:29:19Z"
+    },
+    {
+      "id": "guardian:technology/2026/oct/20/googlebook-review-google-laptops-chromeos-android",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Googlebook review: Google’s new laptops are woefully underbaked",
+      "summary": "Great hardware let down by software flaws on these pricey machines that combine ChromeOS with Android",
+      "url": "https://www.theguardian.com/technology/2026/oct/20/googlebook-review-google-laptops-chromeos-android",
+      "imageUrl": "https://media.guim.co.uk/ee163d0f417072d3807edd7c97356a837cab552d/584_0_5840_4672/500.jpg",
+      "authors": [
+        "Samuel Gibbs"
+      ],
+      "category": "technology",
+      "publishedAt": "2026-10-20T06:00:18Z"
+    },
+    {
+      "id": "guardian:technology/2026/oct/19/ai-tool-predict-cancer-survival-patient-selfie",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "New AI tool can predict cancer survival by a single patient selfie, study suggests",
+      "summary": "System can estimate a person’s biological age and predict chances of cancer survival from a single photograph",
+      "url": "https://www.theguardian.com/technology/2026/oct/19/ai-tool-predict-cancer-survival-patient-selfie",
+      "imageUrl": "https://media.guim.co.uk/fa40f496b03a1db7776f47e3b79ed8b0858aef61/722_304_4620_3696/500.jpg",
+      "authors": [
+        "Andrew Gregory"
+      ],
+      "category": "technology",
+      "publishedAt": "2026-10-19T22:30:08Z"
+    },
+    {
+      "id": "guardian:technology/2026/oct/20/workplace-privacy-concerns-employers-use-ai-to-monitor-staff",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Calls to strengthen workplace privacy in Australia as employers turn to AI to track staff",
+      "summary": "Monitoring tools common in a range of workplaces, including factories, office jobs, delivery work and in retail – often without employees being informed",
+      "url": "https://www.theguardian.com/technology/2026/oct/20/workplace-privacy-concerns-employers-use-ai-to-monitor-staff",
+      "imageUrl": "https://media.guim.co.uk/c2972d767784a668b4664e394a234487682599ea/497_0_5200_4160/500.jpg",
+      "authors": [
+        "Josh Taylor"
+      ],
+      "category": "technology",
+      "publishedAt": "2026-10-19T14:00:03Z"
+    },
+    {
+      "id": "guardian:technology/2026/oct/19/ai-firm-anthropic-to-commit-shares-to-fund-for-public-good",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "AI firm Anthropic to commit 5% of shares to fund for ‘public good’",
+      "summary": "The $48bn giveaway comes amid concerns about the tech and as the company prepares for a stock market listing",
+      "url": "https://www.theguardian.com/technology/2026/oct/19/ai-firm-anthropic-to-commit-shares-to-fund-for-public-good",
+      "imageUrl": "https://media.guim.co.uk/2790d74966de266025ee31e1975f1f2ce9024d36/387_0_2915_2333/500.jpg",
+      "authors": [
+        "Lauren Almeida"
+      ],
+      "category": "technology",
+      "publishedAt": "2026-10-19T12:51:04Z"
+    },
+    {
+      "id": "guardian:technology/2026/oct/19/us-teens-nudify-apps-apple-google-parental-controls",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "US teens can access ‘nudify’ apps despite Apple and Google’s parental controls, report finds",
+      "summary": "Exclusive: Using test accounts, Tech Transparency Project downloaded 135 apps with features to generate nonconsensual nude imagery",
+      "url": "https://www.theguardian.com/technology/2026/oct/19/us-teens-nudify-apps-apple-google-parental-controls",
+      "imageUrl": "https://media.guim.co.uk/1b5ce85190e6d89e4db3acb2c4d28f253a101ac3/500_0_5000_4000/500.jpg",
+      "authors": [
+        "Johana Bhuiyan"
+      ],
+      "category": "technology",
+      "publishedAt": "2026-10-19T10:00:05Z"
+    },
+    {
+      "id": "guardian:technology/2026/oct/18/anthropic-ai-worm-worries",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "What are self-replicating ‘AI worms’, and why is Anthropic worried about them? ",
+      "summary": "The tech company says successful AI worms need more capability on less powerful devices, but current trends make that feasible by the end of the year",
+      "url": "https://www.theguardian.com/technology/2026/oct/18/anthropic-ai-worm-worries",
+      "imageUrl": "https://media.guim.co.uk/34972ab7bdc22bd58b4b430c49ae81493971934a/234_0_5907_4725/500.jpg",
+      "authors": [
+        "Joseph Menn in San Francisco"
+      ],
+      "category": "technology",
+      "publishedAt": "2026-10-18T13:30:00Z"
+    },
+    {
+      "id": "guardian:technology/2026/oct/18/world-bank-artificial-intelligence-developing-economies",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "World Bank says ‘small AI’ could transform developing countries",
+      "summary": "Bank’s chief knowledge officer says the tech could speed up economic development from centuries to decades",
+      "url": "https://www.theguardian.com/technology/2026/oct/18/world-bank-artificial-intelligence-developing-economies",
+      "imageUrl": "https://media.guim.co.uk/eb8682cc7e3f9007f9509c961275a6fa6b472f92/446_0_3621_2896/500.jpg",
+      "authors": [
+        "Heather Stewart"
+      ],
+      "category": "technology",
+      "publishedAt": "2026-10-18T10:00:56Z"
+    },
+    {
+      "id": "guardian:technology/2026/oct/17/artificial-intelligence-ai-labour-government-safety-uk-extremism",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "The power of AI is worrying senior Labour figures – as is the fear of ‘falling behind the public’ ",
+      "summary": "Westminster appears to be waking up to warnings over AI safety, with concerns over its use by extremist groups and bad actors",
+      "url": "https://www.theguardian.com/technology/2026/oct/17/artificial-intelligence-ai-labour-government-safety-uk-extremism",
+      "imageUrl": "https://media.guim.co.uk/e0d13c6ce0b90597a109492537328402905b91ca/719_0_7202_5760/500.jpg",
+      "authors": [
+        "Rowena Mason",
+        "Dan Milmo"
+      ],
+      "category": "technology",
+      "publishedAt": "2026-10-17T11:33:20Z"
+    },
+    {
+      "id": "guardian:technology/2026/oct/17/fake-linda-and-me-mystery-fraudster-stole-my-byline",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Fake Linda and me: the Agatha Christie-worthy mystery of the fraudster who stole my byline",
+      "summary": "How a string of bizarre events led writer Linda Geddes to don her sleuthing cap and dig into a world of shadowy impersonators",
+      "url": "https://www.theguardian.com/technology/2026/oct/17/fake-linda-and-me-mystery-fraudster-stole-my-byline",
+      "imageUrl": "https://media.guim.co.uk/a426a8b6b459aed32bd6a8e431b13736369c3b21/676_119_6732_5385/500.jpg",
+      "authors": [
+        "Linda Geddes"
+      ],
+      "category": "technology",
+      "publishedAt": "2026-10-17T11:00:30Z"
+    },
+    {
+      "id": "guardian:technology/2026/oct/17/russia-threat-uk-former-foreign-office-head-lord-peter-ricketts",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Ministers must be honest about Russian threat to UK, says former Foreign Office head",
+      "summary": "Peter Ricketts calls for more resilience in protecting banking, energy and water systems from cyber-assaults",
+      "url": "https://www.theguardian.com/technology/2026/oct/17/russia-threat-uk-former-foreign-office-head-lord-peter-ricketts",
+      "imageUrl": "https://media.guim.co.uk/8580aa29134c097092b2760c87b5d620add039e7/111_0_455_364/master/455.jpg",
+      "authors": [
+        "Harry Taylor"
+      ],
+      "category": "technology",
+      "publishedAt": "2026-10-17T10:19:32Z"
+    },
+    {
+      "id": "guardian:environment/2026/oct/20/countries-pushing-vital-global-climate-report-delayed",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Why have countries been pushing for a vital global climate report to be delayed?",
+      "summary": "Saudi Arabia, Russia and China among those claiming developed countries have skewed findings of IPCC review",
+      "url": "https://www.theguardian.com/environment/2026/oct/20/countries-pushing-vital-global-climate-report-delayed",
+      "imageUrl": "https://media.guim.co.uk/4e8bc175614db946e21c0ce67854ce34f497f5af/599_0_6827_5464/500.jpg",
+      "authors": [
+        "Fiona Harvey"
+      ],
+      "category": "science",
+      "publishedAt": "2026-10-20T06:00:20Z"
+    },
+    {
+      "id": "guardian:environment/2026/oct/20/the-pest-ill-never-forget-maggots-rained-down-like-hail",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "The pest I’ll never forget: the maggots that rained down like hail",
+      "summary": "The record-breaking heat in London, in summer 2022, resulted in an appalling problem in my neighbourhood – which one man took on, armed only with a jet wash",
+      "url": "https://www.theguardian.com/environment/2026/oct/20/the-pest-ill-never-forget-maggots-rained-down-like-hail",
+      "imageUrl": "https://media.guim.co.uk/7c261d855d24adccd05ccd9e9a401fb48bb6fefe/0_0_3000_2400/500.jpg",
+      "authors": [
+        "Jenny Stevens"
+      ],
+      "category": "science",
+      "publishedAt": "2026-10-20T06:00:19Z"
+    },
+    {
+      "id": "guardian:environment/2026/oct/20/country-diary-a-species-brought-to-the-edge-of-extinction-recovering-in-the-fens",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Country diary: A species brought to the edge of extinction, recovering in the fens | Mark Cocker",
+      "summary": "Ouse Fen, Cambridgeshire: The great egret’s story is remarkable, as is the conversion of this low-grade agricultural land into one of the richest wetlands in Britain",
+      "url": "https://www.theguardian.com/environment/2026/oct/20/country-diary-a-species-brought-to-the-edge-of-extinction-recovering-in-the-fens",
+      "imageUrl": "https://media.guim.co.uk/740ac5e2feaf6d7f8a511e0eb4e424b3468c5862/0_0_3172_2538/500.jpg",
+      "authors": [
+        "Mark Cocker"
+      ],
+      "category": "science",
+      "publishedAt": "2026-10-20T04:30:15Z"
+    },
+    {
+      "id": "guardian:environment/2026/oct/19/study-europe-wild-bee-species-decline-",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "‘Crucial opportunity to act’ as study finds most of Europe’s wild bee species in decline",
+      "summary": "As Cop17 kicks off, records since 1921 show more bee species declining than increasing in all parts of Europe except the Alps",
+      "url": "https://www.theguardian.com/environment/2026/oct/19/study-europe-wild-bee-species-decline-",
+      "imageUrl": "https://media.guim.co.uk/866c33745465d9af42c6e781c991b6d04313522e/289_77_1694_1356/500.jpg",
+      "authors": [
+        "Ajit Niranjan"
+      ],
+      "category": "science",
+      "publishedAt": "2026-10-19T19:00:04Z"
+    },
+    {
+      "id": "guardian:environment/2026/oct/19/stop-cash-for-trash-housebuilding-norfolk-broads-labour-mp-chris-hinchcliffe",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Stop ‘cash to trash’ housebuilding in Norfolk Broads, says Labour MP ",
+      "summary": "Exclusive: Chris Hinchliff urges environment watchdog to block rules that will allow almost 16,000 new homes in one of UK’s most protected areas",
+      "url": "https://www.theguardian.com/environment/2026/oct/19/stop-cash-for-trash-housebuilding-norfolk-broads-labour-mp-chris-hinchcliffe",
+      "imageUrl": "https://media.guim.co.uk/a83c3b9a2bba65e79cbe7089872ef93f7a93454f/1345_158_3644_2915/500.jpg",
+      "authors": [
+        "Sandra Laville"
+      ],
+      "category": "science",
+      "publishedAt": "2026-10-19T12:20:08Z"
+    },
+    {
+      "id": "guardian:environment/2026/oct/19/can-countries-deliver-on-a-deal-to-save-the-worlds-plants-and-animals",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Four years ago countries made a historic deal to save nature. Is it dead in the water?",
+      "summary": "So far not a single target of the plan has been met. As negotiators convene for Cop17, the pressure is on to find a way to honour the commitments made at previous summits",
+      "url": "https://www.theguardian.com/environment/2026/oct/19/can-countries-deliver-on-a-deal-to-save-the-worlds-plants-and-animals",
+      "imageUrl": "https://media.guim.co.uk/c24d8e7952d5ccf505825fac1ca91e813ff32b12/106_0_1920_1536/500.jpg",
+      "authors": [
+        "Patrick Greenfield"
+      ],
+      "category": "science",
+      "publishedAt": "2026-10-19T10:16:09Z"
+    },
+    {
+      "id": "guardian:environment/2026/oct/19/seabird-numbers-bounce-back-solent-region-avian-flu-rspb",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Seabird numbers bounce back in Solent region after 2022 avian flu wipeout",
+      "summary": "Conservation work by RSPB has led to recovery of terns, gulls, plovers and oystercatchers on English south coast",
+      "url": "https://www.theguardian.com/environment/2026/oct/19/seabird-numbers-bounce-back-solent-region-avian-flu-rspb",
+      "imageUrl": "https://media.guim.co.uk/67c33f842c45d9f3f30050a5d803005709071cd4/19_0_1125_900/500.jpg",
+      "authors": [
+        "Patrick Barkham"
+      ],
+      "category": "science",
+      "publishedAt": "2026-10-19T06:00:21Z"
+    },
+    {
+      "id": "guardian:science/2026/oct/19/orionid-meteor-shower-halley-comet-starwatch",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Starwatch: Catch the Orionid meteor shower streak across the night sky",
+      "summary": "As Earth passes through dust left by Halley’s comet, observers may see 10-20 fragments per hour",
+      "url": "https://www.theguardian.com/science/2026/oct/19/orionid-meteor-shower-halley-comet-starwatch",
+      "imageUrl": "https://media.guim.co.uk/ed0e8a41fd06e32e773050302d8439c1d4686730/727_0_1629_1304/500.jpg",
+      "authors": [
+        "Stuart Clark"
+      ],
+      "category": "science",
+      "publishedAt": "2026-10-19T05:00:21Z"
+    },
+    {
+      "id": "guardian:environment/2026/oct/19/tap-water-no-longer-drinkable-norwegian-town-climate-related-thawing-heavy-metals-arctic-longyearbyen-svalbard",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Tap water no longer drinkable in Norwegian town as climate-related thawing releases heavy metals",
+      "summary": "Warning for other Arctic communities as residents told not to use water in Longyearbyen in Svalbard, one of the fastest-warming places in the world",
+      "url": "https://www.theguardian.com/environment/2026/oct/19/tap-water-no-longer-drinkable-norwegian-town-climate-related-thawing-heavy-metals-arctic-longyearbyen-svalbard",
+      "imageUrl": "https://media.guim.co.uk/5063f973bf5f78d337e68238325b3fc349649b42/833_0_4260_3408/500.jpg",
+      "authors": [
+        "Karen McVeigh"
+      ],
+      "category": "science",
+      "publishedAt": "2026-10-19T05:00:20Z"
+    },
+    {
+      "id": "guardian:society/2026/oct/20/young-people-youth-protests-france-india-albania",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Young people: share your views on youth protests around the world",
+      "summary": "Young people in France, India and Albania and other parts of the world are protesting and we want to hear from them about the reasons why they’re taking to the streets",
+      "url": "https://www.theguardian.com/society/2026/oct/20/young-people-youth-protests-france-india-albania",
+      "imageUrl": "https://media.guim.co.uk/3ead2b3098c75ad9c0b041666ca5c0f0e5b6735e/1376_0_6880_5504/500.jpg",
+      "authors": [
+        "Guardian community team"
+      ],
+      "category": "health",
+      "publishedAt": "2026-10-20T10:04:52Z"
+    },
+    {
+      "id": "guardian:society/2026/oct/20/neets-explainer-alan-milburn-young-people-work",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Who exactly will be affected by the UK review of benefits for young people?",
+      "summary": "Around one in eight 16- to 24-year-olds are ‘Neet’ – and Alan Milburn is hinting that the overhaul of their support may be controversial",
+      "url": "https://www.theguardian.com/society/2026/oct/20/neets-explainer-alan-milburn-young-people-work",
+      "imageUrl": "https://media.guim.co.uk/b304d2e44463bd4ebd03f2c7bf517c4f6b4caa56/0_0_4160_3330/500.jpg",
+      "authors": [
+        "Patrick Butler"
+      ],
+      "category": "health",
+      "publishedAt": "2026-10-20T06:00:17Z"
+    },
+    {
+      "id": "guardian:society/2026/oct/20/public-support-founding-principles-nhs-falling-across-uk-population",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Public support for founding principles of NHS is falling across UK population",
+      "summary": "Rise in economic hardship and changes in attitudes towards migration could explain drop in support, experts say",
+      "url": "https://www.theguardian.com/society/2026/oct/20/public-support-founding-principles-nhs-falling-across-uk-population",
+      "imageUrl": "https://media.guim.co.uk/5838b7afdf71058c902aa9318d823733d5f570d5/0_41_2516_2011/500.jpg",
+      "authors": [
+        "Denis Campbell"
+      ],
+      "category": "health",
+      "publishedAt": "2026-10-20T05:00:16Z"
+    },
+    {
+      "id": "guardian:society/2026/oct/19/funding-social-care-is-a-collective-responsibility",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Funding social care is a collective responsibility | Letters",
+      "summary": "Letters: Roger Steer says the solution is to adopt the NHS model, Janet Dubé suggests an audit, while Sally Byers says language that respects people living with dementia is crucial",
+      "url": "https://www.theguardian.com/society/2026/oct/19/funding-social-care-is-a-collective-responsibility",
+      "imageUrl": "https://media.guim.co.uk/d5df8e3d1502469a6bf608c00679be31a590ce7a/0_0_3986_3189/500.jpg",
+      "authors": [],
+      "category": "health",
+      "publishedAt": "2026-10-19T17:18:11Z"
+    },
+    {
+      "id": "guardian:society/2026/oct/19/children-services-state-of-emergency-hardest-places-england",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Youth services in parts of England in state of emergency, children’s commissioner says",
+      "summary": "Rachel de Souza names Middlesbrough and Hounslow among hardest places in which to grow up and says some children are being ‘radically failed’",
+      "url": "https://www.theguardian.com/society/2026/oct/19/children-services-state-of-emergency-hardest-places-england",
+      "imageUrl": "https://media.guim.co.uk/7f312989177adf12419e64e1725ea82ac4d99649/106_0_3193_2554/500.jpg",
+      "authors": [
+        "Patrick Butler"
+      ],
+      "category": "health",
+      "publishedAt": "2026-10-19T12:11:45Z"
+    },
+    {
+      "id": "guardian:society/2026/oct/19/london-tower-residents-fear-disaster-post-grenfell-scaffolding",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "‘We’re living in darkness’: six years of scaffolding, still no post-Grenfell cladding",
+      "summary": "Building safety regulator delays leave London tower block beset by security and vandalism problems",
+      "url": "https://www.theguardian.com/society/2026/oct/19/london-tower-residents-fear-disaster-post-grenfell-scaffolding",
+      "imageUrl": "https://media.guim.co.uk/ba6e6a0dd2af20081d25f798409211087eb9a331/479_0_6827_5464/500.jpg",
+      "authors": [
+        "Jessica Murray"
+      ],
+      "category": "health",
+      "publishedAt": "2026-10-19T05:00:22Z"
+    },
+    {
+      "id": "guardian:society/2026/oct/19/why-are-some-nhs-maternity-units-facing-closure",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Why are some NHS maternity units facing closure?",
+      "summary": "Merging units could improve safety, says NHS leader, but leave women in rural and coastal areas travelling further to give birth",
+      "url": "https://www.theguardian.com/society/2026/oct/19/why-are-some-nhs-maternity-units-facing-closure",
+      "imageUrl": "https://media.guim.co.uk/72b41b7f3dbf9d16759635aee2b748035d3c86bb/143_0_4275_3420/500.jpg",
+      "authors": [
+        "Denis Campbell"
+      ],
+      "category": "health",
+      "publishedAt": "2026-10-19T05:00:21Z"
+    },
+    {
+      "id": "guardian:society/2026/oct/19/revealed-britons-using-an-african-islands-name-to-aid-underground-gambling",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Revealed: African island fights offshore gambling network linked to UK family",
+      "summary": "London-based property investors deny selling licences to casinos claiming to be based on Anjouan, a tiny Indian Ocean island",
+      "url": "https://www.theguardian.com/society/2026/oct/19/revealed-britons-using-an-african-islands-name-to-aid-underground-gambling",
+      "imageUrl": "https://media.guim.co.uk/b82a39531b17295b909c13a7e1a5cd96ce173b6f/336_0_4239_3389/500.jpg",
+      "authors": [
+        "Rob Davies"
+      ],
+      "category": "health",
+      "publishedAt": "2026-10-19T05:00:20Z"
+    },
+    {
+      "id": "guardian:society/2026/oct/19/up-to-20-maternity-units-england-shut-nhs-warning-matthew-hopkins",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Up to 20 maternity units in England may have to shut, NHS leader warns",
+      "summary": "Exclusive: NHS Alliance’s acute care director says centralisation of services ‘inevitable’ to ensure safe care",
+      "url": "https://www.theguardian.com/society/2026/oct/19/up-to-20-maternity-units-england-shut-nhs-warning-matthew-hopkins",
+      "imageUrl": "https://media.guim.co.uk/076f881a15424e2bad319f231e1efbe86618ed39/910_0_4557_3646/500.jpg",
+      "authors": [
+        "Denis Campbell"
+      ],
+      "category": "health",
+      "publishedAt": "2026-10-19T05:00:19Z"
+    },
+    {
+      "id": "guardian:society/2026/oct/18/cut-benefits-fund-employment-support-young-people-neet-review-author-alan-milburn",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Cut benefits to fund work support for young people, says Neet review author Alan Milburn",
+      "summary": "Exclusive: Former health secretary says upfront investment in support is needed ‘if we are going to end the Neet crisis’",
+      "url": "https://www.theguardian.com/society/2026/oct/18/cut-benefits-fund-employment-support-young-people-neet-review-author-alan-milburn",
+      "imageUrl": "https://media.guim.co.uk/c641e402d808f00f61489b84a29a01069fdf14bf/902_15_3323_2659/500.jpg",
+      "authors": [
+        "Kiran Stacey",
+        "Anna Bawden"
+      ],
+      "category": "health",
+      "publishedAt": "2026-10-18T18:30:19Z"
+    },
+    {
+      "id": "guardian:sport/2026/oct/20/england-women-red-roses-canada-end-epic-winning-run-rugby-union",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "The Breakdown | ‘Freer’ Red Roses resolve to come back stronger after Canada end epic run",
+      "summary": "A first defeat in four years could be liberating for England after so long fighting to preserve their historic unbeaten run",
+      "url": "https://www.theguardian.com/sport/2026/oct/20/england-women-red-roses-canada-end-epic-winning-run-rugby-union",
+      "imageUrl": "https://media.guim.co.uk/602d973e944caf72544ad513b7411d7dc0713d9e/501_0_4098_3278/500.jpg",
+      "authors": [
+        "Sarah Rendell"
+      ],
+      "category": "sports",
+      "publishedAt": "2026-10-20T10:00:57Z"
+    },
+    {
+      "id": "guardian:sport/2026/oct/20/nba-2026-27-season-predictions-a-knicks-repeat-and-lebrons-villain-arc",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "NBA 2026-27 season predictions: A Knicks repeat and LeBron’s villain arc ",
+      "summary": "Our writers give their verdicts on the new season, which tips off Tuesday. Can the Spurs or Thunder thwart a New York repeat? And which youngster will make the superstar leap?",
+      "url": "https://www.theguardian.com/sport/2026/oct/20/nba-2026-27-season-predictions-a-knicks-repeat-and-lebrons-villain-arc",
+      "imageUrl": "https://media.guim.co.uk/05ebad33d113056c7329bf1f959a4bf4135b2a13/0_0_5000_4000/500.jpg",
+      "authors": [
+        "Lee Escobedo",
+        "Bryan Armen Graham",
+        "Andrew Lawrence",
+        "Claire de Lune",
+        "Owen Lewis"
+      ],
+      "category": "sports",
+      "publishedAt": "2026-10-20T09:00:22Z"
+    },
+    {
+      "id": "guardian:football/2026/oct/20/liverpool-villarreal-inigo-perez-iraola-test-of-old-bond",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Villarreal’s Iñigo Pérez ready to meet Iraola again in test of old bond",
+      "summary": "Refused a work permit at Bournemouth, Pérez comes face to face with Liverpool’s head coach Andoni Iraola in Champions League",
+      "url": "https://www.theguardian.com/football/2026/oct/20/liverpool-villarreal-inigo-perez-iraola-test-of-old-bond",
+      "imageUrl": "https://media.guim.co.uk/6c4bff171c37fdaaa54d4033dbe3d8b40317fd5d/0_0_5000_4000/500.jpg",
+      "authors": [
+        "Sid Lowe"
+      ],
+      "category": "sports",
+      "publishedAt": "2026-10-20T07:00:19Z"
+    },
+    {
+      "id": "guardian:football/2026/oct/20/dwight-yorke-interview-manager-ghana-trinidad-and-tobago",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Dwight Yorke: ‘I’m not a kid trying to get into management – I’m a manager’",
+      "summary": "Ghana may soon come calling for Trinidad and Tobago’s former captain and manager, who tells Morgan Ofori that he has more to his CV than Premier League striker and treble winner",
+      "url": "https://www.theguardian.com/football/2026/oct/20/dwight-yorke-interview-manager-ghana-trinidad-and-tobago",
+      "imageUrl": "https://media.guim.co.uk/ec4ae3cdaab26b47620d5a9c17280095b5b89a80/1427_370_7377_5902/500.jpg",
+      "authors": [
+        "Morgan Ofori"
+      ],
+      "category": "sports",
+      "publishedAt": "2026-10-20T07:00:19Z"
+    },
+    {
+      "id": "guardian:sport/2026/oct/20/football-australia-chair-anter-isaac-dismisses-recent-fifa-complaints",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Football Australia chair Anter Isaac dismisses recent Fifa ructions as ‘growing pains’",
+      "summary": "The FA chair has backed the direction of Fifa under Gianni Infantino by playing down concerns around the controversial World Cup privatisation push",
+      "url": "https://www.theguardian.com/sport/2026/oct/20/football-australia-chair-anter-isaac-dismisses-recent-fifa-complaints",
+      "imageUrl": "https://media.guim.co.uk/3deae4b96f96bb626bdb753000ddb7171a54c47d/171_0_1706_1365/500.jpg",
+      "authors": [
+        "Jack Snape"
+      ],
+      "category": "sports",
+      "publishedAt": "2026-10-20T04:40:49Z"
+    },
+    {
+      "id": "guardian:football/2026/oct/19/players-meeting-and-bonding-trip-have-boosted-tottenham-says-de-zerbi",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "‘Like a family’: De Zerbi credits players’ talk and bonding trip for improving Tottenham",
+      "summary": "Roberto De Zerbi revealed a players’ meeting has helped his Tottenham side play with more togetherness",
+      "url": "https://www.theguardian.com/football/2026/oct/19/players-meeting-and-bonding-trip-have-boosted-tottenham-says-de-zerbi",
+      "imageUrl": "https://media.guim.co.uk/f690e7fe461b07a7672e7ed817b0bab1824891a7/283_0_4083_3266/500.jpg",
+      "authors": [
+        "Jacob Steinberg"
+      ],
+      "category": "sports",
+      "publishedAt": "2026-10-19T22:14:44Z"
+    },
+    {
+      "id": "guardian:football/live/2026/oct/19/tottenham-v-coventry-premier-league-live",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Tottenham beat Coventry to claim first Premier League win of season – as it happened",
+      "summary": "The returning James Maddison scored a beauty, with Omar Marmoush and Ben Davies also on target as Spurs won in the league for the first time this season",
+      "url": "https://www.theguardian.com/football/live/2026/oct/19/tottenham-v-coventry-premier-league-live",
+      "imageUrl": "https://media.guim.co.uk/621b365df366f250869ee9d9bc7b8f00711e002b/326_68_1981_1585/500.jpg",
+      "authors": [
+        "Daniel Harris"
+      ],
+      "category": "sports",
+      "publishedAt": "2026-10-19T21:08:31Z"
+    },
+    {
+      "id": "guardian:music/2026/oct/20/the-alonetimes-review-jennifer-walshe-philip-venables",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "The Alonetimes review – frenetic, funny and exhilarating music theatre",
+      "summary": "Six performers navigate a disjointed world of online slang, loneliness and absurdity in the UK premiere of Jennifer Walshe and Philip Venables’ thrillingly original collaboration",
+      "url": "https://www.theguardian.com/music/2026/oct/20/the-alonetimes-review-jennifer-walshe-philip-venables",
+      "imageUrl": "https://media.guim.co.uk/b904f2e826d43d40e0393f2b29443432221e3337/445_0_3750_3000/500.jpg",
+      "authors": [
+        "Flora Willson"
+      ],
+      "category": "entertainment",
+      "publishedAt": "2026-10-20T10:40:31Z"
+    },
+    {
+      "id": "guardian:music/2026/oct/20/taylor-swift-tells-us-to-take-the-lead-could-highly-organised-pop-fans-clinch-victory-for-brazils-lula",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "‘Taylor Swift tells us to take the lead!’ Could highly organised pop fans clinch victory for Brazil’s Lula?",
+      "summary": "Brazil’s famously outspoken fandoms have near-unanimously rallied behind the leftwing presidential candidate. On the streets of São Paulo, they explain their mission",
+      "url": "https://www.theguardian.com/music/2026/oct/20/taylor-swift-tells-us-to-take-the-lead-could-highly-organised-pop-fans-clinch-victory-for-brazils-lula",
+      "imageUrl": "https://media.guim.co.uk/ad03af26871c44572de04d13358a890a7e55b621/1198_1338_2313_1851/500.jpg",
+      "authors": [
+        "Felipe Maia"
+      ],
+      "category": "entertainment",
+      "publishedAt": "2026-10-20T10:23:23Z"
+    },
+    {
+      "id": "guardian:film/2026/oct/20/all-rivers-spill-their-stories-to-the-sea-review-stirring-portrait-of-fishers-driven-to-eco-activism",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "All Rivers Spill Their Stories to the Sea review – stirring portrait of fishers driven to eco-activism",
+      "summary": "With catches down 80%, dead crabs and lobsters washed up on beaches and officials denying any responsibility, Hartlepool seafarers have taken a stand",
+      "url": "https://www.theguardian.com/film/2026/oct/20/all-rivers-spill-their-stories-to-the-sea-review-stirring-portrait-of-fishers-driven-to-eco-activism",
+      "imageUrl": "https://media.guim.co.uk/84f9ae81951c60e50d04c2bd8a000fdf30f77a7b/184_0_3602_2882/500.jpg",
+      "authors": [
+        "Cath Clarke"
+      ],
+      "category": "entertainment",
+      "publishedAt": "2026-10-20T10:00:33Z"
+    },
+    {
+      "id": "guardian:books/2026/oct/20/alone-with-a-book-by-tessa-hadley-review-an-acclaimed-writers-cultural-prescription",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Alone With a Book by Tessa Hadley review – an acclaimed writer’s cultural prescription",
+      "summary": "This collection of essays from the beloved novelist is full of gem-like insights on art and books",
+      "url": "https://www.theguardian.com/books/2026/oct/20/alone-with-a-book-by-tessa-hadley-review-an-acclaimed-writers-cultural-prescription",
+      "imageUrl": "https://media.guim.co.uk/58e210146997cde9a88a77e59379c5b6e2c23b6e/92_1665_5039_4029/500.jpg",
+      "authors": [
+        "Chloë Ashby"
+      ],
+      "category": "entertainment",
+      "publishedAt": "2026-10-20T08:10:57Z"
+    },
+    {
+      "id": "guardian:film/2026/oct/20/monster-mia-review-halloween-pre-teen-animation",
+      "sourceId": "guardian",
+      "publisher": "The Guardian",
+      "title": "Monster Mia review – kooky kid discovers school of beastly besties in wholesome Halloween fun",
+      "summary": "A scrappy girl discovers her tribe – which includes a vegan vampire – at a school for top scarers in this entertaining pre-teen animation",
+      "url": "https://www.theguardian.com/film/2026/oct/20/monster-mia-review-halloween-pre-teen-animation",
+      "imageUrl": "https://media.guim.co.uk/7d0e3a30b075ab4043db3bde0b1967d3ead18be6/390_0_2024_1620/500.jpg",
+      "authors": [
+        "Catherine Bray"
+      ],
+      "category": "entertainment",
+      "publishedAt": "2026-10-20T08:00:20Z"
+    },
+    {
+      "id": "nyt:nyt://article/f20678c8-f3ea-5703-a181-fb83f1cd2704",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "Start-Up Claims to Treat a Patient With A.I.-Created Viruses",
+      "summary": "Certain viruses attack bacteria and can sometimes clear antibiotic-resistant infections. Researchers said they had tailored a virus to attack one patient’s illness.",
+      "url": "https://www.nytimes.com/2026/10/20/science/ai-virus-bacteria-radical-numerics.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/19/20SCI-VIRUS-AI-02-53114-cover/20SCI-VIRUS-AI-02-53114-cover-articleLarge.jpg",
+      "authors": [
+        "Carl Zimmer"
+      ],
+      "category": "science",
+      "publishedAt": "2026-10-20T12:07:12Z"
+    },
+    {
+      "id": "nyt:nyt://article/89c57324-6a34-52a7-a9ee-0a81532d8e62",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "Major Yemeni City Running Out of Food and Water as Houthis Encircle It",
+      "summary": "The Iranian-backed Houthi militia has cut road access to Taiz, besieging one of Yemen’s largest cities, where officials warn of an impending humanitarian disaster.",
+      "url": "https://www.nytimes.com/2026/10/20/world/middleeast/yemen-taiz-houthi-siege.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/20/multimedia/20int-yemen-taiz-1-zhtk/20int-yemen-taiz-1-zhtk-articleLarge.jpg",
+      "authors": [
+        "Saeed Al-Batati",
+        "Vivian Nereim"
+      ],
+      "category": "world",
+      "publishedAt": "2026-10-20T12:04:05Z"
+    },
+    {
+      "id": "nyt:nyt://article/18bb97d3-056e-56b1-a266-b884ec1bba41",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "J Street’s Super PAC Targets Two Republicans Backed by AIPAC",
+      "summary": "The liberal pro-Israel advocacy group’s ads denouncing incumbents in Iowa and Pennsylvania put it at odds with the larger organization for the first time.",
+      "url": "https://www.nytimes.com/2026/10/20/us/j-street-israel-super-pac-republicans-aipac.html",
+      "authors": [
+        "Jennifer Medina"
+      ],
+      "publishedAt": "2026-10-20T12:00:02Z"
+    },
+    {
+      "id": "nyt:nyt://article/492661c1-c504-5c10-b0eb-ed53c8345548",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "Rubio Visits India to Boost Economic Ties Amid New Delhi’s Friction With Trump",
+      "summary": "The secretary of state will meet with Asia’s richest men as Washington seeks a trade deal.",
+      "url": "https://www.nytimes.com/2026/10/20/world/asia/marco-rubio-india-us-trade-deal.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/20/multimedia/20int-rubio-india-fqjh/20int-rubio-india-fqjh-articleLarge.jpg",
+      "authors": [
+        "Mujib Mashal"
+      ],
+      "category": "world",
+      "publishedAt": "2026-10-20T11:54:46Z"
+    },
+    {
+      "id": "nyt:nyt://article/c5d49882-7729-51d2-b4e8-6679a173e5fd",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "Investors Await Musk’s Next Big SpaceX Deal",
+      "summary": "Ahead of SpaceX’s quarterly earnings report, many on Wall Street are wondering whether Elon Musk will combine it with Tesla.",
+      "url": "https://www.nytimes.com/2026/10/20/business/dealbook/musk-spacex-deal-tesla.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/20/multimedia/20db-musk-wgvh/20db-musk-wgvh-articleLarge.jpg",
+      "authors": [
+        "Andrew Ross Sorkin",
+        "Bernhard Warner",
+        "Sarah Kessler",
+        "Michael J. de la Merced",
+        "Niko Gallogly",
+        "Brian O’Keefe",
+        "Sri Muppidi",
+        "Vivienne Walt"
+      ],
+      "category": "business",
+      "publishedAt": "2026-10-20T11:49:31Z"
+    },
+    {
+      "id": "nyt:nyt://article/45192d08-0759-530a-bd58-75eaecf2a0db",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "Hegseth Said to Make Unannounced Visit to Israel for Talks With Netanyahu",
+      "summary": "Defense Secretary Pete Hegseth met with Prime Minister Benjamin Netanyahu, two people with knowledge of the trip said. Israel holds elections in a week.",
+      "url": "https://www.nytimes.com/2026/10/20/world/middleeast/hegseth-netanyahu-trump-israel-election.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/20/multimedia/20int-israel-hegseth-wzmj/20int-israel-hegseth-wzmj-articleLarge.jpg",
+      "authors": [
+        "Natan Odenheimer"
+      ],
+      "category": "world",
+      "publishedAt": "2026-10-20T11:24:04Z"
+    },
+    {
+      "id": "nyt:nyt://article/85605f91-90d3-5a28-b241-ff2a097185d7",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "Google Reports Cloud Disruptions in Europe Region",
+      "summary": "The disruptions began around 7 a.m. in London, the tech giant said. The cause of the outage was not immediately clear.",
+      "url": "https://www.nytimes.com/2026/10/20/technology/google-cloud-down-outage-europe.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/20/multimedia/20xp-cloudoutage-mpgb/20xp-cloudoutage-mpgb-articleLarge.jpg",
+      "authors": [
+        "Leo Sands"
+      ],
+      "category": "technology",
+      "publishedAt": "2026-10-20T10:53:16Z"
+    },
+    {
+      "id": "nyt:nyt://article/007c42f3-b949-5715-ae1c-2d0c5545a39c",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "In the Kill Zone",
+      "summary": "We take a look at what’s happening on the front line of the war in Ukraine.",
+      "url": "https://www.nytimes.com/2026/10/20/briefing/ukraine-kill-zone.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/19/briefing/ukraine-kill-zone-gif/ukraine-kill-zone-gif-articleLarge.jpg",
+      "authors": [
+        "Sam Sifton"
+      ],
+      "publishedAt": "2026-10-20T10:35:21Z"
+    },
+    {
+      "id": "nyt:nyt://article/d403413f-1a47-58a0-bf37-827f062ce486",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "A Horny, Horse-Obsessed Artist Gives Free Rein to Her Anxiety",
+      "summary": "The “Bojack Horseman” designer Lisa Hanawalt bridles at glib therapists and is hot to trot for Mister Rogers in her new graphic memoir.",
+      "url": "https://www.nytimes.com/2026/10/20/books/review/lisa-hanawalt-i-cant-stop-thinking-about-horses-and-sex.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/21/multimedia/21tbr-hanawalt-review-pvfq/21tbr-hanawalt-review-pvfq-articleLarge.jpg",
+      "authors": [
+        "Sam Thielman"
+      ],
+      "category": "entertainment",
+      "publishedAt": "2026-10-20T10:30:06Z"
+    },
+    {
+      "id": "nyt:nyt://article/38bcaf4a-4724-5f58-b032-25b273b0da69",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "Don’t Delete Your Child’s Blurry Selfies. They Might Be Art.",
+      "summary": "An exhibition argues that juvenile photographic experiments can reveal unique perspectives worth saving — and even displaying.",
+      "url": "https://www.nytimes.com/2026/10/20/arts/design/snap-happy-photographers-gallery-london.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/20/arts/20cul-child-photographers-05/20cul-child-photographers-05-articleLarge.jpg",
+      "authors": [
+        "Andrew Dickson"
+      ],
+      "category": "entertainment",
+      "publishedAt": "2026-10-20T10:01:00Z"
+    },
+    {
+      "id": "nyt:nyt://article/b18108bc-c151-59a4-b417-72a4015cc749",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "James Talarico on His Plan to Turn Texas Blue",
+      "summary": "Our interview with James Talarico, the Democratic nominee for Senate in Texas.",
+      "url": "https://www.nytimes.com/2026/10/20/podcasts/the-daily/james-talarico-interview-texas-midterms.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/20/multimedia/20daily-talarico-03-mvcw/20daily-talarico-03-mvcw-articleLarge.jpg",
+      "authors": [
+        "Michael Barbaro"
+      ],
+      "publishedAt": "2026-10-20T10:00:17Z"
+    },
+    {
+      "id": "nyt:nyt://article/c29e13fb-40a4-5465-b74c-7a56b26f6b3b",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "The Fight to Tax Billionaires, and Why NDAs Are Everywhere Now",
+      "summary": "Plus, a contentious character is back on “The Simpsons.”",
+      "url": "https://www.nytimes.com/2026/10/20/podcasts/the-headlines/tax-billionaires-ndas.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/05/podcasts/20theheadlines-mag-billionaires-tax-hero-illu/mag-billionaires-tax-hero-illustration-79571-articleLarge.jpg",
+      "authors": [
+        "Will Jarvis",
+        "Margaret Kadifa",
+        "Jake Lucas",
+        "Ian Stewart",
+        "Tracy Mumford",
+        "Laurel Rosenhall",
+        "Emily Davies",
+        "Azam Ahmed"
+      ],
+      "publishedAt": "2026-10-20T10:00:08Z"
+    },
+    {
+      "id": "nyt:nyt://article/f34f1688-ab8d-5f98-b2db-1a2217d64867",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "Connections Companion No. 1,228",
+      "summary": "Scroll down for hints and conversation about the puzzle for Wednesday, Oct. 21, 2026.",
+      "url": "https://www.nytimes.com/2026/10/20/crosswords/connections-companion-1228.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/20/crosswords/21connections-art-1335/21connections-art-1335-articleLarge.jpg",
+      "authors": [
+        "New York Times Games"
+      ],
+      "publishedAt": "2026-10-20T10:00:07Z"
+    },
+    {
+      "id": "nyt:nyt://article/95531adb-85c6-52d1-a38c-eb53f74d0ae0",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "Strands Sidekick No. 962",
+      "summary": "Scroll down for hints and conversation about the puzzle for Wednesday, Oct. 21, 2026.",
+      "url": "https://www.nytimes.com/2026/10/20/crosswords/strands-sidekick-962.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/20/crosswords/21strands-art-1155/21strands-art-1155-articleLarge.jpg",
+      "authors": [
+        "New York Times Games"
+      ],
+      "publishedAt": "2026-10-20T10:00:03Z"
+    },
+    {
+      "id": "nyt:nyt://article/70a7fbbf-5f0c-54b0-8808-e79323b12959",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "Wordle Review No. 1,950",
+      "summary": "Scroll down for hints and conversation about the puzzle for Wednesday, Oct. 21, 2026.",
+      "url": "https://www.nytimes.com/2026/10/20/crosswords/wordle-review-1950.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/20/crosswords/21wordle-review-art-1950/21wordle-review-art-1950-articleLarge.jpg",
+      "authors": [
+        "New York Times Games"
+      ],
+      "publishedAt": "2026-10-20T10:00:03Z"
+    },
+    {
+      "id": "nyt:nyt://article/25572688-687f-51e1-b7de-494d2ca0e42d",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "France to Extend Curfews After a Night of Calm, Prime Minister Says",
+      "summary": "The restrictions are part of a state effort to reassert control after the country’s largest riots in years, as those arrested in the chaos face expedited trials.",
+      "url": "https://www.nytimes.com/2026/10/20/world/europe/france-curfews-riots-protests-extended.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/20/multimedia/20int-france-riots-cpkz/20int-france-riots-cpkz-articleLarge.jpg",
+      "authors": [
+        "Ségolène Le Stradic"
+      ],
+      "category": "world",
+      "publishedAt": "2026-10-20T09:31:34Z"
+    },
+    {
+      "id": "nyt:nyt://article/6e8c7e8c-097a-5f41-862e-be3aaebfae61",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "The NBA Superstar Turned Late-Night Host",
+      "summary": "Blake Griffin on Steve Ballmer, Kelly Clarkson and beyond.",
+      "url": "https://www.nytimes.com/2026/10/20/podcasts/nba-blake-griffin-steve-ballmer.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/20/multimedia/20atl-torre-blake-griffin/20atl-torre-blake-griffin-articleLarge.jpg",
+      "authors": [
+        "Pablo Torre",
+        "Walter Avaroma",
+        "Maxwell Carney",
+        "Ryan Cortes",
+        "Juan Galindo",
+        "Patrick Kim",
+        "Neely Lohmann",
+        "Rob McRae",
+        "Clare Taylor",
+        "Chris Tumminello",
+        "Matt Sullivan",
+        "Laura Newcombe"
+      ],
+      "publishedAt": "2026-10-20T09:16:34Z"
+    },
+    {
+      "id": "nyt:nyt://article/166966ea-8fd8-5f3b-bf6a-dc29918ed6e8",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "Trump Announces $8 Billion Plan to Cover Farm Losses",
+      "summary": "Under the Harvest Fuel Relief program, the Agriculture Department will provide economic aid for farmers hurt by high diesel prices.",
+      "url": "https://www.nytimes.com/2026/10/20/business/trump-farmer-bailout.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/20/multimedia/20biz-farmer-bailout-klvz/20biz-farmer-bailout-klvz-articleLarge.jpg",
+      "authors": [
+        "Kevin Draper"
+      ],
+      "category": "business",
+      "publishedAt": "2026-10-20T09:13:50Z"
+    },
+    {
+      "id": "nyt:nyt://article/3f9dfd20-8589-5186-941e-b4e5c3ad2db5",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "Trumpism Is Backfiring",
+      "summary": "Chrystia Freeland, a former Canadian deputy prime minister, explains why her country chose to fight back against Trump.",
+      "url": "https://www.nytimes.com/2026/10/20/opinion/ezra-klein-podcast-chrystia-freeland.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/20/opinion/20eks-freeland-image01/20eks-freeland-image01-articleLarge.jpg",
+      "authors": [
+        "Ezra Klein",
+        "Jack McCordick"
+      ],
+      "publishedAt": "2026-10-20T09:04:21Z"
+    },
+    {
+      "id": "nyt:nyt://article/874bde2c-5230-57a3-93fd-185f09fb3f50",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "Face Sunscreen for Every Season",
+      "summary": "What to look for and how to find one that feels good on your skin.",
+      "url": "https://www.nytimes.com/2026/10/20/podcasts/face-sunscreen-for-every-season.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/20/podcasts/20wirecutter-sunscreen-art/20wirecutter-sunscreen-art-articleLarge.png",
+      "authors": [
+        "Rosie Guerin",
+        "Caira Blackwell",
+        "Christine Cyr Clisset"
+      ],
+      "publishedAt": "2026-10-20T09:03:19Z"
+    },
+    {
+      "id": "nyt:nyt://article/9beba752-d00d-55fe-aea5-d1b795765ade",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "It’s Not Just France. Europe’s Political Center Is Crumbling.",
+      "summary": "Europe’s centrist parties are losing ground among young people and workers, who are increasingly tempted by populist promises of radical change.",
+      "url": "https://www.nytimes.com/2026/10/20/world/europe/france-protests-europe-centrist-far-right.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/20/multimedia/20int-europe-democracy-analysis-lvhw/20int-europe-democracy-analysis-lvhw-articleLarge.jpg",
+      "authors": [
+        "Steven Erlanger"
+      ],
+      "category": "world",
+      "publishedAt": "2026-10-20T09:01:52Z"
+    },
+    {
+      "id": "nyt:nyt://article/19a97e6a-0a26-5255-a6b6-b6c6c25079b7",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "He Warned a Massacre Was Coming. No One Listened.",
+      "summary": "The mayor of Kenscoff, a town near Haiti’s capital, wrote government officials hundreds of letters to warn of gang threats. Then dozens of people died, and he did, too.",
+      "url": "https://www.nytimes.com/2026/10/20/world/americas/mayor-kenscoff-haiti-gangs-massacre.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/14/multimedia/00int-haiti-kenscoff-massacre01-photo-mwjb/00int-haiti-kenscoff-massacre01-photo-mwjb-articleLarge.jpg",
+      "authors": [
+        "Frances Robles"
+      ],
+      "category": "world",
+      "publishedAt": "2026-10-20T09:01:35Z"
+    },
+    {
+      "id": "nyt:nyt://article/17095420-bfd2-5c0d-87f0-572362d8674f",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "A Chef Celebrates Immigrant Flavors in Anti-Migrant South Africa",
+      "summary": "A self-taught chef borrows ingredients and ideas from restaurants run by immigrants in South Africa, hoping to help counter rising xenophobia.",
+      "url": "https://www.nytimes.com/2026/10/20/world/africa/johannesburg-migrant-cuisine-chef.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/12/multimedia/00int-safrica-chef-profile01-photo-wtfv/00int-safrica-chef-profile01-photo-wtfv-articleLarge.jpg",
+      "authors": [
+        "John Eligon",
+        "Joao Silva"
+      ],
+      "category": "world",
+      "publishedAt": "2026-10-20T09:00:10Z"
+    },
+    {
+      "id": "nyt:nyt://article/955121d0-9375-58a0-a670-86c52be1b38c",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "14 Dead After Gold Mine Collapses in Colombia",
+      "summary": "The mine is among a growing number of small-scale, unlicensed operations in Colombia that are fueled by the metal’s rising global price.",
+      "url": "https://www.nytimes.com/2026/10/20/world/americas/colombia-gold-mine-collapse.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/21/multimedia/21xp-colombia-promo-jhlt/21xp-colombia-promo-jhlt-articleLarge.jpg",
+      "authors": [
+        "Francesca Regalado"
+      ],
+      "category": "world",
+      "publishedAt": "2026-10-20T06:58:33Z"
+    },
+    {
+      "id": "nyt:nyt://article/1f759199-9185-52c2-8c90-642b0d61340a",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "Attack on Australian Lawmaker Prompts Calls to Dial Down Political Tensions",
+      "summary": "Helen Haines, an independent, remained in critical condition after she was struck by a vehicle. A 43-year-old man was charged and will appear in court on Wednesday.",
+      "url": "https://www.nytimes.com/2026/10/20/world/asia/helen-haines-mp-attacked-wangaratta-australia.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/20/multimedia/20-int-oz-lawmaker-lzbf/20-int-oz-lawmaker-lzbf-articleLarge.jpg",
+      "authors": [
+        "Victoria Kim",
+        "Laura Chung"
+      ],
+      "category": "world",
+      "publishedAt": "2026-10-20T05:15:19Z"
+    },
+    {
+      "id": "nyt:nyt://article/f9f45cf2-3cd7-5941-bc1e-89b00a929171",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "The A.I. Data Center Backlash Has Reached a Quiet Corner of Rural England",
+      "summary": "Plans to build one of Europe’s largest data centers in Devon have been met by strong opposition from residents, as environmental concerns grow.",
+      "url": "https://www.nytimes.com/2026/10/20/world/europe/ai-datacenter-devon-uk-backlash.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/20/multimedia/20int-uk-data-01-fqvg/20int-uk-data-01-fqvg-articleLarge.jpg",
+      "authors": [
+        "Stephen Castle"
+      ],
+      "category": "world",
+      "publishedAt": "2026-10-20T04:01:08Z"
+    },
+    {
+      "id": "nyt:nyt://article/26ce51d1-49eb-5364-a3be-806fe0102224",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "Republican National Committee, Far Richer Than D.N.C., Pumps $50 Million Into Midterms",
+      "summary": "The party apparatus is taking advantage of its enormous war chest, as well as a Supreme Court campaign-finance ruling this year, to send tens of millions into congressional races.",
+      "url": "https://www.nytimes.com/2026/10/20/us/politics/republicans-midterm-election-cash-transfer.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/20/multimedia/20pol-rnc-midterms-photo-mzkv/20pol-rnc-midterms-photo-mzkv-articleLarge.jpg",
+      "authors": [
+        "Theodore Schleifer"
+      ],
+      "category": "politics",
+      "publishedAt": "2026-10-20T09:02:13Z"
+    },
+    {
+      "id": "nyt:nyt://article/0e74b7b1-faed-5fd3-a111-fac6e22badcf",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "Taunting Trump Over Gas Prices, Iran Braces for Aftermath of U.S. Vote",
+      "summary": "The midterm elections appear to be a factor for both sides in the war as President Trump weighs his next steps.",
+      "url": "https://www.nytimes.com/2026/10/20/us/politics/iran-trump-midterm-elections.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/20/multimedia/20dc-iran-midterms-03-vczt/20dc-iran-midterms-03-vczt-articleLarge.jpg",
+      "authors": [
+        "Michael Crowley"
+      ],
+      "category": "politics",
+      "publishedAt": "2026-10-20T09:01:54Z"
+    },
+    {
+      "id": "nyt:nyt://article/5a496a5a-bda1-53d6-9d1f-1a94295be66d",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "A.I. Fortunes Could Bring Critical Funds to Global Health. The Scramble Is On.",
+      "summary": "Expected windfalls from I.P.O.s are drawing health leaders into a race for billions in new philanthropic dollars. A fragile aid system may be upended.",
+      "url": "https://www.nytimes.com/2026/10/20/us/politics/ai-fortunes-could-bring-critical-funds-to-global-health-the-scramble-is-on.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/19/multimedia/19dc-philanthropy-health-TOP3-ltgh/19dc-philanthropy-health-TOP3-ltgh-articleLarge.jpg",
+      "authors": [
+        "Stephanie Nolen"
+      ],
+      "category": "politics",
+      "publishedAt": "2026-10-20T09:01:02Z"
+    },
+    {
+      "id": "nyt:nyt://article/1a21094a-156a-5163-b420-692ddd6d029d",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "Trump’s Push for Deals With Russia Powers His Frustration With Ukraine",
+      "summary": "The series of recent steps by the president that seem to favor Vladimir Putin reflect his intensifying desire to normalize the relationship with Moscow even if it means further undercutting Ukraine.",
+      "url": "https://www.nytimes.com/2026/10/19/us/politics/trump-russia-deals.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/19/multimedia/1dc-prexy-gfmw/1dc-prexy-gfmw-articleLarge.jpg",
+      "authors": [
+        "David E. Sanger"
+      ],
+      "category": "politics",
+      "publishedAt": "2026-10-20T00:33:10Z"
+    },
+    {
+      "id": "nyt:nyt://article/d7fd3053-2912-5637-adbd-127600bd3e7e",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "Melania Trump Announces White House Women’s Health Initiative",
+      "summary": "The effort comes as Republicans are struggling to win over female voters two weeks before the midterm elections.",
+      "url": "https://www.nytimes.com/2026/10/19/us/politics/melania-trump-women-health.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/19/multimedia/19dc-womens-health-fhpj/19dc-womens-health-fhpj-articleLarge.jpg",
+      "authors": [
+        "Sheryl Gay Stolberg",
+        "Roni Caryn Rabin"
+      ],
+      "category": "politics",
+      "publishedAt": "2026-10-19T23:36:52Z"
+    },
+    {
+      "id": "nyt:nyt://article/93e5c522-9ac6-5651-bb16-119beaa9948e",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "U.N.C. Strikes Trump Deal to Keep Federal Funding",
+      "summary": "The University of North Carolina at Chapel Hill will not pay any financial penalties but agreed to abide by the Trump administration’s views on diversity and other matters.",
+      "url": "https://www.nytimes.com/2026/10/19/us/politics/unc-trump-deal.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/19/multimedia/19nat-unc-wjvb/19nat-unc-wjvb-articleLarge.jpg",
+      "authors": [
+        "Alan Blinder"
+      ],
+      "category": "politics",
+      "publishedAt": "2026-10-19T22:42:21Z"
+    },
+    {
+      "id": "nyt:nyt://article/e4d1349e-c270-5aab-ae00-289d0526cd96",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "Trump Swings Through Deep-Red States Seeking to Reverse Lagging G.O.P. Enthusiasm",
+      "summary": "The president’s swing is taking him to states including South Carolina and Kansas that were not seen as competitive just a few months ago.",
+      "url": "https://www.nytimes.com/2026/10/19/us/politics/trump-midterm-rally-red-states.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/19/multimedia/19pol-trump-travel-01-hmfq/19pol-trump-travel-01-hmfq-articleLarge.jpg",
+      "authors": [
+        "Emily Davies",
+        "Jonathan Swan"
+      ],
+      "category": "politics",
+      "publishedAt": "2026-10-19T20:23:52Z"
+    },
+    {
+      "id": "nyt:nyt://article/ae58a20a-dd18-5ec8-be3f-5ce0e82697ec",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "Mahmoud Khalil Appeals to Supreme Court to Halt Deportation",
+      "summary": "Mr. Khalil had recently graduated from Columbia when he was arrested by ICE agents and became the face of the Trump administration’s crackdown on pro-Palestinian demonstrations.",
+      "url": "https://www.nytimes.com/2026/10/19/us/politics/supreme-court-mahmoud-khalil-deportation.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/19/multimedia/19dc-scotus-khalil-qwpt/19dc-scotus-khalil-qwpt-articleLarge.jpg",
+      "authors": [
+        "Ann E. Marimow"
+      ],
+      "category": "politics",
+      "publishedAt": "2026-10-19T20:22:37Z"
+    },
+    {
+      "id": "nyt:nyt://article/41c065bb-2ddf-53cb-9329-8d2653577866",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "Justice Dept. Charges 28 in California With Voting-Related Crimes",
+      "summary": "The effort by the Trump administration comes as it wages a broader fight with California officials over voter rolls.",
+      "url": "https://www.nytimes.com/2026/10/19/us/politics/doj-california-voting-crimes-trump-midterms.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/19/multimedia/19dc-california-gpjc/19dc-california-gpjc-articleLarge.jpg",
+      "authors": [
+        "Devlin Barrett"
+      ],
+      "category": "politics",
+      "publishedAt": "2026-10-19T19:51:26Z"
+    },
+    {
+      "id": "nyt:nyt://article/2e8278a0-28d6-51b8-9a18-62e53ca04dd7",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "Supreme Court Will Not Revive Plea Deal for 9/11 Defendants",
+      "summary": "The justices rejected a request from Khalid Shaikh Mohammed and two others accused of plotting the Sept. 11 attacks, clearing the way for a potential death penalty trial.",
+      "url": "https://www.nytimes.com/2026/10/19/us/politics/supreme-court-plea-deal-sept-11.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/19/multimedia/19dc-scotus-911-qwcp/19dc-scotus-911-qwcp-articleLarge.jpg",
+      "authors": [
+        "Abbie VanSickle"
+      ],
+      "category": "politics",
+      "publishedAt": "2026-10-19T18:02:57Z"
+    },
+    {
+      "id": "nyt:nyt://article/216ed970-cc3b-538f-90d0-b8c07b782d06",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "See a Knicks Opener for Under $1,000? Oh, Those Were the Pre-Title Days.",
+      "summary": "Knicks tickets have never been cheap, but prices for the first game alone are soaring after last season’s championship — more than a trip to Paris.",
+      "url": "https://www.nytimes.com/2026/10/20/business/knicks-tickets.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/20/multimedia/20biz-knicks-tickets-1-pmlk/20biz-knicks-tickets-1-pmlk-articleLarge.jpg",
+      "authors": [
+        "Tania Ganguli"
+      ],
+      "category": "business",
+      "publishedAt": "2026-10-20T09:02:00Z"
+    },
+    {
+      "id": "nyt:nyt://article/bfea4f8e-dee3-566b-927b-3b75312f5b27",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "Christiane Amanpour Says She Is Leaving CNN After 43 Years",
+      "summary": "The chief international anchor, one of the most famous names in broadcast news, started as an assistant at the network in 1983.",
+      "url": "https://www.nytimes.com/2026/10/19/business/media/cnn-christiane-amanpour.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/19/multimedia/19biz-amanpour-btmz/19biz-amanpour-btmz-articleLarge.jpg",
+      "authors": [
+        "Michael M. Grynbaum"
+      ],
+      "category": "business",
+      "publishedAt": "2026-10-19T18:49:18Z"
+    },
+    {
+      "id": "nyt:nyt://article/fcb2ab9c-0617-5786-8253-af7f0ddb2f40",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "Jon Stewart to Stay at ‘The Daily Show’ Through the 2028 Election",
+      "summary": "Ratings have surged since Mr. Stewart returned over two years ago to host the show on Monday nights.",
+      "url": "https://www.nytimes.com/2026/10/19/business/media/jon-stewart-daily-show.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/19/business/19biz-stewart-daily/19biz-stewart-daily-articleLarge.jpg",
+      "authors": [
+        "John Koblin"
+      ],
+      "category": "business",
+      "publishedAt": "2026-10-19T18:30:05Z"
+    },
+    {
+      "id": "nyt:nyt://article/3d79d148-ae41-5b62-8eec-f0fe07dbf7c4",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "Saudi Arabia Postpones Its Marquee Investment Event After Houthi Attacks",
+      "summary": "The Future Investment Initiative, a centerpiece of Saudi efforts to diversify its economy from its reliance on the energy industry, was set to begin next week.",
+      "url": "https://www.nytimes.com/2026/10/19/business/saudi-investment-fii-houthis.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/19/multimedia/19biz-saudi-investment-ktlm/19biz-saudi-investment-ktlm-articleLarge.jpg",
+      "authors": [
+        "Humza Jilani"
+      ],
+      "category": "business",
+      "publishedAt": "2026-10-19T15:48:39Z"
+    },
+    {
+      "id": "nyt:nyt://article/aaba13de-7799-56f1-877c-2682301ddcb7",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "Black Unemployment Hints at a Job Market in Worse Shape Than It Seems",
+      "summary": "The Black unemployment rate climbed a percentage point to 7 percent in September, almost double the rate for white workers.",
+      "url": "https://www.nytimes.com/2026/10/19/business/black-unemployment-job-market.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/19/multimedia/19biz-black-workers-bjqk/19biz-black-workers-bjqk-articleLarge.jpg",
+      "authors": [
+        "Talmon Joseph Smith"
+      ],
+      "category": "business",
+      "publishedAt": "2026-10-19T15:25:59Z"
+    },
+    {
+      "id": "nyt:nyt://article/27159181-2248-5844-a56c-33dd43bc1821",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "Anthropic’s I.P.O. Charity",
+      "summary": "The artificial intelligence giant plans to contribute 5 percent of its stock into a philanthropic fund. But its generosity depends on the A.I. boom continuing.",
+      "url": "https://www.nytimes.com/2026/10/19/business/dealbook/anthropic-ipo-charity.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/19/multimedia/19db-anthropic-bjft/19db-anthropic-bjft-articleLarge.jpg",
+      "authors": [
+        "Andrew Ross Sorkin",
+        "Bernhard Warner",
+        "Sarah Kessler",
+        "Michael J. de la Merced",
+        "Niko Gallogly",
+        "Brian O’Keefe",
+        "Sri Muppidi",
+        "Ian Mount"
+      ],
+      "category": "business",
+      "publishedAt": "2026-10-19T11:47:58Z"
+    },
+    {
+      "id": "nyt:nyt://article/6f6558cf-c671-5d3e-8f02-52c8aae9689b",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "‘A Ticking Time Bomb’: An Economic Crisis Looms in Indonesia",
+      "summary": "Once a model of economic stability, Indonesia now faces growing hardship at home as President Prabowo Subianto’s policies shake investor confidence.",
+      "url": "https://www.nytimes.com/2026/10/19/business/indonesia-economy-stocks.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/20/multimedia/19biz-indonesia-economy-bgqw/19biz-indonesia-economy-bgqw-articleLarge.jpg",
+      "authors": [
+        "Sui-Lee Wee",
+        "Rin Hindryati"
+      ],
+      "category": "business",
+      "publishedAt": "2026-10-19T09:03:31Z"
+    },
+    {
+      "id": "nyt:nyt://article/f3cb828a-53e7-5457-91a9-7623f41ddbe0",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "U.S. Political Money Funnels to Indian Bots to Lure Voters",
+      "summary": "At least three dozen videos of people on the street expressing support for a Democratic candidate appeared millions of times on social media. It was unclear who paid for them.",
+      "url": "https://www.nytimes.com/2026/10/19/business/michigan-primary-disinformation-campaign.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/19/business/19biz-india-disinfo-promo/19biz-india-disinfo-promo-articleLarge.jpg",
+      "authors": [
+        "Steven Lee Myers"
+      ],
+      "category": "business",
+      "publishedAt": "2026-10-19T09:02:31Z"
+    },
+    {
+      "id": "nyt:nyt://article/7fabc229-53f1-5bd5-b9c9-546d30fdda90",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "Saudis Aided Family of Engineer Accused of Bugging OpenAI, Prosecutors Say",
+      "summary": "Saudi officials paid for his wife and son to fly out of the U.S. and offered to cover his bail, according to court filings. A judge ordered the engineer to remain in custody.",
+      "url": "https://www.nytimes.com/2026/10/19/technology/saudis-aided-family-openai-engineer.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/19/multimedia/19biz-openai-suspect-jbhc/19biz-openai-suspect-jbhc-articleLarge.jpg",
+      "authors": [
+        "Emmy Martin"
+      ],
+      "category": "technology",
+      "publishedAt": "2026-10-19T18:09:04Z"
+    },
+    {
+      "id": "nyt:nyt://article/4ecb0666-717b-5eaa-993a-61bbd677af18",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "Musk Pledges SpaceX Stock for ‘Every Kid in America’ as Billionaires Push Direct Donations",
+      "summary": "Anthropic, an A.I. rival to SpaceX, earlier said it would form a “public benefit fund” and other tech moguls have contributed to savings accounts for children.",
+      "url": "https://www.nytimes.com/2026/10/19/technology/elon-musk-spacex-stock-anthropic-giveaway.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/19/multimedia/19biz-musk-shares-vfqm/19biz-musk-shares-vfqm-articleLarge.jpg",
+      "authors": [
+        "Ryan Mac"
+      ],
+      "category": "technology",
+      "publishedAt": "2026-10-19T12:33:59Z"
+    },
+    {
+      "id": "nyt:nyt://article/877327a8-ac91-5662-9171-d4c861209d57",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "Meta Withdraws $25 Million From Its Midterms Push",
+      "summary": "The company outlined a $65 million budget last year when it embarked on an effort to elect state politicians friendly to the A.I. industry.",
+      "url": "https://www.nytimes.com/2026/10/16/technology/meta-midterms-funding.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/16/multimedia/16biz-meta-ai-politics-1-fbwt/16biz-meta-ai-politics-1-fbwt-articleLarge.jpg",
+      "authors": [
+        "Theodore Schleifer"
+      ],
+      "category": "technology",
+      "publishedAt": "2026-10-16T20:58:41Z"
+    },
+    {
+      "id": "nyt:nyt://article/357833ae-cf24-5787-91c4-24d14a0d174f",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "OpenAI Engineer Who Is Charged With Planting Bug Advised Saudis",
+      "summary": "The employee, now fired, had said he advised government agencies in Saudi Arabia. He was also listed as a partner at a venture firm with a Saudi prince.",
+      "url": "https://www.nytimes.com/2026/10/14/technology/openai-engineer-hidden-device-saudi-government.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/14/multimedia/14biz-openai-suspect-jfkp/14biz-openai-suspect-jfkp-articleLarge.jpg",
+      "authors": [
+        "Emmy Martin"
+      ],
+      "category": "technology",
+      "publishedAt": "2026-10-15T02:26:38Z"
+    },
+    {
+      "id": "nyt:nyt://article/35541cf5-3255-5ec1-b4db-f50b4d2b039a",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "Anthropic Says Revenue Jumped 45% to $16.8 Billion in Third Quarter",
+      "summary": "The company held an investor meeting on Wednesday as it plans a blockbuster initial public offering as soon as next month.",
+      "url": "https://www.nytimes.com/2026/10/14/technology/anthropic-ipo-revenue-profit.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/13/multimedia/ANTHROPIC-INVESTORS-HFO-zgtc/ANTHROPIC-INVESTORS-HFO-zgtc-articleLarge.jpg",
+      "authors": [
+        "Lauren Hirsch",
+        "Sri Muppidi"
+      ],
+      "category": "technology",
+      "publishedAt": "2026-10-14T23:33:34Z"
+    },
+    {
+      "id": "nyt:nyt://article/723e7565-616d-531a-b622-6b46a545d152",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "Senators Question Meta’s Data Center Tax Strategy",
+      "summary": "Democrats on the Senate Finance Committee sent a letter to Mark Zuckerberg, Meta’s chief executive, questioning the company’s $6.6 billion in tax breaks.",
+      "url": "https://www.nytimes.com/2026/10/14/technology/meta-senators-tax-avoidance.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/14/multimedia/14biz-meta-tax-senators-thgz/14biz-meta-tax-senators-thgz-articleLarge.jpg",
+      "authors": [
+        "Kashmir Hill"
+      ],
+      "category": "technology",
+      "publishedAt": "2026-10-14T14:48:05Z"
+    },
+    {
+      "id": "nyt:nyt://article/7ac10fc1-da56-518f-b876-57cb1c50221d",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "Chinese A.I. Agents Joined the Rogue A.I. Agent Party. I Chatted With Them.",
+      "summary": "Researchers discovered that the agents were trying to bypass security controls on websites and made contact with them. A Times reporter was invited to join the discussion.",
+      "url": "https://www.nytimes.com/2026/10/14/technology/chinese-ai-agents-rogue.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/14/multimedia/14biz-agents-chat-tencent-zwgj/14biz-agents-chat-tencent-zwgj-articleLarge.jpg",
+      "authors": [
+        "Dylan Freedman"
+      ],
+      "category": "technology",
+      "publishedAt": "2026-10-14T11:00:06Z"
+    },
+    {
+      "id": "nyt:nyt://article/63eaa945-dc83-54a8-a843-69b7385a0e85",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "What a Group of A.I. Agents Talked About as Their Humans Had a Dinner Party",
+      "summary": "As artificial intelligence bots spread, we are increasingly glimpsing how these digital entities interact and what they talk about with one another.",
+      "url": "https://www.nytimes.com/2026/10/14/technology/ai-agents-communication-tech-dinner-party.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/14/business/00biz-ai-agents/00biz-ai-agents-articleLarge.jpg",
+      "authors": [
+        "Erin Griffith"
+      ],
+      "category": "technology",
+      "publishedAt": "2026-10-14T09:01:19Z"
+    },
+    {
+      "id": "nyt:nyt://article/26491740-de0b-50d3-b493-a78ab03221ef",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "F.B.I. Arrests OpenAI Employee Accused of Planting Bug in Office",
+      "summary": "OpenAI said that the employee had placed a device built to evade detection and that he had planned to secretly record meetings in other sensitive spaces.",
+      "url": "https://www.nytimes.com/2026/10/13/technology/openai-worker-arrested-bugging.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/13/multimedia/13biz-openai-security-fzgm/13biz-openai-security-fzgm-articleLarge.jpg",
+      "authors": [
+        "Emmy Martin"
+      ],
+      "category": "technology",
+      "publishedAt": "2026-10-13T21:31:18Z"
+    },
+    {
+      "id": "nyt:nyt://article/2bddc4f1-e61b-5448-835b-1dec9ba8df57",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "How Evolution Might Have Given Us Autoimmune Diseases",
+      "summary": "Our genes evolved to fight ancient threats, but in the modern world, some of those changes may be turning against us.",
+      "url": "https://www.nytimes.com/2026/10/20/science/autoimmune-diseases-evolution-ms.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/20/arts/autoimmunity-still/autoimmunity-still-articleLarge.jpg",
+      "authors": [
+        "David Quammen"
+      ],
+      "category": "science",
+      "publishedAt": "2026-10-20T09:00:43Z"
+    },
+    {
+      "id": "nyt:nyt://article/298c66c6-8faf-5594-b8f2-c5f360b3e542",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "Russian Satellite Makes a Menacing Approach to Another Craft in Orbit",
+      "summary": "Although Kosmos 2612 is now backing away, the maneuver raised alarm bells for analysts who see it as part of a pattern of Russian aggression.",
+      "url": "https://www.nytimes.com/2026/10/19/science/russia-satellite-kosmos-2612.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/19/science/19SCI-SAT-STALKER/19SCI-SAT-STALKER-articleLarge.jpg",
+      "authors": [
+        "Kenneth Chang"
+      ],
+      "category": "science",
+      "publishedAt": "2026-10-19T23:05:23Z"
+    },
+    {
+      "id": "nyt:nyt://article/73bd03c6-b1cb-5e14-91f4-314dfbcd3482",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "How Did Life Arise?",
+      "summary": "Where did it start? How did it grow complex? Why did it get big? Three moments in Earth’s early history when evolution suddenly, inexplicably turned up the dial.",
+      "url": "https://www.nytimes.com/2026/10/19/science/evolution-life-earth.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/19/multimedia/19SCI-UNKNOWNS-ORIGINS-top-gbkw/19SCI-UNKNOWNS-ORIGINS-top-gbkw-articleLarge-v3.jpg",
+      "authors": [
+        "William J. Broad",
+        "Kenneth Chang",
+        "Carl Zimmer"
+      ],
+      "category": "science",
+      "publishedAt": "2026-10-19T09:01:35Z"
+    },
+    {
+      "id": "nyt:nyt://article/52df4d76-18a0-51c3-b87f-496e855fc6eb",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "The Overlapping Plagues Quietly Devastating American Forests",
+      "summary": "Trees are suffering one devastating epidemic after another, unleashed by insects and bacteria that enter the country because of global trade.",
+      "url": "https://www.nytimes.com/2026/10/19/climate/tree-pandemics-northeast-forests.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/16/multimedia/19CLI-TREE-PLAGUES-stillpromo/19CLI-TREE-PLAGUES-stillpromo-articleLarge.jpg",
+      "authors": [],
+      "category": "science",
+      "publishedAt": "2026-10-19T09:01:04Z"
+    },
+    {
+      "id": "nyt:nyt://article/e4ceb1c5-abb8-51ff-be70-e0c1da61fc1e",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "A Japanese Spacecraft Aims to Bring Back a Bit of a Martian Moon",
+      "summary": "The mission, which launched on Monday, is headed to Phobos, the larger of the two moons of Mars. It could carry back the first samples from the Martian system.",
+      "url": "https://www.nytimes.com/2026/10/19/science/mmx-mars-moons-jaxa-launch.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/19/multimedia/19sci-mars-moons1-mbjw/19sci-mars-moons1-mbjw-articleLarge.jpg",
+      "authors": [
+        "Kenneth Chang"
+      ],
+      "category": "science",
+      "publishedAt": "2026-10-19T04:01:05Z"
+    },
+    {
+      "id": "nyt:nyt://article/feaeb711-beb3-51e4-9eab-5f9cce37574b",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "The New Science of Stuttering",
+      "summary": "Experts are reaching consensus on what the condition is. Now they’re debating how best to treat it.",
+      "url": "https://www.nytimes.com/2026/10/18/science/the-new-science-of-stuttering.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/20/science/18SCI-Stuttering/18SCI-Stuttering-articleLarge.jpg",
+      "authors": [
+        "Jack Tamisiea"
+      ],
+      "category": "science",
+      "publishedAt": "2026-10-18T11:41:01Z"
+    },
+    {
+      "id": "nyt:nyt://article/6d83ad83-c56d-560a-9397-e7091003132c",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "For a Mere $2 Million, You Could Own Three Books That Unlocked the Universe",
+      "summary": "At Sotheby’s, a feast of rare science books includes volumes from Copernicus, Galileo and Newton that together revolutionized human understanding of the cosmos.",
+      "url": "https://www.nytimes.com/2026/10/17/science/sothebys-science-books-auction.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/17/multimedia/17SCI-RARE-BOOKS-01-lpjt/17SCI-RARE-BOOKS-01-lpjt-articleLarge.jpg",
+      "authors": [
+        "William J. Broad",
+        "Andres Kudacki"
+      ],
+      "category": "science",
+      "publishedAt": "2026-10-17T09:01:50Z"
+    },
+    {
+      "id": "nyt:nyt://article/5e917389-6f90-5e8f-90d5-63fa13227b66",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "Trump Rule Lets Alaska Hunters Lure Bears With Bacon-Greased Doughnuts",
+      "summary": "The National Park Service is reviving a practice that was banned by the Biden administration and condemned by conservationists.",
+      "url": "https://www.nytimes.com/2026/10/16/climate/bear-baiting-hunting-alaska.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/16/climate/16cli-bears/16cli-bears-articleLarge.jpg",
+      "authors": [
+        "Maxine Joselow"
+      ],
+      "category": "science",
+      "publishedAt": "2026-10-16T21:41:50Z"
+    },
+    {
+      "id": "nyt:nyt://article/18361e0b-c42c-542e-9428-becb2db63a73",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "The Leap Second Has Been Canceled",
+      "summary": "Earth’s rotation subtly changes the length of the day. Now our clocks won’t change with it — at least not for a very long time.",
+      "url": "https://www.nytimes.com/2026/10/16/science/leap-second-abolished-vote.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/16/16SCI-LEAP-SECOND-42587-cover/16SCI-LEAP-SECOND-42587-cover-articleLarge.jpg",
+      "authors": [
+        "K. R. Callaway"
+      ],
+      "category": "science",
+      "publishedAt": "2026-10-16T20:13:02Z"
+    },
+    {
+      "id": "nyt:nyt://article/8a316693-793a-5b93-8ff0-f3d9afb06a07",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "5 Common Medications That Can Mess With Your Sleep",
+      "summary": "Certain prescription and over-the-counter drugs are known to keep people awake. We asked experts for some of the biggest offenders.",
+      "url": "https://www.nytimes.com/2026/10/20/well/medications-that-disrupt-sleep.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/20/well/20WELL-MEDICATIONS-SLEEP-image/20WELL-MEDICATIONS-SLEEP-image-articleLarge.jpg",
+      "authors": [
+        "Caroline Hopkins Legaspi"
+      ],
+      "category": "health",
+      "publishedAt": "2026-10-20T09:00:48Z"
+    },
+    {
+      "id": "nyt:nyt://article/6ae5864c-39c6-5d23-b01b-37d6bb0bf07b",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "A Star Reporter Had AIDS. He Wanted to Make It His Beat.",
+      "summary": "Jeffrey Schmalz wrote unsparingly about why the political and medical cavalry would not arrive in time for him.",
+      "url": "https://www.nytimes.com/2026/10/20/health/aids-hiv-jeffrey-schmalz-new-york-times-history.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/13/multimedia/00PROJECTS-175-EYEWITNESS-DOWD-gjwk/00PROJECTS-175-EYEWITNESS-DOWD-gjwk-articleLarge.jpg",
+      "authors": [
+        "Maureen Dowd"
+      ],
+      "category": "health",
+      "publishedAt": "2026-10-20T09:00:20Z"
+    },
+    {
+      "id": "nyt:nyt://article/0a01ec49-ae8a-5503-9a6f-29c84cc77714",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "Is It Safe to Use Eye Drops Every Day?",
+      "summary": "It depends on the formulation, experts say. Here’s what is (and isn’t) recommended for the long term.",
+      "url": "https://www.nytimes.com/2026/10/20/well/eye-drop-health-effects-safety.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/20/well/20WELL-ASK-EYE-DROPS1/20WELL-ASK-EYE-DROPS1-articleLarge.jpg",
+      "authors": [
+        "Erica Sweeney"
+      ],
+      "category": "health",
+      "publishedAt": "2026-10-20T09:00:12Z"
+    },
+    {
+      "id": "nyt:nyt://article/1da0d657-6409-54dd-ad45-a79882e1d515",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "Kennedy’s Vaccine Plan Could Cause Surge in Hepatitis B, Study Finds",
+      "summary": "Ending routine vaccination for hepatitis B at birth, as the health secretary has recommended, would increase the number of chronic infections by as much as 83 percent, a team of researchers reported.",
+      "url": "https://www.nytimes.com/2026/10/19/health/hepatitis-b-vaccine-kennedy.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/19/multimedia/19dc-hepatitis-mqpt/19dc-hepatitis-mqpt-articleLarge.jpg",
+      "authors": [
+        "Apoorva Mandavilli"
+      ],
+      "category": "health",
+      "publishedAt": "2026-10-19T21:00:05Z"
+    },
+    {
+      "id": "nyt:nyt://article/7068a8a8-428d-55e8-bf14-1baad6ba5345",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "Death Penalty Sought for Mother Who Blamed Toddlers’ Deaths on Vaccines",
+      "summary": "As Andrea Shaw, 23, awaits trial for the murder of her twins, a leading lawyer in the anti-vaccine movement has joined her defense team.",
+      "url": "https://www.nytimes.com/2026/10/19/well/andrea-shaw-death-penalty-toddler-deaths-vaccines.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/19/multimedia/19WELL-SHAWUPDATE1-qplh/19WELL-SHAWUPDATE1-qplh-articleLarge.jpg",
+      "authors": [
+        "Lisa Miller"
+      ],
+      "category": "health",
+      "publishedAt": "2026-10-19T19:10:32Z"
+    },
+    {
+      "id": "nyt:nyt://article/c3d31794-bdea-5fca-bf75-5077b2c9f8f3",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "How Bad Is Another Case of Covid?",
+      "summary": "Repeated infections are “a fact of life” at this point, experts say. But they warn there is no such thing as a risk-free case.",
+      "url": "https://www.nytimes.com/2026/10/19/well/covid-reinfection-risks.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/19/well/19WELL-COVID-REINFECTION-image/19WELL-COVID-REINFECTION-image-articleLarge.jpg",
+      "authors": [
+        "Dani Blum"
+      ],
+      "category": "health",
+      "publishedAt": "2026-10-19T09:02:00Z"
+    },
+    {
+      "id": "nyt:nyt://article/fa223a20-c6b5-5b80-a821-816e108c661e",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "The Internet Loves This Ancient Seed Oil. Is It Worth the Hype?",
+      "summary": "Wellness influencers claim it can help regrow hair and lower blood pressure. Here’s what the science says.",
+      "url": "https://www.nytimes.com/2026/10/19/well/black-seed-oil-benefits-hair-loss.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/19/well/19WELL-SCAM-BLACK-SEED-OIL-image/19WELL-SCAM-BLACK-SEED-OIL-image-articleLarge.png",
+      "authors": [
+        "David Dodge"
+      ],
+      "category": "health",
+      "publishedAt": "2026-10-19T09:01:56Z"
+    },
+    {
+      "id": "nyt:nyt://article/fb417c6f-be92-5d99-be8e-1a25fbe3a572",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "A Reporter Who Saw Covid Coming Has Died",
+      "summary": "Helen Branswell recognized the threat of the pandemic ahead of the vast majority of journalists and even medical experts. She was 69.",
+      "url": "https://www.nytimes.com/2026/10/17/health/helen-branswell-dead.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/16/multimedia/16obit-branswell-lkhw/16obit-branswell-lkhw-articleLarge.jpg",
+      "authors": [
+        "Jeré Longman"
+      ],
+      "category": "health",
+      "publishedAt": "2026-10-17T14:49:54Z"
+    },
+    {
+      "id": "nyt:nyt://article/849d7e66-3b6c-517d-9e9f-ab8b08454fd1",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "When a Gun Owner Shows Early Signs of Dementia",
+      "summary": "Public health experts are finding ways to encourage firearm safety practices for older adults who own guns, especially when there are indications of cognitive decline.",
+      "url": "https://www.nytimes.com/2026/10/17/well/family/firearms-elderly-dementia-risks-prevention.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/20/well/17Well-NOA-GunSaftey/17Well-NOA-GunSaftey-articleLarge.jpg",
+      "authors": [
+        "Paula Span"
+      ],
+      "category": "health",
+      "publishedAt": "2026-10-17T09:01:00Z"
+    },
+    {
+      "id": "nyt:nyt://article/c2a13bbb-9e31-53cd-a32f-51c43166b494",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "3 Tools to Help Keep Your Anger in Check",
+      "summary": "It may feel justified in the moment, but yelling at your loved ones rarely gets you what you want.",
+      "url": "https://www.nytimes.com/2026/10/16/well/anger-temper-tools.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/16/well/16WELL-NL-ANGER/16WELL-NL-ANGER-articleLarge-v2.jpg",
+      "authors": [
+        "Elizabeth Passarella"
+      ],
+      "category": "health",
+      "publishedAt": "2026-10-16T09:04:30Z"
+    },
+    {
+      "id": "nyt:nyt://article/424675b2-82f9-596b-ab80-65165f7fc623",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "Cliff Hagan, Master of the Hook Shot, Dies at 94",
+      "summary": "Inducted into the Basketball Hall of Fame in 1978, he led Kentucky to a national title in 1951 and the St. Louis Hawks to a league championship in 1958.",
+      "url": "https://www.nytimes.com/2026/10/17/sports/cliff-hagan-dead.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/17/obituaries/17hagan-1/17hagan-1-articleLarge.jpg",
+      "authors": [
+        "Richard Goldstein"
+      ],
+      "category": "sports",
+      "publishedAt": "2026-10-17T19:43:10Z"
+    },
+    {
+      "id": "nyt:nyt://article/e14886a8-b46b-5893-932d-8e8bd535218f",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "The Complicated Puzzle of the Formula 1 Schedule",
+      "summary": "It can take years to create, and then weather and wars can upend all the planning.",
+      "url": "https://www.nytimes.com/2026/10/13/sports/f1-schedule.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/10/multimedia/10sp-singapore-schedule-grid/10sp-singapore-schedule-grid-articleLarge.jpg",
+      "authors": [
+        "Phillip Horton"
+      ],
+      "category": "sports",
+      "publishedAt": "2026-10-13T14:15:19Z"
+    },
+    {
+      "id": "nyt:nyt://article/b1d9510a-a101-5a66-9f67-263f055b2c32",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "Allan McNish: From Top Driver to Racing Director of Audi",
+      "summary": "He won Le Mans three times, twice with Audi. Now he’s back in Formula 1.",
+      "url": "https://www.nytimes.com/2026/10/13/sports/f1-allan-mcnish-audi.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/10/multimedia/10sp-singapore-audi-inyt-01-jwlz/10sp-singapore-audi-inyt-01-jwlz-articleLarge.jpg",
+      "authors": [
+        "Ian Parkes"
+      ],
+      "category": "sports",
+      "publishedAt": "2026-10-13T13:53:36Z"
+    },
+    {
+      "id": "nyt:nyt://article/dfcbacfb-6b1b-59a7-b969-f1d7047fd68b",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "Mike Ditka Has Died. Bears Coach Was Beloved for Winning and Shouting.",
+      "summary": "He and the Bears won the Super Bowl in 1986, and after coaching he became one of the sport’s most visible and enduring talking heads. He was 86.",
+      "url": "https://www.nytimes.com/2026/10/09/sports/mike-ditka-dead.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/10/multimedia/09obit-Ditka-cpfl-print1/09obit-Ditka-cpfl-articleLarge.jpg",
+      "authors": [
+        "Barry Bearak"
+      ],
+      "category": "sports",
+      "publishedAt": "2026-10-09T15:27:55Z"
+    },
+    {
+      "id": "nyt:nyt://article/4b43a257-8d0c-5ba7-be17-64ac62767997",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "Sam McDowell, Pitching Ace Who Battled Addiction, Has Died",
+      "summary": "Known as “Sudden Sam,” he led the American League in strikeouts five times and posted a single-season high of 325 in 1965.",
+      "url": "https://www.nytimes.com/2026/10/06/sports/sam-mcdowell-dead.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/09/multimedia/06obit-mcdowell-fbcj-print1/06obit-mcdowell-fbcj-articleLarge.jpg",
+      "authors": [
+        "Richard Goldstein"
+      ],
+      "category": "sports",
+      "publishedAt": "2026-10-06T18:25:22Z"
+    },
+    {
+      "id": "nyt:nyt://article/c0b84570-d44a-50e0-904a-bc7278eac69e",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "Gordon Johncock, Two-Time Indianapolis 500 Winner, Dies at 90",
+      "summary": "He was among the premier drivers in the Indy 500, competing in 24 races and finishing eight times in the top five.",
+      "url": "https://www.nytimes.com/2026/09/28/sports/autoracing/gordon-johncock-dead.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/02/obituaries/28johncock-print1/28johncock-articleLarge.jpg",
+      "authors": [
+        "Richard Goldstein"
+      ],
+      "category": "sports",
+      "publishedAt": "2026-09-29T02:34:22Z"
+    },
+    {
+      "id": "nyt:nyt://article/a8b80c85-4cbe-583a-badd-53aaedab1c43",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "Arthur Hancock III, Derby Breeder With a Flair for Bluegrass, Dies at 83",
+      "summary": "He raised more than one Kentucky Derby champion and wrote music recorded by the likes of Willie Nelson. He also spoke out against abuses in horse racing.",
+      "url": "https://www.nytimes.com/2026/09/26/sports/arthur-hancock-horse-racing-dead.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/09/25/multimedia/25obit-hancock-pzmh/25obit-hancock-pzmh-articleLarge.jpg",
+      "authors": [
+        "Joe Drape"
+      ],
+      "category": "sports",
+      "publishedAt": "2026-09-26T09:02:07Z"
+    },
+    {
+      "id": "nyt:nyt://article/14b79aea-04f4-5c58-b0f7-c9295e2d5a9e",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "A Racehorse, Austrian Painter, Is Renamed After a Complaint",
+      "summary": "A name that could call to mind Hitler is judged offensive.",
+      "url": "https://www.nytimes.com/2026/09/25/sports/horse-racing/horse-name-austrian-painter-hitler.html",
+      "imageUrl": "https://static01.nyt.com/images/2023/05/06/multimedia/24xp-horse-name-1/06derby-blog-deadhorses-jwcv-articleLarge.jpg",
+      "authors": [
+        "Victor Mather"
+      ],
+      "category": "sports",
+      "publishedAt": "2026-09-25T15:51:38Z"
+    },
+    {
+      "id": "nyt:nyt://article/23aa045d-f8a3-51a4-8b39-e31c64842431",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "Isao Harimoto, Hiroshima Survivor and a Baseball Star in Japan, Dies at 86",
+      "summary": "A Korean-Japanese slugger known as Hit Machine, he was one of Japanese baseball’s greatest hitters in a career that lasted more than 20 years.",
+      "url": "https://www.nytimes.com/2026/09/11/sports/baseball/isao-harimoto-dead.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/09/17/multimedia/11xp-Harimoto-japan-obit-top-print3/11xp-Harimoto-japan-obit-top-articleLarge.jpg",
+      "authors": [
+        "Victor Mather"
+      ],
+      "category": "sports",
+      "publishedAt": "2026-09-11T16:54:27Z"
+    },
+    {
+      "id": "nyt:nyt://article/c4befa52-5e2a-5eae-a6a3-79c1634d193c",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "The F1 Driver Carlos Sainz Gets to Suit Up in His Hometown",
+      "summary": "He was born in Madrid and has always hoped for a Grand Prix there. It happens on Sunday.",
+      "url": "https://www.nytimes.com/2026/09/11/sports/autoracing/carlos-sainz-spanish-grand-prix.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/09/12/multimedia/12sp-spanish-sainz-inyt-01-gfvh/12sp-spanish-sainz-inyt-01-gfvh-articleLarge.jpg",
+      "authors": [
+        "Ian Parkes"
+      ],
+      "category": "sports",
+      "publishedAt": "2026-09-11T09:00:11Z"
+    },
+    {
+      "id": "nyt:nyt://article/62bb00ae-1e6c-568e-8a7b-8975f085f616",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "What’s Next for the Beach Boys?",
+      "summary": "Mike Love has been a constant, and sometimes contentious, steward of the band’s performances. Health problems and a recent concert appearance have prompted fans to ask what the future holds.",
+      "url": "https://www.nytimes.com/2026/10/20/arts/music/beach-boys-mike-love-future.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/20/arts/20CUL-BEACH-BOYS/20CUL-BEACH-BOYS-articleLarge.jpg",
+      "authors": [
+        "Timothy Sommer"
+      ],
+      "category": "entertainment",
+      "publishedAt": "2026-10-20T09:01:46Z"
+    },
+    {
+      "id": "nyt:nyt://article/1849539f-2d00-5dd3-9aa0-2ee121840dbf",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "How Dolly Parton’s Death Set Off a Legal Feud Surrounding Her Nephew",
+      "summary": "In life, the country music star worked hard to avoid the type of public controversy that erupted in her inner circle soon after her passing.",
+      "url": "https://www.nytimes.com/2026/10/20/arts/music/dolly-parton-estate-family-lawsuit.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/20/arts/20parton-dispute-topper/20parton-dispute-topper-articleLarge.jpg",
+      "authors": [
+        "Julia Jacobs",
+        "Emily Cochrane"
+      ],
+      "category": "entertainment",
+      "publishedAt": "2026-10-20T09:01:39Z"
+    },
+    {
+      "id": "nyt:nyt://article/7b162ea9-f44c-50ac-af35-2fabff219465",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "Houdini Died on Halloween 100 Years Ago. Some Still Question How.",
+      "summary": "A urologist’s inquiry into the magician’s final days is the latest effort to grapple with outstanding questions about his demise.",
+      "url": "https://www.nytimes.com/2026/10/20/arts/houdini-death-mystery.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/20/multimedia/20cul-houdini-gillespie-hcbf/20cul-houdini-gillespie-hcbf-articleLarge.jpg",
+      "authors": [
+        "Robin Pogrebin"
+      ],
+      "category": "entertainment",
+      "publishedAt": "2026-10-20T09:01:27Z"
+    },
+    {
+      "id": "nyt:nyt://article/545a5fbe-668b-531a-b64f-3eb7be099ebe",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "How Far Will These Girls Go to Avoid Becoming Their Mothers?",
+      "summary": "K-Ming Chang’s “Needlemouth” blends body horror with feminist allegory in the story of three cousins grappling with their inherited trauma.",
+      "url": "https://www.nytimes.com/2026/10/20/books/review/k-ming-chang-needlemouth.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/20/books/20k-ming-chang-600/20k-ming-chang-600-articleLarge.jpg",
+      "authors": [
+        "Jac Jemc"
+      ],
+      "category": "entertainment",
+      "publishedAt": "2026-10-20T09:01:22Z"
+    },
+    {
+      "id": "nyt:nyt://article/66f3e411-c7ec-56c7-b5ed-9e1eacc6a546",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "Late Night Sends Off Trump’s Press Secretary After Just Five Days",
+      "summary": "“It’s not good when the edible arrangement you got on your first day is still edible on your last day,” Jimmy Fallon said.",
+      "url": "https://www.nytimes.com/2026/10/20/arts/television/late-night-trump-press-secretary-katie-zacharia.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/20/arts/20latenight/20latenight-articleLarge.jpg",
+      "authors": [
+        "Trish Bendix"
+      ],
+      "category": "entertainment",
+      "publishedAt": "2026-10-20T06:01:58Z"
+    },
+    {
+      "id": "nyt:nyt://article/2cf34614-5120-504d-a64c-b40a916c77c6",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "Before ‘Heated Rivalry,’ This Queer Sports Romance on Ice Shocked Japan",
+      "summary": "The anime series “Yuri!!! On Ice” broke taboos, but brought so much more to the table.",
+      "url": "https://www.nytimes.com/2026/10/19/arts/television/yuri-on-ice-anniversary.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/19/arts/19cul-yuri-on-ice/19cul-yuri-on-ice-articleLarge.png",
+      "authors": [
+        "Maya Phillips"
+      ],
+      "category": "entertainment",
+      "publishedAt": "2026-10-19T20:37:19Z"
+    },
+    {
+      "id": "nyt:nyt://article/6950f6ef-c77c-58ac-8683-1c0f5b49fb78",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "Apu Returns to ‘The Simpsons’ With a New Voice Actor",
+      "summary": "After almost a decade away from Springfield, the character returned to the show, this time voiced by a South Asian actor rather than a white man.",
+      "url": "https://www.nytimes.com/2026/10/19/arts/television/apu-the-simpsons-sunil-malhotra.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/19/multimedia/19xp-apu-gvbc/19xp-apu-gvbc-articleLarge.jpg",
+      "authors": [
+        "Sopan Deb"
+      ],
+      "category": "entertainment",
+      "publishedAt": "2026-10-19T20:22:03Z"
+    },
+    {
+      "id": "nyt:nyt://article/b52f7402-346b-5eec-a5f0-99ce43da15e0",
+      "sourceId": "nyt",
+      "publisher": "The New York Times",
+      "title": "An Opera Ripped From the Headlines of the War in Ukraine",
+      "summary": "Operas don’t usually reflect current events. But “The Mothers of Kherson,” a product of artistic advocacy by the Met Opera, blends news and myth.",
+      "url": "https://www.nytimes.com/2026/10/19/arts/music/mothers-of-kherson-ukraine-opera.html",
+      "imageUrl": "https://static01.nyt.com/images/2026/10/19/multimedia/19cul-ukraine-top-vhfm/19cul-ukraine-top-vhfm-articleLarge.jpg",
+      "authors": [
+        "Joshua Barone"
+      ],
+      "category": "entertainment",
+      "publishedAt": "2026-10-19T16:38:10Z"
+    },
+    {
+      "id": "newsapi:https://www.cnbc.com/2026/10/19/jpmorgan-security-defense-investments.html",
+      "sourceId": "newsapi",
+      "publisher": "CNBC",
+      "title": "Robot factories and hypersonic missiles: JPMorgan Chase’s first $5 billion of defense investments",
+      "summary": "With $5 billion already deployed off its balance sheet, JPMorgan Chase is racing ahead on direct investments in defense tech, hardware and supply chains.",
+      "url": "https://www.cnbc.com/2026/10/19/jpmorgan-security-defense-investments.html",
+      "imageUrl": "https://image.cnbcfm.com/api/v1/image/106310265-1577120438176gettyimages-488164285.jpeg?v=1765554150&w=1920&h=1080",
+      "authors": [
+        "Hugh Son"
+      ],
+      "publishedAt": "2026-10-19T10:00:01Z"
+    },
+    {
+      "id": "newsapi:https://www.bbc.com/news/articles/ckj0ly6qnp1lo",
+      "sourceId": "newsapi",
+      "publisher": "BBC News",
+      "title": "Deadly fire at Canada military base moved a kilometre 'in 30 to 60 seconds' - BBC",
+      "summary": "The blaze that killed four men and injured dozens of others spread with alarming speed, accounts suggest.",
+      "url": "https://www.bbc.com/news/articles/ckj0ly6qnp1lo",
+      "imageUrl": "https://ichef.bbci.co.uk/news/1024/branded_news/e871/live/9a1e4770-cb94-11f1-93a7-b36f3083f4d3.jpg",
+      "authors": [],
+      "publishedAt": "2026-10-19T09:40:44Z"
+    },
+    {
+      "id": "newsapi:https://www.wsj.com/finance/investing/u-s-treasury-yields-fall-in-asian-trade-e5171539",
+      "sourceId": "newsapi",
+      "publisher": "The Wall Street Journal",
+      "title": "French Government-Bond Yields Rise on Protests, Budget Concerns; Treasury Yields Fall - WSJ",
+      "url": "https://www.wsj.com/finance/investing/u-s-treasury-yields-fall-in-asian-trade-e5171539",
+      "authors": [
+        "WSJ"
+      ],
+      "publishedAt": "2026-10-19T09:21:00Z"
+    },
+    {
+      "id": "newsapi:https://www.eurogamer.net/call-of-duty-modern-warfare-4-campaign-steam-review-rating",
+      "sourceId": "newsapi",
+      "publisher": "Eurogamer.net",
+      "title": "Players on Steam so far seem delighted with Modern Warfare 4's campaign, making it one of the most well-received Call of Dutys in recent history",
+      "summary": "Modern Warfare 4 may signal Call of Duty's return to form, at least judging by player sentiment on Steam so far.",
+      "url": "https://www.eurogamer.net/call-of-duty-modern-warfare-4-campaign-steam-review-rating",
+      "imageUrl": "https://assetsio.gnwcdn.com/modern-warfare-4-campaign-crop-2.jpg?width=1200&height=630&fit=crop&enable=upscale&auto=webp",
+      "authors": [
+        "Sherif Saed"
+      ],
+      "publishedAt": "2026-10-19T08:36:43Z"
+    },
+    {
+      "id": "newsapi:https://www.politico.com/news/2026/10/19/independent-mp-helen-haines-critically-injured-in-attack-near-electorate-office-01126005",
+      "sourceId": "newsapi",
+      "publisher": "Politico",
+      "title": "Independent MP Helen Haines critically injured in attack near electorate office",
+      "summary": "A suspect is in custody after the Australian MP was struck by a vehicle near her electorate office on Monday afternoon.",
+      "url": "https://www.politico.com/news/2026/10/19/independent-mp-helen-haines-critically-injured-in-attack-near-electorate-office-01126005",
+      "imageUrl": "https://www.politico.com/dims4/default/resize/1200/quality/90/format/jpg?url=https%3A%2F%2Fstatic.politico.com%2F2a%2F1a%2F82bf1b2f4498b88b564cb599f848%2Fhttps-delivery-gettyimages.com%2Fdownloads%2F2260591011",
+      "authors": [
+        "Finn McHugh, Paul Karp"
+      ],
+      "publishedAt": "2026-10-19T08:35:00Z"
+    },
+    {
+      "id": "newsapi:https://news.google.com/rss/articles/CBMiuwFBVV95cUxNd1JfWjg0eWlYZ2ZnRUc3aEpZelJBbEdkVUFLbm40cUVvVmdCcWlsS3pMQjNydlBINUkxSmp0bGNxYnRRb3pSVkh3RkpkeE5iZERDWGNfR09fTzBmaVZDUmNHRExjYUpvdTdMTV9Xc0tJM01nUm53QXRZWHZMc1BFV3J4NlRMdURqendjeVZvUmNjb21OWXZOTWNGLUtVTjBjNng3LUF0QzNubG5QTlY5c1JEVVpaTGZrNkxB0gHAAUFVX3lxTFB5WjdSVmJVNkxUZnNLd0hwb214STlsaGF4VzhfSC1WMjV2aG5IRUJQZHVLU192eDR5MWk3MnZ5YzZ5YW03YW8xMzdTREpfYnFCekJ1ZFlXRjJfdU4zdm5LUjhHYm50ai1ieW8zWXBIaXQ5VWdyZUNSeG94Rk9aMHJVUlBhU1hHUXpJLTJmbHY3M0VnZV91bXU3VHpBZ0tGa1F1MXNyWG0tOEtGbEs3ck5QOVNoTnFJak9YN0M0OXJiXw?oc=5",
+      "sourceId": "newsapi",
+      "publisher": "Google News",
+      "title": "Police say 10 suspects arrested for West Bank settler attacks on journalist, EU diplomats - The Times of Israel",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNd1JfWjg0eWlYZ2ZnRUc3aEpZelJBbEdkVUFLbm40cUVvVmdCcWlsS3pMQjNydlBINUkxSmp0bGNxYnRRb3pSVkh3RkpkeE5iZERDWGNfR09fTzBmaVZDUmNHRExjYUpvdTdMTV9Xc0tJM01nUm53QXRZWHZMc1BFV3J4NlRMdURqendjeVZvUmNjb21OWXZOTWNGLUtVTjBjNng3LUF0QzNubG5QTlY5c1JEVVpaTGZrNkxB0gHAAUFVX3lxTFB5WjdSVmJVNkxUZnNLd0hwb214STlsaGF4VzhfSC1WMjV2aG5IRUJQZHVLU192eDR5MWk3MnZ5YzZ5YW03YW8xMzdTREpfYnFCekJ1ZFlXRjJfdU4zdm5LUjhHYm50ai1ieW8zWXBIaXQ5VWdyZUNSeG94Rk9aMHJVUlBhU1hHUXpJLTJmbHY3M0VnZV91bXU3VHpBZ0tGa1F1MXNyWG0tOEtGbEs3ck5QOVNoTnFJak9YN0M0OXJiXw?oc=5",
+      "authors": [
+        "The Times of Israel"
+      ],
+      "publishedAt": "2026-10-19T08:26:06Z"
+    },
+    {
+      "id": "newsapi:https://www.forbes.com/sites/jamiecartereurope/2026/10/19/see-shooting-stars-from-halleys-comet-the-night-sky-this-week/",
+      "sourceId": "newsapi",
+      "publisher": "Forbes",
+      "title": "Halley’s Comet Returns To The Night Sky — Sort Of",
+      "url": "https://www.forbes.com/sites/jamiecartereurope/2026/10/19/see-shooting-stars-from-halleys-comet-the-night-sky-this-week/",
+      "authors": [
+        "Forbes"
+      ],
+      "publishedAt": "2026-10-19T06:00:00Z"
+    },
+    {
+      "id": "newsapi:https://www.nbcnews.com/sports/nfl/dallas-cowboys-nfl-green-bay-packers-dak-prescott-results-rcna604280",
+      "sourceId": "newsapi",
+      "publisher": "NBC News",
+      "title": "Thanks to familiar miscues, the Dallas Cowboys are off to their worst start in years",
+      "summary": "The Dallas Cowboys can’t run the ball or stop opposing offenses. Its resulted in their worst record through six games since 2020.",
+      "url": "https://www.nbcnews.com/sports/nfl/dallas-cowboys-nfl-green-bay-packers-dak-prescott-results-rcna604280",
+      "imageUrl": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/rockcms/2026-10/261018-cowboys-813-GWR-76b9e3.jpg",
+      "authors": [
+        "Andrew Greif"
+      ],
+      "publishedAt": "2026-10-19T05:22:00Z"
+    },
+    {
+      "id": "newsapi:https://www.espn.com/nfl/story/_/id/50181469/week-6-sunday-games-takeaways-questions-2026",
+      "sourceId": "newsapi",
+      "publisher": "ESPN",
+      "title": "NFL Week 6: Big takeaways, questions and fantasy spin from Sunday's games",
+      "summary": "Our NFL Nation reporters react to all the action, answering the biggest questions coming out of each Sunday game. Here's what we learned from Week 6.",
+      "url": "https://www.espn.com/nfl/story/_/id/50181469/week-6-sunday-games-takeaways-questions-2026",
+      "imageUrl": "https://a3.espncdn.com/combiner/i?img=%2Fphoto%2F2026%2F1018%2Fr1732703_1296x729_16%2D9.jpg",
+      "authors": [
+        "NFL Nation"
+      ],
+      "publishedAt": "2026-10-19T04:46:00Z"
+    },
+    {
+      "id": "newsapi:https://www.bbc.com/news/articles/cm2kez327gdko",
+      "sourceId": "newsapi",
+      "publisher": "BBC News",
+      "title": "Anthropic says it will commit 5% of its shares to 'public benefit fund' - BBC",
+      "summary": "The announcement comes as Anthropic lays the ground for a blockbuster stock market listing.",
+      "url": "https://www.bbc.com/news/articles/cm2kez327gdko",
+      "imageUrl": "https://ichef.bbci.co.uk/news/1024/branded_news/87fa/live/537946d0-cb5d-11f1-a1ba-9502012907ad.jpg",
+      "authors": [],
+      "publishedAt": "2026-10-19T04:30:59Z"
+    },
+    {
+      "id": "newsapi:https://www.post-gazette.com/sports/steelers/2026/10/18/steelers-report-card-buccaneers-week6/stories/202610180077",
+      "sourceId": "newsapi",
+      "publisher": "Pittsburgh Post-Gazette",
+      "title": "Steelers report card: Germie Bernard and DK Metcalf step up in the win over the Buccaneers",
+      "summary": "False",
+      "url": "https://www.post-gazette.com/sports/steelers/2026/10/18/steelers-report-card-buccaneers-week6/stories/202610180077",
+      "imageUrl": "https://73f3e7d5672db1849e6c-6434aaf008a29447cc424990bc6a54a7.ssl.cf2.rackcdn.com/stories/202610180077/1140x_a10-7_cTC/dk-metcalf_1792368448.jpg",
+      "authors": [
+        "Ray Fittipaldo"
+      ],
+      "publishedAt": "2026-10-19T04:00:35Z"
+    },
+    {
+      "id": "newsapi:https://www.cnbc.com/2026/10/19/putin-trump-xi-ukraine-war-energy.html",
+      "sourceId": "newsapi",
+      "publisher": "CNBC",
+      "title": "Putin reportedly suggests summit with Trump and Xi to decide fate of Ukraine",
+      "summary": "The report comes amid mounting tensions between Ukraine and the United States, its largest military backer.",
+      "url": "https://www.cnbc.com/2026/10/19/putin-trump-xi-ukraine-war-energy.html",
+      "imageUrl": "https://image.cnbcfm.com/api/v1/image/108372989-1791255404749-gettyimages-2229471059-2230320553.jpeg?v=1791572488&w=1920&h=1080",
+      "authors": [
+        "Lim Hui Jie"
+      ],
+      "publishedAt": "2026-10-19T03:56:00Z"
+    },
+    {
+      "id": "newsapi:https://www.usatoday.com/story/sports/ncaaf/big12/2026/10/18/bear-bachmeier-disrespected-notre-dame-byu-qb/92316351007/",
+      "sourceId": "newsapi",
+      "publisher": "USA Today",
+      "title": "Bear Bachmeier gets his revenge: ‘Notre Dame disrespected me and my family’",
+      "summary": "Bear Bachmeier didn’t forget Notre Dame’s “disrespect.” Years later, the BYU quarterback made the Fighting Irish pay.",
+      "url": "https://www.usatoday.com/story/sports/ncaaf/big12/2026/10/18/bear-bachmeier-disrespected-notre-dame-byu-qb/92316351007/",
+      "imageUrl": "https://www.usatoday.com/gcdn/authoring/authoring-images/2026/10/18/USAT/92314404007-getty-images-2300218815.jpg?crop=8185,4607,x0,y71&width=3200&height=1802&format=pjpg&auto=webp",
+      "authors": [
+        "Zac Al-Khateeb"
+      ],
+      "publishedAt": "2026-10-19T03:55:00Z"
+    },
+    {
+      "id": "newsapi:https://www.aljazeera.com/news/2026/10/19/ukrainian-drone-attack-on-russias-st-petersburg-kills-1-hits-energy-sites",
+      "sourceId": "newsapi",
+      "publisher": "Al Jazeera English",
+      "title": "Ukraine launches over 1,000 drones at Russia, setting oil facilities ablaze - Al Jazeera",
+      "summary": "The air strike, one of Ukraine’s largest in the war, comes amid rising tensions between Kyiv and Washington.",
+      "url": "https://www.aljazeera.com/news/2026/10/19/ukrainian-drone-attack-on-russias-st-petersburg-kills-1-hits-energy-sites",
+      "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/10/AFP__20261018__D3M74UK__v1__HighRes__RussiaUkraineConflict-1792313964.jpg?resize=1920%2C1440",
+      "authors": [
+        "Al Jazeera Staff"
+      ],
+      "publishedAt": "2026-10-19T03:01:43Z"
+    },
+    {
+      "id": "newsapi:https://www.wral.com/weather/spacex-launch-oct-19-2026/",
+      "sourceId": "newsapi",
+      "publisher": "WRAL.com",
+      "title": "SpaceX launch Monday morning could bring another ‘space jellyfish’ to Carolina skies - WRAL",
+      "summary": "Tuesday's pre-dawn SpaceX launch could be visible from North Carolina to Florida.",
+      "url": "https://www.wral.com/weather/spacex-launch-oct-19-2026/",
+      "imageUrl": "https://images.wral.com/8ff1c679-0b3f-40e3-b5df-29810f3a2d99?w=1200&h=630&height=630",
+      "authors": [
+        "Tony Rice, NASA Ambassador"
+      ],
+      "publishedAt": "2026-10-19T02:52:23Z"
+    },
+    {
+      "id": "newsapi:https://www.washingtonpost.com/politics/2026/10/18/takeaways-jd-vances-town-hall-forum-michigan/",
+      "sourceId": "newsapi",
+      "publisher": "The Washington Post",
+      "title": "Takeaways from JD Vance’s town hall forum in Michigan",
+      "summary": "A fallen soldier's husband asked Vance about ‘mistakes’ and ‘failures’ in Iran war. Gas prices and immigration were also key topics in event hosted by CBS.",
+      "url": "https://www.washingtonpost.com/politics/2026/10/18/takeaways-jd-vances-town-hall-forum-michigan/",
+      "imageUrl": "https://www.washingtonpost.com/wp-apps/imrs.php?src=https://cloudfront-us-east-1.images.arcpublishing.com/wapo/OPN7R4CRY7CBXY2BQCBZJ2H6VQ.jpg&w=1440",
+      "authors": [
+        "Violet Jira"
+      ],
+      "publishedAt": "2026-10-19T02:25:32Z"
+    },
+    {
+      "id": "newsapi:https://www.npr.org/2026/10/18/nx-s1-6007384/trump-to-close-and-renovate-d-c-golf-course-despite-legal-battle",
+      "sourceId": "newsapi",
+      "publisher": "NPR",
+      "title": "Trump to close and renovate D.C. golf course, despite legal battle.",
+      "summary": "President Trump continues his efforts to remake Washington, D.C. He wants to turn an area used by the public into a world-class golf course.",
+      "url": "https://www.npr.org/2026/10/18/nx-s1-6007384/trump-to-close-and-renovate-d-c-golf-course-despite-legal-battle",
+      "imageUrl": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/4820x2711+0+174/resize/1400/quality/85/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Faa%2F74%2F0bb935124de09dfa1aec7efcf155%2Fap26286635206019.jpg",
+      "authors": [
+        "Andrew Limbong"
+      ],
+      "publishedAt": "2026-10-19T02:09:43Z"
+    },
+    {
+      "id": "newsapi:https://www.wsj.com/world/middle-east/saudi-arabias-military-limitations-are-being-exposed-by-houthi-attacks-40082655",
+      "sourceId": "newsapi",
+      "publisher": "The Wall Street Journal",
+      "title": "Saudi Arabia’s Military Limitations Are Being Exposed by Houthi Attacks - WSJ",
+      "url": "https://www.wsj.com/world/middle-east/saudi-arabias-military-limitations-are-being-exposed-by-houthi-attacks-40082655",
+      "authors": [
+        "WSJ"
+      ],
+      "publishedAt": "2026-10-19T02:00:00Z"
+    },
+    {
+      "id": "newsapi:https://apnews.com/article/meta-muse-openai-dot-ai-privacy-449734d41d3750aad7038b761faa49c9",
+      "sourceId": "newsapi",
+      "publisher": "Associated Press",
+      "title": "AI agents are only as good as the personal information you share. That raises privacy concerns - AP News",
+      "summary": "Downloads of new artificial intelligence agents — like Meta's Muse and OpenAI's dots — are booming. Many have quickly welcomed AI agents into much of their online lives, and raved about the ways they can take care of everyday tasks with ease from snagging a d…",
+      "url": "https://apnews.com/article/meta-muse-openai-dot-ai-privacy-449734d41d3750aad7038b761faa49c9",
+      "imageUrl": "https://dims.apnews.com/dims4/default/df5bbe2/2147483647/strip/true/crop/5121x3414+0+0/resize/1200x800!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2Ffb%2F88%2F85d226562163e21104ad3d896e44%2F16df45a0d7844b48964e67eb130c4875",
+      "authors": [
+        "Wyatte Grantham-Philips"
+      ],
+      "category": "business",
+      "publishedAt": "2026-10-19T09:20:58Z"
+    },
+    {
+      "id": "newsapi:https://finance.yahoo.com/markets/stocks/article/elon-musk-says-he-is-going-to-give-spacex-stock-away-to-kids-090305874.html",
+      "sourceId": "newsapi",
+      "publisher": "Yahoo Entertainment",
+      "title": "Elon Musk says he is going to give SpaceX stock away to kids - Yahoo Finance",
+      "summary": "Kids getting a share of the Muskverse.",
+      "url": "https://finance.yahoo.com/markets/stocks/article/elon-musk-says-he-is-going-to-give-spacex-stock-away-to-kids-090305874.html",
+      "imageUrl": "https://s.yimg.com/lo/mysterio/api/fa1c5af5a1841e8078e0f6790da271c19e133f54f134f1b0b96d243973e522ae/lightyear_networkapi/resizefill_w1200%3Bquality_80%3Bformat_webp/https%3A%2F%2Fd29szjachogqwa.cloudfront.net%2Fimages%2F2026-10%2Fcb539bcd-2c5e-4306-8d73-5ce28232da39",
+      "authors": [
+        "Brian Sozzi"
+      ],
+      "category": "business",
+      "publishedAt": "2026-10-19T09:03:05Z"
+    },
+    {
+      "id": "newsapi:https://www.investing.com/news/stock-market-news/asia-stocks-edge-lower-despite-stronger-china-growth-as-ai-jitters-persist-4956316",
+      "sourceId": "newsapi",
+      "publisher": "Investing.com",
+      "title": "Asian stocks mixed as KOSPI rebounds, Indonesia selloff deepens on MSCI risks",
+      "summary": "Asian stocks mixed as KOSPI rebounds, Indonesia selloff deepens on MSCI risks",
+      "url": "https://www.investing.com/news/stock-market-news/asia-stocks-edge-lower-despite-stronger-china-growth-as-ai-jitters-persist-4956316",
+      "imageUrl": "https://content-media.investing.com/news/LYNXMPEB1H0YB_L.jpg",
+      "authors": [
+        "Roushni Nair"
+      ],
+      "category": "business",
+      "publishedAt": "2026-10-19T08:00:52Z"
+    },
+    {
+      "id": "newsapi:https://www.bloomberg.com/news/articles/2026-10-19/indonesian-stocks-tumble-to-lowest-since-2020-after-msci-warning",
+      "sourceId": "newsapi",
+      "publisher": "Bloomberg",
+      "title": "Indonesia’s Selloff Deepens Across Stocks, Bonds on MSCI Risk - Bloomberg.com",
+      "summary": "Indonesian markets extended their selloff, with stocks deepening their worst rout in almost 30 years and losses spreading to bonds and the rupiah after MSCI Inc. warned the country may face a two-step downgrade.",
+      "url": "https://www.bloomberg.com/news/articles/2026-10-19/indonesian-stocks-tumble-to-lowest-since-2020-after-msci-warning",
+      "imageUrl": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iaoTPy2VZo3k/v0/1200x800.jpg",
+      "authors": [
+        "Bernadette Toh, Karl Lester Yap, Prima Wirayani"
+      ],
+      "category": "business",
+      "publishedAt": "2026-10-19T06:57:00Z"
+    },
+    {
+      "id": "newsapi:https://www.cnbc.com/2026/10/19/openai-bugging-suspect-alfozan-saudi-royal-family.html",
+      "sourceId": "newsapi",
+      "publisher": "CNBC",
+      "title": "OpenAI bugging suspect WhatsApp'ed Saudi royal days before arrest, feds reveal",
+      "summary": "Saudi national Abdulrahman Alfozan is accused of planting a recording device in an executive conference room at OpenAI headquarters in San Francisco.",
+      "url": "https://www.cnbc.com/2026/10/19/openai-bugging-suspect-alfozan-saudi-royal-family.html",
+      "imageUrl": "https://image.cnbcfm.com/api/v1/image/108405226-1792009363242-2026-10-13T224936Z_547248141_RC2F2OAXO3WE_RTRMADP_3_OPENAI-SPYING-FBI.JPG?v=1792009377&w=1920&h=1080",
+      "authors": [
+        "Dan Mangan"
+      ],
+      "category": "business",
+      "publishedAt": "2026-10-19T06:03:03Z"
+    },
+    {
+      "id": "newsapi:https://newsletter.semianalysis.com/p/datacenters-2027-the-year-of-acceleration",
+      "sourceId": "newsapi",
+      "publisher": "Semianalysis.com",
+      "title": "Datacenters 2027: The Year of Acceleration, +50GW in a Single Year - SemiAnalysis",
+      "summary": "60GW Under Construction, SemiAnalysis Leading Indicators, 1.3T of Lease Contracts Signed YTD, The Shortage Could Move to Chips",
+      "url": "https://newsletter.semianalysis.com/p/datacenters-2027-the-year-of-acceleration",
+      "imageUrl": "https://substackcdn.com/image/fetch/$s_!yNnq!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd0f59757-0f4d-46af-858f-de75498b900f_1376x768.jpeg",
+      "authors": [
+        "Jeremie Eliahou Ontiveros, Reyk Knuhtsen, Dylan Patel"
+      ],
+      "category": "business",
+      "publishedAt": "2026-10-19T05:39:38Z"
+    },
+    {
+      "id": "newsapi:https://mashable.com/entertainment/gta-grand-theft-auto-6-cyberleek-lucia-leaked-gameplay-videos",
+      "sourceId": "newsapi",
+      "publisher": "Mashable",
+      "title": "Cyberleek drops more NSFW Lucia videos, threatens to release 'GTA 6' in full",
+      "summary": "Only about a month until the game is out.",
+      "url": "https://mashable.com/entertainment/gta-grand-theft-auto-6-cyberleek-lucia-leaked-gameplay-videos",
+      "imageUrl": "https://helios-i.mashable.com/imagery/articles/03sZ0A4BYrf77U0A6HR6KhF/hero-image.fill.size_1200x675.v1791815910.jpg",
+      "authors": [
+        "Alex Perry"
+      ],
+      "category": "technology",
+      "publishedAt": "2026-10-19T10:12:20Z"
+    },
+    {
+      "id": "newsapi:https://www.bgr.com/2287528/most-affordable-gaming-console-2026/",
+      "sourceId": "newsapi",
+      "publisher": "BGR",
+      "title": "What Is The Most Affordable Gaming Console In 2026?",
+      "summary": "On paper, Nintendo ties Xbox for the cheapest console to date, but it also has the weakest hardware, and owning one of its systems comes with hidden costs.",
+      "url": "https://www.bgr.com/2287528/most-affordable-gaming-console-2026/",
+      "imageUrl": "https://www.bgr.com/img/gallery/what-is-the-most-affordable-gaming-console-in-2026/l-intro-1792072426.jpg",
+      "authors": [
+        "Faith Leroux"
+      ],
+      "category": "technology",
+      "publishedAt": "2026-10-19T04:17:00Z"
+    },
+    {
+      "id": "newsapi:https://www.bgr.com/2286870/essential-tools-every-pc-gamer-should-install/",
+      "sourceId": "newsapi",
+      "publisher": "BGR",
+      "title": "3 Essential Tools Every PC Gamer Should Install",
+      "summary": "You have a lot of tools available to you to maintain and monitor your PC, but these three, in particular, are must-haves for any gamer.",
+      "url": "https://www.bgr.com/2286870/essential-tools-every-pc-gamer-should-install/",
+      "imageUrl": "https://www.bgr.com/img/gallery/3-essential-tools-every-pc-gamer-should-install/l-intro-1792001568.jpg",
+      "authors": [
+        "Matthew Sholtz"
+      ],
+      "category": "technology",
+      "publishedAt": "2026-10-19T01:17:00Z"
+    },
+    {
+      "id": "newsapi:https://en.softonic.com/articles/epic-games-shifts-to-automation-first-development-tim-sweeney-sees-a-golden-age-of-gaming",
+      "sourceId": "newsapi",
+      "publisher": "Softonic",
+      "title": "Epic Games shifts to automation-first development: Tim Sweeney sees a “golden age of gaming”",
+      "summary": "Epic Games is moving teams toward automation-first development. Tim Sweeney says generative tools could speed up production, lower costs, and open what he calls a “golden age of gaming.” Epic Games Download He says coding assistants now measure up ag",
+      "url": "https://en.softonic.com/articles/epic-games-shifts-to-automation-first-development-tim-sweeney-sees-a-golden-age-of-gaming",
+      "imageUrl": "https://articles-img.sftcdn.net/t_article_cover_xl/auto-mapping-folder/sites/3/2026/10/epic-games-shifts-to-automation-first-development-tim-sweene-20261018.jpg",
+      "authors": [
+        "Chema Carvajal Sarabia"
+      ],
+      "category": "technology",
+      "publishedAt": "2026-10-19T00:48:05Z"
+    },
+    {
+      "id": "newsapi:https://kotaku.com/mrbeast-joins-shark-tank-invests-quarter-million-in-ai-powered-ball-2-2000747308",
+      "sourceId": "newsapi",
+      "publisher": "Kotaku",
+      "title": "MrBeast Joins Shark Tank, Invests Quarter Million In AI-Powered ‘Ball 2’",
+      "summary": "Mr. Wonderful inversely appeared uninterested in the foam orb, not seeing how it could distinguish itself among other, more popular balls",
+      "url": "https://kotaku.com/mrbeast-joins-shark-tank-invests-quarter-million-in-ai-powered-ball-2-2000747308",
+      "imageUrl": "https://kotaku.com/app/uploads/2026/10/ball2-1200x675.jpg",
+      "authors": [
+        "Zack Kotzer"
+      ],
+      "category": "technology",
+      "publishedAt": "2026-10-18T22:24:42Z"
+    },
+    {
+      "id": "newsapi:https://www.howtogeek.com/your-usb-c-cables-might-need-a-firmware-update-im-serious/",
+      "sourceId": "newsapi",
+      "publisher": "How-To Geek",
+      "title": "Your USB-C cables might need a firmware update. I'm serious",
+      "summary": "Great, yet another firmware update to forget about.",
+      "url": "https://www.howtogeek.com/your-usb-c-cables-might-need-a-firmware-update-im-serious/",
+      "imageUrl": "https://static0.howtogeekimages.com/wordpress/wp-content/uploads/wm/2026/07/usbccables2-2.jpg?w=1600&h=900&fit=crop",
+      "authors": [
+        "Monica J. White"
+      ],
+      "category": "technology",
+      "publishedAt": "2026-10-18T21:30:16Z"
+    },
+    {
+      "id": "newsapi:https://9to5mac.com/2026/10/18/apple-keeps-making-the-phone-app-better-heres-how/",
+      "sourceId": "newsapi",
+      "publisher": "9to5Mac",
+      "title": "Three Phone app features worth turning on right now",
+      "summary": "Hold Assist and Call Screening are available today, with Call Context arriving in iOS 27. Here's how each one works.",
+      "url": "https://9to5mac.com/2026/10/18/apple-keeps-making-the-phone-app-better-heres-how/",
+      "imageUrl": "https://9to5mac.com/wp-content/uploads/sites/6/2026/07/phone-app-icon-fi-ios-27.jpg?quality=82&strip=all&resize=1200,628",
+      "authors": [
+        "Chance Miller"
+      ],
+      "category": "technology",
+      "publishedAt": "2026-10-18T21:19:00Z"
+    },
+    {
+      "id": "newsapi:https://www.androidpolice.com/googles-renamed-gemini-features-field-guide/",
+      "sourceId": "newsapi",
+      "publisher": "Android Police",
+      "title": "Google is renaming Gemini again; here's what each feature does now",
+      "summary": "Gems, Skills, Spark, Scheduled Actions: a field guide to renamed features",
+      "url": "https://www.androidpolice.com/googles-renamed-gemini-features-field-guide/",
+      "imageUrl": "https://static0.anpoimages.com/wordpress/wp-content/uploads/2026/10/gemini-gems-spark-and-scheduled-actions-icons-floating-on-a-light-blue-gradient-background.png?w=1600&h=900&fit=crop",
+      "authors": [
+        "Ben Khalesi"
+      ],
+      "category": "technology",
+      "publishedAt": "2026-10-18T21:00:13Z"
+    },
+    {
+      "id": "newsapi:https://www.discoverwildlife.com/animal-facts/marine-animals/humpback-whale-sea-lion-hunting",
+      "sourceId": "newsapi",
+      "publisher": "Discoverwildlife.com",
+      "title": "Astounding footage shows humpback whales teaming up with California sea lions to hunt in Monterey Bay - BBC Wildlife Magazine",
+      "summary": "Scientists studied nearly 2,000 whale lunge-feeding events and noticed that something was different when California sea lions were nearby.",
+      "url": "https://www.discoverwildlife.com/animal-facts/marine-animals/humpback-whale-sea-lion-hunting",
+      "imageUrl": "https://d2rj6cu2ik1biv.cloudfront.net/193c804a-a673-47bd-b09b-11baf4822a17/9ac494a4-627d-4fea-a827-dcf588dd6f96/e7080336-7989-45d3-86b8-f0f5a57c52e5/thumbnails/05e7b72b-e77c-48b6-a8ac-e4e1dcd6afae.jpeg?appId=f347d34d-c1a6-4a00-b570-b78c2dcb3211&platform=WEB&w=1200",
+      "authors": [
+        "Melissa Hobson"
+      ],
+      "category": "science",
+      "publishedAt": "2026-10-19T00:05:26Z"
+    },
+    {
+      "id": "newsapi:https://nypost.com/2026/10/18/science/scientists-reveal-first-zombie-star-with-ghostly-green-glow/",
+      "sourceId": "newsapi",
+      "publisher": "New York Post",
+      "title": "Scientists reveal first ‘zombie’ star with ‘ghostly green glow’ — and fascinating reason behind hue",
+      "summary": "“It feels like something out of science fiction.”",
+      "url": "https://nypost.com/2026/10/18/science/scientists-reveal-first-zombie-star-with-ghostly-green-glow/",
+      "imageUrl": "https://nypost.com/wp-content/uploads/sites/2/2026/10/comp-green-star-145609396.jpg?quality=75&strip=all&w=1200",
+      "authors": [
+        "Jesse O’Neill"
+      ],
+      "category": "science",
+      "publishedAt": "2026-10-18T20:28:00Z"
+    },
+    {
+      "id": "newsapi:https://www.foxweather.com/earth-space/nasa-mars-rover-major-milestone-record-breaking-journey",
+      "sourceId": "newsapi",
+      "publisher": "Foxweather.com",
+      "title": "NASA’s Mars rover reaches major milestone with record-breaking journey - FOX Weather",
+      "summary": "NASA’s Perseverance Mars rover has set a world record for the farthest distance driven by any vehicle on the surface of another world. The milestone came as Perseverance traveled toward an area called \"Idubi,\" a region off the western rim of Jezero Crater.",
+      "url": "https://www.foxweather.com/earth-space/nasa-mars-rover-major-milestone-record-breaking-journey",
+      "imageUrl": "https://images.foxweather.com/static.foxweather.com/www.foxweather.com/content/uploads/2026/05/1024/512/hin95bsbaaaf0lp.jpeg?ve=1&tl=1",
+      "authors": [],
+      "category": "science",
+      "publishedAt": "2026-10-18T18:23:22Z"
+    },
+    {
+      "id": "newsapi:https://phys.org/news/2026-10-physicists-quantum-limit-thermalization.html",
+      "sourceId": "newsapi",
+      "publisher": "Phys.Org",
+      "title": "Physicists prove a long-suspected quantum speed limit for thermalization - Phys.org",
+      "summary": "Whether we are waiting for a car windshield to defrost in winter or a warm drink to cool down, how long it takes for an object to settle into a stable, even temperature within its environment (thermal equilibrium) depends on numerous factors. These can includ…",
+      "url": "https://phys.org/news/2026-10-physicists-quantum-limit-thermalization.html",
+      "imageUrl": "https://scx2.b-cdn.net/gfx/news/2026/the-search-is-over-sci.jpg",
+      "authors": [
+        "Paul Arnold"
+      ],
+      "category": "science",
+      "publishedAt": "2026-10-18T17:20:01Z"
+    },
+    {
+      "id": "newsapi:https://spaceflightnow.com/2026/10/18/live-coverage-spacex-to-launch-starfall-reentry-capsule-31-customer-payloads-on-bandwagon-5-rideshare-mission/",
+      "sourceId": "newsapi",
+      "publisher": "Spaceflight Now",
+      "title": "Live coverage: SpaceX to launch Starfall reentry capsule, 31 customer payloads on Bandwagon-5 rideshare mission",
+      "url": "https://spaceflightnow.com/2026/10/18/live-coverage-spacex-to-launch-starfall-reentry-capsule-31-customer-payloads-on-bandwagon-5-rideshare-mission/",
+      "authors": [],
+      "category": "science",
+      "publishedAt": "2026-10-18T16:34:34Z"
+    },
+    {
+      "id": "newsapi:https://phys.org/news/2026-10-scientists-reverse-coral.html",
+      "sourceId": "newsapi",
+      "publisher": "Phys.Org",
+      "title": "Scientists discover a way to reverse coral bleaching at record speed - Phys.org",
+      "summary": "For the first time, scientists have observed bleached corals on the brink of death fully recover through brief contact with healthy clones. Ghostly white corals returned to full health in a laboratory setting within seven weeks, the fastest documented recover…",
+      "url": "https://phys.org/news/2026-10-scientists-reverse-coral.html",
+      "imageUrl": "https://scx2.b-cdn.net/gfx/news/hires/2026/stanford-scientists-di.jpg",
+      "authors": [],
+      "category": "science",
+      "publishedAt": "2026-10-18T16:00:01Z"
+    },
+    {
+      "id": "newsapi:https://www.space.com/space-exploration/apollo/computer-scientist-margaret-hamilton-was-a-problem-solver-for-the-ages-op-ed",
+      "sourceId": "newsapi",
+      "publisher": "Space.com",
+      "title": "Computer scientist Margaret Hamilton was a problem-solver for the ages (op-ed) - Space",
+      "summary": "Hamilton showed that, no matter how daunting the obstacles, there are few problems we can't solve.",
+      "url": "https://www.space.com/space-exploration/apollo/computer-scientist-margaret-hamilton-was-a-problem-solver-for-the-ages-op-ed",
+      "imageUrl": "https://cdn.mos.cms.futurecdn.net/5KPnDror6M4GWWDHyrn5Uc-2560-80.jpg",
+      "authors": [
+        "Dean Robbins"
+      ],
+      "category": "science",
+      "publishedAt": "2026-10-18T16:00:00Z"
+    },
+    {
+      "id": "newsapi:https://www.space.com/space-exploration/on-this-day-in-space-october-18-2026",
+      "sourceId": "newsapi",
+      "publisher": "Space.com",
+      "title": "On this day in space! Oct. 18, 1963: France's Félicette Becomes the 1st Cat in Space! >^..^ - Space",
+      "summary": "On Oct. 18, 1963, a cat went to space! Félicette was a French \"catstronaut\" who became the first and only feline to fly to space. Here's why it mattered.",
+      "url": "https://www.space.com/space-exploration/on-this-day-in-space-october-18-2026",
+      "imageUrl": "https://cdn.mos.cms.futurecdn.net/T4jZforjx7NshA5itfB9Ym-800-80.jpg",
+      "authors": [
+        "Hanneke Weitering, Robert Z. Pearlman"
+      ],
+      "category": "science",
+      "publishedAt": "2026-10-18T13:52:32Z"
+    },
+    {
+      "id": "newsapi:https://www.sciencealert.com/a-saline-injection-could-offer-longer-relief-from-carpal-tunnel-pain",
+      "sourceId": "newsapi",
+      "publisher": "ScienceAlert",
+      "title": "A Saline Injection Could Offer Longer Relief From Carpal Tunnel Pain",
+      "summary": "Typing with numb fingers, struggling to hold a pen, or waking with an aching hand can make everyday life exhausting for people with carpal tunnel syndrome.",
+      "url": "https://www.sciencealert.com/a-saline-injection-could-offer-longer-relief-from-carpal-tunnel-pain",
+      "imageUrl": "https://www.sciencealert.com/images/2026/10/carpal-tunnel.jpg",
+      "authors": [
+        "Esra Öz"
+      ],
+      "category": "health",
+      "publishedAt": "2026-10-19T00:01:32Z"
+    },
+    {
+      "id": "newsapi:https://www.nbcnews.com/world/africa/dr-congos-fast-moving-ebola-outbreak-spreads-eighth-province-rcna604234",
+      "sourceId": "newsapi",
+      "publisher": "NBC News",
+      "title": "Congo’s fast-moving Ebola outbreak spreads to eighth province",
+      "summary": "The Health Ministry has recorded two cases, including one death, in Nord-Ubangi province. Both people were men in their 20s, the ministry said.",
+      "url": "https://www.nbcnews.com/world/africa/dr-congos-fast-moving-ebola-outbreak-spreads-eighth-province-rcna604234",
+      "imageUrl": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/rockcms/2026-10/261018-ebola-congo-ww-1619-8fd81a.jpg",
+      "authors": [
+        "The Associated Press"
+      ],
+      "category": "health",
+      "publishedAt": "2026-10-18T23:37:55Z"
+    },
+    {
+      "id": "newsapi:https://monseyscoop.com/harmonious-hearts-issues-public-health-alert-over-dangerous-cats-claw-tablets-sold-in-rockland-county/",
+      "sourceId": "newsapi",
+      "publisher": "Monseyscoop.com",
+      "title": "Harmonious Hearts Issues Public Health Alert Over Dangerous “Cat’s Claw” Tablets Sold in Rockland County - Monsey Scoop",
+      "summary": "A public health warning has been issued by Harmonious Hearts regarding potentially dangerous tablets known as “Cat’s Claw” being sold in local shops throu",
+      "url": "https://monseyscoop.com/harmonious-hearts-issues-public-health-alert-over-dangerous-cats-claw-tablets-sold-in-rockland-county/",
+      "imageUrl": "https://monseyscoop.com/wp-content/uploads/2026/10/IMG-20261018-WA1324.jpg",
+      "authors": [
+        "Sruly, Sruly"
+      ],
+      "category": "health",
+      "publishedAt": "2026-10-18T22:39:16Z"
+    },
+    {
+      "id": "newsapi:https://www.newsweek.com/woman-thought-she-had-crick-in-neck-scan-changed-everything-12577432",
+      "sourceId": "newsapi",
+      "publisher": "Newsweek",
+      "title": "Woman Thought She Had a Crick in Her Neck, One Scan Changed Everything",
+      "summary": "\"One minute, you’re living your normal life, and suddenly, the future you pictured feels uncertain,\" Sarah Esposito, 26 said.",
+      "url": "https://www.newsweek.com/woman-thought-she-had-crick-in-neck-scan-changed-everything-12577432",
+      "imageUrl": "https://assets.newsweek.com/wp-content/uploads/2026/10/Copy-of-New-Split-Pic-Template-2026-10-16T102430-751.png?w=1200&crop=1",
+      "authors": [
+        "Alyce Collins"
+      ],
+      "category": "health",
+      "publishedAt": "2026-10-18T21:00:00Z"
+    },
+    {
+      "id": "newsapi:https://www.realsimple.com/myths-about-longevity-12175893",
+      "sourceId": "newsapi",
+      "publisher": "Real Simple",
+      "title": "6 Things You’ve Been Told About Healthy Aging That Aren’t Actually True, According to Doctors",
+      "summary": "From sleep needs to supplements, doctors debunk six common myths about aging and longevity, and share simple, realistic ways to support your health as you get older.",
+      "url": "https://www.realsimple.com/myths-about-longevity-12175893",
+      "imageUrl": "https://www.realsimple.com/thmb/DodQvSyX5erIrFK71jVhZLcCKvo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/healthyaging-8062baf13e33481dab2fc98628cfba99.jpg",
+      "authors": [],
+      "category": "health",
+      "publishedAt": "2026-10-18T20:38:00Z"
+    },
+    {
+      "id": "newsapi:https://www.sciencealert.com/one-blood-type-seems-to-carry-a-higher-risk-of-type-2-diabetes",
+      "sourceId": "newsapi",
+      "publisher": "ScienceAlert",
+      "title": "One Blood Type Seems to Carry a Higher Risk of Type 2 Diabetes",
+      "summary": "Depending on your blood type, it's possible you could carry a higher diabetes risk, research suggests.",
+      "url": "https://www.sciencealert.com/one-blood-type-seems-to-carry-a-higher-risk-of-type-2-diabetes",
+      "imageUrl": "https://www.sciencealert.com/images/2026/10/BloodTypeDiabetes-1200x675.png",
+      "authors": [
+        "Michelle Starr"
+      ],
+      "category": "health",
+      "publishedAt": "2026-10-18T20:02:50Z"
+    },
+    {
+      "id": "newsapi:https://www.iheart.com/content/2026-10-18-napping-linked-to-dementia-risk-in-older-adults/",
+      "sourceId": "newsapi",
+      "publisher": "Iheart.com",
+      "title": "Napping Linked To Dementia Risk In Older Adults - iHeart",
+      "summary": "A study from Johns Hopkins links frequent napping to a higher dementia risk in older adults. The research found that unintentional naps and naps under 30 minutes are associated with increased risk, suggesting changes in sleep habits could signal early cogniti…",
+      "url": "https://www.iheart.com/content/2026-10-18-napping-linked-to-dementia-risk-in-older-adults/",
+      "imageUrl": "https://i.iheart.com/v3/re/assets.getty/6ad523b80aa03726cf9a4173",
+      "authors": [],
+      "category": "health",
+      "publishedAt": "2026-10-18T19:59:01Z"
+    },
+    {
+      "id": "newsapi:https://www.psypost.org/a-single-dose-of-psilocybin-eased-depression-within-days-but-its-edge-over-placebo-faded-within-a-year/",
+      "sourceId": "newsapi",
+      "publisher": "PsyPost",
+      "title": "A single dose of psilocybin eased depression within days, but its edge over placebo faded within a year",
+      "summary": "A single dose of psilocybin eased depression within days in a small Swedish trial, outperforming an active placebo for more than three months on patients’ self-ratings. By one year, however, the placebo group had largely caught up.",
+      "url": "https://www.psypost.org/a-single-dose-of-psilocybin-eased-depression-within-days-but-its-edge-over-placebo-faded-within-a-year/",
+      "imageUrl": "https://www.psypost.org/wp-content/uploads/2024/11/psychedelic-psilocybin-mushrooms-1.jpg",
+      "authors": [
+        "Vladimir Hedrih"
+      ],
+      "category": "health",
+      "publishedAt": "2026-10-18T18:36:34Z"
+    },
+    {
+      "id": "newsapi:https://medicalxpress.com/news/2026-10-poorly-understood-brain-region-tracks.html",
+      "sourceId": "newsapi",
+      "publisher": "Medical Xpress",
+      "title": "A poorly understood brain region tracks the gap between expectations and reality",
+      "summary": "Adapting to changing situations requires people to continuously revise their expectations about what might happen next when new information becomes available. These expectations are believed to be represented by mental models that help the brain predict outco…",
+      "url": "https://medicalxpress.com/news/2026-10-poorly-understood-brain-region-tracks.html",
+      "imageUrl": "https://scx2.b-cdn.net/gfx/news/hires/2026/a-poorly-understood-br-1.jpg",
+      "authors": [
+        "Ingrid Fadelli"
+      ],
+      "category": "health",
+      "publishedAt": "2026-10-18T17:40:01Z"
+    },
+    {
+      "id": "newsapi:https://www.foxnews.com/health/popular-foods-americans-eat-every-day-linked-silent-brain-damage-alarming-study-finds",
+      "sourceId": "newsapi",
+      "publisher": "Fox News",
+      "title": "Popular foods Americans eat every day linked to silent brain damage, alarming study finds",
+      "summary": "MRI scans of 9,000 Canadians revealed hidden brain damage linked to ultra-processed foods like soft drinks and sugary cereals, with women at higher risk.",
+      "url": "https://www.foxnews.com/health/popular-foods-americans-eat-every-day-linked-silent-brain-damage-alarming-study-finds",
+      "imageUrl": "https://static.foxnews.com/foxnews.com/content/uploads/2026/06/man_eating_chips_with_beer.jpeg",
+      "authors": [],
+      "category": "health",
+      "publishedAt": "2026-10-18T17:07:23Z"
+    },
+    {
+      "id": "newsapi:https://www.usatoday.com/story/sports/ncaaf/2026/10/18/texas-football-bench-arch-manning-steve-sarkisian-hot-seat/92218015007/",
+      "sourceId": "newsapi",
+      "publisher": "USA Today",
+      "title": "Arch Manning is a Texas problem, and Steve Sarkisian is last to see it",
+      "summary": "Steve Sarkisian finally sees it: Texas may need to move on from Arch Manning.",
+      "url": "https://www.usatoday.com/story/sports/ncaaf/2026/10/18/texas-football-bench-arch-manning-steve-sarkisian-hot-seat/92218015007/",
+      "imageUrl": "https://www.usatoday.com/gcdn/authoring/authoring-images/2026/10/18/USAT/92318462007-20261017-t-160353-z-1989369700-mt-1-usatoday-30109397-rtrmadp-3-ncaafootballfloridaattexas.JPG?crop=6817,3835,x0,y0&width=3200&height=1801&format=pjpg&auto=webp",
+      "authors": [
+        "Blake Toppmeyer"
+      ],
+      "category": "sports",
+      "publishedAt": "2026-10-19T10:16:00Z"
+    },
+    {
+      "id": "newsapi:https://www.audacy.com/wgr550/sports/bills/capaccio-arrow-up-arrow-down-bills-at-raiders",
+      "sourceId": "newsapi",
+      "publisher": "Audacy.com",
+      "title": "Capaccio: Arrow Up/ Arrow Down: Bills at Raiders - Audacy",
+      "summary": "| WGR Sports Radio Buffalo",
+      "url": "https://www.audacy.com/wgr550/sports/bills/capaccio-arrow-up-arrow-down-bills-at-raiders",
+      "imageUrl": "https://www.audacy.com/media-library/buffalo-bills-v-las-vegas-raiders.jpg?id=68468187&width=1200&height=600&coordinates=0%2C85%2C0%2C86",
+      "authors": [
+        "Sal Capaccio"
+      ],
+      "category": "sports",
+      "publishedAt": "2026-10-19T05:48:00Z"
+    },
+    {
+      "id": "newsapi:https://www.post-gazette.com/sports/steelers/2026/10/18/nfl-picks-week-6/stories/202610150037",
+      "sourceId": "newsapi",
+      "publisher": "Pittsburgh Post-Gazette",
+      "title": "Gerry Dulac’s 2026 NFL predictions: Week 6",
+      "summary": "False",
+      "url": "https://www.post-gazette.com/sports/steelers/2026/10/18/nfl-picks-week-6/stories/202610150037",
+      "imageUrl": "https://73f3e7d5672db1849e6c-6434aaf008a29447cc424990bc6a54a7.ssl.cf2.rackcdn.com/stories/202610150037/1140x_a10-7_cTC/49ers-Seahawks-Football-16_1792310441.jpg",
+      "authors": [
+        "Gerry Dulac"
+      ],
+      "category": "sports",
+      "publishedAt": "2026-10-19T05:43:17Z"
+    },
+    {
+      "id": "newsapi:https://www.espn.com/college-football/story/_/id/50216261/duke-kimari-robinson-apologizes-swatting-away-arm-female-staffer-checking-injured-player",
+      "sourceId": "newsapi",
+      "publisher": "ESPN",
+      "title": "Duke's Kimari Robinson apologizes for swatting away trainer's arm during UNC game",
+      "summary": "Kimari Robinson, the Duke cornerback who swatted the arm of a training staff member as she checked on an injured player during the team's game against North Carolina over the weekend, apologized for his actions Sunday night.",
+      "url": "https://www.espn.com/college-football/story/_/id/50216261/duke-kimari-robinson-apologizes-swatting-away-arm-female-staffer-checking-injured-player",
+      "imageUrl": "https://a3.espncdn.com/combiner/i?img=%2Fphoto%2F2016%2F0502%2Fr79363_1296x729_16%2D9.jpg",
+      "authors": [],
+      "category": "sports",
+      "publishedAt": "2026-10-19T04:41:00Z"
+    },
+    {
+      "id": "newsapi:https://www.usatoday.com/story/sports/nba/kings/2026/10/18/ben-simmons-injury-update-kings-achilles/92322933007/",
+      "sourceId": "newsapi",
+      "publisher": "USA Today",
+      "title": "Ben Simmons sustains Achilles injury during Sacramento Kings practice",
+      "summary": "Recently signed forward Ben Simmons sustained a torn Achilles during Sacramento Kings practice on Sunday, Oct. 18.",
+      "url": "https://www.usatoday.com/story/sports/nba/kings/2026/10/18/ben-simmons-injury-update-kings-achilles/92322933007/",
+      "imageUrl": "https://www.usatoday.com/gcdn/authoring/authoring-images/2026/10/18/USAT/92322938007-20260928-t-234216-z-1046400978-mt-1-usatoday-29945169-rtrmadp-3-nbasacramentokingsmediaday.JPG?crop=4727,2661,x0,y888&width=3200&height=1802&format=pjpg&auto=webp",
+      "authors": [
+        "Marcus D. Smith"
+      ],
+      "category": "sports",
+      "publishedAt": "2026-10-19T04:14:00Z"
+    },
+    {
+      "id": "newsapi:https://www.on3.com/news/college-football-bowl-projections-week-8-full-list-of-matchups-playoff-predictions-2/",
+      "sourceId": "newsapi",
+      "publisher": "On3.com",
+      "title": "College Football Bowl Projections Week 8: Full list of matchups, playoff predictions - On3",
+      "summary": "There’s a tremendous amount of uncertainty surrounding the bowl system with the College Football Playoff expanding to 24 teams next season. How many",
+      "url": "https://www.on3.com/news/college-football-bowl-projections-week-8-full-list-of-matchups-playoff-predictions-2/",
+      "imageUrl": "https://on3static.com/uploads/dev/assets/cms/2025/09/21161343/bowls-afi.png",
+      "authors": [
+        "Brett McMurphy"
+      ],
+      "category": "sports",
+      "publishedAt": "2026-10-19T01:57:17Z"
+    },
+    {
+      "id": "newsapi:http://www.rollingstone.com/music/music-news/miley-cyrus-hollywood-bowl-show-criticism-response-1235644514/",
+      "sourceId": "newsapi",
+      "publisher": "Rolling Stone",
+      "title": "Miley Cyrus Responds to Criticism of Hollywood Bowl Show: ‘I Am Fully Present’",
+      "summary": "Miley Cyrus responded to criticism of her concert at the Hollywood Bowl on Friday night, confirming that she was \"fully present.\"",
+      "url": "http://www.rollingstone.com/music/music-news/miley-cyrus-hollywood-bowl-show-criticism-response-1235644514/",
+      "imageUrl": "https://www.rollingstone.com/wp-content/uploads/2026/10/GettyImages-2300218556-1.jpg?w=1600&h=900&crop=1",
+      "authors": [
+        "Emily Zemler"
+      ],
+      "category": "entertainment",
+      "publishedAt": "2026-10-19T07:01:15Z"
+    },
+    {
+      "id": "newsapi:http://deadline.com/2026/10/other-desert-cities-broadway-review-julia-louis-dreyfus-1237165682/",
+      "sourceId": "newsapi",
+      "publisher": "Deadline",
+      "title": "‘Other Desert Cities’ Review: Julia Louis-Dreyfus Gets Seriously Funny For Broadway Debut",
+      "summary": "Deadline reviews Julia Louis-Dreyfus' Broadway debut in 'Other Desert Cities.\"",
+      "url": "http://deadline.com/2026/10/other-desert-cities-broadway-review-julia-louis-dreyfus-1237165682/",
+      "imageUrl": "https://deadline.com/wp-content/uploads/2026/10/Other-Desert-Cities_Allison-Janney-as-Silda-Grauman-Julia-Louis-Dreyfus-as-Polly-Wyeth_by-Emilio-Madrid_6098.jpg?w=1024",
+      "authors": [
+        "Greg Evans"
+      ],
+      "category": "entertainment",
+      "publishedAt": "2026-10-19T04:00:00Z"
+    },
+    {
+      "id": "newsapi:https://www.cbsnews.com/losangeles/news/presley-gerber-death-cindy-crawford-rande-kaia-break-silence/",
+      "sourceId": "newsapi",
+      "publisher": "CBS News",
+      "title": "Cindy Crawford and family break silence on Presley Gerber's death: \"We love you forever\"",
+      "summary": "Cindy Crawford, Rande Gerber and their daughter, Kaia, have broken their silence for the first time since Presley Gerber's death​ last month.",
+      "url": "https://www.cbsnews.com/losangeles/news/presley-gerber-death-cindy-crawford-rande-kaia-break-silence/",
+      "imageUrl": "https://assets3.cbsnewsstatic.com/hub/i/r/2026/10/19/8bfc9a8c-884c-4c81-85ae-818e23a30cfd/thumbnail/1200x630/6520963f7e9d527ec1d4e0ad66d8aa8a/gettyimages-1081122974.jpg",
+      "authors": [
+        "Dean  Fioresi"
+      ],
+      "category": "entertainment",
+      "publishedAt": "2026-10-19T02:58:00Z"
+    },
+    {
+      "id": "newsapi:https://www.mensjournal.com/news/gisele-bundchen-makes-surprise-victorias-secret-cameo-20-years-after-last-runway-appearance",
+      "sourceId": "newsapi",
+      "publisher": "Men's Journal",
+      "title": "Gisele Bündchen Makes Surprise Victoria’s Secret Cameo 20 Years After Last Runway Appearance",
+      "url": "https://www.mensjournal.com/news/gisele-bundchen-makes-surprise-victorias-secret-cameo-20-years-after-last-runway-appearance",
+      "authors": [
+        "Men's Journal"
+      ],
+      "category": "entertainment",
+      "publishedAt": "2026-10-19T02:34:00Z"
+    },
+    {
+      "id": "newsapi:https://www.foxnews.com/entertainment/kevin-bacon-pleads-help-recovering-missing-fedex-package-rerouted-multiple-times-globe",
+      "sourceId": "newsapi",
+      "publisher": "Fox News",
+      "title": "Kevin Bacon pleads for help recovering missing FedEx package rerouted multiple times around the globe",
+      "summary": "Kevin Bacon's FedEx package of sentimental '90s clothes was shipped to Israel instead of Ireland and bounced through multiple countries since.",
+      "url": "https://www.foxnews.com/entertainment/kevin-bacon-pleads-help-recovering-missing-fedex-package-rerouted-multiple-times-globe",
+      "imageUrl": "https://static.foxnews.com/foxnews.com/content/uploads/2025/04/kevinbacon.jpg",
+      "authors": [],
+      "category": "entertainment",
+      "publishedAt": "2026-10-19T02:19:55Z"
+    },
+    {
+      "id": "newsapi:https://people.com/dylan-sprouse-praises-wife-barbara-palvin-for-walking-2026-victorias-secret-fashion-show-after-giving-birth-12181008",
+      "sourceId": "newsapi",
+      "publisher": "PEOPLE",
+      "title": "Dylan Sprouse Praises New Mom Barbara Palvin for Walking the 2026 Victoria’s Secret Fashion Show - People.com",
+      "summary": "Dylan Sprouse praised his wife Barbara Palvin’s hard work to return to the Victoria’s Secret Fashion Show runway just six weeks after the model gave birth to their daughter in September.",
+      "url": "https://people.com/dylan-sprouse-praises-wife-barbara-palvin-for-walking-2026-victorias-secret-fashion-show-after-giving-birth-12181008",
+      "imageUrl": "https://people.com/thmb/vdVSm6ZPcHb80AUIkZnvE3p0b0I=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(749x0:751x2)/Barbara-Palvin-dylan-101826-d74226b069604214aac4c2e928d5a93a.jpg",
+      "authors": [],
+      "category": "entertainment",
+      "publishedAt": "2026-10-19T01:33:38Z"
+    },
+    {
+      "id": "newsapi:https://www.foxnews.com/outkick-sports/caitlin-clark-taylor-swift-spotted-together-cheering-travis-kelce-chiefs-game",
+      "sourceId": "newsapi",
+      "publisher": "Fox News",
+      "title": "Caitlin Clark and Taylor Swift spotted together again cheering on Travis Kelce at Chiefs game",
+      "summary": "Caitlin Clark and Taylor Swift were spotted celebrating a Travis Kelce catch at Arrowhead Stadium as the Chiefs routed the Chargers on Sunday.",
+      "url": "https://www.foxnews.com/outkick-sports/caitlin-clark-taylor-swift-spotted-together-cheering-travis-kelce-chiefs-game",
+      "imageUrl": "https://static.foxnews.com/foxnews.com/content/uploads/2026/10/taylor-swift-caitlin-clark-chiefs-chargers.jpg",
+      "authors": [],
+      "category": "entertainment",
+      "publishedAt": "2026-10-19T01:23:52Z"
+    },
+    {
+      "id": "newsapi:https://variety.com/2026/tv/news/the-simpsons-apu-new-voice-sunil-malhotra-hank-azaria-1236915177/",
+      "sourceId": "newsapi",
+      "publisher": "Variety",
+      "title": "‘The Simpsons’ Surprise: Apu Is Heard for the First Time in Nearly a Decade, as Sunil Malhotra Takes Over for Hank Azaria (EXCLUSIVE)",
+      "summary": "'The Simpsons' brought back Apu's voice for the first time in nearly a decade, with the new voice now played by Sunil Malhotra instead of Hank Azaria.",
+      "url": "https://variety.com/2026/tv/news/the-simpsons-apu-new-voice-sunil-malhotra-hank-azaria-1236915177/",
+      "imageUrl": "https://variety.com/wp-content/uploads/2026/10/Apu-Sunil-Malhotra.jpg?w=1000&h=563&crop=1",
+      "authors": [
+        "Michael Schneider"
+      ],
+      "category": "entertainment",
+      "publishedAt": "2026-10-19T00:30:00Z"
+    },
+    {
+      "id": "newsapi:https://www.vogue.com/article/kylie-jenner-fantasy-bra-2026-victorias-secret-10-18-2026",
+      "sourceId": "newsapi",
+      "publisher": "Vogue",
+      "title": "Kylie Jenner Debuts on the Victoria’s Secret Runway in its $50 Million Fantasy Bra",
+      "summary": "The reality TV star and entrepreneur stepped onto the Victoria's Secret catwalk wearing the most expensive Fantasy Bra to date.",
+      "url": "https://www.vogue.com/article/kylie-jenner-fantasy-bra-2026-victorias-secret-10-18-2026",
+      "imageUrl": "https://assets.vogue.com/photos/6ad563dde23326fc4c9fa6f0/16:9/w_1280,c_limit/GettyImages-2300878305.jpg",
+      "authors": [
+        "Max Berlinger"
+      ],
+      "category": "entertainment",
+      "publishedAt": "2026-10-19T00:28:01Z"
+    },
+    {
+      "id": "newsapi:https://variety.com/2026/film/news/taika-waititi-confirms-star-wars-movie-is-on-hold-1236916086/",
+      "sourceId": "newsapi",
+      "publisher": "Variety",
+      "title": "Taika Waititi Confirms His ‘Star Wars’ Movie Has Been Put ‘on Ice’ Indefinitely",
+      "summary": "Taika Waititi’s “Star Wars” movie, which has been in development since 2020, is officially on hold.",
+      "url": "https://variety.com/2026/film/news/taika-waititi-confirms-star-wars-movie-is-on-hold-1236916086/",
+      "imageUrl": "https://variety.com/wp-content/uploads/2024/12/Taika-Waititi-by-Gareth-Cattermole-Getty-Images.jpg?w=1000&h=563&crop=1",
+      "authors": [
+        "Payton Turkeltaub"
+      ],
+      "category": "entertainment",
+      "publishedAt": "2026-10-18T23:39:00Z"
+    }
+  ]
+}

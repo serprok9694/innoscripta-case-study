@@ -14,6 +14,8 @@ describe('App', () => {
     );
 
     expect(screen.getByRole('heading', { level: 1, name: 'My feed' })).toBeInTheDocument();
-    expect(await screen.findByText('No news sources available')).toBeInTheDocument();
+    // No keys configured: the recorded sample is shown, with an explanation.
+    expect(await screen.findByRole('note')).toHaveTextContent('Demo mode');
+    expect(await screen.findByRole('list', { name: 'Articles' })).toBeInTheDocument();
   });
 });
