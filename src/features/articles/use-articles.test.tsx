@@ -1,9 +1,11 @@
 import { act, renderHook, waitFor } from '@testing-library/react';
+import { http, HttpResponse } from 'msw';
 import { describe, expect, it } from 'vitest';
 import guardianFixture from '@/sources/guardian/__fixtures__/search.json';
 import guardianTags from '@/sources/guardian/__fixtures__/tags.json';
 import nytFixture from '@/sources/nyt/__fixtures__/search.json';
 import { mockJson } from '@/test/msw/mock-json';
+import { server } from '@/test/msw/server';
 import { createWrapper } from '@/test/render';
 import type { NewsFilters } from './filters';
 import { useArticles } from './use-articles';
@@ -54,6 +56,33 @@ describe('useArticles', () => {
     expect(nytRequests.map((r) => r.searchParams.get('page'))).toEqual(['0', '1']);
     // The mocks return the same articles again: they are not duplicated.
     expect(result.current.articles).toHaveLength(8);
+  });
+
+  it('keeps loaded articles when the only remaining source fails on the next page', async () => {
+    mockConfig({ nyt: true });
+    let calls = 0;
+    server.use(
+      http.get(`*${NYT}`, () => {
+        calls += 1;
+        return calls === 1
+          ? HttpResponse.json(nytFixture)
+          : HttpResponse.json({ fault: { faultstring: 'Rate limit' } }, { status: 429 });
+      }),
+    );
+    const { result } = renderUseArticles({ sources: ['nyt'] });
+    await waitFor(() => expect(result.current.articles).toHaveLength(4));
+
+    await act(() => result.current.fetchNextPage());
+
+    await waitFor(() =>
+      expect(result.current.failures).toEqual([
+        { sourceId: 'nyt', kind: 'rate-limit', message: 'Rate limit' },
+      ]),
+    );
+    expect(calls).toBe(2);
+    expect(result.current.error).toBeNull();
+    expect(result.current.articles).toHaveLength(4);
+    expect(result.current.hasNextPage).toBe(false);
   });
 
   it('shows the sources that work and reports the one that failed', async () => {

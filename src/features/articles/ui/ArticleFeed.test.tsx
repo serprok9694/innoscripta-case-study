@@ -17,7 +17,7 @@ function feed(overrides: Partial<ArticlesResult> = {}): ArticlesResult {
     hasNextPage: false,
     isFetchingNextPage: false,
     fetchNextPage: vi.fn<ArticlesResult['fetchNextPage']>(),
-    refetch: vi.fn<ArticlesResult['refetch']>(),
+    retry: vi.fn<ArticlesResult['retry']>(),
     ...overrides,
   } as ArticlesResult;
 }
@@ -37,11 +37,11 @@ describe('ArticleFeed', () => {
   });
 
   it('offers a retry when loading failed', async () => {
-    const refetch = vi.fn<ArticlesResult['refetch']>();
-    render(<ArticleFeed feed={feed({ error: new Error('down'), refetch })} />);
+    const retry = vi.fn<ArticlesResult['retry']>();
+    render(<ArticleFeed feed={feed({ error: new Error('down'), retry })} />);
 
     await userEvent.click(screen.getByRole('button', { name: 'Try again' }));
-    expect(refetch).toHaveBeenCalledOnce();
+    expect(retry).toHaveBeenCalledOnce();
   });
 
   it('shows the given empty state', () => {
@@ -65,5 +65,41 @@ describe('ArticleFeed', () => {
     expect(screen.getByRole('status')).toHaveTextContent(
       'The New York Times — request limit reached, try again in a minute',
     );
+  });
+
+  it('keeps the loaded articles when a further page fails', async () => {
+    const fetchNextPage = vi.fn<ArticlesResult['fetchNextPage']>();
+    render(
+      <ArticleFeed
+        feed={feed({
+          articles: [makeArticle({ title: 'Still here' })],
+          error: new Error('page 2 failed'),
+          isFetchNextPageError: true,
+          hasNextPage: true,
+          fetchNextPage,
+        })}
+      />,
+    );
+
+    expect(screen.getByText('Still here')).toBeInTheDocument();
+    expect(screen.queryByText('Couldn’t load the news')).not.toBeInTheDocument();
+    expect(screen.getByRole('alert')).toHaveTextContent('Couldn’t load more articles.');
+    await userEvent.click(screen.getByRole('button', { name: 'Try again' }));
+    expect(fetchNextPage).toHaveBeenCalledOnce();
+  });
+
+  it('lets unavailable sources be retried', async () => {
+    const retry = vi.fn<ArticlesResult['retry']>();
+    render(
+      <ArticleFeed
+        feed={feed({
+          articles: [makeArticle()],
+          failures: [{ sourceId: 'nyt', kind: 'rate-limit', message: '' }],
+          retry,
+        })}
+      />,
+    );
+    await userEvent.click(screen.getByRole('button', { name: 'Retry' }));
+    expect(retry).toHaveBeenCalledOnce();
   });
 });

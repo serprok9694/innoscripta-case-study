@@ -2,6 +2,7 @@ import { useId } from 'react';
 import { Link } from 'react-router';
 import type { Article } from '@/domain/article';
 import { CATEGORY_LABELS } from '@/domain/category';
+import type { SearchEntryState } from '@/features/search/search-entry';
 import { searchUrl } from '@/features/search/search-params';
 import { formatDateTime } from '@/shared/lib/format-date';
 import { Drawer } from '@/shared/ui/Drawer';
@@ -12,14 +13,22 @@ import { FollowButton } from './FollowButton';
 
 const LINK = 'font-medium text-blue-700 hover:underline dark:text-blue-400';
 
+/**
+ * History state for related-search links ("More by…"): they replace the
+ * preview's entry, so a search opened from the feed must say so.
+ */
+type RelatedLinkState = SearchEntryState | undefined;
+
 function PreviewBody({
   article,
   titleId,
   following,
+  relatedLinkState,
 }: {
   article: Article;
   titleId: string;
   following?: AuthorFollowing;
+  relatedLinkState: RelatedLinkState;
 }) {
   const sourceName = getSource(article.sourceId).name;
 
@@ -53,7 +62,12 @@ function PreviewBody({
               <li key={name} className="flex items-center justify-between gap-3">
                 <div className="min-w-0">
                   <p className="truncate font-medium">{name}</p>
-                  <Link to={searchUrl({ authors: [name] })} replace className={`text-sm ${LINK}`}>
+                  <Link
+                    to={searchUrl({ authors: [name] })}
+                    replace
+                    state={relatedLinkState}
+                    className={`text-sm ${LINK}`}
+                  >
                     More by {name}
                   </Link>
                 </div>
@@ -79,14 +93,24 @@ function PreviewBody({
         <ul className="space-y-1 text-sm">
           {article.category && (
             <li>
-              <Link to={searchUrl({ categories: [article.category] })} replace className={LINK}>
+              <Link
+                to={searchUrl({ categories: [article.category] })}
+                replace
+                state={relatedLinkState}
+                className={LINK}
+              >
                 More in {CATEGORY_LABELS[article.category]}
               </Link>
             </li>
           )}
           <li>
             {/* The source, not the publisher: NewsAPI can't filter by publisher. */}
-            <Link to={searchUrl({ sources: [article.sourceId] })} replace className={LINK}>
+            <Link
+              to={searchUrl({ sources: [article.sourceId] })}
+              replace
+              state={relatedLinkState}
+              className={LINK}
+            >
               More from {sourceName}
             </Link>
           </li>
@@ -100,6 +124,7 @@ interface ArticlePreviewProps {
   article: Article | undefined;
   onClose: () => void;
   following?: AuthorFollowing;
+  relatedLinkState?: RelatedLinkState;
 }
 
 /**
@@ -107,7 +132,12 @@ interface ArticlePreviewProps {
  * read on the original site, follow the authors, find related articles.
  * Built from already loaded data — APIs return snippets, not full text.
  */
-export function ArticlePreview({ article, onClose, following }: ArticlePreviewProps) {
+export function ArticlePreview({
+  article,
+  onClose,
+  following,
+  relatedLinkState,
+}: ArticlePreviewProps) {
   const titleId = useId();
 
   return (
@@ -131,7 +161,14 @@ export function ArticlePreview({ article, onClose, following }: ArticlePreviewPr
         )
       }
     >
-      {article && <PreviewBody article={article} titleId={titleId} following={following} />}
+      {article && (
+        <PreviewBody
+          article={article}
+          titleId={titleId}
+          following={following}
+          relatedLinkState={relatedLinkState}
+        />
+      )}
     </Drawer>
   );
 }

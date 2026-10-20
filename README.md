@@ -48,8 +48,12 @@ Open **http://localhost:8080**.
 - **With keys** the news is live. You can configure any subset of the keys; sources without a key
   are disabled.
 
-The image build runs lint, format check, type check and the whole test suite, so a broken commit
-never produces an image. To use another port, run `PORT=3000 docker compose up --build`.
+The image only type-checks and bundles the app, so it builds reliably on any machine. Lint and
+tests run in CI on every push (`.github/workflows/ci.yml`), and in Docker on demand:
+`docker build --target verify .`. To use another port, run `PORT=3000 docker compose up --build`.
+
+The container also starts without network access (demo mode works offline): the proxy resolves
+the API hosts per request.
 
 ## Getting API keys
 
@@ -72,23 +76,24 @@ also solves CORS: NewsAPI's free plan rejects browser requests from anything but
 
 ## Local development
 
-Requires Node **20.19+** (`.nvmrc` pins 24, so `nvm use` is enough).
+Requires Node **20.19+** for the app (`.nvmrc` pins 24, so `nvm use` is enough); `npm run
+demo:record` runs a TypeScript script directly and needs Node 22.18+.
 
 ```bash
 npm install
 npm run dev               # http://localhost:5173, reads keys from .env
 ```
 
-| Script                | What it does                                                            |
-| --------------------- | ----------------------------------------------------------------------- |
-| `npm run dev`         | Dev server with the API proxy                                           |
-| `npm run build`       | Type check and production build                                         |
-| `npm run preview`     | Serves the production build (with the proxy)                            |
-| `npm test`            | Runs all tests once (`test:watch`, `test:coverage` also exist)          |
-| `npm run check`       | Lint, format check, type check and tests (also run by the Docker build) |
-| `npm run lint`        | [oxlint](https://oxc.rs) (React, hooks, a11y, import and Vitest rules)  |
-| `npm run format`      | Prettier, including Tailwind class sorting                              |
-| `npm run demo:record` | Re-records the demo-mode sample from the live APIs (needs keys)         |
+| Script                | What it does                                                           |
+| --------------------- | ---------------------------------------------------------------------- |
+| `npm run dev`         | Dev server with the API proxy                                          |
+| `npm run build`       | Type check and production build                                        |
+| `npm run preview`     | Serves the production build (with the proxy)                           |
+| `npm test`            | Runs all tests once (`test:watch`, `test:coverage` also exist)         |
+| `npm run check`       | Lint, format check, type check and tests (what CI runs)                |
+| `npm run lint`        | [oxlint](https://oxc.rs) (React, hooks, a11y, import and Vitest rules) |
+| `npm run format`      | Prettier, including Tailwind class sorting                             |
+| `npm run demo:record` | Re-records the demo-mode sample from the live APIs (needs keys)        |
 
 ## Architecture
 
@@ -148,8 +153,8 @@ scripts/         Demo data recorder
 ```
 
 `app` wires everything together. Otherwise dependencies point downwards:
-`pages → features → sources → domain`. Shared code is used by any layer, and the domain layer
-depends on nothing.
+`pages → features → sources → domain`. Small generic helpers in `shared/` (e.g. text folding) are
+used by any layer, including the domain; `oxlint`'s `import/no-cycle` keeps the graph acyclic.
 
 ### Key decisions
 
@@ -160,8 +165,8 @@ depends on nothing.
   preferences, filters, a "search in my feed" switch) that a usability review found confusing.
   "Use my sources & topics" covers the "search within my feed" case explicitly. Entering search is
   one history step; refining it replaces that step, and leaving it steps back, so Back never loops
-  between feed and results. Search state stays in the URL, so results remain shareable, and the old
-  `/search?…` links redirect.
+  between feed and results (links from an article preview carry the same history state). Search
+  state stays in the URL, so results remain shareable.
 - **Preview instead of an article page.** The APIs return snippets, not full text, so an article
   page would mostly repeat the card. Instead, a preview panel is the place for actions: read on
   the site, follow the authors, explore related articles. The previewed article is a snapshot kept
@@ -193,33 +198,40 @@ depends on nothing.
 - **Single responsibility:** each adapter only translates one API. The aggregator only merges.
   `fetchJson` only does HTTP plus validation. Every UI state of a feed (loading, error, empty,
   partial failure) is rendered by one component, `ArticleFeed`.
-- **Open/closed:** to add a source, implement `NewsSource` and register it in
-  [`sources/registry.ts`](src/sources/registry.ts). Nothing else changes. Demo mode proves it: it is
-  just another `NewsSource` implementation, and the aggregator, hooks and UI are unaware of it.
+- **Open/closed:** on the client, a source is an adapter implementing `NewsSource` plus an entry in
+  [`sources/registry.ts`](src/sources/registry.ts) and `SOURCE_IDS`; the aggregator, hooks and UI
+  don't change. Demo mode proves it: it's just another `NewsSource` implementation. The
+  infrastructure is a separate, honest list: the proxy table, the nginx template and the
+  container's env vars must each get the new source — a test fails if any of them is missed (see
+  DRY).
 - **Liskov substitution:** live and demo sources are interchangeable everywhere, and fake sources
   in the aggregator tests are too.
 - **Interface segregation:** components get narrow props. For example, `ArticleCard` receives an
   optional `AuthorFollowing` capability instead of the whole store.
-- **Dependency inversion:** the aggregator receives its sources as a parameter, and the UI depends
-  on the `NewsSource` abstraction, not on concrete APIs. The card does not know about Redux: pages
-  wire the store in.
+- **Dependency inversion:** the aggregator receives its sources as a parameter and only knows the
+  `NewsSource` abstraction. The card doesn't know about Redux: pages wire the store in. (The UI does
+  read display names from the registry.)
 
-**DRY:** one source table drives both proxies (`server/api-sources.ts`, mirrored by the nginx
-template), there is one matcher for client-side filtering, one `mergePages` for per-category and
-per-author requests, and shared option builders for the search and settings pages.
+**DRY:** one source table (`server/api-sources.ts`: upstream, auth, allowed endpoints) drives the
+dev proxy and the tests. nginx can't import TypeScript, so its template repeats those rules, and
+[`server/source-config-sync.test.ts`](server/source-config-sync.test.ts) fails if the template,
+entrypoint, compose file, Dockerfile, `.env.example` or the client's `SOURCE_IDS` drift from it.
+In the app: one matcher for client-side filtering, one `mergePages` for per-category and
+per-author requests, shared filter options for search and settings.
 
 **KISS:**
 
 - no global UI state that the URL or a component can hold;
 - no `redux-persist`: a small listener middleware does the job;
 - per-page sorting instead of a cross-source k-way merge (see the trade-offs below);
-- native platform features (`<dialog>`, radio inputs, `Intl`) instead of extra dependencies.
+- native platform features (`<dialog>`, `<select>`, radio inputs, `Intl`) instead of a component
+  library: focus trapping, Esc, keyboard support and screen-reader semantics come from the browser.
 
 ## Testing
 
 ```bash
-npm test                  # about 250 tests, a few seconds
-npm run test:coverage     # line coverage above 99%
+npm test                  # about 280 tests, a few seconds
+npm run test:coverage     # line coverage ≈ 99%
 ```
 
 - **Adapters** are tested against fixtures recorded from the real APIs, plus edge cases (HTML in
@@ -232,20 +244,30 @@ npm run test:coverage     # line coverage above 99%
 - **Hooks and components** cover debounce, infinite scroll, the drawer, theme switching,
   persistence and accessibility roles.
 
-Every stage was also checked by hand in a real browser (desktop and 375 px, light and dark) and in
-Docker.
+- **Config checks** keep the source list in sync across the proxy, nginx and the container.
+
+CI runs all of it plus a Docker smoke test (the image starts without keys and serves the app).
+Every stage was also checked by hand in a real browser (desktop and 375 px, light and dark).
+
+**Security of the proxy:** keys only exist in the container's environment; nginx forwards only the
+endpoints the app uses (everything else under `/api` is 404), verifies the APIs' TLS certificates,
+rate-limits `/api` per client, strips cookies and browser origin headers, and sends basic security
+headers for the app itself.
 
 ## Known limitations and trade-offs
 
+- **API quotas on free plans are small.** Search-as-you-type waits for a 600 ms pause and two
+  characters, results are cached for 5 minutes, and later pages skip exhausted sources — but heavy
+  use can still hit the limits, shown as a per-source notice with a Retry button.
 - **NewsAPI free (developer) plan:**
-  - at most 100 results per query;
+  - 100 requests per day, and at most 100 results per query;
   - articles are delayed by about 24 hours;
   - categories exist only for top headlines, which have no date filter (the date range is then
     applied client-side);
   - no equivalent for _World_ or _Politics_, so NewsAPI is skipped for those categories.
 - **NYT:**
-  - 5 requests per minute; with several sources and pages you can see the "request limit reached"
-    notice;
+  - 5 requests per minute (and 500 per day); with several sources and pages you can see the
+    "request limit reached" notice;
   - byline filtering no longer works in the 2025 Article Search API, so authors are searched by
     name and matched client-side;
   - the number of followed authors is capped at 5 because each one costs an NYT request.
@@ -260,4 +282,9 @@ Docker.
 - **Authors** are matched by name. Name variants (initials, middle names) can be missed.
 - **Demo mode** turns on only when _no_ key is configured. Its sample is fixed in time, so the
   dates age (`npm run demo:record` refreshes it).
-- Preferences are stored per browser (`localStorage`). There are no accounts and no sync.
+- Preferences are stored per browser (`localStorage`). There are no accounts and no sync, not even
+  between open tabs.
+- **Date filters use UTC days**, the convention of the APIs: late in the evening in the Americas,
+  "today" can already be tomorrow's date in UTC.
+- **No Content-Security-Policy yet.** The inline script that applies the theme before first paint
+  would need a hash or nonce; the other security headers are set.

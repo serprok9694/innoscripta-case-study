@@ -1,4 +1,4 @@
-import { type InfiniteData, useInfiniteQuery } from '@tanstack/react-query';
+import { type InfiniteData, useInfiniteQuery, useQueryClient } from '@tanstack/react-query';
 import type { Article, SourceId } from '@/domain/article';
 import { availableSources } from '@/sources/registry';
 import {
@@ -40,8 +40,11 @@ export function useArticles(filters: NewsFilters, { enabled = true }: { enabled?
   const normalized = normalizeFilters(filters);
   const sources = config.data ? selectSources(availableSources(config.data), normalized) : [];
 
+  const queryClient = useQueryClient();
+  const queryKey = ['articles', normalized, sources.map((s) => s.id)];
+
   const query = useInfiniteQuery({
-    queryKey: ['articles', normalized, sources.map((s) => s.id)],
+    queryKey,
     queryFn: ({ pageParam, signal }) => fetchFeedPage(sources, normalized, pageParam, signal),
     initialPageParam: initialCursors(sources),
     getNextPageParam: (lastPage) => lastPage.next ?? undefined,
@@ -58,8 +61,14 @@ export function useArticles(filters: NewsFilters, { enabled = true }: { enabled?
     hasNoSources: enabled && config.isSuccess && sources.length === 0,
     hasNextPage: query.hasNextPage,
     isFetchingNextPage: query.isFetchingNextPage,
+    /** Loading a further page failed (the articles already loaded stay). */
+    isFetchNextPageError: query.isFetchNextPageError,
     fetchNextPage: query.fetchNextPage,
-    refetch: query.refetch,
+    /**
+     * Start over from the first page. Cheaper than `refetch`, which would
+     * re-request every loaded page and spend API quota.
+     */
+    retry: () => queryClient.resetQueries({ queryKey, exact: true }),
   };
 }
 

@@ -22,6 +22,10 @@ export interface ArticleQuery {
 
 export type ArticleSort = 'newest' | 'relevance';
 
+export function isArticleSort(value: string): value is ArticleSort {
+  return value === 'newest' || value === 'relevance';
+}
+
 export interface SourcePage {
   articles: Article[];
   /** 1-based page to request next, or `null` when the source is exhausted. */

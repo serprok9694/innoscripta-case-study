@@ -1,15 +1,16 @@
 import type { Connect, Plugin, ProxyOptions } from 'vite';
 import {
-  API_PREFIX,
   API_SOURCES,
   buildSourcesConfig,
   CONFIG_PATH,
+  proxyRoutePattern,
   rewriteUpstreamPath,
 } from './api-sources.ts';
 
 /**
- * Dev/preview counterpart of the nginx proxy: forwards `/api/<id>/*` to the
- * upstream API with the key attached, and serves `/api/config`.
+ * Dev/preview counterpart of the nginx proxy: forwards the allowed
+ * `/api/<id>/…` endpoints to the upstream API with the key attached, and
+ * serves `/api/config`.
  */
 export function apiProxy(env: Record<string, string | undefined>): Plugin {
   const proxy: Record<string, ProxyOptions> = {};
@@ -18,7 +19,8 @@ export function apiProxy(env: Record<string, string | undefined>): Plugin {
     const apiKey = env[source.envKey]?.trim();
     if (!apiKey) continue;
 
-    proxy[`${API_PREFIX}/${source.id}/`] = {
+    // A `^…` key is a RegExp for Vite: only the allowed endpoints are proxied.
+    proxy[proxyRoutePattern(source)] = {
       target: source.target,
       changeOrigin: true,
       rewrite: (path) => rewriteUpstreamPath(path, source, apiKey),

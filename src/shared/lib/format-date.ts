@@ -10,9 +10,10 @@ const UNITS: Array<[Intl.RelativeTimeFormatUnit, number]> = [
   ['minute', 60],
 ];
 
-/** "3 hours ago", "yesterday"… Falls back to "just now" under a minute. */
+/** "3 hours ago", "yesterday"… Falls back to "just now" under a minute; "" for an invalid date. */
 export function formatRelativeTime(iso: string, now: Date = new Date(), locale = LOCALE): string {
   const seconds = (Date.parse(iso) - now.getTime()) / 1000;
+  if (Number.isNaN(seconds)) return '';
   const rtf = new Intl.RelativeTimeFormat(locale, { numeric: 'auto' });
   for (const [unit, size] of UNITS) {
     if (Math.abs(seconds) >= size) return rtf.format(Math.round(seconds / size), unit);
@@ -20,11 +21,11 @@ export function formatRelativeTime(iso: string, now: Date = new Date(), locale =
   return 'just now';
 }
 
-/** Full date and time for tooltips, e.g. "20 Oct 2026, 09:00". */
+/** Full date and time for tooltips, e.g. "20 Oct 2026, 09:00"; "" for an invalid date. */
 export function formatDateTime(iso: string, locale = LOCALE): string {
-  return new Intl.DateTimeFormat(locale, { dateStyle: 'medium', timeStyle: 'short' }).format(
-    new Date(iso),
-  );
+  const date = new Date(iso);
+  if (Number.isNaN(date.getTime())) return '';
+  return new Intl.DateTimeFormat(locale, { dateStyle: 'medium', timeStyle: 'short' }).format(date);
 }
 
 /** Today as `YYYY-MM-DD` in local time (for `<input type="date" max>`). */

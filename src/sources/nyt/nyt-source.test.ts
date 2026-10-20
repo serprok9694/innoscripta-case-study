@@ -1,7 +1,9 @@
+import { http, HttpResponse } from 'msw';
 import { describe, expect, it } from 'vitest';
 import { mockJson } from '@/test/msw/mock-json';
+import { server } from '@/test/msw/server';
 import fixture from './__fixtures__/search.json';
-import { nytSource, parseByline } from './nyt-source';
+import { createNytSource, nytSource, parseByline } from './nyt-source';
 
 const PATH = '/api/nyt/svc/search/v2/articlesearch.json';
 
@@ -111,6 +113,29 @@ describe('nytSource', () => {
       'floods Zoey Poll',
     ]);
     expect(articles).toHaveLength(4); // same fixture twice: duplicates merged
+  });
+});
+
+describe('nytSource: authors across pages', () => {
+  it('stops asking about authors whose results ran out', async () => {
+    const source = createNytSource();
+    const requests: URL[] = [];
+    server.use(
+      http.get(`*${PATH}`, ({ request }) => {
+        const url = new URL(request.url);
+        requests.push(url);
+        // "Zoey Poll" has 4 results (one page), "Rachel Wharton" has 102.
+        const hits = url.searchParams.get('q') === 'Zoey Poll' ? 4 : 102;
+        return HttpResponse.json(withHits(hits));
+      }),
+    );
+
+    await source.search({ authors: ['Rachel Wharton', 'Zoey Poll'] }, 1);
+    await source.search({ authors: ['Rachel Wharton', 'Zoey Poll'] }, 2);
+
+    expect(requests.map((r) => `${r.searchParams.get('q')}@${r.searchParams.get('page')}`)).toEqual(
+      ['Rachel Wharton@0', 'Zoey Poll@0', 'Rachel Wharton@1'],
+    );
   });
 });
 

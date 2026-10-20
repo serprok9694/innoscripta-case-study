@@ -6,7 +6,7 @@ import { invertCategoryMap, nativeValuesFor } from '../shared/category-map';
 import { PAGE_SIZE } from '../shared/constants';
 import { fetchJson, proxyUrl, type QueryParams } from '../shared/http';
 import { mergePages } from '../shared/merge-pages';
-import { nonEmpty } from '../shared/text';
+import { nonEmpty, webUrl } from '../shared/text';
 
 /**
  * NewsAPI categories (top-headlines only). World and politics have no
@@ -92,7 +92,7 @@ function toArticle(raw: RawArticle, category?: CategoryId): Article {
       ? undefined
       : nonEmpty(raw.description),
     url: raw.url,
-    imageUrl: nonEmpty(raw.urlToImage),
+    imageUrl: webUrl(raw.urlToImage),
     authors: parseAuthor(raw.author),
     category,
     publishedAt: raw.publishedAt,
@@ -111,7 +111,9 @@ async function fetchPage(
   const available = Math.min(data.totalResults, MAX_RESULTS);
 
   return {
-    articles: data.articles.filter((a) => !isRemoved(a)).map((a) => toArticle(a, category)),
+    articles: data.articles
+      .filter((a) => !isRemoved(a) && webUrl(a.url))
+      .map((a) => toArticle(a, category)),
     nextPage: page * PAGE_SIZE < available ? page + 1 : null,
   };
 }

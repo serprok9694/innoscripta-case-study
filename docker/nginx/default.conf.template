@@ -2,7 +2,12 @@
 # /etc/nginx/templates). Only defined env vars are substituted, so nginx's own
 # $variables are left untouched.
 #
-# The /api/<id>/ proxy rules mirror server/api-sources.ts — keep them in sync.
+# The /api/<id>/ rules mirror server/api-sources.ts (same endpoints, same auth);
+# server/source-config-sync.test.ts fails if they drift apart.
+
+# Generous for one reader, but stops a published container from being
+# hammered into spending the API keys' quota.
+limit_req_zone $binary_remote_addr zone=api:1m rate=10r/s;
 
 server {
     listen 80;
@@ -11,7 +16,12 @@ server {
     index index.html;
 
     gzip on;
+    gzip_vary on;
     gzip_types text/css application/javascript application/json image/svg+xml;
+
+    # Upstream hosts are resolved per request (not at startup), so the
+    # container also starts offline — e.g. in demo mode without network.
+    include /etc/nginx/runtime/resolver.conf;
 
     location = /healthz {
         access_log off;
@@ -27,41 +37,46 @@ server {
     }
 
     # --- Upstream news APIs: keys are attached here and never reach the browser.
+    # Only the endpoints the app uses are forwarded; anything else under /api is 404.
 
-    location /api/guardian/ {
+    location ~ ^/api/guardian/(search|tags)$ {
+        set $upstream https://content.guardianapis.com;
         rewrite ^/api/guardian/(.*)$ /$1?api-key=${GUARDIAN_API_KEY} break;
         include /etc/nginx/snippets/upstream-proxy.conf;
-        proxy_pass https://content.guardianapis.com;
+        proxy_pass $upstream;
     }
 
-    location /api/nyt/ {
+    location ~ ^/api/nyt/svc/search/v2/articlesearch\.json$ {
+        set $upstream https://api.nytimes.com;
         rewrite ^/api/nyt/(.*)$ /$1?api-key=${NYT_API_KEY} break;
         include /etc/nginx/snippets/upstream-proxy.conf;
-        proxy_pass https://api.nytimes.com;
+        proxy_pass $upstream;
     }
 
-    location /api/newsapi/ {
+    location ~ ^/api/newsapi/v2/(everything|top-headlines)$ {
+        set $upstream https://newsapi.org;
         rewrite ^/api/newsapi/(.*)$ /$1 break;
         include /etc/nginx/snippets/upstream-proxy.conf;
         proxy_set_header X-Api-Key "${NEWSAPI_API_KEY}";
-        proxy_pass https://newsapi.org;
+        proxy_pass $upstream;
     }
 
     location /api/ {
         return 404;
     }
 
-    # --- Static SPA
+    # --- Static SPA (add_header in a location drops inherited ones: include them here)
 
     # Vite emits content-hashed file names, so these can be cached forever.
     location /assets/ {
-        expires 1y;
-        add_header Cache-Control "public, immutable";
+        include /etc/nginx/snippets/security-headers.conf;
+        add_header Cache-Control "public, max-age=31536000, immutable" always;
         try_files $uri =404;
     }
 
     location / {
-        add_header Cache-Control "no-cache";
+        include /etc/nginx/snippets/security-headers.conf;
+        add_header Cache-Control "no-cache" always;
         try_files $uri $uri/ /index.html;
     }
 }

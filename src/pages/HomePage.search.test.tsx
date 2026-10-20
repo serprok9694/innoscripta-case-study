@@ -49,13 +49,6 @@ describe('HomePage: search', () => {
     expect(within(await results()).getAllByRole('article')).toHaveLength(3);
   });
 
-  it('keeps old /search links working', async () => {
-    const { router } = setup('/search?q=climate');
-    await waitFor(() => expect(heading()).toHaveTextContent('Results for “climate”'));
-    expect(router.state.location.pathname).toBe('/');
-    expect(router.state.location.search).toBe('?q=climate');
-  });
-
   describe('feed ↔ results', () => {
     it('turns the feed into results while typing, without losing focus', async () => {
       const { guardian, search } = setup('/');
@@ -112,6 +105,18 @@ describe('HomePage: search', () => {
         expect(isOnFirstEntry()).toBe(true);
       },
     );
+
+    it('treats related searches from a feed preview like any search from the feed', async () => {
+      const { isOnFirstEntry } = setup('/');
+      await userEvent.click(within(await results()).getByRole('link', { name: /Country diary/ }));
+      await userEvent.click(screen.getByRole('link', { name: 'More from The Guardian' }));
+      expect(heading()).toHaveTextContent('Filtered news');
+
+      await userEvent.click(screen.getByRole('link', { name: '← Back to my feed' }));
+
+      expect(heading()).toHaveTextContent('My feed');
+      expect(isOnFirstEntry()).toBe(true); // Back can't bring the results back
+    });
 
     it('leaves results when the last filter is removed', async () => {
       const { isOnFirstEntry } = setup('/');

@@ -7,6 +7,7 @@ import { useAppSelector } from '@/app/hooks';
 import { hasPreferences, selectPreferences } from '@/features/preferences/preferences-slice';
 import { useAuthorFollowing } from '@/features/preferences/use-author-following';
 import { cx } from '@/shared/lib/cx';
+import { FROM_FEED } from '@/features/search/search-entry';
 import { getSource } from '@/sources/registry';
 import { PageHeader } from '../PageHeader';
 
@@ -92,6 +93,7 @@ export function FeedView({ view }: { view: FeedViewName }) {
         <ArticleFeed
           feed={feed}
           following={following}
+          relatedLinkState={FROM_FEED}
           empty={
             <Message title="Nothing here yet">
               {view === 'following'

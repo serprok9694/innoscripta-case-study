@@ -8,6 +8,7 @@ describe('SettingsPage', () => {
   it('saves source and topic preferences as they are toggled', async () => {
     mockJson('/api/config', { sources: { guardian: true, nyt: true, newsapi: false } });
     const { store } = renderRoute('/settings');
+    await screen.findByRole('heading', { level: 1, name: 'Settings' });
 
     const sources = screen.getByRole('group', { name: 'Preferred sources' });
     await within(sources).findByRole('button', { name: 'The Guardian', pressed: false });
@@ -32,6 +33,7 @@ describe('SettingsPage', () => {
     const { store } = renderRoute('/settings', {
       preferences: { categories: ['world'], authors: ['Mark Cocker'] },
     });
+    await screen.findByRole('heading', { level: 1, name: 'Settings' });
 
     await userEvent.click(screen.getByRole('button', { name: 'Reset all preferences' }));
 
@@ -42,6 +44,7 @@ describe('SettingsPage', () => {
   it('changes the appearance', async () => {
     mockJson('/api/config', { sources: {} });
     const { store } = renderRoute('/settings');
+    await screen.findByRole('heading', { level: 1, name: 'Settings' });
 
     expect(screen.getByRole('radio', { name: 'System' })).toBeChecked();
     await userEvent.click(screen.getByRole('radio', { name: 'Dark' }));

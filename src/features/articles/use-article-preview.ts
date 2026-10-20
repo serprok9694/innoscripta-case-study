@@ -1,15 +1,12 @@
 import { useLocation, useNavigate } from 'react-router';
 import type { Article } from '@/domain/article';
+import { articleSchema } from './article-schema';
 
-/** History state can outlive a deploy: only trust what looks like an article. */
+/** History state can outlive a deploy: only trust a valid article. */
 function readPreview(state: unknown): Article | undefined {
-  const preview = (state as { preview?: Partial<Article> } | null)?.preview;
-  const valid =
-    typeof preview?.id === 'string' &&
-    typeof preview.title === 'string' &&
-    typeof preview.url === 'string' &&
-    Array.isArray(preview.authors);
-  return valid ? (preview as Article) : undefined;
+  const preview = (state as { preview?: unknown } | null)?.preview;
+  const parsed = articleSchema.safeParse(preview);
+  return parsed.success ? parsed.data : undefined;
 }
 
 /**

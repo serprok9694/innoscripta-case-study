@@ -78,7 +78,9 @@ export function interleave<T>(lists: readonly T[][]): T[] {
  *   first, or interleaved by each source's ranking when sorting by relevance.
  * - A failing source is reported in `failures` and dropped from later pages, so
  *   infinite scrolling never hammers a broken or rate-limited API.
- * - Only when every source fails does the page itself fail.
+ * - Only when every source fails on the *first* page does the page fail
+ *   (nothing to show). Later pages report the failures instead, so the
+ *   articles already loaded stay on screen.
  */
 export async function fetchFeedPage(
   sources: readonly NewsSource[],
@@ -111,7 +113,8 @@ export async function fetchFeedPage(
     if (result.value.nextPage !== null) next[source.id] = result.value.nextPage;
   });
 
-  if (active.length > 0 && failures.length === active.length) {
+  const isFirstPage = active.every(({ page }) => page === 1);
+  if (isFirstPage && active.length > 0 && failures.length === active.length) {
     throw new AllSourcesFailedError(failures);
   }
 

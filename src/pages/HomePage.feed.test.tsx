@@ -139,9 +139,14 @@ describe('HomePage: feed', () => {
       expect(router.state.location.state).toBeNull();
     });
 
-    it('ignores unexpected history state', () => {
+    it.each([
+      ['a partial object', { title: 'Not an article' }],
+      ['an unknown source', { ...makeArticle(), sourceId: 'bbc' }],
+      ['an invalid date', { ...makeArticle(), publishedAt: 'yesterday' }],
+      ['a non-web URL', { ...makeArticle(), url: 'javascript:alert(1)' }],
+    ])('ignores history state with %s', (_case, preview) => {
       mockSources();
-      renderRoute({ pathname: '/', state: { preview: { title: 'Not an article' } } });
+      renderRoute({ pathname: '/', state: { preview } });
       expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
     });
   });

@@ -160,4 +160,12 @@ describe('guardianSource', () => {
       expect(requests[0]?.searchParams.get('tag')).toBe('profile/fiona-harvey');
     });
   });
+
+  it('drops results whose link isn’t a web URL', async () => {
+    const [first] = fixture.response.results;
+    mockJson(PATH, {
+      response: { ...fixture.response, results: [{ ...first, webUrl: 'javascript:alert(1)' }] },
+    });
+    expect((await guardianSource.search({}, 1)).articles).toEqual([]);
+  });
 });

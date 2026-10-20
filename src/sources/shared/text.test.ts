@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { compactDate, htmlToText, nonEmpty } from './text';
+import { compactDate, htmlToText, nonEmpty, webUrl } from './text';
 
 describe('nonEmpty', () => {
   it.each([
@@ -34,5 +34,18 @@ describe('compactDate', () => {
   it('formats dates for the NYT API', () => {
     expect(compactDate('2026-10-01')).toBe('20261001');
     expect(compactDate(undefined)).toBeUndefined();
+  });
+});
+
+describe('webUrl', () => {
+  it.each([
+    ['https://example.com/a', 'https://example.com/a'],
+    ['http://example.com', 'http://example.com'],
+    ['javascript:alert(1)', undefined],
+    ['/relative/path', undefined],
+    ['', undefined],
+    [null, undefined],
+  ])('%j → %j', (value, expected) => {
+    expect(webUrl(value)).toBe(expected);
   });
 });

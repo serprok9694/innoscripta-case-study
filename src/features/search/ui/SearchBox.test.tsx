@@ -32,4 +32,28 @@ describe('SearchBox', () => {
     rerender(<SearchBox value="new" onChange={vi.fn<(value: string) => void>()} />);
     expect(getInput()).toHaveValue('new');
   });
+
+  it('waits for a couple of characters before searching as you type', async () => {
+    const onChange = vi.fn<(value: string) => void>();
+    render(<SearchBox value="" onChange={onChange} debounceMs={10} />);
+
+    await userEvent.type(getInput(), 'a');
+    await new Promise((resolve) => setTimeout(resolve, 30));
+    expect(onChange).not.toHaveBeenCalled();
+
+    await userEvent.type(getInput(), '{Enter}'); // Enter always searches
+    expect(onChange).toHaveBeenCalledExactlyOnceWith('a');
+  });
+
+  it('drops a pending search when the value changes from outside', async () => {
+    const onChange = vi.fn<(value: string) => void>();
+    const { rerender } = render(<SearchBox value="" onChange={onChange} debounceMs={50} />);
+
+    await userEvent.type(getInput(), 'bees');
+    rerender(<SearchBox value="climate" onChange={onChange} debounceMs={50} />); // e.g. Back
+    await new Promise((resolve) => setTimeout(resolve, 80));
+
+    expect(onChange).not.toHaveBeenCalled();
+    expect(getInput()).toHaveValue('climate');
+  });
 });

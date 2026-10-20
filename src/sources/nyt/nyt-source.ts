@@ -6,7 +6,7 @@ import { invertCategoryMap, nativeValuesFor } from '../shared/category-map';
 import { PAGE_SIZE } from '../shared/constants';
 import { fetchJson, proxyUrl } from '../shared/http';
 import { mergePages } from '../shared/merge-pages';
-import { compactDate, nonEmpty } from '../shared/text';
+import { compactDate, nonEmpty, webUrl } from '../shared/text';
 
 /**
  * NYT section names per category. Politics lives in a subsection (U.S. → Politics).
@@ -82,7 +82,7 @@ function toArticle(doc: z.infer<typeof docSchema>): Article {
     title: doc.headline.main,
     summary: nonEmpty(doc.abstract),
     url: doc.web_url,
-    imageUrl: nonEmpty(doc.multimedia?.default?.url),
+    imageUrl: webUrl(doc.multimedia?.default?.url),
     authors: parseByline(doc.byline?.original),
     category: CATEGORY_BY_SUBSECTION.get(subsection) ?? CATEGORY_BY_SECTION.get(section),
     publishedAt: doc.pub_date,
@@ -108,25 +108,49 @@ async function searchPage(
   const hasMore = docs.length > 0 && page * PAGE_SIZE < response.metadata.hits && page < MAX_PAGE;
 
   return {
-    articles: docs.map(toArticle),
+    articles: docs.map(toArticle).filter((a) => webUrl(a.url)),
     nextPage: hasMore ? page + 1 : null,
   };
 }
 
-export const nytSource: NewsSource = {
-  id: 'nyt',
-  name: 'The New York Times',
+export function createNytSource(): NewsSource {
+  /**
+   * Authors whose results ran out, per query: the free quota is 5 requests a
+   * minute, so later pages only ask about authors that still have articles.
+   */
+  const exhausted = new Set<string>();
+  const authorKey = (query: ArticleQuery, author: string) =>
+    JSON.stringify([query.keyword, query.from, query.to, query.categories, query.sort, author]);
 
-  async search(query, page, signal) {
-    if (!query.authors?.length) return searchPage(query, query.keyword, page, signal);
+  return {
+    id: 'nyt',
+    name: 'The New York Times',
 
-    // Byline filters no longer work and `q` has no OR, so search each author's
-    // name separately; the aggregator then keeps only real bylines.
-    const pages = await Promise.all(
-      query.authors.map((author) =>
-        searchPage(query, [query.keyword, author].filter(Boolean).join(' '), page, signal),
-      ),
-    );
-    return mergePages(pages, page);
-  },
-};
+    async search(query, page, signal) {
+      if (!query.authors?.length) return searchPage(query, query.keyword, page, signal);
+
+      // Byline filters no longer work and `q` has no OR, so search each author's
+      // name separately; the aggregator then keeps only real bylines.
+      const authors = query.authors.filter(
+        (author) => page === 1 || !exhausted.has(authorKey(query, author)),
+      );
+      const pages = await Promise.all(
+        authors.map(async (author) => {
+          const result = await searchPage(
+            query,
+            [query.keyword, author].filter(Boolean).join(' '),
+            page,
+            signal,
+          );
+          const key = authorKey(query, author);
+          if (result.nextPage === null) exhausted.add(key);
+          else exhausted.delete(key);
+          return result;
+        }),
+      );
+      return mergePages(pages, page);
+    },
+  };
+}
+
+export const nytSource = createNytSource();

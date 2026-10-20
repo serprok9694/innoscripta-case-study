@@ -156,6 +156,20 @@ describe('fetchFeedPage', () => {
     ]);
   });
 
+  it('reports, instead of failing, when every source fails on a later page', async () => {
+    const nyt = fakeSource('nyt', () => {
+      throw new SourceError('nyt', 'rate-limit', 'Too many requests', 429);
+    });
+
+    const page = await fetchFeedPage([nyt], {}, { nyt: 3 });
+
+    expect(page).toEqual({
+      articles: [],
+      next: null,
+      failures: [{ sourceId: 'nyt', kind: 'rate-limit', message: 'Too many requests' }],
+    });
+  });
+
   it('propagates cancellation', async () => {
     const controller = new AbortController();
     const guardian = fakeSource('guardian', () => {

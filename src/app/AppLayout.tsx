@@ -4,7 +4,7 @@ import { DemoModeBanner } from '@/features/articles/ui/DemoModeBanner';
 import { ThemeToggle } from '@/features/theme/ui/ThemeToggle';
 import { useApplyTheme } from '@/features/theme/use-theme';
 import { cx } from '@/shared/lib/cx';
-import { NewspaperIcon, SlidersIcon } from '@/shared/ui/icons';
+import { NewspaperIcon, SettingsIcon } from '@/shared/ui/icons';
 
 interface NavItem {
   to: string;
@@ -15,7 +15,7 @@ interface NavItem {
 
 const NAV: NavItem[] = [
   { to: '/', label: 'Home', end: true, Icon: NewspaperIcon },
-  { to: '/settings', label: 'Settings', end: false, Icon: SlidersIcon },
+  { to: '/settings', label: 'Settings', end: false, Icon: SettingsIcon },
 ];
 
 /** Top links on larger screens. */

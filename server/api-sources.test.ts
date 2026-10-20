@@ -1,5 +1,10 @@
 import { describe, expect, it } from 'vitest';
-import { API_SOURCES, buildSourcesConfig, rewriteUpstreamPath } from './api-sources.ts';
+import {
+  API_SOURCES,
+  buildSourcesConfig,
+  proxyRoutePattern,
+  rewriteUpstreamPath,
+} from './api-sources.ts';
 
 const [guardian, , newsapi] = API_SOURCES;
 
@@ -34,5 +39,20 @@ describe('buildSourcesConfig', () => {
     expect(
       buildSourcesConfig({ GUARDIAN_API_KEY: 'a', NYT_API_KEY: '  ', NEWSAPI_API_KEY: undefined }),
     ).toEqual({ sources: { guardian: true, nyt: false, newsapi: false } });
+  });
+});
+
+describe('proxyRoutePattern', () => {
+  const [guardianApi, nytApi] = API_SOURCES;
+  const matches = (source: (typeof API_SOURCES)[number], url: string) =>
+    new RegExp(proxyRoutePattern(source)).test(url);
+
+  it('lets only the allowed endpoints through', () => {
+    expect(matches(guardianApi, '/api/guardian/search?q=climate')).toBe(true);
+    expect(matches(guardianApi, '/api/guardian/tags')).toBe(true);
+    expect(matches(guardianApi, '/api/guardian/sections')).toBe(false);
+    expect(matches(guardianApi, '/api/guardian/searchx')).toBe(false);
+    expect(matches(nytApi, '/api/nyt/svc/search/v2/articlesearch.json?q=x')).toBe(true);
+    expect(matches(nytApi, '/api/nyt/svc/search/v2/articlesearchXjson')).toBe(false);
   });
 });

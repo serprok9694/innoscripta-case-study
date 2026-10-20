@@ -10,7 +10,13 @@ const REASONS: Record<SourceFailure['kind'], string> = {
 };
 
 /** Non-blocking notice: the other sources' articles are still shown. */
-export function SourceFailuresNotice({ failures }: { failures: readonly SourceFailure[] }) {
+export function SourceFailuresNotice({
+  failures,
+  onRetry,
+}: {
+  failures: readonly SourceFailure[];
+  onRetry: () => void;
+}) {
   if (!failures.length) return null;
 
   return (
@@ -26,6 +32,13 @@ export function SourceFailuresNotice({ failures }: { failures: readonly SourceFa
           </li>
         ))}
       </ul>
+      <button
+        type="button"
+        onClick={onRetry}
+        className="mt-2 font-medium underline hover:no-underline"
+      >
+        Retry
+      </button>
     </div>
   );
 }

@@ -32,8 +32,9 @@ describe('AppLayout', () => {
     }
 
     await userEvent.click(within(mobile!).getByRole('link', { name: 'Settings' }));
+    // Settings is lazy-loaded: the router navigates once the page module is in.
+    expect(await screen.findByRole('heading', { level: 1, name: 'Settings' })).toBeInTheDocument();
     expect(router.state.location.pathname).toBe('/settings');
-    expect(screen.getByRole('heading', { level: 1, name: 'Settings' })).toBeInTheDocument();
   });
 
   it('switches between light and dark themes and remembers the choice', async () => {

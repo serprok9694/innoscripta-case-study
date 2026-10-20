@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    name: Lint, types, tests, build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - run: npm run check
+      - run: npm run build
+
+  docker:
+    name: Docker image (demo mode smoke test)
+    needs: check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t news-aggregator .
+      - name: Start without API keys and probe it
+        run: |
+          docker run -d --name app -p 8080:80 news-aggregator
+          for i in $(seq 1 30); do curl -fs http://localhost:8080/healthz && break; sleep 1; done
+          curl -fs http://localhost:8080/api/config | grep -q '"guardian":false'
+          curl -fs http://localhost:8080/ | grep -q '<title>Newsroom</title>'
+          test "$(curl -s -o /dev/null -w '%{http_code}' http://localhost:8080/api/unknown)" = 404
+      - if: failure()
+        run: docker logs app

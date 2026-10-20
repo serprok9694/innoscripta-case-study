@@ -1,11 +1,12 @@
 import type { MouseEvent, ReactNode } from 'react';
 import { Link } from 'react-router';
-import type { ArticleSort } from '@/domain/news-source';
+import { isArticleSort } from '@/domain/news-source';
 import type { NewsFilters } from '@/features/articles/filters';
 import { useArticles } from '@/features/articles/use-articles';
 import { ArticleFeed } from '@/features/articles/ui/ArticleFeed';
 import { FollowButton } from '@/features/articles/ui/FollowButton';
 import { useAuthorFollowing } from '@/features/preferences/use-author-following';
+import { FROM_FEED } from '@/features/search/search-entry';
 import { ActiveFilters } from '@/features/search/ui/ActiveFilters';
 import { PageHeader } from '../PageHeader';
 
@@ -20,6 +21,8 @@ interface SearchViewProps {
   /** Link back to the feed the search started from. */
   feedUrl: string;
   onBackToFeed: (event: MouseEvent<HTMLAnchorElement>) => void;
+  /** This search was entered from the feed (see `SearchEntryState`). */
+  fromFeed: boolean;
   /** Mobile-only "Filters" button (the sidebar takes over on large screens). */
   filtersButton: ReactNode;
 }
@@ -30,6 +33,7 @@ export function SearchView({
   onChange,
   feedUrl,
   onBackToFeed,
+  fromFeed,
   filtersButton,
 }: SearchViewProps) {
   const feed = useArticles(filters);
@@ -65,9 +69,10 @@ export function SearchView({
               Sort
               <select
                 value={filters.sort ?? 'newest'}
-                onChange={(event) =>
-                  onChange({ ...filters, sort: event.target.value as ArticleSort })
-                }
+                onChange={(event) => {
+                  const sort = event.target.value;
+                  if (isArticleSort(sort)) onChange({ ...filters, sort });
+                }}
                 className="rounded-lg border border-zinc-300 bg-white py-1.5 pr-8 pl-3 text-sm text-zinc-900 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-100"
               >
                 <option value="newest">Newest</option>
@@ -89,6 +94,7 @@ export function SearchView({
         <ArticleFeed
           feed={feed}
           following={following}
+          relatedLinkState={fromFeed ? FROM_FEED : undefined}
           empty={
             <div className="rounded-xl border border-dashed border-zinc-300 px-6 py-12 text-center dark:border-zinc-700">
               <p className="font-medium">No articles match your search</p>

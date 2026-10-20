@@ -52,7 +52,7 @@ export function LoadMore({
 
   return (
     <div ref={sentinelRef} className="flex justify-center py-6">
-      <Button onClick={onLoadMore} disabled={isFetchingNextPage} aria-live="polite">
+      <Button onClick={onLoadMore} disabled={isFetchingNextPage}>
         {isFetchingNextPage ? 'Loading more…' : 'Load more'}
       </Button>
     </div>

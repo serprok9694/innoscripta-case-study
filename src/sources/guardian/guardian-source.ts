@@ -6,7 +6,7 @@ import { invertCategoryMap, nativeValuesFor } from '../shared/category-map';
 import { PAGE_SIZE } from '../shared/constants';
 import { fetchJson, proxyUrl } from '../shared/http';
 import { foldText } from '@/shared/lib/fold-text';
-import { htmlToText, nonEmpty } from '../shared/text';
+import { htmlToText, nonEmpty, webUrl } from '../shared/text';
 
 /** Guardian section ids per category. https://open-platform.theguardian.com/documentation/search */
 const SECTIONS: Record<CategoryId, readonly string[]> = {
@@ -65,7 +65,7 @@ function toArticle(result: z.infer<typeof resultSchema>): Article {
     title: result.webTitle,
     summary: htmlToText(result.fields?.trailText),
     url: result.webUrl,
-    imageUrl: nonEmpty(result.fields?.thumbnail),
+    imageUrl: webUrl(result.fields?.thumbnail),
     authors: contributors.length ? contributors : byline ? [byline] : [],
     category: CATEGORY_BY_SECTION.get(result.sectionId),
     publishedAt: result.webPublicationDate,
@@ -135,7 +135,7 @@ export function createGuardianSource(): NewsSource {
       const { response } = await fetchJson('guardian', url, searchResponseSchema, signal);
 
       return {
-        articles: response.results.map(toArticle),
+        articles: response.results.map(toArticle).filter((a) => webUrl(a.url)),
         nextPage: response.currentPage < response.pages ? response.currentPage + 1 : null,
       };
     },

@@ -1,17 +1,35 @@
-import { type FormEvent, useId, useState } from 'react';
+import { type FormEvent, useEffect, useId, useRef, useState } from 'react';
 import { useDebouncedCallback } from '@/shared/lib/use-debounced-callback';
 
 interface SearchBoxProps {
   value: string;
   onChange: (value: string) => void;
   debounceMs?: number;
+  /** Search-as-you-type starts at this many characters (Enter always searches). */
+  minLength?: number;
 }
 
-/** Search-as-you-type with debounce; Enter searches immediately. */
-export function SearchBox({ value, onChange, debounceMs = 400 }: SearchBoxProps) {
+/** Search-as-you-type with debounce and a minimum length; Enter searches immediately. */
+export function SearchBox({ value, onChange, debounceMs = 600, minLength = 2 }: SearchBoxProps) {
   const inputId = useId();
   const [draft, setDraft] = useState(value);
-  const debounced = useDebouncedCallback((next: string) => onChange(next.trim()), debounceMs);
+  /** The last value this box reported, to tell its own updates from outside ones. */
+  const reported = useRef(value);
+  const report = (next: string) => {
+    reported.current = next.trim();
+    onChange(next.trim());
+  };
+  const debounced = useDebouncedCallback(report, debounceMs);
+
+  // Changed from outside (Back, "Back to my feed", clearing): a search still
+  // pending from earlier typing must not fire and undo that navigation.
+  const { cancel } = debounced;
+  useEffect(() => {
+    if (value !== reported.current) {
+      cancel();
+      reported.current = value;
+    }
+  }, [value, cancel]);
 
   // Follow external changes (back/forward navigation, "reset filters").
   const [lastValue, setLastValue] = useState(value);
@@ -23,7 +41,7 @@ export function SearchBox({ value, onChange, debounceMs = 400 }: SearchBoxProps)
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
     debounced.cancel();
-    onChange(draft.trim());
+    report(draft);
   };
 
   return (
@@ -49,8 +67,13 @@ export function SearchBox({ value, onChange, debounceMs = 400 }: SearchBoxProps)
           type="search"
           value={draft}
           onChange={(event) => {
-            setDraft(event.target.value);
-            debounced.run(event.target.value);
+            const next = event.target.value;
+            setDraft(next);
+            // Each search costs a request per source, and the free API quotas are
+            // small: wait for a pause and a meaningful query.
+            const length = next.trim().length;
+            if (length === 0 || length >= minLength) debounced.run(next);
+            else debounced.cancel();
           }}
           placeholder="Search articles, e.g. climate, elections, AI…"
           autoComplete="off"

@@ -2,6 +2,16 @@ import { foldText } from '@/shared/lib/fold-text';
 import type { Article } from './article';
 import type { ArticleQuery } from './news-source';
 
+const words = (name: string) =>
+  foldText(name)
+    .split(/[\s.,]+/)
+    .filter(Boolean);
+
+/** Whole-word match: "Harvey" matches "Fiona Harvey", but "Ian" doesn't match "Brian". */
+function containsWords(byline: readonly string[], name: readonly string[]): boolean {
+  return name.every((word) => byline.includes(word));
+}
+
 /**
  * Client-side safety net. Sources apply what their API supports; this
  * enforces the rest (e.g. dates on NewsAPI top headlines) and keeps author
@@ -18,9 +28,11 @@ export function matchesQuery(article: Article, query: ArticleQuery): boolean {
   }
 
   if (query.authors?.length) {
-    const authors = article.authors.map(foldText);
-    const wanted = query.authors.map(foldText);
-    if (!wanted.some((name) => authors.some((author) => author.includes(name)))) return false;
+    const bylines = article.authors.map(words);
+    const wanted = query.authors.map(words);
+    if (!wanted.some((name) => bylines.some((byline) => containsWords(byline, name)))) {
+      return false;
+    }
   }
 
   return true;

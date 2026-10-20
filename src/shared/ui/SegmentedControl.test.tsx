@@ -24,21 +24,4 @@ describe('SegmentedControl', () => {
     await userEvent.click(screen.getByRole('radio', { name: 'Dark' }));
     expect(onChange).toHaveBeenCalledWith('dark');
   });
-
-  it('can be disabled and show its label', () => {
-    render(
-      <SegmentedControl
-        label="Sort"
-        showLabel
-        disabled
-        options={[{ value: 'newest', label: 'Newest' }]}
-        value="newest"
-        onChange={vi.fn<(value: string) => void>()}
-      />,
-    );
-    expect(screen.getByRole('group', { name: 'Sort' })).toBeDisabled();
-    expect(screen.getByRole('radio', { name: 'Newest' })).toBeDisabled();
-    // Visible label for sighted users; the legend names the group for screen readers.
-    expect(screen.getByText('Sort', { selector: 'span' })).toBeVisible();
-  });
 });

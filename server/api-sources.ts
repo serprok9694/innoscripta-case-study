@@ -12,6 +12,11 @@ export interface ApiSourceDefinition {
   target: string;
   envKey: string;
   auth: ApiAuth;
+  /**
+   * The only upstream endpoints the proxy forwards: an open proxy would let
+   * anyone reaching it spend these keys on any API call.
+   */
+  paths: readonly string[];
 }
 
 export const API_SOURCES = [
@@ -20,18 +25,21 @@ export const API_SOURCES = [
     target: 'https://content.guardianapis.com',
     envKey: 'GUARDIAN_API_KEY',
     auth: { in: 'query', name: 'api-key' },
+    paths: ['/search', '/tags'],
   },
   {
     id: 'nyt',
     target: 'https://api.nytimes.com',
     envKey: 'NYT_API_KEY',
     auth: { in: 'query', name: 'api-key' },
+    paths: ['/svc/search/v2/articlesearch.json'],
   },
   {
     id: 'newsapi',
     target: 'https://newsapi.org',
     envKey: 'NEWSAPI_API_KEY',
     auth: { in: 'header', name: 'X-Api-Key' },
+    paths: ['/v2/everything', '/v2/top-headlines'],
   },
 ] as const satisfies readonly ApiSourceDefinition[];
 
@@ -58,4 +66,12 @@ export function rewriteUpstreamPath(
     url.searchParams.set(source.auth.name, apiKey);
   }
   return url.pathname + url.search;
+}
+
+const escapeRegExp = (value: string) => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+/** Matches proxied URLs of a source (allowed endpoints only, any query string). */
+export function proxyRoutePattern(source: ApiSourceDefinition): string {
+  const endpoints = source.paths.map(escapeRegExp).join('|');
+  return `^${API_PREFIX}/${source.id}(${endpoints})(\\?|$)`;
 }

@@ -18,7 +18,7 @@ export function useSourceOptions(): ChipOption<SourceId>[] {
       value: source.id,
       label: source.name,
       disabled: !available,
-      hint: available ? undefined : 'Not configured: add an API key to enable this source',
+      hint: available ? undefined : 'Sources without an API key are unavailable.',
     };
   });
 }

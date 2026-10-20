@@ -15,3 +15,15 @@ export function htmlToText(html: string | null | undefined): string | undefined 
 export function compactDate(date: string | undefined): string | undefined {
   return date?.replaceAll('-', '');
 }
+
+/** An absolute http(s) URL, or `undefined` (e.g. `javascript:` or relative links from a feed). */
+export function webUrl(value: string | null | undefined): string | undefined {
+  const trimmed = nonEmpty(value);
+  if (!trimmed) return undefined;
+  try {
+    const { protocol } = new URL(trimmed);
+    return protocol === 'https:' || protocol === 'http:' ? trimmed : undefined;
+  } catch {
+    return undefined;
+  }
+}

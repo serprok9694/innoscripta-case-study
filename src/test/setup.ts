@@ -3,19 +3,26 @@ import { cleanup } from '@testing-library/react';
 import { afterAll, afterEach, beforeAll } from 'vitest';
 import { server } from './msw/server';
 
-// jsdom doesn't implement modal dialogs yet.
-HTMLDialogElement.prototype.showModal ??= function (this: HTMLDialogElement) {
-  this.open = true;
-};
-HTMLDialogElement.prototype.close ??= function (this: HTMLDialogElement) {
-  this.open = false;
-  this.dispatchEvent(new Event('close'));
-};
+/** Most tests run in jsdom; a few (e.g. config checks) run in plain Node. */
+const hasDom = typeof window !== 'undefined';
+
+if (hasDom) {
+  // jsdom doesn't implement modal dialogs or scrolling yet.
+  HTMLDialogElement.prototype.showModal ??= function (this: HTMLDialogElement) {
+    this.open = true;
+  };
+  HTMLDialogElement.prototype.close ??= function (this: HTMLDialogElement) {
+    this.open = false;
+    this.dispatchEvent(new Event('close'));
+  };
+  window.scrollTo = () => {};
+}
 
 beforeAll(() => server.listen({ onUnhandledFrame: 'error' }));
 afterEach(() => {
-  cleanup();
   server.resetHandlers();
+  if (!hasDom) return;
+  cleanup();
   localStorage.clear();
   sessionStorage.clear();
   document.documentElement.className = '';

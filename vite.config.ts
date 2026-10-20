@@ -12,6 +12,23 @@ export default defineConfig(({ mode }) => {
 
   return {
     plugins: [react(), tailwindcss(), apiProxy(env)],
+    build: {
+      rolldownOptions: {
+        output: {
+          // Libraries change less often than app code: separate chunks stay cached
+          // across deploys, and no single chunk trips the 500 kB warning.
+          codeSplitting: {
+            groups: [
+              {
+                name: 'react',
+                test: /node_modules[\\/](react|react-dom|scheduler|react-router)[\\/]/,
+              },
+              { name: 'vendor', test: /node_modules[\\/]/ },
+            ],
+          },
+        },
+      },
+    },
     resolve: {
       alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) },
     },

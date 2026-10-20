@@ -1,3 +1,4 @@
+import { useId } from 'react';
 import { cx } from '@/shared/lib/cx';
 
 export interface ChipOption<T extends string> {
@@ -22,6 +23,11 @@ export function ChipGroup<T extends string>({
   selected,
   onChange,
 }: ChipGroupProps<T>) {
+  const hintId = useId();
+  // Why options are unavailable, visible to everyone (a `title` tooltip isn't
+  // shown on touch devices or to keyboard users).
+  const hints = [...new Set(options.filter((o) => o.disabled && o.hint).map((o) => o.hint))];
+
   const toggle = (value: T) =>
     onChange(selected.includes(value) ? selected.filter((v) => v !== value) : [...selected, value]);
 
@@ -37,7 +43,7 @@ export function ChipGroup<T extends string>({
               type="button"
               aria-pressed={pressed}
               disabled={option.disabled}
-              title={option.hint}
+              aria-describedby={option.disabled && option.hint ? hintId : undefined}
               onClick={() => toggle(option.value)}
               className={cx(
                 'rounded-full border px-3 py-1 text-sm transition-colors',
@@ -53,6 +59,11 @@ export function ChipGroup<T extends string>({
           );
         })}
       </div>
+      {hints.length > 0 && (
+        <p id={hintId} className="mt-2 text-xs text-zinc-500 dark:text-zinc-400">
+          {hints.join(' ')}
+        </p>
+      )}
     </fieldset>
   );
 }

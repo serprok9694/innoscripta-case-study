@@ -27,9 +27,13 @@ describe('matchesQuery', () => {
     );
   });
 
-  it('matches authors by case- and accent-insensitive substring', () => {
+  it('matches authors by whole words, ignoring case and accents', () => {
     expect(matchesQuery(article, { authors: ['segolene le stradic'] })).toBe(true);
     expect(matchesQuery(article, { authors: ['Nobody', 'stradic'] })).toBe(true);
+    expect(matchesQuery(article, { authors: ['Le Stradic'] })).toBe(true);
+    // Whole words only: a short name mustn't match inside a longer one.
+    expect(matchesQuery(article, { authors: ['Stra'] })).toBe(false);
+    expect(matchesQuery(makeArticle({ authors: ['Brian Cox'] }), { authors: ['Ian'] })).toBe(false);
     expect(matchesQuery(article, { authors: ['Fiona Harvey'] })).toBe(false);
     expect(matchesQuery(makeArticle({ authors: [] }), { authors: ['x'] })).toBe(false);
   });

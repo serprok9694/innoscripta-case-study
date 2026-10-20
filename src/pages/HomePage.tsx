@@ -4,6 +4,7 @@ import { useAppSelector } from '@/app/hooks';
 import type { NewsFilters } from '@/features/articles/filters';
 import { selectPreferences } from '@/features/preferences/preferences-slice';
 import { isSearching, parseSearchParams, toSearchParams } from '@/features/search/search-params';
+import { FROM_FEED, isFromFeed } from '@/features/search/search-entry';
 import { SearchBox } from '@/features/search/ui/SearchBox';
 import { SearchFilters } from '@/features/search/ui/SearchFilters';
 import { Button } from '@/shared/ui/Button';
@@ -11,11 +12,6 @@ import { Drawer } from '@/shared/ui/Drawer';
 import { SlidersIcon } from '@/shared/ui/icons';
 import { type FeedViewName, FeedView } from './home/FeedView';
 import { SearchView } from './home/SearchView';
-
-/** History state of a search entered from the feed: leaving it steps back instead of piling up. */
-interface SearchEntryState {
-  fromFeed?: boolean;
-}
 
 function activeFilterCount({
   from,
@@ -40,7 +36,7 @@ export function HomePage() {
   const searching = isSearching(filters);
   const view: FeedViewName = params.get('view') === 'following' ? 'following' : 'for-you';
   const feedUrl = view === 'following' ? '/?view=following' : '/';
-  const fromFeed = (location.state as SearchEntryState | null)?.fromFeed === true;
+  const fromFeed = isFromFeed(location.state);
   const preferences = useAppSelector(selectPreferences);
   const [filtersOpen, setFiltersOpen] = useState(false);
 
@@ -57,7 +53,7 @@ export function HomePage() {
     const nextParams = toSearchParams(next);
     if (view === 'following') nextParams.set('view', view);
     if (!searching && nextSearching) {
-      setParams(nextParams, { state: { fromFeed: true } satisfies SearchEntryState });
+      setParams(nextParams, { state: FROM_FEED });
     } else {
       setParams(nextParams, { replace: true, state: location.state });
     }
@@ -106,6 +102,7 @@ export function HomePage() {
               onChange={search}
               feedUrl={feedUrl}
               onBackToFeed={backToFeed}
+              fromFeed={fromFeed}
               filtersButton={<div className="lg:hidden">{filtersButton}</div>}
             />
           </div>

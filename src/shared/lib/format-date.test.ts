@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { formatRelativeTime, todayIsoDate } from './format-date';
+import { formatDateTime, formatRelativeTime, todayIsoDate } from './format-date';
 
 const now = new Date('2026-10-20T12:00:00Z');
 
@@ -19,5 +19,12 @@ describe('formatRelativeTime', () => {
 describe('todayIsoDate', () => {
   it('formats the local calendar date', () => {
     expect(todayIsoDate(new Date(2026, 0, 5, 23, 59))).toBe('2026-01-05');
+  });
+});
+
+describe('invalid dates', () => {
+  it('format to an empty string instead of throwing', () => {
+    expect(formatRelativeTime('not a date', now)).toBe('');
+    expect(formatDateTime('not a date')).toBe('');
   });
 });
