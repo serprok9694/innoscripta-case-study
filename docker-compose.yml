@@ -1,0 +1,12 @@
+services:
+  web:
+    build: .
+    image: news-aggregator:latest
+    ports:
+      - '${PORT:-8080}:80'
+    # Read from .env (see .env.example). Missing keys disable that source.
+    environment:
+      GUARDIAN_API_KEY: ${GUARDIAN_API_KEY:-}
+      NYT_API_KEY: ${NYT_API_KEY:-}
+      NEWSAPI_API_KEY: ${NEWSAPI_API_KEY:-}
+    restart: unless-stopped

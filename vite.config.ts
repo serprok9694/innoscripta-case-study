@@ -1,0 +1,30 @@
+/// <reference types="vitest/config" />
+import { fileURLToPath, URL } from 'node:url';
+import tailwindcss from '@tailwindcss/vite';
+import react from '@vitejs/plugin-react';
+import { defineConfig, loadEnv } from 'vite';
+import { apiProxy } from './server/vite-api-proxy.ts';
+
+export default defineConfig(({ mode }) => {
+  // Empty prefix: load non-VITE_ vars too. They are used by the proxy only
+  // and are never exposed to client code.
+  const env = { ...loadEnv(mode, process.cwd(), ''), ...process.env };
+
+  return {
+    plugins: [react(), tailwindcss(), apiProxy(env)],
+    resolve: {
+      alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) },
+    },
+    test: {
+      environment: 'jsdom',
+      setupFiles: ['./src/test/setup.ts'],
+      include: ['src/**/*.test.{ts,tsx}', 'server/**/*.test.ts'],
+      restoreMocks: true,
+      coverage: {
+        provider: 'v8',
+        include: ['src/**/*.{ts,tsx}'],
+        exclude: ['src/**/*.test.{ts,tsx}', 'src/test/**', 'src/main.tsx'],
+      },
+    },
+  };
+});
