@@ -46,4 +46,34 @@ describe('createDemoSource', () => {
     const byAuthor = await source.search({ authors: ['fiona harvey'] }, 1);
     expect(byAuthor.articles.map((a) => a.id)).toEqual(['guardian:5']);
   });
+
+  it('ranks by relevance: title matches first, then summary, then date', async () => {
+    const ranked = createDemoSource('nyt', 'NYT', async () => ({
+      recordedAt: '2026-10-20',
+      articles: [
+        makeArticle({
+          id: 'summary',
+          sourceId: 'nyt',
+          title: 'Other',
+          summary: 'bees',
+          publishedAt: '2026-10-20T00:00:00Z',
+        }),
+        makeArticle({
+          id: 'old-title',
+          sourceId: 'nyt',
+          title: 'Bees',
+          publishedAt: '2026-10-01T00:00:00Z',
+        }),
+        makeArticle({
+          id: 'new-title',
+          sourceId: 'nyt',
+          title: 'Bees',
+          publishedAt: '2026-10-10T00:00:00Z',
+        }),
+      ],
+    }));
+
+    const { articles } = await ranked.search({ keyword: 'bees', sort: 'relevance' }, 1);
+    expect(articles.map((a) => a.id)).toEqual(['new-title', 'old-title', 'summary']);
+  });
 });

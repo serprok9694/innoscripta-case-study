@@ -3,7 +3,13 @@ import type { SourceId } from '@/domain/article';
 import type { NewsSource, SourcePage } from '@/domain/news-source';
 import { SourceError } from '@/sources/shared/source-error';
 import { makeArticle } from '@/test/factories';
-import { AllSourcesFailedError, fetchFeedPage, initialCursors, selectSources } from './aggregator';
+import {
+  AllSourcesFailedError,
+  fetchFeedPage,
+  initialCursors,
+  interleave,
+  selectSources,
+} from './aggregator';
 
 function fakeSource(id: SourceId, respond: (page: number) => SourcePage | Promise<SourcePage>) {
   const search = vi.fn<NewsSource['search']>(async (_query, page) => respond(page));
@@ -160,5 +166,36 @@ describe('fetchFeedPage', () => {
     await expect(
       fetchFeedPage([guardian], {}, { guardian: 1 }, controller.signal),
     ).rejects.toMatchObject({ name: 'AbortError' });
+  });
+
+  it('keeps each source’s ranking when sorting by relevance', async () => {
+    const guardian = fakeSource('guardian', () => ({
+      articles: [at('guardian', '2026-10-01T10:00:00Z'), at('guardian', '2026-10-20T10:00:00Z')],
+      nextPage: null,
+    }));
+    const nyt = fakeSource('nyt', () => ({
+      articles: [at('nyt', '2026-10-15T10:00:00Z')],
+      nextPage: null,
+    }));
+
+    const page = await fetchFeedPage(
+      [guardian, nyt],
+      { keyword: 'x', sort: 'relevance' },
+      initialCursors([guardian, nyt]),
+    );
+
+    // Best match of each source first, not newest first.
+    expect(page.articles.map((a) => a.id)).toEqual([
+      'guardian:2026-10-01T10:00:00Z',
+      'nyt:2026-10-15T10:00:00Z',
+      'guardian:2026-10-20T10:00:00Z',
+    ]);
+  });
+});
+
+describe('interleave', () => {
+  it('takes one item per list per round', () => {
+    expect(interleave([[1, 2, 3], [10], [], [20, 21]])).toEqual([1, 10, 20, 2, 21, 3]);
+    expect(interleave([])).toEqual([]);
   });
 });

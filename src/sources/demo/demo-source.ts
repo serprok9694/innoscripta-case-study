@@ -14,13 +14,24 @@ export interface DemoDataset {
 const loadDataset = (): Promise<DemoDataset> =>
   import('./demo-articles.json').then((module) => module.default as DemoDataset);
 
+const words = (keyword: string | undefined) => (keyword ? foldText(keyword).split(/\s+/) : []);
+
 function matchesKeyword(article: Article, keyword: string | undefined): boolean {
-  if (!keyword) return true;
   const haystack = foldText(`${article.title} ${article.summary ?? ''}`);
-  return foldText(keyword)
-    .split(/\s+/)
-    .every((word) => haystack.includes(word));
+  return words(keyword).every((word) => haystack.includes(word));
 }
+
+/** Simple stand-in for API relevance: title matches weigh more than summary ones. */
+function relevance(article: Article, keyword: string | undefined): number {
+  const title = foldText(article.title);
+  const summary = foldText(article.summary ?? '');
+  return words(keyword).reduce(
+    (score, word) => score + (title.includes(word) ? 2 : 0) + (summary.includes(word) ? 1 : 0),
+    0,
+  );
+}
+
+const byDate = (a: Article, b: Article) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt);
 
 /**
  * Offline stand-in for a real source, serving a recorded sample of its
@@ -40,7 +51,11 @@ export function createDemoSource(
       const matching = articles
         .filter((a) => a.sourceId === id && matchesKeyword(a, query.keyword))
         .filter((a) => matchesQuery(a, query))
-        .sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt));
+        .sort(
+          query.sort === 'relevance'
+            ? (a, b) => relevance(b, query.keyword) - relevance(a, query.keyword) || byDate(a, b)
+            : byDate,
+        );
 
       const start = (page - 1) * PAGE_SIZE;
       return {

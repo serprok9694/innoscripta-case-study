@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { mockJson } from '@/test/msw/mock-json';
 import everything from './__fixtures__/everything.json';
 import topHeadlines from './__fixtures__/top-headlines.json';
-import { newsApiSource } from './newsapi-source';
+import { newsApiSource, stripOutletSuffix } from './newsapi-source';
 
 const EVERYTHING = '/api/newsapi/v2/everything';
 const TOP = '/api/newsapi/v2/top-headlines';
@@ -22,6 +22,12 @@ describe('newsApiSource', () => {
         pageSize: '10',
         page: '2',
       });
+    });
+
+    it('sorts by relevancy on request', async () => {
+      const requests = mockJson(EVERYTHING, everything);
+      await newsApiSource.search({ keyword: 'climate', sort: 'relevance' }, 1);
+      expect(requests[0]?.searchParams.get('sortBy')).toBe('relevancy');
     });
 
     it('normalises articles and drops [Removed] placeholders', async () => {
@@ -131,5 +137,38 @@ describe('newsApiSource', () => {
       await newsApiSource.search(query, 1);
       expect(requests[0]?.searchParams.get('q')).toBe(q);
     });
+  });
+
+  describe('stripOutletSuffix', () => {
+    it.each([
+      [
+        'Stocks rally as inflation cools - Yahoo Finance',
+        'CNBC',
+        'Stocks rally as inflation cools',
+      ],
+      [
+        'Bills beat the Jets in overtime thriller - Audacy',
+        'Audacy',
+        'Bills beat the Jets in overtime thriller',
+      ],
+      [
+        'Apple unveils its new iPhone lineup - live updates',
+        'BBC',
+        'Apple unveils its new iPhone lineup - live updates',
+      ],
+      ['Short - Reuters', 'Reuters', 'Short - Reuters'], // too little left
+      ['No suffix here at all', 'BBC', 'No suffix here at all'],
+    ])('%j', (title, publisher, expected) => {
+      expect(stripOutletSuffix(title, publisher)).toBe(expected);
+    });
+  });
+
+  it('drops placeholder descriptions', async () => {
+    mockJson(EVERYTHING, {
+      ...everything,
+      articles: [{ ...everything.articles[0], description: 'False' }],
+    });
+    const { articles } = await newsApiSource.search({ keyword: 'x' }, 1);
+    expect(articles[0]?.summary).toBeUndefined();
   });
 });

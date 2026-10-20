@@ -1,7 +1,7 @@
 import type { RouteObject } from 'react-router';
-import { FeedPage } from '@/pages/FeedPage';
+import { HomePage } from '@/pages/HomePage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
-import { SearchPage } from '@/pages/SearchPage';
+import { SearchRedirect } from '@/pages/SearchRedirect';
 import { SettingsPage } from '@/pages/SettingsPage';
 import { AppLayout } from './AppLayout';
 
@@ -9,8 +9,8 @@ export const routes: RouteObject[] = [
   {
     element: <AppLayout />,
     children: [
-      { index: true, element: <FeedPage /> },
-      { path: 'search', element: <SearchPage /> },
+      { index: true, element: <HomePage /> },
+      { path: 'search', element: <SearchRedirect /> },
       { path: 'settings', element: <SettingsPage /> },
       { path: '*', element: <NotFoundPage /> },
     ],

@@ -3,10 +3,20 @@
 A news aggregator built with React and TypeScript. It pulls articles from **The Guardian**,
 **The New York Times** and **NewsAPI.org** and shows them in one clean, responsive feed.
 
-- **Search and filters:** search by keyword and filter by date range, category and source. The
-  filters live in the URL, so a search can be shared and the back button works.
-- **Personalised feed:** pick preferred sources and topics, and follow authors. You can follow an
-  author straight from any article by clicking their name.
+- **One home page for feed and search:** the personalised feed with a search box and a
+  **Filters** button on top. As soon as you type or pick a filter, the same page shows results;
+  Back or "Back to my feed" returns to the feed in one step.
+- **Search and filters:** search all news by keyword and filter by date range, topic, source and
+  author. Applied filters are shown as removable chips with the article count. "Use my sources &
+  topics" applies your feed preferences in one click. Sort by newest or most relevant. Everything
+  lives in the URL (`/?q=climate&category=science`), so a search can be shared.
+- **Personalised feed:** pick preferred sources and topics, and follow authors (their articles show
+  from every source).
+- **Article preview:** clicking an article opens a side panel (a bottom sheet on phones) with the
+  full summary and its authors, each with a **Follow** button. It also links to more articles by the
+  same author, on the same topic or from the same source, and to the original article. Cmd/Ctrl-click
+  still opens the original in a new tab. An author filter doubles as an author page
+  (`/?author=Fiona+Harvey`) with its own Follow button.
 - **Mobile-first:** bottom tab bar and a bottom-sheet filter drawer on phones, a sidebar on
   desktop. Light, dark and system themes.
 - **Resilient:** if one source fails or hits its rate limit, the others are still shown together
@@ -88,8 +98,7 @@ Redux Toolkit (client state), React Router, Zod, Vitest, Testing Library and MSW
 ```mermaid
 flowchart LR
   subgraph UI["Pages"]
-    Feed[FeedPage]
-    Search[SearchPage]
+    Home["HomePage<br/>feed + search"]
     Settings[SettingsPage]
   end
   Redux[("Redux Toolkit<br/>preferences, theme<br/>→ localStorage")]
@@ -103,16 +112,16 @@ flowchart LR
   Proxy["/api proxy<br/>(nginx / Vite) adds keys"]
 
   Settings --> Redux
-  Feed --> Redux
-  Feed & Search --> Hook --> Agg --> Contract
+  Home --> Redux
+  Home --> Hook --> Agg --> Contract
   Contract --> G & N & A & D
   G & N & A --> Proxy --> APIs[(Guardian · NYT · NewsAPI)]
 ```
 
 ### How a request flows
 
-1. **Pages** turn UI state into `NewsFilters`. The search page reads them from the URL, the feed
-   page from the user's preferences in Redux.
+1. **The home page** turns UI state into `NewsFilters`: from the URL when searching, from the
+   user's preferences in Redux otherwise.
 2. **`useArticles`** ([`features/articles/use-articles.ts`](src/features/articles/use-articles.ts))
    normalises the filters (so equal filters share a cache entry) and runs a TanStack infinite query.
 3. **The aggregator** ([`features/articles/aggregator.ts`](src/features/articles/aggregator.ts))
@@ -129,7 +138,7 @@ src/
 ├── domain/      Article, categories, the NewsSource contract, query matching (no React, no I/O)
 ├── sources/     One adapter per API + demo source, registry, shared HTTP/error helpers
 ├── features/    articles (aggregator, hooks, feed UI), search, preferences, theme
-├── pages/       Route components: feed, search, settings, 404
+├── pages/       Route components: home (feed + search views), settings, 404
 ├── shared/      Generic UI (Button, ChipGroup, Drawer…) and helpers
 ├── app/         Providers, router, Redux store, QueryClient
 └── test/        MSW server, render helpers, factories
@@ -144,6 +153,20 @@ depends on nothing.
 
 ### Key decisions
 
+- **Feed and search on one page, with one rule: the feed is personalised (Settings), search
+  covers all news with filters.** The assignment lists search and the personalised feed as
+  separate features, not separate pages, so one page keeps search one tap away. Filters belong to
+  search only, as in Google News: putting them on the feed too created overlapping layers (feed
+  preferences, filters, a "search in my feed" switch) that a usability review found confusing.
+  "Use my sources & topics" covers the "search within my feed" case explicitly. Entering search is
+  one history step; refining it replaces that step, and leaving it steps back, so Back never loops
+  between feed and results. Search state stays in the URL, so results remain shareable, and the old
+  `/search?…` links redirect.
+- **Preview instead of an article page.** The APIs return snippets, not full text, so an article
+  page would mostly repeat the card. Instead, a preview panel is the place for actions: read on
+  the site, follow the authors, explore related articles. The previewed article is a snapshot kept
+  in the history entry's state, so opening it makes no request, Back closes it, and it survives a
+  reload. It isn't in the URL: NYT and NewsAPI have no stable article ids to link to.
 - **Server state vs client state.** Articles and the source configuration are server state:
   caching, infinite pagination, cancellation and retries are what TanStack Query does best. User
   preferences and the theme are client state and live in Redux Toolkit. They are persisted to
@@ -195,7 +218,7 @@ per-author requests, and shared option builders for the search and settings page
 ## Testing
 
 ```bash
-npm test                  # about 190 tests, a few seconds
+npm test                  # about 250 tests, a few seconds
 npm run test:coverage     # line coverage above 99%
 ```
 
@@ -226,6 +249,11 @@ Docker.
   - byline filtering no longer works in the 2025 Article Search API, so authors are searched by
     name and matched client-side;
   - the number of followed authors is capped at 5 because each one costs an NYT request.
+- **Previews can't be shared by link** (see Key decisions). Share the original article instead.
+- **"Most relevant" keeps each source's own ranking.** Relevance scores of different APIs aren't
+  comparable, so results are interleaved: every source's best match, then every second-best, and so
+  on. Top headlines (NewsAPI with a category) have no relevance order. In demo mode, a simple local
+  score is used: title matches count more than summary matches.
 - **Ordering across sources is per page.** Each "page" contains one page from every source, sorted
   newest first. A strict global order would need buffering and a k-way merge across sources: more
   complexity for little visible gain in a news feed.

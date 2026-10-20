@@ -55,7 +55,7 @@ export function SettingsPage() {
 
         <Section title="Topics" hint="What “For you” shows. None selected means all topics.">
           <ChipGroup
-            label="Preferred categories"
+            label="Preferred topics"
             options={CATEGORY_OPTIONS}
             selected={preferences.categories}
             onChange={(categories) => dispatch(setCategories(categories))}

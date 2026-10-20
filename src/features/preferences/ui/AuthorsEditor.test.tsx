@@ -49,6 +49,8 @@ describe('AuthorsEditor', () => {
 
     expect(input()).toBeDisabled();
     expect(screen.getByRole('button', { name: 'Follow' })).toBeDisabled();
-    expect(screen.getByText(/5 of 5 followed/)).toBeInTheDocument();
+    expect(screen.getByText(/5 of 5 followed/)).toHaveTextContent(
+      'Unfollow someone to add another author.',
+    );
   });
 });

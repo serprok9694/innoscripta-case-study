@@ -14,7 +14,7 @@ describe('SettingsPage', () => {
     expect(within(sources).getByRole('button', { name: 'NewsAPI' })).toBeDisabled();
 
     await userEvent.click(within(sources).getByRole('button', { name: 'The Guardian' }));
-    const topics = screen.getByRole('group', { name: 'Preferred categories' });
+    const topics = screen.getByRole('group', { name: 'Preferred topics' });
     await userEvent.click(within(topics).getByRole('button', { name: 'Technology' }));
 
     expect(store.getState().preferences).toMatchObject({

@@ -48,6 +48,23 @@ function isRemoved(raw: RawArticle): boolean {
   return raw.title === '[Removed]' || raw.url === 'https://removed.com';
 }
 
+/** Placeholders some feeds put in the description. */
+const JUNK_DESCRIPTIONS = new Set(['False', 'None', 'null', '[Removed]']);
+
+/**
+ * Headlines often end with " - Outlet" (sometimes an outlet other than the
+ * listed source, e.g. "… - Yahoo Finance"). Strip a short, capitalised tail.
+ */
+export function stripOutletSuffix(title: string, publisher: string): string {
+  const match = / - ([^-]{2,40})$/.exec(title);
+  if (!match) return title;
+  const tail = match[1]!.trim();
+  const rest = title.slice(0, match.index).trim();
+  const looksLikeOutlet =
+    tail === publisher || (/^[A-Z0-9]/.test(tail) && tail.split(/\s+/).length <= 4);
+  return looksLikeOutlet && rest.length >= 20 ? rest : title;
+}
+
 /** Some publishers put a URL in the author field. */
 function parseAuthor(author: string | null | undefined): string[] {
   const name = nonEmpty(author);
@@ -64,15 +81,16 @@ function searchExpression({ keyword, authors = [] }: ArticleQuery): string | und
 function toArticle(raw: RawArticle, category?: CategoryId): Article {
   const publisher = raw.source.name;
   // Headlines often end with " - Publisher".
-  const suffix = ` - ${publisher}`;
-  const title = raw.title.endsWith(suffix) ? raw.title.slice(0, -suffix.length) : raw.title;
+  const title = stripOutletSuffix(raw.title, publisher);
 
   return {
     id: `newsapi:${raw.url}`,
     sourceId: 'newsapi',
     publisher,
     title,
-    summary: nonEmpty(raw.description),
+    summary: JUNK_DESCRIPTIONS.has(raw.description?.trim() ?? '')
+      ? undefined
+      : nonEmpty(raw.description),
     url: raw.url,
     imageUrl: nonEmpty(raw.urlToImage),
     authors: parseAuthor(raw.author),
@@ -145,7 +163,7 @@ export const newsApiSource: NewsSource = {
           q,
           from: query.from,
           to: query.to,
-          sortBy: 'publishedAt',
+          sortBy: query.sort === 'relevance' ? 'relevancy' : 'publishedAt',
           language: 'en',
         },
         page,

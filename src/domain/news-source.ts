@@ -16,7 +16,11 @@ export interface ArticleQuery {
   categories?: readonly CategoryId[];
   /** Articles by any of these authors. Sources narrow by author where their API allows it. */
   authors?: readonly string[];
+  /** Newest first by default; relevance only makes sense with a keyword. */
+  sort?: ArticleSort;
 }
+
+export type ArticleSort = 'newest' | 'relevance';
 
 export interface SourcePage {
   articles: Article[];

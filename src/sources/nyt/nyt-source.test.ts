@@ -68,6 +68,12 @@ describe('nytSource', () => {
     expect(params?.get('page')).toBe('1'); // 0-based
   });
 
+  it('sorts by relevance on request', async () => {
+    const requests = mockJson(PATH, fixture);
+    await nytSource.search({ keyword: 'bees', sort: 'relevance' }, 1);
+    expect(requests[0]?.searchParams.get('sort')).toBe('relevance');
+  });
+
   it('omits the filter when no category is requested', async () => {
     const requests = mockJson(PATH, fixture);
     await nytSource.search({ keyword: 'x' }, 1);

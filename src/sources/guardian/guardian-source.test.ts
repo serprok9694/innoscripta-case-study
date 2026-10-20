@@ -65,6 +65,12 @@ describe('guardianSource', () => {
     expect(params?.get('show-tags')).toBe('contributor');
   });
 
+  it('orders by relevance on request', async () => {
+    const requests = mockJson(PATH, fixture);
+    await guardianSource.search({ keyword: 'bees', sort: 'relevance' }, 1);
+    expect(requests[0]?.searchParams.get('order-by')).toBe('relevance');
+  });
+
   it('omits filters that are not set', async () => {
     const requests = mockJson(PATH, fixture);
     await guardianSource.search({ categories: [] }, 1);

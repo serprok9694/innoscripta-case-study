@@ -4,7 +4,7 @@ import { DemoModeBanner } from '@/features/articles/ui/DemoModeBanner';
 import { ThemeToggle } from '@/features/theme/ui/ThemeToggle';
 import { useApplyTheme } from '@/features/theme/use-theme';
 import { cx } from '@/shared/lib/cx';
-import { NewspaperIcon, SearchIcon, SlidersIcon } from '@/shared/ui/icons';
+import { NewspaperIcon, SlidersIcon } from '@/shared/ui/icons';
 
 interface NavItem {
   to: string;
@@ -14,8 +14,7 @@ interface NavItem {
 }
 
 const NAV: NavItem[] = [
-  { to: '/', label: 'My feed', end: true, Icon: NewspaperIcon },
-  { to: '/search', label: 'Search', end: false, Icon: SearchIcon },
+  { to: '/', label: 'Home', end: true, Icon: NewspaperIcon },
   { to: '/settings', label: 'Settings', end: false, Icon: SlidersIcon },
 ];
 
@@ -54,7 +53,7 @@ function MobileNav() {
       aria-label="Main"
       className="fixed inset-x-0 bottom-0 z-30 border-t border-zinc-200 bg-white/95 pb-[env(safe-area-inset-bottom)] backdrop-blur sm:hidden dark:border-zinc-800 dark:bg-zinc-900/95"
     >
-      <ul className="grid grid-cols-3">
+      <ul className="grid grid-cols-2">
         {NAV.map(({ to, label, end, Icon }) => (
           <li key={to}>
             <NavLink

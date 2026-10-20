@@ -1,96 +1,30 @@
-import { Fragment, useState } from 'react';
+import type { MouseEvent } from 'react';
 import type { Article } from '@/domain/article';
 import { CATEGORY_LABELS } from '@/domain/category';
-import { cx } from '@/shared/lib/cx';
 import { formatDateTime, formatRelativeTime } from '@/shared/lib/format-date';
+import { formatAuthors } from '../format-authors';
+import { ArticleImage } from './ArticleImage';
 
-/** Lets readers follow an article's authors. Provided by the page, so the card stays store-agnostic. */
-export interface AuthorFollowing {
-  isFollowing: (name: string) => boolean;
-  /** False once the follow limit is reached. */
-  canFollow: boolean;
-  toggle: (name: string) => void;
-}
-
-function ArticleImage({ src }: { src?: string }) {
-  const [failed, setFailed] = useState(false);
-  const showImage = src && !failed;
-
-  return (
-    <div className="aspect-[16/9] overflow-hidden bg-zinc-100 dark:bg-zinc-800">
-      {showImage ? (
-        <img
-          src={src}
-          alt=""
-          loading="lazy"
-          decoding="async"
-          referrerPolicy="no-referrer"
-          onError={() => setFailed(true)}
-          className="size-full object-cover transition-transform duration-300 group-hover:scale-105"
-        />
-      ) : (
-        <div
-          data-testid="image-placeholder"
-          className="size-full bg-gradient-to-br from-zinc-100 to-zinc-200 dark:from-zinc-800 dark:to-zinc-900"
-        />
-      )}
-    </div>
-  );
-}
-
-function AuthorButton({ name, following }: { name: string; following: AuthorFollowing }) {
-  const followed = following.isFollowing(name);
-  const disabled = !followed && !following.canFollow;
-
-  return (
-    <button
-      type="button"
-      // Above the card's stretched link, so it gets its own clicks.
-      className={cx(
-        'relative z-10 rounded text-left whitespace-nowrap hover:underline focus-visible:outline-2 focus-visible:outline-blue-600 disabled:no-underline disabled:opacity-60',
-        followed && 'font-medium text-blue-700 dark:text-blue-400',
-      )}
-      aria-label={`Follow ${name}`}
-      aria-pressed={followed}
-      disabled={disabled}
-      title={
-        disabled
-          ? 'You’re following the maximum number of authors'
-          : followed
-            ? 'Unfollow'
-            : 'Follow'
-      }
-      onClick={() => following.toggle(name)}
-    >
-      {name}
-      {followed && <span aria-hidden="true"> ✓</span>}
-    </button>
-  );
-}
-
-function Authors({ names, following }: { names: string[]; following?: AuthorFollowing }) {
-  return (
-    <span className="min-w-0">
-      {names.map((name, index) => (
-        // The separator stays outside the no-wrap span, so lines break between names.
-        <Fragment key={name}>
-          {index > 0 && ', '}
-          <span className="whitespace-nowrap">
-            {following ? <AuthorButton name={name} following={following} /> : name}
-          </span>
-        </Fragment>
-      ))}
-    </span>
-  );
+/** A plain left click, i.e. not "open in a new tab/window". */
+function isPlainClick(event: MouseEvent) {
+  return event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey;
 }
 
 interface ArticleCardProps {
   article: Article;
-  following?: AuthorFollowing;
+  /**
+   * Opens the in-app preview on a plain click. The card stays a real link,
+   * so Cmd/Ctrl/middle click still open the original article in a new tab.
+   */
+  onOpen?: (article: Article) => void;
 }
 
-export function ArticleCard({ article, following }: ArticleCardProps) {
-  const hasAuthors = article.authors.length > 0;
+export function ArticleCard({ article, onOpen }: ArticleCardProps) {
+  const handleClick = (event: MouseEvent<HTMLAnchorElement>) => {
+    if (!onOpen || !isPlainClick(event)) return;
+    event.preventDefault();
+    onOpen(article);
+  };
 
   return (
     <article className="group relative flex w-full flex-col overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-sm transition-shadow hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900">
@@ -110,12 +44,15 @@ export function ArticleCard({ article, following }: ArticleCardProps) {
         </p>
 
         <h3 className="line-clamp-3 text-lg leading-snug font-semibold text-zinc-900 dark:text-zinc-50">
-          {/* The ::after overlay makes the whole card clickable while keeping one link. */}
+          {/* The ::after overlay makes the whole card clickable while keeping one link;
+              it also draws the focus ring (Tailwind 4 variants apply left to right). */}
           <a
             href={article.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="group-hover:underline after:absolute after:inset-0 focus-visible:outline-none after:focus-visible:rounded-xl after:focus-visible:outline-2 after:focus-visible:outline-blue-600"
+            onClick={handleClick}
+            aria-haspopup={onOpen ? 'dialog' : undefined}
+            className="group-hover:underline after:absolute after:inset-0 focus-visible:outline-none focus-visible:after:rounded-xl focus-visible:after:outline-2 focus-visible:after:outline-offset-2 focus-visible:after:outline-blue-600 dark:focus-visible:after:outline-blue-400"
           >
             {article.title}
           </a>
@@ -127,7 +64,11 @@ export function ArticleCard({ article, following }: ArticleCardProps) {
 
         {/* Authors wrap instead of being cut off; the time stays on the right. */}
         <p className="mt-auto flex items-start justify-between gap-3 pt-2 text-xs text-zinc-500 dark:text-zinc-400">
-          {hasAuthors && <Authors names={article.authors} following={following} />}
+          {article.authors.length > 0 && (
+            <span className="min-w-0" title={article.authors.join(', ')}>
+              {formatAuthors(article.authors)}
+            </span>
+          )}
           <time
             dateTime={article.publishedAt}
             title={formatDateTime(article.publishedAt)}

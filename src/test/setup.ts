@@ -17,6 +17,7 @@ afterEach(() => {
   cleanup();
   server.resetHandlers();
   localStorage.clear();
+  sessionStorage.clear();
   document.documentElement.className = '';
 });
 afterAll(() => server.close());

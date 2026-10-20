@@ -1,4 +1,4 @@
-import { type FormEvent, useState } from 'react';
+import { type FormEvent, useId, useState } from 'react';
 import { useDebouncedCallback } from '@/shared/lib/use-debounced-callback';
 
 interface SearchBoxProps {
@@ -9,6 +9,7 @@ interface SearchBoxProps {
 
 /** Search-as-you-type with debounce; Enter searches immediately. */
 export function SearchBox({ value, onChange, debounceMs = 400 }: SearchBoxProps) {
+  const inputId = useId();
   const [draft, setDraft] = useState(value);
   const debounced = useDebouncedCallback((next: string) => onChange(next.trim()), debounceMs);
 
@@ -28,7 +29,7 @@ export function SearchBox({ value, onChange, debounceMs = 400 }: SearchBoxProps)
   return (
     <search>
       <form onSubmit={handleSubmit} className="relative">
-        <label htmlFor="search-input" className="sr-only">
+        <label htmlFor={inputId} className="sr-only">
           Search articles
         </label>
         <svg
@@ -44,7 +45,7 @@ export function SearchBox({ value, onChange, debounceMs = 400 }: SearchBoxProps)
           />
         </svg>
         <input
-          id="search-input"
+          id={inputId}
           type="search"
           value={draft}
           onChange={(event) => {

@@ -1,7 +1,11 @@
 import type { ReactNode } from 'react';
+import type { Article } from '@/domain/article';
 import { Button } from '@/shared/ui/Button';
 import type { ArticlesResult } from '../use-articles';
-import { ArticleCard, ArticleCardSkeleton, type AuthorFollowing } from './ArticleCard';
+import type { AuthorFollowing } from '../author-following';
+import { useArticlePreview } from '../use-article-preview';
+import { ArticleCard, ArticleCardSkeleton } from './ArticleCard';
+import { ArticlePreview } from './ArticlePreview';
 import { LoadMore } from './LoadMore';
 import { SourceFailuresNotice } from './SourceFailuresNotice';
 
@@ -21,11 +25,30 @@ interface ArticleFeedProps {
   feed: ArticlesResult;
   /** Shown when the query succeeded but nothing matched. */
   empty?: ReactNode;
+  /** Enables Follow buttons in the article preview. */
   following?: AuthorFollowing;
 }
 
-/** Renders every state of an article feed: loading, error, empty, results, pagination. */
+/**
+ * An article feed in every state (loading, error, empty, results, pagination),
+ * plus the preview that opens when an article is clicked.
+ */
 export function ArticleFeed({ feed, empty, following }: ArticleFeedProps) {
+  const preview = useArticlePreview();
+
+  return (
+    <>
+      <FeedContent feed={feed} empty={empty} onOpen={preview.open} />
+      <ArticlePreview article={preview.article} onClose={preview.close} following={following} />
+    </>
+  );
+}
+
+function FeedContent({
+  feed,
+  empty,
+  onOpen,
+}: Omit<ArticleFeedProps, 'following'> & { onOpen: (article: Article) => void }) {
   if (feed.hasNoSources) {
     return (
       <Message title="No news sources available">
@@ -70,7 +93,7 @@ export function ArticleFeed({ feed, empty, following }: ArticleFeedProps) {
           <ul className={GRID} aria-label="Articles">
             {feed.articles.map((article) => (
               <li key={article.id} className="flex min-w-0">
-                <ArticleCard article={article} following={following} />
+                <ArticleCard article={article} onOpen={onOpen} />
               </li>
             ))}
           </ul>

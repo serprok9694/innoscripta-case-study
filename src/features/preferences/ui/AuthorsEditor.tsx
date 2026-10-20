@@ -55,8 +55,10 @@ export function AuthorsEditor() {
       </form>
 
       <p id={`${inputId}-help`} className="text-xs text-zinc-500 dark:text-zinc-400">
-        {authors.length} of {MAX_FOLLOWED_AUTHORS} followed. Tip: click an author’s name on any
-        article to follow them.
+        {authors.length} of {MAX_FOLLOWED_AUTHORS} followed.{' '}
+        {full
+          ? 'Unfollow someone to add another author.'
+          : 'Tip: open any article and press Follow next to an author.'}
       </p>
       <p role="alert" className="text-sm text-red-700 empty:hidden dark:text-red-400">
         {error}

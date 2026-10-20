@@ -126,7 +126,7 @@ export function createGuardianSource(): NewsSource {
         tag,
         'from-date': query.from,
         'to-date': query.to,
-        'order-by': 'newest',
+        'order-by': query.sort === 'relevance' ? 'relevance' : 'newest',
         'show-fields': 'trailText,byline,thumbnail',
         'show-tags': 'contributor',
         'page-size': PAGE_SIZE,

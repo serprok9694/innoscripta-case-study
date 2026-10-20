@@ -100,7 +100,7 @@ async function searchPage(
     fq: categoryFilter(query.categories),
     begin_date: compactDate(query.from),
     end_date: compactDate(query.to),
-    sort: 'newest',
+    sort: query.sort === 'relevance' ? 'relevance' : 'newest',
     page: page - 1, // NYT pages are 0-based
   });
   const { response } = await fetchJson('nyt', url, searchResponseSchema, signal);

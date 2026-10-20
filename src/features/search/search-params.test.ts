@@ -38,9 +38,19 @@ describe('toSearchParams', () => {
         keyword: ' ai ',
         categories: ['technology', 'business'],
         sources: [],
-        authors: ['ignored'],
+        sort: 'newest',
       }).toString(),
     ).toBe('q=ai&category=business%2Ctechnology');
+  });
+
+  it('writes the author and relevance sort', () => {
+    expect(
+      toSearchParams({ keyword: 'ai', authors: ['Fiona Harvey'], sort: 'relevance' }).toString(),
+    ).toBe('q=ai&author=Fiona+Harvey&sort=relevance');
+  });
+
+  it('drops relevance sort without a keyword', () => {
+    expect(toSearchParams({ sort: 'relevance' }).toString()).toBe('');
   });
 
   it('round-trips', () => {
@@ -50,6 +60,8 @@ describe('toSearchParams', () => {
       to: '2026-10-20',
       categories: ['politics' as const],
       sources: ['nyt' as const],
+      authors: ['Smith, Jr.'],
+      sort: 'relevance' as const,
     };
     expect(parseSearchParams(toSearchParams(filters))).toEqual(filters);
   });

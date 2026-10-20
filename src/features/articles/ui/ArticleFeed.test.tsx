@@ -1,4 +1,6 @@
-import { render, screen } from '@testing-library/react';
+import { render as rtlRender, screen } from '@testing-library/react';
+import type { ReactElement } from 'react';
+import { MemoryRouter } from 'react-router';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 import { makeArticle } from '@/test/factories';
@@ -19,6 +21,9 @@ function feed(overrides: Partial<ArticlesResult> = {}): ArticlesResult {
     ...overrides,
   } as ArticlesResult;
 }
+
+/** The feed opens previews through the router. */
+const render = (ui: ReactElement) => rtlRender(<MemoryRouter>{ui}</MemoryRouter>);
 
 describe('ArticleFeed', () => {
   it('shows skeletons while loading', () => {

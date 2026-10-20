@@ -1,8 +1,9 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 import { makeArticle } from '@/test/factories';
-import { ArticleCard, type AuthorFollowing } from './ArticleCard';
+import type { Article } from '@/domain/article';
+import { formatAuthors } from '../format-authors';
+import { ArticleCard } from './ArticleCard';
 
 describe('ArticleCard', () => {
   const article = makeArticle({
@@ -52,40 +53,57 @@ describe('ArticleCard', () => {
     expect(screen.queryByText('·')).not.toBeInTheDocument();
   });
 
-  describe('following authors', () => {
-    const multi = makeArticle({ authors: ['Rachel Wharton', 'Graham Dickie'] });
-    const following = (overrides: Partial<AuthorFollowing> = {}): AuthorFollowing => ({
-      isFollowing: (name) => name === 'Rachel Wharton',
-      canFollow: true,
-      toggle: vi.fn<(name: string) => void>(),
-      ...overrides,
+  describe('opening the preview', () => {
+    it('opens the preview on a plain click instead of navigating', async () => {
+      const onOpen = vi.fn<(article: Article) => void>();
+      render(<ArticleCard article={article} onOpen={onOpen} />);
+      const link = screen.getByRole('link', { name: 'Bees in decline' });
+
+      expect(link).toHaveAttribute('aria-haspopup', 'dialog');
+      expect(fireEvent.click(link)).toBe(false); // default (navigation) prevented
+      expect(onOpen).toHaveBeenCalledWith(article);
     });
 
-    it('shows plain names when following is not offered', () => {
-      render(<ArticleCard article={multi} />);
-      expect(screen.getByRole('time').parentElement).toHaveTextContent(
-        'Rachel Wharton, Graham Dickie',
-      );
-      expect(screen.queryByRole('button')).not.toBeInTheDocument();
+    it.each([
+      ['Cmd', { metaKey: true }],
+      ['Ctrl', { ctrlKey: true }],
+      ['Shift', { shiftKey: true }],
+      ['middle button', { button: 1 }],
+    ])('leaves %s-clicks to the browser (open in a new tab)', (_name, init) => {
+      const onOpen = vi.fn<(article: Article) => void>();
+      render(<ArticleCard article={article} onOpen={onOpen} />);
+
+      expect(fireEvent.click(screen.getByRole('link'), init)).toBe(true);
+      expect(onOpen).not.toHaveBeenCalled();
     });
 
-    it('lets each author be followed or unfollowed', async () => {
-      const props = following();
-      render(<ArticleCard article={multi} following={props} />);
-
-      const rachel = screen.getByRole('button', { name: 'Follow Rachel Wharton' });
-      const graham = screen.getByRole('button', { name: 'Follow Graham Dickie' });
-      expect(rachel).toHaveAttribute('aria-pressed', 'true');
-      expect(graham).toHaveAttribute('aria-pressed', 'false');
-
-      await userEvent.click(graham);
-      expect(props.toggle).toHaveBeenCalledWith('Graham Dickie');
+    it('is a plain external link without a preview', () => {
+      render(<ArticleCard article={article} />);
+      expect(screen.getByRole('link')).not.toHaveAttribute('aria-haspopup');
     });
+  });
 
-    it('disables following new authors at the limit, but still allows unfollowing', () => {
-      render(<ArticleCard article={multi} following={following({ canFollow: false })} />);
-      expect(screen.getByRole('button', { name: 'Follow Graham Dickie' })).toBeDisabled();
-      expect(screen.getByRole('button', { name: 'Follow Rachel Wharton' })).toBeEnabled();
-    });
+  it('lists authors as plain text', () => {
+    render(<ArticleCard article={makeArticle({ authors: ['Rachel Wharton', 'Graham Dickie'] })} />);
+    expect(screen.getByText('Rachel Wharton, Graham Dickie')).toBeInTheDocument();
+    expect(screen.queryByRole('button')).not.toBeInTheDocument();
+  });
+
+  it('shortens long author lists, keeping the full list in the tooltip', () => {
+    const authors = ['Andrew Ross Sorkin', 'Bernhard Warner', 'Sarah Kessler', 'Ian Mount'];
+    render(<ArticleCard article={makeArticle({ authors })} />);
+    expect(screen.getByText('Andrew Ross Sorkin, Bernhard Warner +2')).toHaveAttribute(
+      'title',
+      authors.join(', '),
+    );
+  });
+
+  it.each([
+    [[], ''],
+    [['A'], 'A'],
+    [['A', 'B'], 'A, B'],
+    [['A', 'B', 'C'], 'A, B +1'],
+  ])('formatAuthors(%j) → %j', (authors, expected) => {
+    expect(formatAuthors(authors)).toBe(expected);
   });
 });

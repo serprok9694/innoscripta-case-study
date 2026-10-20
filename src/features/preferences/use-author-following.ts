@@ -1,5 +1,5 @@
 import { useAppDispatch, useAppSelector } from '@/app/hooks';
-import type { AuthorFollowing } from '@/features/articles/ui/ArticleCard';
+import type { AuthorFollowing } from '@/features/articles/author-following';
 import {
   canFollowMore,
   followAuthor,

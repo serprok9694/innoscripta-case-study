@@ -27,6 +27,8 @@ export function normalizeFilters(filters: NewsFilters): NewsFilters {
     categories: normalizeList(filters.categories),
     sources: normalizeList(filters.sources),
     authors: normalizeList(filters.authors),
+    // Relevance needs a keyword; "newest" is the default and stays implicit.
+    sort: filters.sort === 'relevance' && filters.keyword?.trim() ? 'relevance' : undefined,
   };
   return Object.fromEntries(
     Object.entries(normalized).filter(([, value]) => value !== undefined),
@@ -40,6 +42,7 @@ export function toArticleQuery({
   to,
   categories,
   authors,
+  sort,
 }: NewsFilters): ArticleQuery {
-  return { keyword, from, to, categories, authors };
+  return { keyword, from, to, categories, authors, sort };
 }

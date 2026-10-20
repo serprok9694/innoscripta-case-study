@@ -56,9 +56,26 @@ const newestFirst = (a: Article, b: Article) =>
   Date.parse(b.publishedAt) - Date.parse(a.publishedAt);
 
 /**
+ * Relevance scores of different APIs aren't comparable, so each source's own
+ * ranking is kept and the lists are interleaved: every source's best match,
+ * then every second-best, and so on.
+ */
+export function interleave<T>(lists: readonly T[][]): T[] {
+  const result: T[] = [];
+  const longest = Math.max(0, ...lists.map((list) => list.length));
+  for (let rank = 0; rank < longest; rank++) {
+    for (const list of lists) {
+      if (rank < list.length) result.push(list[rank]!);
+    }
+  }
+  return result;
+}
+
+/**
  * Fetches one page from every source that still has results, in parallel.
  *
- * - Articles are filtered client-side (see `matchesQuery`) and sorted newest first.
+ * - Articles are filtered client-side (see `matchesQuery`) and sorted newest
+ *   first, or interleaved by each source's ranking when sorting by relevance.
  * - A failing source is reported in `failures` and dropped from later pages, so
  *   infinite scrolling never hammers a broken or rate-limited API.
  * - Only when every source fails does the page itself fail.
@@ -80,7 +97,7 @@ export async function fetchFeedPage(
   );
   signal?.throwIfAborted();
 
-  const articles: Article[] = [];
+  const perSource: Article[][] = [];
   const failures: SourceFailure[] = [];
   const next: Cursors = {};
 
@@ -90,7 +107,7 @@ export async function fetchFeedPage(
       failures.push(toFailure(source.id, result.reason));
       return;
     }
-    articles.push(...result.value.articles.filter((a) => matchesQuery(a, filters)));
+    perSource.push(result.value.articles.filter((a) => matchesQuery(a, filters)));
     if (result.value.nextPage !== null) next[source.id] = result.value.nextPage;
   });
 
@@ -99,7 +116,8 @@ export async function fetchFeedPage(
   }
 
   return {
-    articles: articles.sort(newestFirst),
+    articles:
+      filters.sort === 'relevance' ? interleave(perSource) : perSource.flat().sort(newestFirst),
     next: Object.keys(next).length ? next : null,
     failures,
   };

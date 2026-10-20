@@ -18,6 +18,15 @@ describe('normalizeFilters', () => {
     });
   });
 
+  it('keeps relevance sort only with a keyword; newest is implicit', () => {
+    expect(normalizeFilters({ keyword: 'ai', sort: 'relevance' })).toEqual({
+      keyword: 'ai',
+      sort: 'relevance',
+    });
+    expect(normalizeFilters({ sort: 'relevance' })).toEqual({});
+    expect(normalizeFilters({ keyword: 'ai', sort: 'newest' })).toEqual({ keyword: 'ai' });
+  });
+
   it('orders a reversed date range', () => {
     expect(normalizeFilters({ from: '2026-10-20', to: '2026-10-01' })).toEqual({
       from: '2026-10-01',
@@ -42,6 +51,7 @@ describe('toArticleQuery', () => {
       to: undefined,
       categories: ['world'],
       authors: ['b'],
+      sort: undefined,
     });
   });
 });

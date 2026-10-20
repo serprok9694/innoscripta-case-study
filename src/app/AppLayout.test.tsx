@@ -20,7 +20,7 @@ describe('AppLayout', () => {
     // Only one is visible at a time (CSS); jsdom renders both.
     const [desktop, mobile] = screen.getAllByRole('navigation', { name: 'Main' });
     for (const nav of [desktop!, mobile!]) {
-      expect(within(nav).getByRole('link', { name: 'My feed' })).toHaveAttribute(
+      expect(within(nav).getByRole('link', { name: 'Home' })).toHaveAttribute(
         'aria-current',
         'page',
       );
@@ -28,12 +28,12 @@ describe('AppLayout', () => {
         within(nav)
           .getAllByRole('link')
           .map((a) => a.textContent),
-      ).toEqual(['My feed', 'Search', 'Settings']);
+      ).toEqual(['Home', 'Settings']);
     }
 
-    await userEvent.click(within(mobile!).getByRole('link', { name: 'Search' }));
-    expect(router.state.location.pathname).toBe('/search');
-    expect(screen.getByRole('heading', { level: 1, name: 'Search' })).toBeInTheDocument();
+    await userEvent.click(within(mobile!).getByRole('link', { name: 'Settings' }));
+    expect(router.state.location.pathname).toBe('/settings');
+    expect(screen.getByRole('heading', { level: 1, name: 'Settings' })).toBeInTheDocument();
   });
 
   it('switches between light and dark themes and remembers the choice', async () => {
