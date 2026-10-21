@@ -4,6 +4,8 @@ import { createMemoryRouter, RouterProvider } from 'react-router';
 import { describe, expect, it, vi } from 'vitest';
 import type { Article } from '@/domain/article';
 import { makeArticle } from '@/test/factories';
+import { fakeCatalog } from '@/test/fake-catalog';
+import { SourceCatalogContext } from '../source-catalog-context';
 import type { AuthorFollowing } from '../author-following';
 import { ArticlePreview } from './ArticlePreview';
 
@@ -29,7 +31,11 @@ function renderPreview(value: Article | undefined, following?: AuthorFollowing) 
     ],
     { initialEntries: ['/'] },
   );
-  render(<RouterProvider router={router} />);
+  render(
+    <SourceCatalogContext value={fakeCatalog()}>
+      <RouterProvider router={router} />
+    </SourceCatalogContext>,
+  );
   return { onClose, router };
 }
 

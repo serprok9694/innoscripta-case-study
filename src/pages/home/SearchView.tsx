@@ -8,6 +8,7 @@ import { FollowButton } from '@/features/articles/ui/FollowButton';
 import { useAuthorFollowing } from '@/features/preferences/use-author-following';
 import { FROM_FEED } from '@/features/search/search-entry';
 import { ActiveFilters } from '@/features/search/ui/ActiveFilters';
+import { EmptyState } from '@/shared/ui/EmptyState';
 import { PageHeader } from '../PageHeader';
 
 function title({ keyword, authors }: NewsFilters): string {
@@ -96,19 +97,16 @@ export function SearchView({
           following={following}
           relatedLinkState={fromFeed ? FROM_FEED : undefined}
           empty={
-            <div className="rounded-xl border border-dashed border-zinc-300 px-6 py-12 text-center dark:border-zinc-700">
-              <p className="font-medium">No articles match your search</p>
-              <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-                Try different keywords, a wider date range or fewer filters.
-              </p>
+            <EmptyState title="No articles match your search">
+              <p>Try different keywords, a wider date range or fewer filters.</p>
               <button
                 type="button"
                 onClick={() => onChange({ keyword: filters.keyword })}
-                className="mt-4 font-medium text-blue-700 hover:underline dark:text-blue-400"
+                className="font-medium text-blue-700 hover:underline dark:text-blue-400"
               >
                 Clear filters
               </button>
-            </div>
+            </EmptyState>
           }
         />
       </section>

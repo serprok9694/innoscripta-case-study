@@ -6,6 +6,9 @@ import guardianTags from '@/sources/guardian/__fixtures__/tags.json';
 import nytFixture from '@/sources/nyt/__fixtures__/search.json';
 import { mockJson } from '@/test/msw/mock-json';
 import { server } from '@/test/msw/server';
+import type { NewsSource } from '@/domain/news-source';
+import { makeArticle } from '@/test/factories';
+import { fakeCatalog } from '@/test/fake-catalog';
 import { createTestProviders, createWrapper } from '@/test/render';
 import type { NewsFilters } from './filters';
 import { useArticles } from './use-articles';
@@ -83,6 +86,20 @@ describe('useArticles', () => {
     expect(result.current.error).toBeNull();
     expect(result.current.articles).toHaveLength(4);
     expect(result.current.hasNextPage).toBe(false);
+  });
+
+  it('fetches from whatever sources the injected catalog provides (no registry, no network)', async () => {
+    const article = makeArticle({ id: 'fake:1', title: 'From a fake source' });
+    const fake: NewsSource = {
+      id: 'guardian',
+      name: 'Fake',
+      search: async () => ({ articles: [article], nextPage: null }),
+    };
+    const { result } = renderHook(() => useArticles({}), {
+      wrapper: createWrapper({ catalog: fakeCatalog([fake]) }),
+    });
+
+    await waitFor(() => expect(result.current.articles).toEqual([article]));
   });
 
   describe('quota: never re-request every loaded page', () => {

@@ -1,26 +1,16 @@
-import type { ReactNode } from 'react';
 import { Link } from 'react-router';
 import { CATEGORY_LABELS } from '@/domain/category';
+import { useSourceCatalog } from '@/features/articles/source-catalog-context';
 import { useArticles } from '@/features/articles/use-articles';
 import { ArticleFeed } from '@/features/articles/ui/ArticleFeed';
 import { useAppSelector } from '@/app/hooks';
 import { hasPreferences, selectPreferences } from '@/features/preferences/preferences-slice';
 import { useAuthorFollowing } from '@/features/preferences/use-author-following';
 import { cx } from '@/shared/lib/cx';
+import { EmptyState } from '@/shared/ui/EmptyState';
 import { FROM_FEED } from '@/features/search/search-entry';
-import { getSource } from '@/sources/registry';
+import type { FeedViewName } from '@/features/search/use-search-navigation';
 import { PageHeader } from '../PageHeader';
-
-export type FeedViewName = 'for-you' | 'following';
-
-function Message({ title, children }: { title: string; children: ReactNode }) {
-  return (
-    <div className="rounded-xl border border-dashed border-zinc-300 px-6 py-12 text-center dark:border-zinc-700">
-      <p className="font-medium">{title}</p>
-      <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">{children}</p>
-    </div>
-  );
-}
 
 const settingsLink = (
   <Link to="/settings" className="font-medium text-blue-700 underline dark:text-blue-400">
@@ -38,7 +28,8 @@ export function FeedView({ view }: { view: FeedViewName }) {
   const filters = view === 'following' ? { authors } : { sources, categories };
   const feed = useArticles(filters, { enabled: view === 'for-you' || authors.length > 0 });
 
-  const from = sources.map((s) => getSource(s).name).join(', ') || 'all sources';
+  const { nameOf } = useSourceCatalog();
+  const from = sources.map(nameOf).join(', ') || 'all sources';
   const summary =
     view === 'following'
       ? 'Latest from the authors you follow, from all sources'
@@ -86,20 +77,20 @@ export function FeedView({ view }: { view: FeedViewName }) {
       </nav>
 
       {view === 'following' && authors.length === 0 ? (
-        <Message title="You’re not following anyone yet">
+        <EmptyState title="You’re not following anyone yet">
           Open any article and follow its authors, or add authors in {settingsLink}.
-        </Message>
+        </EmptyState>
       ) : (
         <ArticleFeed
           feed={feed}
           following={following}
           relatedLinkState={FROM_FEED}
           empty={
-            <Message title="Nothing here yet">
+            <EmptyState title="Nothing here yet">
               {view === 'following'
                 ? 'Your authors haven’t published anything recently in the selected sources.'
                 : 'No recent articles match your preferences. Try more topics or sources.'}
-            </Message>
+            </EmptyState>
           }
         />
       )}

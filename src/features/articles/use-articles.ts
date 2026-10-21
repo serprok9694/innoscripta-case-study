@@ -1,6 +1,5 @@
 import { type InfiniteData, useInfiniteQuery, useQueryClient } from '@tanstack/react-query';
 import type { Article, SourceId } from '@/domain/article';
-import { availableSources } from '@/sources/registry';
 import {
   type Cursors,
   type FeedPage,
@@ -10,6 +9,7 @@ import {
   type SourceFailure,
 } from './aggregator';
 import { type NewsFilters, normalizeFilters } from './filters';
+import { useSourceCatalog } from './source-catalog-context';
 import { useSourcesConfig } from './use-sources-config';
 
 export interface Feed {
@@ -36,9 +36,10 @@ function selectFeed(data: InfiniteData<FeedPage, Cursors>): Feed {
  * Equivalent filters share a cache entry (see `normalizeFilters`).
  */
 export function useArticles(filters: NewsFilters, { enabled = true }: { enabled?: boolean } = {}) {
+  const catalog = useSourceCatalog();
   const config = useSourcesConfig();
   const normalized = normalizeFilters(filters);
-  const sources = config.data ? selectSources(availableSources(config.data), normalized) : [];
+  const sources = config.data ? selectSources(catalog.available(config.data), normalized) : [];
 
   const queryClient = useQueryClient();
   const queryKey = ['articles', normalized, sources.map((s) => s.id)];

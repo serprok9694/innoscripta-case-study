@@ -55,3 +55,14 @@ export function isSearching(filters: NewsFilters): boolean {
 export function searchUrl(filters: NewsFilters): string {
   return `/?${toSearchParams(filters).toString()}`;
 }
+
+/** Applied filters, for badges like "Filters (3)" (a date range counts once). */
+export function countActiveFilters({
+  from,
+  to,
+  categories = [],
+  sources = [],
+  authors = [],
+}: NewsFilters): number {
+  return (from || to ? 1 : 0) + categories.length + sources.length + authors.length;
+}

@@ -4,6 +4,8 @@ import { MemoryRouter } from 'react-router';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 import { makeArticle } from '@/test/factories';
+import { fakeCatalog } from '@/test/fake-catalog';
+import { SourceCatalogContext } from '../source-catalog-context';
 import type { ArticlesResult } from '../use-articles';
 import { ArticleFeed } from './ArticleFeed';
 
@@ -22,8 +24,13 @@ function feed(overrides: Partial<ArticlesResult> = {}): ArticlesResult {
   } as ArticlesResult;
 }
 
-/** The feed opens previews through the router. */
-const render = (ui: ReactElement) => rtlRender(<MemoryRouter>{ui}</MemoryRouter>);
+/** The feed opens previews through the router and names sources through the catalog. */
+const render = (ui: ReactElement) =>
+  rtlRender(
+    <SourceCatalogContext value={fakeCatalog()}>
+      <MemoryRouter>{ui}</MemoryRouter>
+    </SourceCatalogContext>,
+  );
 
 describe('ArticleFeed', () => {
   it('shows skeletons while loading', () => {

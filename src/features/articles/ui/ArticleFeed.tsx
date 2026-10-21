@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import type { Article } from '@/domain/article';
 import { Button } from '@/shared/ui/Button';
+import { EmptyState } from '@/shared/ui/EmptyState';
 import type { ArticlesResult } from '../use-articles';
 import type { SearchEntryState } from '@/features/search/search-entry';
 import type { AuthorFollowing } from '../author-following';
@@ -16,15 +17,6 @@ const FIRST_ROW = 3;
 
 // Explicit columns (minmax(0, 1fr)) so long unbreakable text can't widen the grid.
 const GRID = 'grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3';
-
-function Message({ title, children }: { title: string; children?: ReactNode }) {
-  return (
-    <div className="rounded-xl border border-dashed border-zinc-300 px-6 py-12 text-center dark:border-zinc-700">
-      <p className="font-medium text-zinc-900 dark:text-zinc-100">{title}</p>
-      {children && <div className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">{children}</div>}
-    </div>
-  );
-}
 
 interface ArticleFeedProps {
   feed: ArticlesResult;
@@ -65,9 +57,9 @@ function FeedContent({
 }) {
   if (feed.hasNoSources) {
     return (
-      <Message title="No news sources available">
+      <EmptyState title="No news sources available">
         Add API keys to <code>.env</code> (see the README), or pick a different source.
-      </Message>
+      </EmptyState>
     );
   }
 
@@ -84,12 +76,10 @@ function FeedContent({
   // Only when there's nothing to show: a failed further page keeps the list.
   if (feed.error && feed.articles.length === 0) {
     return (
-      <Message title="Couldn’t load the news">
+      <EmptyState title="Couldn’t load the news">
         <p>None of the news sources could be reached.</p>
-        <Button className="mt-4" onClick={() => void feed.retry()}>
-          Try again
-        </Button>
-      </Message>
+        <Button onClick={() => void feed.retry()}>Try again</Button>
+      </EmptyState>
     );
   }
 
@@ -103,7 +93,7 @@ function FeedContent({
       <SourceFailuresNotice failures={feed.failures} onRetry={() => void feed.retry()} />
 
       {feed.articles.length === 0 && !feed.hasNextPage ? (
-        (empty ?? <Message title="No articles found" />)
+        (empty ?? <EmptyState title="No articles found" />)
       ) : (
         <>
           {/* Keeps the heading outline intact: page h1 → (this) h2 → card h3. */}

@@ -1,6 +1,7 @@
 import { z } from 'zod';
 import { SOURCE_IDS, type SourceId } from '@/domain/article';
 import type { NewsSource } from '@/domain/news-source';
+import type { SourceCatalog, SourcesConfig } from '@/domain/source-catalog';
 import { createDemoSource } from './demo/demo-source';
 import { guardianSource } from './guardian/guardian-source';
 import { newsApiSource } from './newsapi/newsapi-source';
@@ -11,9 +12,9 @@ export const NEWS_SOURCES: readonly NewsSource[] = [guardianSource, nytSource, n
 
 const configSchema = z.object({
   sources: z.partialRecord(z.enum(SOURCE_IDS), z.boolean()),
-});
+}) satisfies z.ZodType<SourcesConfig>;
 
-export type SourcesConfig = z.infer<typeof configSchema>;
+export type { SourcesConfig };
 
 /** Which sources have an API key configured on the proxy. */
 export async function fetchSourcesConfig(signal?: AbortSignal): Promise<SourcesConfig> {
@@ -51,3 +52,13 @@ export function getSource(id: SourceId): NewsSource {
   if (!source) throw new Error(`Unknown source: ${id}`);
   return source;
 }
+
+/** The concrete catalog the app provides at its root (see `app/AppProviders`). */
+export const sourceCatalog: SourceCatalog = {
+  all: NEWS_SOURCES,
+  loadConfig: fetchSourcesConfig,
+  available: availableSources,
+  isAvailable: isSourceAvailable,
+  isDemoMode,
+  nameOf: (id) => getSource(id).name,
+};

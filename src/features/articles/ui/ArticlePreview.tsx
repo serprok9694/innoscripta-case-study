@@ -6,8 +6,8 @@ import type { SearchEntryState } from '@/features/search/search-entry';
 import { searchUrl } from '@/features/search/search-params';
 import { formatDateTime } from '@/shared/lib/format-date';
 import { Drawer } from '@/shared/ui/Drawer';
-import { getSource } from '@/sources/registry';
 import type { AuthorFollowing } from '../author-following';
+import { useSourceCatalog } from '../source-catalog-context';
 import { ArticleImage } from './ArticleImage';
 import { FollowButton } from './FollowButton';
 
@@ -30,7 +30,7 @@ function PreviewBody({
   following?: AuthorFollowing;
   relatedLinkState: RelatedLinkState;
 }) {
-  const sourceName = getSource(article.sourceId).name;
+  const sourceName = useSourceCatalog().nameOf(article.sourceId);
 
   return (
     <div className="space-y-6">

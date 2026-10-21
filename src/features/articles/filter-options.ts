@@ -1,7 +1,7 @@
 import type { SourceId } from '@/domain/article';
 import { CATEGORIES, CATEGORY_LABELS, type CategoryId } from '@/domain/category';
 import type { ChipOption } from '@/shared/ui/ChipGroup';
-import { isSourceAvailable, NEWS_SOURCES } from '@/sources/registry';
+import { useSourceCatalog } from './source-catalog-context';
 import { useSourcesConfig } from './use-sources-config';
 
 export const CATEGORY_OPTIONS: ChipOption<CategoryId>[] = CATEGORIES.map((id) => ({
@@ -11,9 +11,10 @@ export const CATEGORY_OPTIONS: ChipOption<CategoryId>[] = CATEGORIES.map((id) =>
 
 /** All sources; the ones without an API key are disabled with an explanation. */
 export function useSourceOptions(): ChipOption<SourceId>[] {
+  const catalog = useSourceCatalog();
   const { data } = useSourcesConfig();
-  return NEWS_SOURCES.map((source) => {
-    const available = data ? isSourceAvailable(data, source.id) : false;
+  return catalog.all.map((source) => {
+    const available = data ? catalog.isAvailable(data, source.id) : false;
     return {
       value: source.id,
       label: source.name,

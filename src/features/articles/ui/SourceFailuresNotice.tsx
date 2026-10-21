@@ -1,4 +1,4 @@
-import { getSource } from '@/sources/registry';
+import { useSourceCatalog } from '../source-catalog-context';
 import type { SourceFailure } from '../aggregator';
 
 const REASONS: Record<SourceFailure['kind'], string> = {
@@ -17,6 +17,7 @@ export function SourceFailuresNotice({
   failures: readonly SourceFailure[];
   onRetry: () => void;
 }) {
+  const catalog = useSourceCatalog();
   if (!failures.length) return null;
 
   return (
@@ -28,7 +29,7 @@ export function SourceFailuresNotice({
       <ul className="mt-1 list-inside list-disc">
         {failures.map((failure) => (
           <li key={failure.sourceId}>
-            {getSource(failure.sourceId).name} — {REASONS[failure.kind]}
+            {catalog.nameOf(failure.sourceId)} — {REASONS[failure.kind]}
           </li>
         ))}
       </ul>

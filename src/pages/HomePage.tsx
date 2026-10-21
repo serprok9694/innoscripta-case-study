@@ -1,71 +1,28 @@
-import { type MouseEvent, useMemo, useState } from 'react';
-import { useLocation, useNavigate, useSearchParams } from 'react-router';
+import { useState } from 'react';
 import { useAppSelector } from '@/app/hooks';
-import type { NewsFilters } from '@/features/articles/filters';
 import { selectPreferences } from '@/features/preferences/preferences-slice';
-import { isSearching, parseSearchParams, toSearchParams } from '@/features/search/search-params';
-import { FROM_FEED, isFromFeed } from '@/features/search/search-entry';
+import { countActiveFilters } from '@/features/search/search-params';
 import { SearchBox } from '@/features/search/ui/SearchBox';
 import { SearchFilters } from '@/features/search/ui/SearchFilters';
+import { useSearchNavigation } from '@/features/search/use-search-navigation';
 import { Button } from '@/shared/ui/Button';
 import { Drawer } from '@/shared/ui/Drawer';
 import { SlidersIcon } from '@/shared/ui/icons';
-import { type FeedViewName, FeedView } from './home/FeedView';
+import { FeedView } from './home/FeedView';
 import { SearchView } from './home/SearchView';
-
-function activeFilterCount({
-  from,
-  to,
-  categories = [],
-  sources = [],
-  authors = [],
-}: NewsFilters): number {
-  return (from || to ? 1 : 0) + categories.length + sources.length + authors.length;
-}
 
 /**
  * Home: the personalised feed (driven by Settings), with search on top.
  * Typing or picking a filter turns the page into search results across all
- * news — filters belong to search, never to the feed.
+ * news — filters belong to search, never to the feed. Navigation and history
+ * live in `useSearchNavigation`; this component is layout.
  */
 export function HomePage() {
-  const [params, setParams] = useSearchParams();
-  const location = useLocation();
-  const navigate = useNavigate();
-  const filters = useMemo(() => parseSearchParams(params), [params]);
-  const searching = isSearching(filters);
-  const view: FeedViewName = params.get('view') === 'following' ? 'following' : 'for-you';
-  const feedUrl = view === 'following' ? '/?view=following' : '/';
-  const fromFeed = isFromFeed(location.state);
+  const { filters, searching, view, feedUrl, fromFeed, search, backToFeed } = useSearchNavigation();
   const preferences = useAppSelector(selectPreferences);
   const [filtersOpen, setFiltersOpen] = useState(false);
 
-  /**
-   * History: entering search from the feed is one step; refining replaces it;
-   * leaving goes back to that feed entry, so Back never loops into results.
-   */
-  const search = (next: NewsFilters) => {
-    const nextSearching = isSearching(next);
-    if (searching && !nextSearching && fromFeed) {
-      navigate(-1);
-      return;
-    }
-    const nextParams = toSearchParams(next);
-    if (view === 'following') nextParams.set('view', view);
-    if (!searching && nextSearching) {
-      setParams(nextParams, { state: FROM_FEED });
-    } else {
-      setParams(nextParams, { replace: true, state: location.state });
-    }
-  };
-
-  const backToFeed = (event: MouseEvent<HTMLAnchorElement>) => {
-    if (!fromFeed) return; // a shared link: just follow it to the feed
-    event.preventDefault();
-    navigate(-1);
-  };
-
-  const count = activeFilterCount(filters);
+  const count = countActiveFilters(filters);
   const filtersPanel = (
     <SearchFilters filters={filters} onChange={search} feedPreset={preferences} />
   );

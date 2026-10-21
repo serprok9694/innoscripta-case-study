@@ -199,29 +199,38 @@ used by any layer, including the domain; `oxlint`'s `import/no-cycle` keeps the 
 
 **SOLID**
 
-- **Single responsibility:** each adapter only translates one API. The aggregator only merges.
-  `fetchJson` only does HTTP plus validation. Every UI state of a feed (loading, error, empty,
-  partial failure) is rendered by one component, `ArticleFeed`.
+- **Single responsibility:** each adapter translates one API (Guardian's also caches its
+  name→contributor-tag lookups, NYT's remembers which authors ran out, both details of their
+  APIs). The aggregator only merges; `fetchJson` only does HTTP plus validation. The home page is
+  layout: its URL and history model lives in
+  [`useSearchNavigation`](src/features/search/use-search-navigation.ts), tested on its own.
 - **Open/closed:** on the client, a source is an adapter implementing `NewsSource` plus an entry in
   [`sources/registry.ts`](src/sources/registry.ts) and `SOURCE_IDS`; the aggregator, hooks and UI
   don't change. Demo mode proves it: it's just another `NewsSource` implementation. The
   infrastructure is a separate, honest list: the proxy table, the nginx template and the
   container's env vars must each get the new source — a test fails if any of them is missed (see
   DRY).
-- **Liskov substitution:** live and demo sources are interchangeable everywhere, and fake sources
-  in the aggregator tests are too.
-- **Interface segregation:** components get narrow props. For example, `ArticleCard` receives an
-  optional `AuthorFollowing` capability instead of the whole store.
-- **Dependency inversion:** the aggregator receives its sources as a parameter and only knows the
-  `NewsSource` abstraction. The card doesn't know about Redux: pages wire the store in. (The UI does
-  read display names from the registry.)
+- **Liskov substitution:** live, demo and test sources are interchangeable wherever a `NewsSource`
+  is expected, and so are the real and fake `SourceCatalog`s.
+- **Interface segregation:** small contracts — `NewsSource` is `id`, `name` and `search`;
+  `ArticleCard` gets an optional `onOpen`, the preview an optional `AuthorFollowing` capability,
+  never the whole store. `ArticleFeed` takes the feed hook's result because it renders every one
+  of its states.
+- **Dependency inversion:** hooks and components depend on the
+  [`SourceCatalog`](src/domain/source-catalog.ts) abstraction (which sources exist, which are
+  available, their names, where the config comes from), injected through React context. The
+  concrete registry is chosen in one place, the composition root
+  ([`app/AppProviders.tsx`](src/app/AppProviders.tsx)); tests inject a fake catalog. Likewise the
+  aggregator receives its sources as a parameter, and pages wire the Redux store into
+  store-agnostic components.
 
 **DRY:** one source table (`server/api-sources.ts`: upstream, auth, allowed endpoints) drives the
 dev proxy and the tests. nginx can't import TypeScript, so its template repeats those rules, and
 [`server/source-config-sync.test.ts`](server/source-config-sync.test.ts) fails if the template,
 entrypoint, compose file, Dockerfile, `.env.example` or the client's `SOURCE_IDS` drift from it.
 In the app: one matcher for client-side filtering, one `mergePages` for per-category and
-per-author requests, shared filter options for search and settings.
+per-author requests, one `EmptyState` for every "nothing to show" screen, shared filter options
+for search and settings.
 
 **KISS:**
 
@@ -231,10 +240,21 @@ per-author requests, shared filter options for search and settings.
 - native platform features (`<dialog>`, `<select>`, radio inputs, `Intl`) instead of a component
   library: focus trapping, Esc, keyboard support and screen-reader semantics come from the browser.
 
+Where it is _not_ the simplest possible code, on purpose:
+
+- **Browser history** (`useSearchNavigation`): entering search pushes one entry, refining replaces
+  it, leaving steps back. Plain push/replace would be shorter, but Back would then bounce between
+  the feed and old results.
+- **The article preview lives in history state**, so Back (and Android's back gesture) closes it
+  and it survives a reload, without inventing article URLs that NYT and NewsAPI can't resolve.
+- **Small data heuristics** in the adapters (NewsAPI "- Outlet" title suffixes, placeholder
+  descriptions, relevance interleaving across sources): each is a few lines with tests, because
+  the raw API data would otherwise show up as visible glitches.
+
 ## Testing
 
 ```bash
-npm test                  # about 290 tests, a few seconds
+npm test                  # about 300 tests, a few seconds
 npm run test:coverage     # line coverage ≈ 99%
 ```
 

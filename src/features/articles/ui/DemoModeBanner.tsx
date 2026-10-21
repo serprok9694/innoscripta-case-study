@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { CloseIcon } from '@/shared/ui/icons';
-import { isDemoMode } from '@/sources/registry';
+import { useSourceCatalog } from '../source-catalog-context';
 import { useSourcesConfig } from '../use-sources-config';
 
 const DISMISSED_KEY = 'news-aggregator:demo-banner-dismissed';
@@ -15,9 +15,10 @@ function wasDismissed(): boolean {
 
 /** Explains why the news isn't live when no API key is configured. Dismissible per session. */
 export function DemoModeBanner() {
+  const catalog = useSourceCatalog();
   const { data } = useSourcesConfig();
   const [dismissed, setDismissed] = useState(wasDismissed);
-  if (!data || !isDemoMode(data) || dismissed) return null;
+  if (!data || !catalog.isDemoMode(data) || dismissed) return null;
 
   const dismiss = () => {
     setDismissed(true);

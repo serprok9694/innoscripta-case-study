@@ -1,7 +1,8 @@
 import { CATEGORY_LABELS } from '@/domain/category';
 import type { NewsFilters } from '@/features/articles/filters';
 import { CloseIcon } from '@/shared/ui/icons';
-import { getSource } from '@/sources/registry';
+import type { SourceId } from '@/domain/article';
+import { useSourceCatalog } from '@/features/articles/source-catalog-context';
 
 const formatDay = (iso: string) =>
   new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }).format(
@@ -22,7 +23,7 @@ interface Chip {
 }
 
 /** Every applied filter as a removable chip — what's applied is always visible. */
-function chipsFor(filters: NewsFilters): Chip[] {
+function chipsFor(filters: NewsFilters, nameOf: (id: SourceId) => string): Chip[] {
   const without = (patch: Partial<NewsFilters>): NewsFilters => ({ ...filters, ...patch });
   const chips: Chip[] = [];
   const dates = dateLabel(filters);
@@ -38,7 +39,7 @@ function chipsFor(filters: NewsFilters): Chip[] {
   for (const source of filters.sources ?? []) {
     chips.push({
       key: `source:${source}`,
-      label: getSource(source).name,
+      label: nameOf(source),
       remove: without({ sources: filters.sources?.filter((s) => s !== source) }),
     });
   }
@@ -61,7 +62,7 @@ interface ActiveFiltersProps {
 }
 
 export function ActiveFilters({ filters, onChange, count, hasMore }: ActiveFiltersProps) {
-  const chips = chipsFor(filters);
+  const chips = chipsFor(filters, useSourceCatalog().nameOf);
 
   return (
     <div className="flex flex-wrap items-center gap-2 text-sm">
