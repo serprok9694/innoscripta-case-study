@@ -7,8 +7,12 @@ import type { AuthorFollowing } from '../author-following';
 import { useArticlePreview } from '../use-article-preview';
 import { ArticleCard, ArticleCardSkeleton } from './ArticleCard';
 import { ArticlePreview } from './ArticlePreview';
+import { FreshnessBar } from './FreshnessBar';
 import { LoadMore } from './LoadMore';
 import { SourceFailuresNotice } from './SourceFailuresNotice';
+
+/** Cards in the first row of the widest layout. */
+const FIRST_ROW = 3;
 
 // Explicit columns (minmax(0, 1fr)) so long unbreakable text can't widen the grid.
 const GRID = 'grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3';
@@ -95,6 +99,7 @@ function FeedContent({
       <p className="sr-only" aria-live="polite">
         {feed.articles.length === 1 ? '1 article' : `${feed.articles.length} articles`} loaded
       </p>
+      <FreshnessBar updatedAt={feed.updatedAt} onRefresh={() => void feed.refresh()} />
       <SourceFailuresNotice failures={feed.failures} onRetry={() => void feed.retry()} />
 
       {feed.articles.length === 0 && !feed.hasNextPage ? (
@@ -104,9 +109,10 @@ function FeedContent({
           {/* Keeps the heading outline intact: page h1 → (this) h2 → card h3. */}
           <h2 className="sr-only">Articles</h2>
           <ul className={GRID} aria-label="Articles">
-            {feed.articles.map((article) => (
+            {feed.articles.map((article, index) => (
               <li key={article.id} className="flex min-w-0">
-                <ArticleCard article={article} onOpen={onOpen} />
+                {/* The first row is above the fold: its images must not wait for lazy loading. */}
+                <ArticleCard article={article} onOpen={onOpen} priority={index < FIRST_ROW} />
               </li>
             ))}
           </ul>

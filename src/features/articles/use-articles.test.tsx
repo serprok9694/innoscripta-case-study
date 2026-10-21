@@ -6,7 +6,7 @@ import guardianTags from '@/sources/guardian/__fixtures__/tags.json';
 import nytFixture from '@/sources/nyt/__fixtures__/search.json';
 import { mockJson } from '@/test/msw/mock-json';
 import { server } from '@/test/msw/server';
-import { createWrapper } from '@/test/render';
+import { createTestProviders, createWrapper } from '@/test/render';
 import type { NewsFilters } from './filters';
 import { useArticles } from './use-articles';
 
@@ -83,6 +83,41 @@ describe('useArticles', () => {
     expect(result.current.error).toBeNull();
     expect(result.current.articles).toHaveLength(4);
     expect(result.current.hasNextPage).toBe(false);
+  });
+
+  describe('quota: never re-request every loaded page', () => {
+    async function loadTwoPages() {
+      mockConfig({ guardian: true });
+      const requests = mockJson(GUARDIAN, guardianFixture);
+      // Shared across mounts, like the app's QueryClient (tests use staleTime 0,
+      // so the data is immediately stale: the worst case).
+      const { Wrapper } = createTestProviders();
+      const view = renderHook(() => useArticles({}), { wrapper: Wrapper });
+      await waitFor(() => expect(view.result.current.articles.length).toBeGreaterThan(0));
+      await act(() => view.result.current.fetchNextPage());
+      await waitFor(() => expect(requests).toHaveLength(2));
+      return { ...view, requests, Wrapper };
+    }
+
+    it('shows cached pages again without refetching them', async () => {
+      const { unmount, requests, Wrapper } = await loadTwoPages();
+      unmount(); // e.g. the reader opens Settings…
+
+      const again = renderHook(() => useArticles({}), { wrapper: Wrapper }); // …and comes back
+      await waitFor(() => expect(again.result.current.articles.length).toBeGreaterThan(0));
+
+      expect(requests).toHaveLength(2);
+      expect(again.result.current.updatedAt).toBeGreaterThan(0);
+    });
+
+    it('refreshes from the first page only', async () => {
+      const { result, requests } = await loadTwoPages();
+
+      await act(() => result.current.refresh());
+
+      await waitFor(() => expect(requests).toHaveLength(3));
+      expect(requests.map((r) => r.searchParams.get('page'))).toEqual(['1', '2', '1']);
+    });
   });
 
   it('shows the sources that work and reports the one that failed', async () => {

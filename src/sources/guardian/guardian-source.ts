@@ -76,12 +76,25 @@ function toArticle(result: z.infer<typeof resultSchema>): Article {
  * The Guardian filters by author via contributor tags (`profile/fiona-harvey`),
  * so names are resolved to tag ids once and cached for the session.
  */
+/** Lets one caller stop waiting for a shared promise without cancelling it for the others. */
+function untilAborted<T>(promise: Promise<T>, signal?: AbortSignal): Promise<T> {
+  if (!signal) return promise;
+  signal.throwIfAborted();
+  return new Promise<T>((resolve, reject) => {
+    const onAbort = () => reject(signal.reason);
+    signal.addEventListener('abort', onAbort, { once: true });
+    promise.then(resolve, reject).finally(() => signal.removeEventListener('abort', onAbort));
+  });
+}
+
 function createContributorResolver() {
   const cache = new Map<string, Promise<string | null>>();
 
-  async function lookup(name: string, signal?: AbortSignal): Promise<string | null> {
+  // Shared by concurrent callers, so it isn't tied to any one caller's
+  // AbortSignal: one cancelled search mustn't fail another's lookup.
+  async function lookup(name: string): Promise<string | null> {
     const url = proxyUrl('guardian', '/tags', { type: 'contributor', q: name, 'page-size': 10 });
-    const { response } = await fetchJson('guardian', url, tagsResponseSchema, signal);
+    const { response } = await fetchJson('guardian', url, tagsResponseSchema);
     return response.results.find((tag) => foldText(tag.webTitle) === foldText(name))?.id ?? null;
   }
 
@@ -91,12 +104,12 @@ function createContributorResolver() {
         const key = foldText(name);
         let pending = cache.get(key);
         if (!pending) {
-          pending = lookup(name, signal);
+          pending = lookup(name);
           cache.set(key, pending);
-          // Don't cache failures (network, abort): retry next time.
+          // Don't cache failures: retry next time.
           pending.catch(() => cache.delete(key));
         }
-        return pending;
+        return untilAborted(pending, signal);
       }),
     );
     return ids.filter((id): id is string => id !== null);

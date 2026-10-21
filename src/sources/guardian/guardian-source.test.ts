@@ -147,6 +147,21 @@ describe('guardianSource', () => {
       expect(requests).toHaveLength(0);
     });
 
+    it('keeps a shared lookup alive when one of its callers is cancelled', async () => {
+      const source = createGuardianSource();
+      mockJson(TAGS, tagsFixture);
+      const requests = mockJson(PATH, fixture);
+      const first = new AbortController();
+
+      const cancelled = source.search({ authors: ['Fiona Harvey'] }, 1, first.signal);
+      const other = source.search({ authors: ['Fiona Harvey'] }, 1);
+      first.abort();
+
+      await expect(cancelled).rejects.toMatchObject({ name: 'AbortError' });
+      await expect(other).resolves.toMatchObject({ nextPage: 2 });
+      expect(requests.at(-1)?.searchParams.get('tag')).toBe('profile/fiona-harvey');
+    });
+
     it('does not cache failed lookups', async () => {
       const source = createGuardianSource();
       mockJson(TAGS, {}, { status: 500 });

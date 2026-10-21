@@ -1,8 +1,8 @@
 import { isThemeMode, type ThemeMode } from './theme-slice';
 
 /**
- * Stored as a plain string so the inline script in index.html can read it
- * before React loads (keep the key in sync there).
+ * Stored as a plain string so the pre-paint theme script can read it
+ * before React loads (`public/theme-init.js`; keep the key in sync there).
  */
 export const THEME_STORAGE_KEY = 'news-aggregator:theme';
 

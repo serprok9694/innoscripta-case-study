@@ -9,6 +9,10 @@
 # hammered into spending the API keys' quota.
 limit_req_zone $binary_remote_addr zone=api:1m rate=10r/s;
 
+# Shared cache of API responses: identical requests from different readers
+# spend the quota once (NewsAPI's free plan allows 100 requests a day in total).
+proxy_cache_path /var/cache/nginx/api levels=1:2 keys_zone=api_cache:5m max_size=50m inactive=10m use_temp_path=off;
+
 server {
     listen 80;
     server_name _;
@@ -40,6 +44,11 @@ server {
     # Only the endpoints the app uses are forwarded; anything else under /api is 404.
 
     location ~ ^/api/guardian/(search|tags)$ {
+        # No key: answer here instead of sending an unauthenticated request upstream.
+        set $api_key "${GUARDIAN_API_KEY}";
+        if ($api_key = "") {
+            return 503 '{"status":"error","message":"This source is not configured."}';
+        }
         set $upstream https://content.guardianapis.com;
         rewrite ^/api/guardian/(.*)$ /$1?api-key=${GUARDIAN_API_KEY} break;
         include /etc/nginx/snippets/upstream-proxy.conf;
@@ -47,6 +56,11 @@ server {
     }
 
     location ~ ^/api/nyt/svc/search/v2/articlesearch\.json$ {
+        # No key: answer here instead of sending an unauthenticated request upstream.
+        set $api_key "${NYT_API_KEY}";
+        if ($api_key = "") {
+            return 503 '{"status":"error","message":"This source is not configured."}';
+        }
         set $upstream https://api.nytimes.com;
         rewrite ^/api/nyt/(.*)$ /$1?api-key=${NYT_API_KEY} break;
         include /etc/nginx/snippets/upstream-proxy.conf;
@@ -54,6 +68,11 @@ server {
     }
 
     location ~ ^/api/newsapi/v2/(everything|top-headlines)$ {
+        # No key: answer here instead of sending an unauthenticated request upstream.
+        set $api_key "${NEWSAPI_API_KEY}";
+        if ($api_key = "") {
+            return 503 '{"status":"error","message":"This source is not configured."}';
+        }
         set $upstream https://newsapi.org;
         rewrite ^/api/newsapi/(.*)$ /$1 break;
         include /etc/nginx/snippets/upstream-proxy.conf;

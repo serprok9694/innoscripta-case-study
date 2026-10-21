@@ -30,6 +30,8 @@ A news aggregator built with React and TypeScript. It pulls articles from **The 
 - [Architecture](#architecture)
 - [Design principles in the code](#design-principles-in-the-code)
 - [Testing](#testing)
+- [Performance](#performance)
+- [Where authentication and the cloud would fit](#where-authentication-and-the-cloud-would-fit)
 - [Known limitations and trade-offs](#known-limitations-and-trade-offs)
 
 ## Quick start (Docker)
@@ -183,9 +185,11 @@ used by any layer, including the domain; `oxlint`'s `import/no-cycle` keeps the 
 - **Partial failure is normal.** A rate-limited or failing source is reported and dropped from
   later pages, so infinite scroll never hammers it. Only when every source fails does the feed
   show an error with a retry button.
-- **Quota-aware by default.** Responses are cached for 5 minutes, there is no refetch on window
-  focus and no retry on HTTP 429. Infinite scroll loads the next page automatically only if the
-  previous page added articles.
+- **Quota-aware by default.** The proxy caches API responses for 5 minutes, shared by all
+  readers. In the app, a feed is never refetched behind the reader's back (an infinite query would
+  re-request every loaded page): it shows "Updated … ago · Refresh" and refreshes from the first
+  page on request. No retry on HTTP 429, and infinite scroll loads the next page automatically only
+  if the previous page added articles.
 - **URL as state for search**, Redux for preferences, local component state for everything else.
 - **Accessibility.** Semantic landmarks and headings, a skip link, a native `<dialog>` for the
   drawer, native radio inputs, `aria-pressed` toggles, visible focus, a live region for results
@@ -230,7 +234,7 @@ per-author requests, shared filter options for search and settings.
 ## Testing
 
 ```bash
-npm test                  # about 280 tests, a few seconds
+npm test                  # about 290 tests, a few seconds
 npm run test:coverage     # line coverage ≈ 99%
 ```
 
@@ -250,15 +254,63 @@ CI runs all of it plus a Docker smoke test (the image starts without keys and se
 Every stage was also checked by hand in a real browser (desktop and 375 px, light and dark).
 
 **Security of the proxy:** keys only exist in the container's environment; nginx forwards only the
-endpoints the app uses (everything else under `/api` is 404), verifies the APIs' TLS certificates,
-rate-limits `/api` per client, strips cookies and browser origin headers, and sends basic security
-headers for the app itself.
+endpoints the app uses (everything else under `/api` is 404), answers 503 itself for a source
+without a key, verifies the APIs' TLS certificates, rate-limits `/api` per client, strips cookies
+and browser origin headers, and sends a Content-Security-Policy (`script-src 'self'`: the pre-paint
+theme script is a file, not inline) plus the usual security headers.
+
+## Performance
+
+Measured on the Docker image in demo mode (no third-party API latency), Lighthouse 12, mobile
+emulation with its default simulated throttling, three runs:
+
+| Metric                                       | Result           |
+| -------------------------------------------- | ---------------- |
+| Performance / Accessibility / Best practices | 84–89 / 100 / 96 |
+| First Contentful Paint                       | 2.3–2.4 s        |
+| Largest Contentful Paint                     | 3.3–4.0 s        |
+| Total Blocking Time                          | 0–50 ms          |
+| Cumulative Layout Shift                      | 0–0.04           |
+
+JavaScript on first load is about **163 kB gzipped**, split for caching:
+
+| Chunk                              | gzip   | Loaded         |
+| ---------------------------------- | ------ | -------------- |
+| `react` (React, React DOM, Router) | 100 kB | always         |
+| `vendor` (Redux, TanStack, Zod…)   | 45 kB  | always         |
+| app code                           | 17 kB  | always         |
+| Settings page                      | 2 kB   | on navigation  |
+| demo sample                        | 51 kB  | demo mode only |
+
+The LCP element is the first article image. About 1 s of it is the SPA waterfall (JS, then
+`/api/config` and the articles, then the image request) and about 1.8 s is downloading the
+publisher's image on a throttled mobile connection. Loading the first row of images eagerly with
+`fetchpriority="high"` is in place but didn't move the number measurably. What would: rendering
+the first page on the server or preloading its data, and an image proxy/CDN that serves resized,
+modern formats. Both are architecture changes beyond this assignment.
+
+## Where authentication and the cloud would fit
+
+Not built (the assignment has no accounts), but the architecture leaves clear places for them:
+
+- **Accounts and synced preferences:** the nginx proxy grows into a small backend-for-frontend
+  (BFF). Sign-in issues a session as an `httpOnly`, `Secure`, `SameSite` cookie (or a short-lived
+  JWT plus a rotating refresh token kept in that cookie), never in `localStorage` where any XSS
+  could read it. `fetchJson` would handle `401` by refreshing once and retrying; the Redux
+  preferences slice would load from and save to the BFF instead of `localStorage`.
+- **Scaling past free quotas:** instead of every request reaching the news APIs, a scheduled job
+  ingests articles into a database with a search index, and the API (behind a CDN) serves the
+  app. The `NewsSource` contract would get one more implementation for that API.
+- **Deployment:** the image is stateless and configured by environment variables, so it runs as is
+  on a container platform (e.g. Cloud Run, ECS, Kubernetes) with secrets from the platform's secret
+  manager.
 
 ## Known limitations and trade-offs
 
 - **API quotas on free plans are small.** Search-as-you-type waits for a 600 ms pause and two
-  characters, results are cached for 5 minutes, and later pages skip exhausted sources — but heavy
-  use can still hit the limits, shown as a per-source notice with a Retry button.
+  characters, the proxy shares cached responses for 5 minutes, and later pages skip exhausted
+  sources — but heavy use can still hit the limits, shown as a per-source notice with a Retry
+  button.
 - **NewsAPI free (developer) plan:**
   - 100 requests per day, and at most 100 results per query;
   - articles are delayed by about 24 hours;
@@ -286,5 +338,5 @@ headers for the app itself.
   between open tabs.
 - **Date filters use UTC days**, the convention of the APIs: late in the evening in the Americas,
   "today" can already be tomorrow's date in UTC.
-- **No Content-Security-Policy yet.** The inline script that applies the theme before first paint
-  would need a hash or nonce; the other security headers are set.
+- **Article images load from the publishers' servers**, which see the reader's IP address. An
+  image proxy would avoid that (and help performance, see above).

@@ -17,9 +17,11 @@ interface ArticleCardProps {
    * so Cmd/Ctrl/middle click still open the original article in a new tab.
    */
   onOpen?: (article: Article) => void;
+  /** One of the first cards on screen: its image loads eagerly. */
+  priority?: boolean;
 }
 
-export function ArticleCard({ article, onOpen }: ArticleCardProps) {
+export function ArticleCard({ article, onOpen, priority }: ArticleCardProps) {
   const handleClick = (event: MouseEvent<HTMLAnchorElement>) => {
     if (!onOpen || !isPlainClick(event)) return;
     event.preventDefault();
@@ -28,7 +30,7 @@ export function ArticleCard({ article, onOpen }: ArticleCardProps) {
 
   return (
     <article className="group relative flex w-full flex-col overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-sm transition-shadow hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900">
-      <ArticleImage src={article.imageUrl} />
+      <ArticleImage src={article.imageUrl} priority={priority} />
 
       <div className="flex flex-1 flex-col gap-2 p-4">
         <p className="flex flex-wrap items-center gap-x-2 text-xs font-medium tracking-wide text-zinc-500 uppercase dark:text-zinc-400">

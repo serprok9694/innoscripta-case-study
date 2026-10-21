@@ -2,7 +2,16 @@ import { useState } from 'react';
 import { cx } from '@/shared/lib/cx';
 
 /** Article image with a neutral placeholder when it's missing or fails to load. */
-export function ArticleImage({ src, className }: { src?: string; className?: string }) {
+export function ArticleImage({
+  src,
+  className,
+  priority = false,
+}: {
+  src?: string;
+  className?: string;
+  /** Above the fold: load right away (lazy-loading it would delay the LCP). */
+  priority?: boolean;
+}) {
   const [failed, setFailed] = useState(false);
   const showImage = src && !failed;
 
@@ -12,7 +21,8 @@ export function ArticleImage({ src, className }: { src?: string; className?: str
         <img
           src={src}
           alt=""
-          loading="lazy"
+          loading={priority ? 'eager' : 'lazy'}
+          fetchPriority={priority ? 'high' : 'auto'}
           decoding="async"
           referrerPolicy="no-referrer"
           onError={() => setFailed(true)}

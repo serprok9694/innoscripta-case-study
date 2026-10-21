@@ -106,4 +106,13 @@ describe('ArticleCard', () => {
   ])('formatAuthors(%j) → %j', (authors, expected) => {
     expect(formatAuthors(authors)).toBe(expected);
   });
+
+  it('loads above-the-fold images eagerly and the rest lazily', () => {
+    const { container, rerender } = render(<ArticleCard article={article} priority />);
+    expect(container.querySelector('img')).toHaveAttribute('loading', 'eager');
+    expect(container.querySelector('img')).toHaveAttribute('fetchpriority', 'high');
+
+    rerender(<ArticleCard article={article} />);
+    expect(container.querySelector('img')).toHaveAttribute('loading', 'lazy');
+  });
 });

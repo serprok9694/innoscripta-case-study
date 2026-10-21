@@ -50,7 +50,16 @@ export function useArticles(filters: NewsFilters, { enabled = true }: { enabled?
     getNextPageParam: (lastPage) => lastPage.next ?? undefined,
     enabled: enabled && sources.length > 0,
     select: selectFeed,
+    // An infinite query refetches *every* loaded page when it goes stale and is
+    // shown again: after scrolling 8 pages that's 8 requests per source. Feeds are
+    // refreshed explicitly instead (`refresh`), always from the first page; an
+    // unused feed is dropped after `gcTime` and starts fresh next time.
+    refetchOnMount: false,
+    refetchOnReconnect: false,
   });
+
+  /** Start over from the first page (never re-request every loaded page). */
+  const restart = () => queryClient.resetQueries({ queryKey, exact: true });
 
   return {
     articles: query.data?.articles ?? [],
@@ -64,11 +73,12 @@ export function useArticles(filters: NewsFilters, { enabled = true }: { enabled?
     /** Loading a further page failed (the articles already loaded stay). */
     isFetchNextPageError: query.isFetchNextPageError,
     fetchNextPage: query.fetchNextPage,
-    /**
-     * Start over from the first page. Cheaper than `refetch`, which would
-     * re-request every loaded page and spend API quota.
-     */
-    retry: () => queryClient.resetQueries({ queryKey, exact: true }),
+    /** When the loaded articles were fetched (0 before the first load). */
+    updatedAt: query.dataUpdatedAt,
+    /** Reload the newest articles. */
+    refresh: restart,
+    /** Retry after sources failed. */
+    retry: restart,
   };
 }
 
