@@ -92,6 +92,7 @@ npm run dev               # http://localhost:5173, reads keys from .env
 | `npm run build`       | Type check and production build                                        |
 | `npm run preview`     | Serves the production build (with the proxy)                           |
 | `npm test`            | Runs all tests once (`test:watch`, `test:coverage` also exist)         |
+| `npm run e2e`         | End-to-end tests (Playwright) against the Docker image in demo mode    |
 | `npm run check`       | Lint, format check, type check and tests (what CI runs)                |
 | `npm run lint`        | [oxlint](https://oxc.rs) (React, hooks, a11y, import and Vitest rules) |
 | `npm run format`      | Prettier, including Tailwind class sorting                             |
@@ -269,9 +270,16 @@ npm run test:coverage     # line coverage ≈ 99%
   persistence and accessibility roles.
 
 - **Config checks** keep the source list in sync across the proxy, nginx and the container.
+- **End-to-end tests** ([`e2e/`](e2e/), Playwright) run in Chromium against the production Docker
+  image in demo mode — the real bundle behind nginx and its CSP, offline and without keys. They
+  cover what jsdom can't: the native `<dialog>`, real browser history, the lazy Settings route,
+  layout at 375 px (no horizontal scroll), the pre-paint theme script, and they fail on any page
+  error or Content-Security-Policy violation. `npm run e2e` builds and starts the image itself
+  (needs Docker; first run: `npx playwright install chromium`).
 
-CI runs all of it plus a Docker smoke test (the image starts without keys and serves the app).
-Every stage was also checked by hand in a real browser (desktop and 375 px, light and dark).
+CI runs all of it: lint, types and unit/integration tests, then the Docker image with a smoke test
+and the end-to-end suite. Every stage was also checked by hand in a real browser (desktop and
+375 px, light and dark).
 
 **Security of the proxy:** keys only exist in the container's environment; nginx forwards only the
 endpoints the app uses (everything else under `/api` is 404), answers 503 itself for a source

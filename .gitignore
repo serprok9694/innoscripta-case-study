@@ -14,3 +14,7 @@ coverage/
 .vscode/*
 !.vscode/extensions.json
 *.log
+
+# Playwright
+playwright-report/
+test-results/
